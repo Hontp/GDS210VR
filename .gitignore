@@ -34,3 +34,12 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Krystal Added this to fix merges on Scenes possibly https://docs.unity3d.com/Manual/SmartMerge.html
+
+[merge]
+    tool = unityyamlmerge
+
+    [mergetool "unityyamlmerge"]
+    trustExitCode = false
+    cmd = '<path to UnityYAMLMerge>' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
