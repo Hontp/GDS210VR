@@ -5,11 +5,22 @@ using UnityEngine;
 public class GettingHit : MonoBehaviour
 {
     public GameObject brokenMesh, replacedMesh;
-    private void Update()
+    public SpawnEnemy spawnEngine;
+    public bool bypass;
+
+    private void Awake()
     {
-        
+        spawnEngine = GameObject.Find("EnemySpawnManager").GetComponent<SpawnEnemy>();
     }
 
+    private void Update()
+    {
+        if(bypass)
+        {
+            bypass = false;
+            DestroyMe();
+        }
+    }
     void OnTriggerEnter(Collider hittingCollider)
     {
         Debug.Log(hittingCollider.transform.tag);
@@ -18,11 +29,6 @@ public class GettingHit : MonoBehaviour
             Hit();
             Invoke("DestroyMe", 2f);
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision.transform.tag);
     }
 
     void Hit()
@@ -35,7 +41,7 @@ public class GettingHit : MonoBehaviour
 
     void DestroyMe()
     {
+        spawnEngine.TestSpawn();
         Destroy(gameObject);
-        Destroy(replacedMesh);
     }
 }
