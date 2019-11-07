@@ -10,6 +10,7 @@ namespace MemeMachine
     {
         public SteamVR_Input_Sources inputSource;
         public SteamVR_Action_Boolean grabPinch;
+        public SteamVR_Action_Vibration vibration;
         public bool shoot;
         public GameObject bullet;
         public void Shoot()
@@ -18,27 +19,20 @@ namespace MemeMachine
             GameObject shot = Instantiate(bullet, transform.position + transform.forward * 0.55f, Quaternion.Euler(angleInfo.x, angleInfo.y, angleInfo.z));
             shot.GetComponent<Rigidbody>().velocity = transform.forward * 100f;
             shot.GetComponent<Bullet>().DestroyBullet(3f);
+
         }
-
-
         private void Update()
         {
             CheckShoot();
         }
-
         private void CheckShoot()
         {
             if (grabPinch.GetStateDown(inputSource))
             {
                 Shoot();
                 shoot = false;
+                vibration.Execute(0, 0.3f, 100f, 1, inputSource);
             }
         }
-
-
-
-
-
-
     }
 }
