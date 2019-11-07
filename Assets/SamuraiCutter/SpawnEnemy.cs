@@ -9,7 +9,7 @@ public class SpawnEnemy : MonoBehaviour
 
     public void TestSpawn()
     {
-        int spawn = Random.Range(0, 2);
+        int spawn = Random.Range(0, 3);
         Transform currentTransform;
         switch (spawn)
         {
