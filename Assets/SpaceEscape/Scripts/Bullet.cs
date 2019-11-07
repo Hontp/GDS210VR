@@ -2,28 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+namespace MemeMachine
 {
-    public void DestroyBullet(float time)
+    public class Bullet : MonoBehaviour
     {
-        Destroy(gameObject, time);
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        print("Hit Something");
-        switch (collision.gameObject.tag)
+        public void DestroyBullet(float time)
         {
-            case "Enviroment":
-                Destroy(gameObject);
-                print("hit Enviroment");
-                break;
-            case "Enemy":
-                Destroy(gameObject);
-                print("hit enemy");
-                break;
+            Destroy(gameObject, time);
         }
-    }
 
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            print("Hit Something");
+            switch (collision.gameObject.tag)
+            {
+                case "Enviroment":
+                    Destroy(gameObject);
+                    print("hit Enviroment");
+                    break;
+                case "Enemy":
+                    Destroy(gameObject);
+                    print("hit enemy");
+                    break;
+            }
+        }
+
+    }
 }
