@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class Gun : MonoBehaviour
 {
+    public SteamVR_Input_Sources inputSource;    
+    public SteamVR_Action_Boolean grabPinch;
     public bool shoot;
     public GameObject bullet;
     public void Shoot()
@@ -17,12 +20,19 @@ public class Gun : MonoBehaviour
 
     private void Update()
     {
-        if (shoot)
+        CheckShoot();
+    }
+
+    private void CheckShoot()
+    {
+        if (grabPinch.GetStateDown(inputSource))
         {
-            shoot = false;
             Shoot();
+            shoot = false;
         }
     }
+
+
 
 
 
