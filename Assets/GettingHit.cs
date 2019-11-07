@@ -5,13 +5,24 @@ using UnityEngine;
 public class GettingHit : MonoBehaviour
 {
     public GameObject brokenMesh, replacedMesh;
+    private void Update()
+    {
+        
+    }
+
     void OnTriggerEnter(Collider hittingCollider)
     {
-        if(hittingCollider.tag == "PlayerSword")
+        Debug.Log(hittingCollider.transform.tag);
+        if(hittingCollider.CompareTag("PlayerSword"))
         {
             Hit();
             Invoke("DestroyMe", 2f);
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.transform.tag);
     }
 
     void Hit()
