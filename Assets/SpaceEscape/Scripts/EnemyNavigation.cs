@@ -2,23 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class EnemyNavigation : MonoBehaviour
+
+namespace MemeMachine
 {
-    [SerializeField]
-    NavMeshAgent myAgent;
-    [SerializeField]
-    Transform playerTransform;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public class EnemyNavigation : MonoBehaviour
     {
-        myAgent.SetDestination(playerTransform.position);
-    }
+        [SerializeField]
+        NavMeshAgent myAgent;
+        [SerializeField]
+        Transform playerTransform;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            myAgent.SetDestination(playerTransform.position);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }
