@@ -31,7 +31,7 @@ namespace MemeMachine
             {
                 Shoot();
                 shoot = false;
-                vibration.Execute(0, 0.3f, 100f, 1, inputSource);
+                vibration.Execute(0, 0.3f, 300f, 1, inputSource);
             }
         }
     }
