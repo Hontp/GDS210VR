@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5540769091535275315}
   - component: {fileID: 5127591743774848472}
   m_Layer: 0
-  m_Name: gunfixed
+  m_Name: rightgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,6 +94,9 @@ MonoBehaviour:
   inputSource: 2
   grabPinch:
     actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  vibration:
+    actionPath: /actions/default/out/Haptic
     needsReinit: 0
   shoot: 0
   bullet: {fileID: 7783943817609677207, guid: b297451ae1facee45910599eb8aa114c, type: 3}
