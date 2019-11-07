@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5540769091535275315}
   - component: {fileID: 5127591743774848472}
   m_Layer: 0
-  m_Name: gunfixed
+  m_Name: rightgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6113656480232026607}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.953717, z: -0.30070576, w: 0}
   m_LocalPosition: {x: 15.1811075, y: 0.5, z: -3.1795359}
   m_LocalScale: {x: 0.1651, y: 0.1651, z: 0.1651}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 35, y: 180, z: 0}
 --- !u!33 &2294668993180957130
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -94,6 +94,9 @@ MonoBehaviour:
   inputSource: 2
   grabPinch:
     actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  vibration:
+    actionPath: /actions/default/out/Haptic
     needsReinit: 0
   shoot: 0
   bullet: {fileID: 7783943817609677207, guid: b297451ae1facee45910599eb8aa114c, type: 3}

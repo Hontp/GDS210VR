@@ -208,7 +208,7 @@ Shader "Custom/LWRPToonShader"
 				VertexNormalInputs nInput = GetVertexNormalInputs(v.normal);
 				o.worldNormal = nInput.normalWS;
 						
-				half3 vsDir = vInput.positionVS.xyz;
+				half3 vsDir =  mul((half3x3)unity_CameraToWorld, vInput.positionVS.xyz);
 
 				o.viewDir = vsDir;               
 				o.color = v.color;
@@ -238,12 +238,12 @@ Shader "Custom/LWRPToonShader"
 
 				half NdotH = dot(normal, halfVec);
 
-				half specIntensity = pow(NdotH * lightIntensity, _Glossiness * _Glossiness);
+				half specIntensity = pow(abs(NdotH * lightIntensity), _Glossiness * _Glossiness);
 				half specSmooth = smoothstep(0.005, 0.01, specIntensity);
 				half4 specular = specSmooth * _SpecularColor;
 
 				half4 rimDot = 1 - dot(viewDir, normal);
-				half4 rimIntensity = rimDot * pow(NdotL, _RimThreshold);
+				half4 rimIntensity = rimDot * pow(abs(NdotL), _RimThreshold);
 				rimIntensity = smoothstep(_RimAmount - 0.01, _RimAmount + 0.01, rimIntensity);
 				half4 rim = rimIntensity * _RimColor;
 
