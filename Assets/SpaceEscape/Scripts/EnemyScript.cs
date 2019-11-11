@@ -29,6 +29,7 @@ namespace MemeMachine
             {
                 Destroy(gameObject);
                 mySpawner.enemies.Remove(this);
+                mySpawner.numOfEnimies--;
             }
         }
         public void GiveInfo(EnemySpawner spawnerToGive, Transform PlayerLoc)
