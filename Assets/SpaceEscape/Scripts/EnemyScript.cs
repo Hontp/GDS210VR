@@ -20,6 +20,7 @@ namespace MemeMachine
         void Start()
         {
             //myAgent.SetDestination(playerTransform.position);
+            myHealth = 5;
         }
 
         public void DamageEnemy(int damageTaken)
