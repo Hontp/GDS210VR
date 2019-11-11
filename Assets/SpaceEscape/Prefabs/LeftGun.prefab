@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6451544342881801796}
   - component: {fileID: 5957040283151025473}
   - component: {fileID: 4688845132651238722}
+  - component: {fileID: 9163888350144871609}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -78,6 +79,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &9163888350144871609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265497878420217964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bde74620636e8e468e2e99c0e4f6ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSource: 1
+  grabPinch:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  vibration:
+    actionPath: /actions/default/out/Haptic
+    needsReinit: 0
+  shoot: 0
+  bullet: {fileID: 7783943817609677207, guid: b297451ae1facee45910599eb8aa114c, type: 3}
 --- !u!1 &4225170080268828303
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +109,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: -2752338770534627388}
-  - component: {fileID: 1826099762085893838}
   m_Layer: 0
   m_Name: LeftGun
   m_TagString: Untagged
@@ -110,24 +131,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1826099762085893838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4225170080268828303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bde74620636e8e468e2e99c0e4f6ad6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputSource: 1
-  grabPinch:
-    actionPath: /actions/default/in/GrabPinch
-    needsReinit: 0
-  vibration:
-    actionPath: /actions/default/out/Haptic
-    needsReinit: 0
-  shoot: 0
-  bullet: {fileID: 7783943817609677207, guid: b297451ae1facee45910599eb8aa114c, type: 3}
