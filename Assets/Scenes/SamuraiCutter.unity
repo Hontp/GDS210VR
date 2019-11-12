@@ -154,6 +154,113 @@ MonoBehaviour:
   enemySpawn3: {fileID: 272600772}
   respawnEnemy: {fileID: 4765895009882826289, guid: 3d566184d7fe76043b2843edea0281c6,
     type: 3}
+  waveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0007209805
+      value: 0.10048623
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.049759507
+      value: 0.30141115
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.10020866
+      value: 0.19773276
+      inSlope: 0.047765534
+      outSlope: 0.047765534
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.32854617
+      outWeight: 0.3357645
+    - serializedVersion: 3
+      time: 0.20150451
+      value: 0.6011446
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.2508104
+      value: 0.38984573
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.400766
+      value: 1.1002772
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.45494634
+      value: 0.7004335
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6510675
+      value: 1.8052784
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.70092136
+      value: 1.1099969
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9494658
+      value: 2.5041213
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.99991804
+      value: 1.7033309
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  currentWaveNumber: 0
+  enemyAmounts: 020000000600000003000000070000000c000000070000000b00000012000000160000000e0000001000000018000000200000002400000016000000190000001f000000280000002f00000032000000
 --- !u!4 &67577268
 Transform:
   m_ObjectHideFlags: 0
