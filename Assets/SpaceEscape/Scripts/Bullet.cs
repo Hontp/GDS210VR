@@ -24,7 +24,7 @@ namespace MemeMachine
                 case "Enemy":
                     Destroy(gameObject);
                     print("hit enemy");
-                    gameObject.GetComponent<EnemyScript>().DamageEnemy(1);
+                    collision.gameObject.GetComponent<EnemyScript>().DamageEnemy(1);
                     break;
             }
         }

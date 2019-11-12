@@ -13,6 +13,7 @@ namespace MemeMachine
         public SteamVR_Action_Vibration vibration;
         public bool shoot;
         public GameObject bullet;
+
         public void Shoot()
         {
             Vector3 angleInfo = transform.rotation.eulerAngles + new Vector3(-90, 0, 0);

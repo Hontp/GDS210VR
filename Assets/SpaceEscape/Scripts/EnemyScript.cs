@@ -19,7 +19,6 @@ namespace MemeMachine
         // Start is called before the first frame update
         void Start()
         {
-            //myAgent.SetDestination(playerTransform.position);
             myHealth = 5;
         }
 
