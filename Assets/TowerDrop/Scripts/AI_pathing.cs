@@ -55,7 +55,7 @@ namespace TowerDrop
                 distances.Add(Vector3.Distance(Path_points[i].position, Path_points[i - 1].position));
             }
             //spawn tick
-            InvokeRepeating("Spawn_enitiy", 0, spawn_time / speed);
+            InvokeRepeating("Spawn_enitiy", 0, spawn_time);
 
         }
 
