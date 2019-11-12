@@ -77,7 +77,7 @@ MonoBehaviour:
   Path_points: []
   distances: []
   spawner: {fileID: 7085381070169843645}
-  AI_PAthing_entity: {fileID: 2136419002480739342, guid: 9f2b18a24c6174da1b9afb2f208477a8,
+  AI_PAthing_entity: {fileID: 8529596017102239149, guid: 2a7d0665bf7e2cc43869a7192eb127cc,
     type: 3}
   entitys: []
   entitysToDestroy: []

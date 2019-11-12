@@ -99,6 +99,11 @@ namespace SamuraiCutter
             }
             Instantiate(respawnEnemy, currentTransform.position, currentTransform.rotation);
         }
+<<<<<<< HEAD
+=======
+        Instantiate(respawnEnemy, currentTransform.position, currentTransform.rotation, this.transform);
+        enemiesLeft++;
+>>>>>>> f0025b260b67b5dee65f2337c09fbdca70acb153
     }
 
 }
