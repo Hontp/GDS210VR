@@ -65,7 +65,7 @@ namespace SamuraiCutter
 
         void DestroyMe()
         {
-            spawnEngine.TestSpawn();
+            spawnEngine.spawn();
             Destroy(replacedMesh);
             Destroy(gameObject);
         }
