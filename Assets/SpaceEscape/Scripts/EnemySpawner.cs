@@ -53,7 +53,7 @@ namespace MemeMachine
             newEnemy.GetComponent<EnemyScript>().GiveInfo(this,playerTransform );
             enemies.Add(newEnemy.GetComponent<EnemyScript>());
             numOfEnimies++;
-        }
+        }   
 
         void EnemySpawnCounter()
         {
