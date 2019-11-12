@@ -22,6 +22,7 @@ struct VertexOutput
 	half4 position : POSITION;
 	half2 uv : TEXCOORD1;
 	half3 viewDir :TEXCOORD2;
+	half4 shadowCoord : TEXCOORD3;
 	half3 worldNormal : NORMAL;
 	half4 color : COLOR;
 
@@ -57,6 +58,8 @@ VertexOutput ToonPassVertex(VertexInput v)
 
 	VertexPositionInputs vInput = GetVertexPositionInputs(v.vertex.xyz);
 
+	o.shadowCoord = GetShadowCoord(vInput);
+
 	o.position = vInput.positionCS;
 
 	half4 baseTex = UNITY_ACCESS_INSTANCED_PROP(UnityPerMaterialColor, _MainTex_ST);
@@ -85,8 +88,7 @@ half4 ToonPassFragment(VertexOutput i) : SV_Target
 	half4 ambientColorProp = UNITY_ACCESS_INSTANCED_PROP(UnityPerMaterial, _AmbientColor);
 
 
-
-	Light mainLight = GetMainLight();
+	Light mainLight = GetMainLight(i.shadowCoord);
 
 	half3 normal = normalize(i.worldNormal);
 	half NdotL = dot(mainLight.direction, normal);

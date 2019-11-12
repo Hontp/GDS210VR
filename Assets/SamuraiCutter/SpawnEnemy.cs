@@ -2,76 +2,103 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
-public class SpawnEnemy : MonoBehaviour
+namespace SamuraiCutter
 {
-    public Transform enemySpawn1, enemySpawn2, enemySpawn3;
-    public GameObject respawnEnemy;
-    // I believe in this curve
-    public AnimationCurve waveCurve;
-    public int currentWaveNumber =0;
-    [SerializeField]
-    [Header("Max Wave Number (Here for reference)")]
-    public const int maxWaves = 20;
-    public int[] enemyAmounts = new int[maxWaves];
-    public int enemiesLeft;
 
-    public void incWave()
+    public class SpawnEnemy : MonoBehaviour
     {
-        currentWaveNumber++;
-    }
+        public Transform enemySpawn1, enemySpawn2, enemySpawn3;
+        public GameObject respawnEnemy;
+        // I believe in this curve
+        public AnimationCurve waveCurve;
+        public int currentWaveNumber =0;
+        [SerializeField]
+        [Header("Max Wave Number (Here for reference)")]
+        public const int maxWaves = 20;
+        public int[] enemyAmounts = new int[maxWaves];
+        
+        public int waveTimeLength;
 
-    public int sampleWave(int waveNumber)
-    {
-        return (int)( waveCurve.Evaluate(0.05f * waveNumber) * 20f);
-    }
+        public int enemiesSpawned;
+        public int remainingEnemies;
 
-    private void Awake()
-    {
-        for (int i = 0; i < maxWaves; i++)
+        public float waveStartTime;
+
+        public float sectionTime = 1f;
+
+        public AnimationCurve waveSpawnCurve;
+
+        public void registerKill()
         {
-            enemyAmounts[i] = sampleWave(i);
+            remainingEnemies--;
         }
-        WaveManagement();
-    }
 
-    private void Update()
-    {
-        if(enemiesLeft <= 0)
+        public void incWave()
         {
             currentWaveNumber++;
-            WaveManagement();
+            waveStartTime = Time.time;
+        }
+
+        public int sampleWave(int waveNumber)
+        {
+            return (int)( waveCurve.Evaluate(0.05f * waveNumber) * 20f);
+        }
+
+        public int sampleSpawns(float timeSinceWaveStart)
+        {
+            return (int) (waveSpawnCurve.Evaluate(0.05f * timeSinceWaveStart) * waveTimeLength);
+        }
+
+
+        void Start()
+        {
+            for(int i=0;i<maxWaves;i++)
+            {
+                enemyAmounts[i] = sampleWave(i);
+            }
+
+            waveStartTime = Time.time;
+            
+        }
+
+
+        public void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                spawn();
+            }
+            // WIP: still working out how to spawn enemies within the round
+            if(enemiesSpawned < enemyAmounts[currentWaveNumber])
+            {
+                //if(waveStartTime - )
+            }
+        }
+
+
+
+        public void spawn()
+        {
+            int spawn = Random.Range(0, 3);
+            Transform currentTransform;
+            switch (spawn)
+            {
+                case 0:
+                    currentTransform = enemySpawn1;
+                    break;
+                case 1:
+                    currentTransform = enemySpawn2;
+                    break;
+
+                case 2:
+                    currentTransform = enemySpawn3;
+                    break;
+                default:
+                    currentTransform = enemySpawn1;
+                    break;
+            }
+            Instantiate(respawnEnemy, currentTransform.position, currentTransform.rotation);
         }
     }
 
-    void WaveManagement()
-    {
-        for (int i = 0; i < enemyAmounts[currentWaveNumber]; i++)
-        {
-            TestSpawn();
-        }
-    }
-    public void TestSpawn()
-    {
-        int spawn = Random.Range(0, 3);
-        Transform currentTransform;
-        switch (spawn)
-        {
-            case 0:
-                currentTransform = enemySpawn1;
-                break;
-            case 1:
-                currentTransform = enemySpawn2;
-                break;
-
-            case 2:
-                currentTransform = enemySpawn3;
-                break;
-            default:
-                currentTransform = enemySpawn1;
-                break;
-        }
-        Instantiate(respawnEnemy, currentTransform.position, currentTransform.rotation, this.transform);
-        enemiesLeft++;
-    }
 }
