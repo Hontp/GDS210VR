@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class GettingHit : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GettingHit : MonoBehaviour
     public bool bypass;
     public float explosionRadius, explosionPower;
     public Vector3 explosionPos;
+    public SteamVR_Action_Vibration vibration;
+    public SteamVR_Input_Sources inputSource;
 
     private void Awake()
     {
@@ -58,7 +61,7 @@ public class GettingHit : MonoBehaviour
 
     void DestroyMe()
     {
-        spawnEngine.TestSpawn();
+        print("test 1");
         Destroy(replacedMesh);
         Destroy(gameObject);
     }

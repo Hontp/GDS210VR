@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class SwordHitting : MonoBehaviour
 {
     public SteamVR_Action_Vibration vibration;
     public SteamVR_Input_Sources inputSource;
+    public Hand hand;
+
+    public void Start()
+    {
+        hand = GetComponentInParent<Hand>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            vibration.Execute(0, 0.3f, 180f, 1, inputSource);
+            vibration.Execute(0f, 0.4f, 20f, 1, inputSource);
+            hand.TriggerHapticPulse(180);
         }
     }
 
