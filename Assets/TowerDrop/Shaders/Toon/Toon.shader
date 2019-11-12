@@ -62,7 +62,6 @@ Shader "Custom/LWRPToonShader"
             #include "Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.lightweight/ShaderLibrary/Lighting.hlsl"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
-            #include "Packages/com.unity.render-pipelines.lightweight/Shaders/UnlitInput.hlsl"
            
 			#include "OutlinePass.hlsl"
            
@@ -109,6 +108,8 @@ Shader "Custom/LWRPToonShader"
 
             ENDHLSL
         }
+
+		UsePass "Lightweight Render Pipeline/Lit/ShadowCaster"
 		
     }
     Fallback "Hidden/InternalErrorShader"	
