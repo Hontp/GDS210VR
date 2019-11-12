@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8521656567018317355}
   m_Layer: 0
   m_Name: DummyEnemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +116,10 @@ MonoBehaviour:
   explosionRadius: 0
   explosionPower: 0
   explosionPos: {x: 0, y: 0, z: 0}
+  vibration:
+    actionPath: 
+    needsReinit: 0
+  inputSource: 0
 --- !u!54 &1249270463
 Rigidbody:
   m_ObjectHideFlags: 0

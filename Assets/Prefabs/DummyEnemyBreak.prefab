@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7285401266602645770}
   m_Layer: 0
   m_Name: Cube_cell
+  m_TagString: EnemyChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +125,7 @@ GameObject:
   - component: {fileID: 7285401267025426834}
   m_Layer: 0
   m_Name: Cube_cell.002
+  m_TagString: EnemyChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,6 +345,7 @@ GameObject:
   - component: {fileID: 7285401267446986610}
   m_Layer: 0
   m_Name: Cube_cell.016
+  m_TagString: EnemyChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -562,6 +565,7 @@ GameObject:
   - component: {fileID: 7285401266861484027}
   m_Layer: 0
   m_Name: Cube_cell.009
+  m_TagString: EnemyChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -781,6 +785,7 @@ GameObject:
   - component: {fileID: 7285401266956454657}
   m_Layer: 0
   m_Name: Cube_cell.034
+  m_TagString: EnemyChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,6 +895,7 @@ GameObject:
   - component: {fileID: 7285401266988146618}
   m_Layer: 0
   m_Name: Cube_cell.044
+  m_TagString: EnemyChunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
