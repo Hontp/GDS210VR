@@ -13,6 +13,7 @@ namespace TowerDrop
         public List<float> distances;
         //object were the entitys spawn
         public GameObject spawner;
+        public float spawn_time;
         // gameobject being spawned
         public GameObject AI_PAthing_entity;
         //list of struct nititys allows for mass controls
@@ -54,7 +55,7 @@ namespace TowerDrop
                 distances.Add(Vector3.Distance(Path_points[i].position, Path_points[i - 1].position));
             }
             //spawn tick
-            InvokeRepeating("Spawn_enitiy", 0, 2 / speed);
+            InvokeRepeating("Spawn_enitiy", 0, spawn_time / speed);
 
         }
 
