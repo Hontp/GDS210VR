@@ -14,8 +14,7 @@ public class SpawnEnemy : MonoBehaviour
     [Header("Max Wave Number (Here for reference)")]
     public const int maxWaves = 20;
     public int[] enemyAmounts = new int[maxWaves];
-
-    
+    public int enemiesLeft;
 
     public void incWave()
     {
@@ -27,15 +26,31 @@ public class SpawnEnemy : MonoBehaviour
         return (int)( waveCurve.Evaluate(0.05f * waveNumber) * 20f);
     }
 
-
-    void Start()
+    private void Awake()
     {
-        for(int i=0;i<maxWaves;i++)
+        for (int i = 0; i < maxWaves; i++)
         {
             enemyAmounts[i] = sampleWave(i);
         }
+        WaveManagement();
     }
 
+    private void Update()
+    {
+        if(enemiesLeft <= 0)
+        {
+            currentWaveNumber++;
+            WaveManagement();
+        }
+    }
+
+    void WaveManagement()
+    {
+        for (int i = 0; i < enemyAmounts[currentWaveNumber]; i++)
+        {
+            TestSpawn();
+        }
+    }
     public void TestSpawn()
     {
         int spawn = Random.Range(0, 3);
@@ -56,6 +71,7 @@ public class SpawnEnemy : MonoBehaviour
                 currentTransform = enemySpawn1;
                 break;
         }
-        Instantiate(respawnEnemy, currentTransform.position, currentTransform.rotation);
+        Instantiate(respawnEnemy, currentTransform.position, currentTransform.rotation, this.transform);
+        enemiesLeft++;
     }
 }

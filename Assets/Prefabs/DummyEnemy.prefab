@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1204971090552731201}
   - component: {fileID: 8542036117498152742}
   - component: {fileID: 1249270463}
+  - component: {fileID: 8521656567018317355}
   m_Layer: 0
   m_Name: DummyEnemy
   m_TagString: Untagged
@@ -112,6 +113,9 @@ MonoBehaviour:
     type: 3}
   spawnEngine: {fileID: 0}
   bypass: 0
+  explosionRadius: 0
+  explosionPower: 0
+  explosionPos: {x: 0, y: 0, z: 0}
 --- !u!54 &1249270463
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,3 +132,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8521656567018317355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765895009882826289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc4c6fc13ca79d43af712051d1e1106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  rotationSpeed: 3
+  MoveSpeed: 4
+  MinDist: 2
+  MaxDist: 20
