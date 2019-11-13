@@ -9,7 +9,7 @@ namespace TowerDrop
     {
         public int entity_index;
         public AI_pathing AI_P;
-        bool hit = false;
+        public bool hit = false;
         bool inlist;
         // Start is called before the first frame update
         void Start()
@@ -27,10 +27,13 @@ namespace TowerDrop
             if (col.gameObject.tag == "wepon" && hit == false)
             {
                 hit = true;
+
                 AI_P.RemoveFromEntityList(entity_index);
                 gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 Destroy(gameObject, 5);
+            
             }
         }
+
     }
 }
