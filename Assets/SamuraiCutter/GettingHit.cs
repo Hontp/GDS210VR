@@ -5,14 +5,6 @@ using Valve.VR;
 
 namespace SamuraiCutter
 {
-    public GameObject brokenMesh, replacedMesh;
-    public SpawnEnemy spawnEngine;
-    public bool bypass;
-    public float explosionRadius, explosionPower;
-    public Vector3 explosionPos;
-    public SteamVR_Action_Vibration vibration;
-    public SteamVR_Input_Sources inputSource;
-
     public class GettingHit : MonoBehaviour
     {
         public GameObject brokenMesh, replacedMesh;
@@ -25,13 +17,13 @@ namespace SamuraiCutter
         private void Awake()
         {
             spawnEngine = GameObject.Find("EnemySpawnManager").GetComponent<SpawnEnemy>();
-            
+
         }
 
         private void Update()
         {
-            
-            if(bypass)
+
+            if (bypass)
             {
                 bypass = false;
                 Hit();
@@ -41,7 +33,7 @@ namespace SamuraiCutter
         void OnTriggerEnter(Collider hittingCollider)
         {
             Debug.Log(hittingCollider.transform.tag);
-            if(hittingCollider.CompareTag("PlayerSword"))
+            if (hittingCollider.CompareTag("PlayerSword"))
             {
                 Hit();
                 explosionPos = hittingCollider.transform.position;
@@ -64,18 +56,18 @@ namespace SamuraiCutter
 
         void Hit()
         {
-                replacedMesh = Instantiate(brokenMesh, transform.position, transform.rotation);
-                this.GetComponent<BoxCollider>().enabled = false;
-                this.GetComponent<MeshRenderer>().enabled = false;
-                spawnEngine.registerKill();
-                //Gain Score Code Here
+            replacedMesh = Instantiate(brokenMesh, transform.position, transform.rotation);
+            this.GetComponent<BoxCollider>().enabled = false;
+            this.GetComponent<MeshRenderer>().enabled = false;
+            spawnEngine.registerKill();
+            //Gain Score Code Here
         }
 
-    void DestroyMe()
-    {
-        print("test 1");
-        Destroy(replacedMesh);
-        Destroy(gameObject);
+        void DestroyMe()
+        {
+            print("test 1");
+            Destroy(replacedMesh);
+            Destroy(gameObject);
+        }
     }
-
 }

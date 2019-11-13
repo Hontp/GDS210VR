@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 56a764f325240e8408192f98abffd987
+guid: 9e445d0b03ffe8d46a804f01ede9626c
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,28 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: BaseColour
-    second: {fileID: 2100000, guid: d26b42c854f83c04490e97dade4c293d, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 3aa0fc35bb056fc488adc92a27e647da, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: EngineGlow
-    second: {fileID: 2100000, guid: df2e3b693b53dbb4bbf5a23a48afbc90, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FuelGlow
-    second: {fileID: 2100000, guid: 821ed0f281ce87c4e92a96eb144e3e72, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: FuelPipe
-    second: {fileID: 2100000, guid: dcc197d816069a54b8ec4993177814bd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Windows
-    second: {fileID: 2100000, guid: 608bd87671ad7904fb67956d14224cbd, type: 2}
+      name: Material.002
+    second: {fileID: 2100000, guid: a5bd8a7f56619bc45be71ff7682be1e5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

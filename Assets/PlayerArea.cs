@@ -8,7 +8,6 @@ namespace MemeMachine
     {
         private void OnTriggerEnter(Collider objectEntering)
         {
-            print("test");
             if (objectEntering != null && objectEntering.CompareTag("Enemy"))
             {
                 objectEntering.gameObject.GetComponent<EnemyScript>().DamageEnemy(10000);
