@@ -49,6 +49,7 @@ UNITY_INSTANCING_BUFFER_START(UnityPerMaterial)
 	UNITY_DEFINE_INSTANCED_PROP(half, _Glossiness)
 UNITY_INSTANCING_BUFFER_END(UnityPerMaterial)
 
+
 VertexOutput ToonPassVertex(VertexInput v)
 {
 	VertexOutput o;
@@ -58,19 +59,18 @@ VertexOutput ToonPassVertex(VertexInput v)
 
 	VertexPositionInputs vInput = GetVertexPositionInputs(v.vertex.xyz);
 
-	o.shadowCoord = GetShadowCoord(vInput);
-
 	o.position = vInput.positionCS;
 
 	half4 baseTex = UNITY_ACCESS_INSTANCED_PROP(UnityPerMaterialColor, _MainTex_ST);
 	o.uv = v.uv * baseTex.xy + baseTex.zw;
 	VertexNormalInputs nInput = GetVertexNormalInputs(v.normal);
-	o.worldNormal = nInput.normalWS;
+	o.worldNormal = mul ((half3x3)UNITY_MATRIX_M, nInput.normalWS);
 
 	half3 vsDir = mul((half3x3)unity_CameraToWorld, vInput.positionVS.xyz);
 
 	o.viewDir = vsDir;
 	o.color = v.color;
+	o.shadowCoord = GetShadowCoord(vInput);
 
 	return o;
 }
