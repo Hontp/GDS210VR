@@ -6,11 +6,14 @@ namespace MemeMachine
 {
     public class Bullet : MonoBehaviour
     {
+        void Update()
+        {
+            transform.Rotate(0, 0, 50 * Time.deltaTime);           
+        }
         public void DestroyBullet(float time)
         {
             Destroy(gameObject, time);
         }
-
 
         private void OnCollisionEnter(Collision collision)
         {
@@ -30,4 +33,5 @@ namespace MemeMachine
         }
 
     }
+   
 }
