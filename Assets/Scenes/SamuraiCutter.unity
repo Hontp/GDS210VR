@@ -259,13 +259,14 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  currentWaveNumber: 1
+  currentWaveNumber: 0
   enemyAmounts: 020000000600000003000000070000000c000000070000000b00000012000000160000000e0000001000000018000000200000002400000016000000190000001f000000280000002f00000032000000
-  roundTimeLength: 20
+  waveTimeLength: 0
   enemiesSpawned: 0
   remainingEnemies: 0
-  roundStartTime: 0
-  roundSpawnCurve:
+  waveStartTime: 0
+  sectionTime: 1
+  waveSpawnCurve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
@@ -503,11 +504,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SamuraiCutLevelLightTesting2
       objectReference: {fileID: 0}
-    - target: {fileID: 3179774389773594836, guid: 8895ccb993c21c64ca7e0ae187d414b3,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8895ccb993c21c64ca7e0ae187d414b3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -562,6 +558,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3179774389773594836, guid: 8895ccb993c21c64ca7e0ae187d414b3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8895ccb993c21c64ca7e0ae187d414b3, type: 3}
