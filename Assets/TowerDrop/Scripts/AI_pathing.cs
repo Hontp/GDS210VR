@@ -68,7 +68,7 @@ namespace TowerDrop
                 if (entitys[i].AI_gameObject != null)
                 {
                     //refreshes entity index in event off deleted entitys
-                    entitys[i].AI_gameObject.GetComponent<entity_collsion>().entity_index = i;
+                    entitys[i].AI_gameObject.GetComponent<Health>().entity_index = i;
 
                     //creation of a struct template to reaply to it self because its naot an array 
                     pathed_entity x;
@@ -155,8 +155,8 @@ namespace TowerDrop
             //creates gameobect
             x = Instantiate(AI_PAthing_entity, spawner.transform);
 
-            x.AddComponent<entity_collsion>();
-            entity_collsion eC = x.GetComponent<entity_collsion>();
+            x.AddComponent<Health>();
+            Health eC = x.GetComponent<Health>();
             eC.entity_index = entitys.Count;
             eC.AI_P = GetComponent<AI_pathing>();
 

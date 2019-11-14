@@ -6,24 +6,28 @@ namespace TowerDrop
 {
     public class HealthSystem : Singleton< MonoBehaviour>
     {
-        public AI_pathing AIObjects;
+        public  List<AI_pathing> AIObjects=  new List<AI_pathing>();
 
         void Update()
         {
             if (AIObjects == null)
                 return;
-
-            for ( int i =0;  i <  AIObjects.entitys.Count; i++)
+            for (int i = 0; AIObjects.Count > i; i++)
             {
-                GameObject entity = AIObjects.entitys[i].AI_gameObject;
 
-                if (entity != null)
+                for (int x = 0; x < AIObjects[i].entitys.Count; x++)
                 {
-                    if (entity.GetComponent<entity_collsion>().hit)
-                        entity.GetComponent<Health>().HP--;
+                    
+                     GameObject entity = AIObjects[i].entitys[x].AI_gameObject;
 
-                    entity.GetComponent<entity_collsion>().hit = false;
-                }               
+                    if (entity != null)
+                    {
+                        if (entity.GetComponent<Health>().hit)
+                            entity.GetComponent<Health>().HP--;
+
+                        entity.GetComponent<Health>().hit = false;
+                    }
+                }
             }
             
         }
