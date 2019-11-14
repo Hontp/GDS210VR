@@ -4,6 +4,11 @@ namespace TowerDrop
 {
     public class Health : MonoBehaviour
     {
+        public int entity_index;
+        public AI_pathing AI_P;
+        public bool hit = false;
+        bool inlist;
+
         [SerializeField]
         private int hp = 5;
 
@@ -29,5 +34,21 @@ namespace TowerDrop
                 totalHP = value;
             }
         }
+        
+        private void OnCollisionEnter(Collision col)
+        {
+            if (col.gameObject.tag == "wepon" && hit == false)
+            {
+                hit = true;
+
+                if (totalHP <= 0)
+                {
+                    AI_P.RemoveFromEntityList(entity_index);
+                    gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    Destroy(gameObject, 5);
+                }
+            }
+        }
+
     }
 }
