@@ -9,7 +9,9 @@ namespace MemeMachine
         public float SpawnTime;
         public int numOfEnimies;
         public List<EnemyScript> enemies;
-        
+
+        [SerializeField]
+        GameObject secondaryLocations;
         [SerializeField]
         GameObject basicEnemy;
         [SerializeField]
