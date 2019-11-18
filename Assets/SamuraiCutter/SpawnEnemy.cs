@@ -38,6 +38,7 @@ namespace SamuraiCutter
             currentWaveNumber++;
             waveStartTime = Time.time;
             remainingEnemies = enemyAmounts[currentWaveNumber];
+            enemiesSpawned = 0;
             
         }
 

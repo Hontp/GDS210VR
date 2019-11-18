@@ -18,8 +18,11 @@ namespace SamuraiCutter
                     MaxDist = 10f;
 
         private SpawnEnemy spawnEnemy;
+        private Rigidbody rb;
+        public bool jumping;
         private void Start()
         {
+            rb = GetComponent<Rigidbody>();
             nma = GetComponent<NavMeshAgent>();
             nma.speed = MoveSpeed;
             nma.SetDestination(GameManager._instance.playerPos.position);
@@ -29,8 +32,35 @@ namespace SamuraiCutter
         // Update is called once per frame
         void Update()
         {
-
+            if(Vector3.Distance(GameManager._instance.playerPos.position, transform.position) < 1.5f && !jumping)
+            {
+                jumping = true;
+                jumpBack();
+            }
             //Movement();
+        }
+
+        public void jumpBack()
+        {
+            nma.isStopped = true;
+            nma.enabled = false;
+            //new Vector3( (((transform.position-GameManager._instance.playerPos.position).normalized).x), -1.0f, (((transform.position-GameManager._instance.playerPos.position).normalized).z))
+            rb.AddForce( new Vector3( (((transform.position-GameManager._instance.playerPos.position).normalized).x), 5f, (((transform.position-GameManager._instance.playerPos.position).normalized).z)), ForceMode.VelocityChange);
+            rb.constraints = RigidbodyConstraints.FreezeRotationY & RigidbodyConstraints.FreezeRotationZ & RigidbodyConstraints.FreezePosition;
+            rb.AddTorque(transform.right * -180f);
+        }
+
+        public void OnCollisionEnter(Collision col)
+        {
+            if(col.transform.CompareTag("floor"))
+            {
+                jumping = false;
+                nma.enabled = true;
+                nma.isStopped = false;
+                nma.speed = MoveSpeed;
+            nma.SetDestination(GameManager._instance.playerPos.position);
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+            }
         }
 
         public void Movement()

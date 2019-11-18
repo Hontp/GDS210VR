@@ -8,6 +8,9 @@ TagManager:
   - FxTemporaire
   - PlayerSword
   - wepon
+  - Enemy
+  - EnemyChunk
+  - floor
   layers:
   - Default
   - TransparentFX

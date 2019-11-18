@@ -16,12 +16,14 @@ public class SwordHitting : MonoBehaviour
         hand = GetComponentInParent<Hand>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             vibration.Execute(0f, 0.4f, 20f, 1, inputSource);
             hand.TriggerHapticPulse(180);
+
+            other.gameObject.GetComponent<Enemy>().slice(other.GetContact(other.contactCount/2).point,transform.up);
         }
     }
 
