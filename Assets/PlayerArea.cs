@@ -11,7 +11,6 @@ namespace MemeMachine
             if (objectEntering != null && objectEntering.CompareTag("Enemy"))
             {
                 objectEntering.gameObject.GetComponent<EnemyScript>().DamageEnemy(10000);
-                print("An enemy has reached the player");
             }
         }
     }

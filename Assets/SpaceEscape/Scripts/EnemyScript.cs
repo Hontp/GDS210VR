@@ -9,6 +9,7 @@ namespace MemeMachine
     {
         int myHealth;
         EnemySpawner mySpawner;
+        Transform firstLocation;
 
         [SerializeField]
         NavMeshAgent myAgent;
@@ -32,13 +33,26 @@ namespace MemeMachine
                 mySpawner.numOfEnimies--;
             }
         }
-        public void GiveInfo(EnemySpawner spawnerToGive, Transform PlayerLoc)
+        public void GiveInfo(EnemySpawner spawnerToGive, Transform PlayerLoc, Transform intermediatePos)
         {
             mySpawner = spawnerToGive;
             playerTransform = PlayerLoc;
-            myAgent.SetDestination(playerTransform.position);
+            firstLocation = intermediatePos;
+            myAgent.SetDestination(firstLocation.position);
         }
 
+        void ChangeLocation()
+        {
+            if(myAgent.remainingDistance < 1)
+            {
+                myAgent.SetDestination(playerTransform.position);
+            }
+        }
+
+        private void Update()
+        {
+            ChangeLocation();
+        }
 
 
     }
