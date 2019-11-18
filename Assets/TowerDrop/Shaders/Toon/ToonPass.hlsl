@@ -46,6 +46,38 @@ struct Varyings
 		UNITY_VERTEX_OUTPUT_STEREO
 };
 
+void InitializeInputData(Varyings input, half3 normalTS, out InputData inputData)
+{
+	inputData = (InputData)0;
+
+#ifdef _ADDITIONAL_LIGHTS
+	inputData.positionWS = input.positionCS;
+#endif
+
+#ifdef _NORMALMAP
+	half3 viewDirWS = half3(input.normalWS.w, input.tangentWS.w, input.bitangentWS.w);
+	inputData.normalWS = TransformTangentToWorld(normalTS,
+		half3x3(input.tangentWS.xyz, input.bitangentWS.xyz, input.normalWS.xyz));
+#else
+	half3 viewDirWS = input.viewDirWS;
+	inputData.normalWS = input.normalWS;
+#endif
+
+	inputData.normalWS = NormalizeNormalPerPixel(inputData.normalWS);
+	viewDirWS = SafeNormalize(viewDirWS);
+
+	inputData.viewDirectionWS = viewDirWS;
+#if defined(_MAIN_LIGHT_SHADOWS) && !defined(_RECEIVE_SHADOWS_OFF)
+	inputData.shadowCoord = input.shadowCoord;
+#else
+	inputData.shadowCoord = float4(0, 0, 0, 0);
+#endif
+	inputData.fogCoord = input.positionWSAndFogFactor.x;
+	inputData.vertexLighting = input.positionWSAndFogFactor.yzw;
+	inputData.bakedGI = SAMPLE_GI(input.lightmapUV, input.vertexSH, inputData.normalWS);
+}
+
+
 Varyings ToonPassVertex(Attributes input)
 {
 	Varyings output = (Varyings)0;
@@ -85,37 +117,6 @@ Varyings ToonPassVertex(Attributes input)
 	output.color = input.color;
 
 	return output;
-}
-
-void InitializeInputData(Varyings input, half3 normalTS, out InputData inputData)
-{
-	inputData = (InputData)0;
-
-#ifdef _ADDITIONAL_LIGHTS
-	inputData.positionWS = input.positionCS;
-#endif
-
-#ifdef _NORMALMAP
-	half3 viewDirWS = half3(input.normalWS.w, input.tangentWS.w, input.bitangentWS.w);
-	inputData.normalWS = TransformTangentToWorld(normalTS,
-		half3x3(input.tangentWS.xyz, input.bitangentWS.xyz, input.normalWS.xyz));
-#else
-	half3 viewDirWS = input.viewDirWS;
-	inputData.normalWS = input.normalWS;
-#endif
-
-	inputData.normalWS = NormalizeNormalPerPixel(inputData.normalWS);
-	viewDirWS = SafeNormalize(viewDirWS);
-
-	inputData.viewDirectionWS = viewDirWS;
-#if defined(_MAIN_LIGHT_SHADOWS) && !defined(_RECEIVE_SHADOWS_OFF)
-	inputData.shadowCoord = input.shadowCoord;
-#else
-	inputData.shadowCoord = float4(0, 0, 0, 0);
-#endif
-	inputData.fogCoord = input.positionWSAndFogFactor.x;
-	inputData.vertexLighting = input.positionWSAndFogFactor.yzw;
-	inputData.bakedGI = SAMPLE_GI(input.lightmapUV, input.vertexSH, inputData.normalWS);
 }
 
 half4 ToonPassFragment(Varyings input) : SV_Target

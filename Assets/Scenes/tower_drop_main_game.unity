@@ -684,7 +684,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2083460, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: field of view
-      value: 90
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083460, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: far clip plane
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 429506, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -700,7 +704,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: field of view
-      value: 90
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014920, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: far clip plane
+      value: 350
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
@@ -1047,6 +1055,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 867367621}
+  - component: {fileID: 867367622}
   m_Layer: 8
   m_Name: GameScene
   m_TagString: Untagged
@@ -1076,6 +1085,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867367622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867367620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ce95e739408a644b79f643d205b03d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AIObjects: []
+  player: {fileID: 0}
 --- !u!1 &900683304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2235,6 +2258,26 @@ Transform:
   m_Father: {fileID: 1887027562}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: -90, y: 30, z: 0}
+--- !u!1 &2137528580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 650410611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2137528581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137528580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf370ce52c690d43966de222c27070b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  hit: 0
 --- !u!4 &631000904203139360
 Transform:
   m_ObjectHideFlags: 0
