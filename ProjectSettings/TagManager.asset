@@ -9,6 +9,8 @@ TagManager:
   - PlayerSword
   - wepon
   - Enemy
+  - EnemyChunk
+  - floor
   layers:
   - Default
   - TransparentFX
