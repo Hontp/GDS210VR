@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 namespace MemeMachine
 {
@@ -17,11 +19,24 @@ namespace MemeMachine
         [SerializeField]
         Transform playerTransform;
 
+        [SerializeField]
+        TMP_Text mainText;
+        [SerializeField]
+        Slider FuelSlider;
+
+
+
         float enemyTimer;
         GameObject spawnLocationHolder;
         int previousSpawnLocactionInt,
             previousMiddleLocationInt;
         int whileLimiter;
+        float timeLeft;
+
+        const float GAMETIME = 180;
+        const string FUELSTART = "- Refueling In Process -" + "\n" + "ETC : ";
+        const string FUELMIDDLE = " Seconds" + "\n" + "Current Fuel Level : ";
+        const string FUELEND = "%";
 
 
         // Start is called before the first frame update
@@ -31,12 +46,14 @@ namespace MemeMachine
             enemyTimer = 0;
             numOfEnimies = 0;
             spawnLocationHolder = gameObject;
+            timeLeft = GAMETIME;
         }
 
         // Update is called once per frame
         void Update()
         {
             EnemySpawnCounter();
+            CountDownTimer();
         }
 
 
@@ -85,6 +102,14 @@ namespace MemeMachine
             {
                 enemyTimer += Time.deltaTime;
             }
+        }
+
+        void CountDownTimer()
+        {
+            float fuelPercentage = (GAMETIME - timeLeft) / GAMETIME * 100;
+            timeLeft -= Time.deltaTime;
+            mainText.text = FUELSTART + Mathf.RoundToInt(timeLeft).ToString() + FUELMIDDLE + Mathf.RoundToInt(fuelPercentage).ToString() + FUELEND;
+            FuelSlider.value = fuelPercentage/100;
         }
     }
 }
