@@ -19,7 +19,8 @@ namespace MemeMachine
 
         float enemyTimer;
         GameObject spawnLocationHolder;
-        int previousSpawnLocactionInt;
+        int previousSpawnLocactionInt,
+            previousMiddleLocationInt;
         int whileLimiter;
 
 
@@ -42,17 +43,33 @@ namespace MemeMachine
 
         void SpawnEnemies()
         {
-            int randInt = Random.Range(0, 6);
-            while(randInt == previousSpawnLocactionInt && whileLimiter < 10)
+            //Code finds a spawn locations and runs a while loop 10 times to try and get it to not spawn at the same location with in reason, if it does the same spawn past that i do not want iot to keep whiling for perfomance reasons
+            int randIntSpawnLocation = Random.Range(0, 6);
+            while(randIntSpawnLocation == previousSpawnLocactionInt && whileLimiter < 10)
             {
-                randInt = Random.Range(0, 6);
+                randIntSpawnLocation = Random.Range(0, 6);
                 whileLimiter++;
             }
             whileLimiter = 0;
-            previousSpawnLocactionInt = randInt;
-            Transform spawnLoc = spawnLocationHolder.transform.GetChild(randInt);
+            previousSpawnLocactionInt = randIntSpawnLocation;
+
+
+            //finds a middle location in an identical method as the spawn finding location
+            int randIntMiddleLocation = Random.Range(0, 6);
+            while (randIntMiddleLocation == previousMiddleLocationInt && whileLimiter < 10)
+            {
+                randIntMiddleLocation = Random.Range(0, 6);
+                whileLimiter++;
+            }
+            whileLimiter = 0;
+            previousMiddleLocationInt = randIntMiddleLocation;
+
+
+
+
+            Transform spawnLoc = spawnLocationHolder.transform.GetChild(randIntSpawnLocation);
             GameObject newEnemy = Instantiate(basicEnemy, spawnLoc.position, Quaternion.identity);
-            newEnemy.GetComponent<EnemyScript>().GiveInfo(this,playerTransform );
+            newEnemy.GetComponent<EnemyScript>().GiveInfo(this,playerTransform, secondaryLocations.transform.GetChild(randIntMiddleLocation));
             enemies.Add(newEnemy.GetComponent<EnemyScript>());
             numOfEnimies++;
         }   
