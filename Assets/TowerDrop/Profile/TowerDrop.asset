@@ -1,5 +1,115 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5819056616192755735
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b805f78990fcddf478003bbceffdb2e1, type: 3}
+  m_Name: SobelOutline
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  scale:
+    overrideState: 1
+    value: 4
+  color:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  depthThreshold:
+    overrideState: 1
+    value: 5.58
+  depthNormalThreshold:
+    overrideState: 1
+    value: 9.1
+  depthNormalThresholdScale:
+    overrideState: 1
+    value: 7
+  normalThreshold:
+    overrideState: 1
+    value: 1.55
+--- !u!114 &-4669142295152698759
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: SobleOutline
+  m_EditorClassIdentifier: Assembly-CSharp::SobleOutline
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  scale:
+    overrideState: 1
+    value: 4
+  color:
+    overrideState: 1
+    value:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
+  depthThreshold:
+    overrideState: 1
+    value: 21.7
+  depthNormalThreshold:
+    overrideState: 1
+    value: 9.47
+  depthNormalThresholdScale:
+    overrideState: 1
+    value: 1.82
+  normalThreshold:
+    overrideState: 1
+    value: 0.46
+--- !u!114 &-3575277410299922730
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: PostProcessOutline
+  m_EditorClassIdentifier: Assembly-CSharp::PostProcessOutline
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  scale:
+    overrideState: 1
+    value: 1
+  color:
+    overrideState: 0
+    value:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+  depthThreshold:
+    overrideState: 0
+    value: 1.5
+  depthNormalThreshold:
+    overrideState: 0
+    value: 0.5
+  depthNormalThresholdScale:
+    overrideState: 0
+    value: 7
+  normalThreshold:
+    overrideState: 0
+    value: 0.4
 --- !u!114 &-2248893092370466162
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -62,6 +172,7 @@ MonoBehaviour:
   settings:
   - {fileID: -2248893092370466162}
   - {fileID: 2510105887083577044}
+  - {fileID: -5819056616192755735}
 --- !u!114 &2510105887083577044
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1373,3 +1484,71 @@ MonoBehaviour:
       - 0.5
       - 0.5
       - 0.5
+--- !u!114 &4722489819856801947
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b805f78990fcddf478003bbceffdb2e1, type: 3}
+  m_Name: SobelOutline
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  scale:
+    overrideState: 1
+    value: 4
+  color:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  depthThreshold:
+    overrideState: 1
+    value: 5.58
+  depthNormalThreshold:
+    overrideState: 1
+    value: 9.1
+  depthNormalThresholdScale:
+    overrideState: 1
+    value: 7
+  normalThreshold:
+    overrideState: 1
+    value: 1.55
+--- !u!114 &9205727433677933093
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b805f78990fcddf478003bbceffdb2e1, type: 3}
+  m_Name: SobelOutline
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  scale:
+    overrideState: 0
+    value: 1
+  color:
+    overrideState: 1
+    value: {r: 0, g: 0, b: 0, a: 1}
+  depthThreshold:
+    overrideState: 0
+    value: 1.5
+  depthNormalThreshold:
+    overrideState: 0
+    value: 0.5
+  depthNormalThresholdScale:
+    overrideState: 0
+    value: 7
+  normalThreshold:
+    overrideState: 0
+    value: 0.4
