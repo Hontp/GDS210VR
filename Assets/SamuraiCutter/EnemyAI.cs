@@ -20,6 +20,14 @@ namespace SamuraiCutter
         private SpawnEnemy spawnEnemy;
         private Rigidbody rb;
         public bool jumping;
+        public bool attacking;
+
+        public bool idle;
+
+        public enum State {IDLE,WALK,JUMP};
+
+        public Animator animator;
+
         private void Start()
         {
             rb = GetComponent<Rigidbody>();
@@ -27,94 +35,124 @@ namespace SamuraiCutter
             nma.speed = MoveSpeed;
             nma.SetDestination(GameManager._instance.playerPos.position);
             spawnEnemy = GameManager._instance.spawnEnemy;
+            
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(Vector3.Distance(GameManager._instance.playerPos.position, transform.position) < 1.5f && !jumping)
+            if(Vector3.Distance(GameManager._instance.playerPos.position, transform.position) < 1.6f && !jumping && !attacking)
             {
-                jumping = true;
-                jumpBack();
+                idle = true;
+                //jumping = true;
+                
+                if(nma.isActiveAndEnabled)
+                {
+                    nma.speed = 0;
+                    nma.isStopped = true;
+                    //
+                }
+                
+                var rand = Random.Range(0,100000);
+                if(rand >= 0 && rand <= 100)
+                {
+                    jumpBack();
+                }
+                else if(rand > 100 && rand <= 500)
+                {
+                    slash();
+                }
+         
             }
+            else
+            {
+                attacking = false;
+            }
+            if(animator != null)
+            animation();
             //Movement();
+        }
+
+        void animation()
+        {
+
+            if(!attacking && !jumping && !idle)
+            {
+                
+                nma.speed = MoveSpeed;
+                nma.isStopped = false;
+                
+            }
+            if(jumping && !attacking)
+            {
+                animator.SetBool("flip",true);
+                animator.SetBool("attack",false);
+                nma.isStopped = false;
+                jumping = false;
+                nma.speed = 0;
+            }
+
+            if(attacking && !jumping)
+            {
+                animator.SetBool("flip", false);
+                animator.SetBool("attack",true);
+                nma.isStopped = false;
+                
+                nma.speed = 0;
+                attacking = false;
+            }
+            else if(idle)
+            {
+                animator.SetBool("idle", true);
+                animator.SetBool("attack",false);
+                
+            
+                nma.isStopped = false;
+                nma.speed = 0;
+                attacking = false;
+            }
+
+            
+        }
+
+        public void slash()
+        {
+            attacking = true;
         }
 
         public void jumpBack()
         {
+            
+            jumping = true;
+            //new Vector3( (((transform.position-GameManager._instance.playerPos.position).normalized).x), -1.0f, (((transform.position-GameManager._instance.playerPos.position).normalized).z))
+            rb.isKinematic = false;
+            rb.useGravity = true;
+            rb.AddForce( new Vector3( 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).x), 2f, 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).z)), ForceMode.VelocityChange);
+            //rb.constraints = RigidbodyConstraints.FreezeRotationY & RigidbodyConstraints.FreezeRotationZ & RigidbodyConstraints.FreezePosition;
+            //rb.AddTorque(transform.right * -180f);
             nma.isStopped = true;
             nma.enabled = false;
-            //new Vector3( (((transform.position-GameManager._instance.playerPos.position).normalized).x), -1.0f, (((transform.position-GameManager._instance.playerPos.position).normalized).z))
-            rb.AddForce( new Vector3( (((transform.position-GameManager._instance.playerPos.position).normalized).x), 5f, (((transform.position-GameManager._instance.playerPos.position).normalized).z)), ForceMode.VelocityChange);
-            rb.constraints = RigidbodyConstraints.FreezeRotationY & RigidbodyConstraints.FreezeRotationZ & RigidbodyConstraints.FreezePosition;
-            rb.AddTorque(transform.right * -180f);
+            idle = false;
         }
 
         public void OnCollisionEnter(Collision col)
         {
             if(col.transform.CompareTag("floor"))
             {
+                rb.isKinematic = true;
+                rb.useGravity = false;
                 jumping = false;
                 nma.enabled = true;
                 nma.isStopped = false;
                 nma.speed = MoveSpeed;
-            nma.SetDestination(GameManager._instance.playerPos.position);
-            rb.constraints = RigidbodyConstraints.FreezeRotation;
+                nma.SetDestination(GameManager._instance.playerPos.position);
+                animator.SetBool("flip", false);
+                animator.SetBool("attack",false);
+                idle = false;
             }
         }
 
-        public void Movement()
-        {
-
-            #region SimpleMethod
-            float distance = Vector3.Distance(transform.position, target.position);
-
-            myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
-
-            if (distance >= MinDist)
-            {
-                transform.position += transform.forward * MoveSpeed * Time.deltaTime;
-
-                if (distance <= MaxDist)
-                {
-                    //run attack trigger here
-                }
-            }
-            Debug.Log(distance);
-            #endregion
-
-
-            #region Testing
-
-            #region Simple No If Statments
-            ///* Rotation - Look At Player */
-            //myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
-
-            ///* Movement - Move Towards Player */
-            //myTransform.position += transform.forward * MoveSpeed * Time.deltaTime;
-            #endregion
-
-            #region Issues RigidBody
-            /* Rigidbody component will need to be referenced */
-
-            //float distance = Vector3.Distance(transform.position, target.position);
-
-            //if (distance >= MinDist)
-            //{
-            //    myTransform.rotation = Quaternion.Slerp(myTransform.rotation, Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
-
-            //    rb.AddForce(myTransform.forward * MoveSpeed * Time.deltaTime);
-
-            //    if (distance < MinDist)
-            //    {
-            //        //attack                
-            //    }
-            //}
-            #endregion
-
-            #endregion
-
-        }
+       
     }
 
 }

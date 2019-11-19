@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8849753411966275689}
   - component: {fileID: 3020836438523964560}
   - component: {fileID: 6565310170279458284}
+  - component: {fileID: 4584114270781150327}
   m_Layer: 0
   m_Name: Blaster
   m_TagString: Untagged
@@ -99,4 +100,19 @@ MonoBehaviour:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
   shoot: 0
-  bullet: {fileID: 7783943817609677207, guid: b297451ae1facee45910599eb8aa114c, type: 3}
+  bullet: {fileID: 5086274578444792297, guid: fc736b5756c43354cabd62f4937701c3, type: 3}
+  shootRateTimeStamp: 0
+  shootRate: 0.1
+--- !u!65 &4584114270781150327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3589646739874043980}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6629009, y: 2.116199, z: 7.0442142}
+  m_Center: {x: -0.000008150935, y: -0.29058695, z: -0.09201433}

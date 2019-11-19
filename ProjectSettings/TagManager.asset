@@ -11,6 +11,9 @@ TagManager:
   - Enemy
   - EnemyChunk
   - floor
+   - Enviroment
+  - hand
+  - enemysword
   layers:
   - Default
   - TransparentFX

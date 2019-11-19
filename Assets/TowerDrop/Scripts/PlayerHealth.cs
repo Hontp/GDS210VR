@@ -1,30 +1,32 @@
 ﻿using UnityEngine;
-
-public class PlayerHealth : MonoBehaviour
+namespace TowerDrop
 {
-    [SerializeField]
-    private float Health = 100.0f;
-
-    public bool hit;
-
-    public float playerHP
+    public class PlayerHealth : MonoBehaviour
     {
-        get
-        {
-            return Health;
-        }
-        set
-        {
-            Health = value;
-        }
-    }
+        [SerializeField]
+        private float Health = 100.0f;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Enemy" && hit == false)
-        {
-            hit = true;
-        }
-    }
+        public bool hit;
 
+        public float playerHP
+        {
+            get
+            {
+                return Health;
+            }
+            set
+            {
+                Health = value;
+            }
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag == "Enemy" && hit == false)
+            {
+                hit = true;
+            }
+        }
+
+    }
 }
