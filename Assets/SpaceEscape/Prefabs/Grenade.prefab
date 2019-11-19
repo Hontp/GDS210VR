@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2385502675471095867}
-  - component: {fileID: 4748722570904600260}
-  - component: {fileID: 990529357479106578}
-  - component: {fileID: 3126218769054635806}
+  - component: {fileID: -554592117269542266}
+  - component: {fileID: 4776902474744988905}
+  - component: {fileID: -3468551564508624820}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4748722570904600260
+--- !u!114 &-554592117269542266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
   handFollowTransform: 1
   highlightOnHover: 1
   hideHighlight: []
---- !u!54 &990529357479106578
+--- !u!54 &4776902474744988905
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,7 +101,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3126218769054635806
+--- !u!114 &-3468551564508624820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
