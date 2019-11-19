@@ -93,10 +93,14 @@ namespace MemeMachine
 
         void EnemySpawnCounter()
         {
-            if(enemyTimer > (SpawnTime + numOfEnimies/30))
+            if(enemyTimer > (SpawnTime + numOfEnimies/75))
             {
                 enemyTimer = 0;
                 SpawnEnemies();
+                if(SpawnTime > 0.2)
+                {
+                    SpawnTime -= 0.07f;
+                }
             }
             else
             {

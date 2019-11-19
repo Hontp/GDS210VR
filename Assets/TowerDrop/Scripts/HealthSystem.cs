@@ -7,18 +7,18 @@ namespace TowerDrop
     {
         public  List<AI_pathing> AIObjects=  new List<AI_pathing>();
 
-        public GameObject player;
+        public GameObject Player_hitbox;
 
 
         private void UpdatePlayerHealth()
         {
-            if (player == null)
+            if (Player_hitbox == null)
                 return;
 
-            if (player.GetComponent<PlayerHealth>().hit == true)
-                player.GetComponent<PlayerHealth>().playerHP--;
+            if (Player_hitbox.GetComponent<PlayerHealth>().hit == true)
+                Player_hitbox.GetComponent<PlayerHealth>().playerHP--;
 
-            player.GetComponent<PlayerHealth>().hit = false;
+            Player_hitbox.GetComponent<PlayerHealth>().hit = false;
 
         }
 

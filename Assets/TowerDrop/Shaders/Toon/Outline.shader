@@ -66,6 +66,7 @@
 
 			float4 Frag(Varyings i) : SV_Target
 			{
+			
 				float halfScaleFloor = floor(_Scale * 0.5);
 				float halfScaleCeil = ceil(_Scale * 0.5);
 

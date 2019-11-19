@@ -17,7 +17,6 @@ namespace SamuraiCutter
         private void Awake()
         {
             spawnEngine = GameObject.Find("EnemySpawnManager").GetComponent<SpawnEnemy>();
-
         }
 
         private void Update()
@@ -55,13 +54,16 @@ namespace SamuraiCutter
 
         void Hit()
         {
+<<<<<<< HEAD
             replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
+=======
+            GameObject.Find("Score").GetComponent<Scoring>().ScoringSystem();
+            //replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
+>>>>>>> b6b26aeedb11ae58075874b9aef5009bba8b1c81
             this.GetComponentInChildren<BoxCollider>().enabled = false;
             this.gameObject.SetActive(false);
             //this.GetComponentInChildren<MeshRenderer>().enabled = false;
             spawnEngine.registerKill();
-            
-            //Gain Score Code Here
         }
 
         void DestroyMe()
