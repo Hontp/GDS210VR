@@ -13,12 +13,16 @@ namespace MemeMachine
         public SteamVR_Action_Vibration vibration;
         public bool shoot;
         public GameObject bullet;
+
+        public float shootRateTimeStamp;
+        public float shootRate = 0.1f;
         public void Shoot()
         {
             Vector3 angleInfo = transform.rotation.eulerAngles + new Vector3(-90, 0, 0);
             GameObject shot = Instantiate(bullet, transform.position + transform.forward * 0.55f, Quaternion.Euler(angleInfo.x, angleInfo.y, angleInfo.z));
             shot.GetComponent<Rigidbody>().velocity = transform.forward * 100f;
             shot.GetComponent<Bullet>().DestroyBullet(3f);
+            shootRateTimeStamp = Time.time + shootRate;
 
         }
         private void Update()
@@ -29,11 +33,17 @@ namespace MemeMachine
         {
             if (grabPinch.GetStateDown(inputSource))
             {
-                Shoot();
-                shoot = false;
-                vibration.Execute(0, 0.3f, 300f, 1, inputSource);
+                if (Time.time > shootRateTimeStamp)
+                {
+                    Shoot();
+                    shoot = false;
+                    vibration.Execute(0, 0.3f, 300f, 1, inputSource);
+                }
+  
             }
+
         }
        
     }
+
 }
