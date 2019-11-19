@@ -37,7 +37,6 @@ namespace TowerDrop
 
             if (x == 1)
             {
-<<<<<<< HEAD
                 G=Instantiate(throwable[0], hand.transform.position, Quaternion.identity);
                 G.transform.parent = hand.gameObject.transform;
             }
@@ -50,17 +49,6 @@ namespace TowerDrop
             {
                 G=Instantiate(throwable[2], hand.transform.position, Quaternion.identity);
                 G.transform.parent = hand.gameObject.transform;
-=======
-                Instantiate(throwable[0], hand.gameObject.transform.position, Quaternion.EulerRotation(0,0,0));
-            }
-            if (x == 2)
-            {
-                Instantiate(throwable[1], hand.gameObject.transform.position, Quaternion.EulerRotation(0, 0, 0));
-            }
-            if (x == 3)
-            {
-                Instantiate(throwable[2], hand.gameObject.transform.position, Quaternion.EulerRotation(0, 0, 0));
->>>>>>> 708c049e70556db0868803978fffddb09ee998ec
             }
         }
     }
