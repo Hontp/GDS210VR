@@ -32,7 +32,7 @@ namespace SamuraiCutter
         }
         void OnTriggerEnter(Collider hittingCollider)
         {
-            Debug.Log(hittingCollider.transform.tag);
+            //Debug.Log(hittingCollider.transform.tag);
             if (hittingCollider.CompareTag("PlayerSword"))
             {
                 Hit();
@@ -55,9 +55,10 @@ namespace SamuraiCutter
 
         void Hit()
         {
-            //replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
+            replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
             this.GetComponentInChildren<BoxCollider>().enabled = false;
-            this.GetComponentInChildren<MeshRenderer>().enabled = true;
+            this.gameObject.SetActive(false);
+            //this.GetComponentInChildren<MeshRenderer>().enabled = false;
             spawnEngine.registerKill();
             
             //Gain Score Code Here
@@ -66,8 +67,8 @@ namespace SamuraiCutter
         void DestroyMe()
         {
             print("test 1");
-           // Destroy(replacedMesh);
             Destroy(gameObject);
+            Destroy(replacedMesh);
         }
     }
 }
