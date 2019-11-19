@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8680296740696109019}
   - component: {fileID: 2867613450249434362}
   - component: {fileID: 7285401266602645769}
-  - component: {fileID: 7285401266602645770}
+  - component: {fileID: 2468539981710820612}
   m_Layer: 0
   m_Name: Cube_cell
   m_TagString: EnemyChunk
@@ -96,8 +96,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266602645770
-MeshCollider:
+--- !u!65 &2468539981710820612
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,10 +106,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2748122039205728653, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.015038196, y: 0.008382809, z: 0.01608358}
+  m_Center: {x: -0.00051084295, y: -0.00029994355, z: -0.0011210702}
 --- !u!1 &267503156136880069
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +121,7 @@ GameObject:
   - component: {fileID: 5744253745343797478}
   - component: {fileID: 3687208923153117083}
   - component: {fileID: 7285401267025426833}
-  - component: {fileID: 7285401267025426834}
+  - component: {fileID: 3003970850744082053}
   m_Layer: 0
   m_Name: Cube_cell.002
   m_TagString: EnemyChunk
@@ -206,8 +205,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267025426834
-MeshCollider:
+--- !u!65 &3003970850744082053
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -216,10 +215,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -1380893565745363673, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.01836192, y: 0.006497121, z: 0.0068946052}
+  m_Center: {x: 0.0020945177, y: 0.000082856255, z: 0.0005936938}
 --- !u!1 &451443406485862443
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +230,7 @@ GameObject:
   - component: {fileID: 1377252023018399440}
   - component: {fileID: 1403945420333253189}
   - component: {fileID: 7285401266062186639}
-  - component: {fileID: 7285401266062186624}
+  - component: {fileID: 38678467136524798}
   m_Layer: 0
   m_Name: Cube_cell.004
   m_TagString: EnemyChunk
@@ -316,8 +314,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266062186624
-MeshCollider:
+--- !u!65 &38678467136524798
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -326,10 +324,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 3823483857004336790, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0043763765, y: 0.010150124, z: 0.011460717}
+  m_Center: {x: -0.00000008672941, y: -0.00055098895, z: -0.0005460192}
 --- !u!1 &555174887484690556
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +339,7 @@ GameObject:
   - component: {fileID: 3398380818312768954}
   - component: {fileID: 8898911500332351947}
   - component: {fileID: 7285401267446986609}
-  - component: {fileID: 7285401267446986610}
+  - component: {fileID: 6165773670964688088}
   m_Layer: 0
   m_Name: Cube_cell.016
   m_TagString: EnemyChunk
@@ -426,8 +423,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267446986610
-MeshCollider:
+--- !u!65 &6165773670964688088
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -436,10 +433,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4963078695963570544, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0036547256, y: 0.0048063453, z: 0.0082754735}
+  m_Center: {x: 0.00045520233, y: 0.0006366583, z: -0.00070306665}
 --- !u!1 &599338526051902331
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +448,7 @@ GameObject:
   - component: {fileID: 5975837160499767586}
   - component: {fileID: 6009464144215732022}
   - component: {fileID: 7285401266203142175}
-  - component: {fileID: 7285401266203142160}
+  - component: {fileID: 2698567687840999498}
   m_Layer: 0
   m_Name: Cube_cell.038
   m_TagString: EnemyChunk
@@ -536,8 +532,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266203142160
-MeshCollider:
+--- !u!65 &2698567687840999498
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -546,10 +542,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 2440188193220683517, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.002299975, y: 0.008585084, z: 0.0042127515}
+  m_Center: {x: -0.00003783154, y: 0.0014441034, z: -0.0011496076}
 --- !u!1 &625358780976686720
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +557,7 @@ GameObject:
   - component: {fileID: 5014852836109522749}
   - component: {fileID: 6076842446023012161}
   - component: {fileID: 7285401266861484026}
-  - component: {fileID: 7285401266861484027}
+  - component: {fileID: 3771537030419580254}
   m_Layer: 0
   m_Name: Cube_cell.009
   m_TagString: EnemyChunk
@@ -646,8 +641,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266861484027
-MeshCollider:
+--- !u!65 &3771537030419580254
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -656,10 +651,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5428243983063349662, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.005000002, y: 0.0019037607, z: 0.0056922277}
+  m_Center: {x: 0.00020546278, y: 0.000081477665, z: -0.00010511207}
 --- !u!1 &751668402494643689
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,7 +666,7 @@ GameObject:
   - component: {fileID: 4045970762349472439}
   - component: {fileID: 1255356011475307380}
   - component: {fileID: 7285401265866282221}
-  - component: {fileID: 7285401265866282222}
+  - component: {fileID: 7326034246190113119}
   m_Layer: 0
   m_Name: Cube_cell.050
   m_TagString: EnemyChunk
@@ -756,8 +750,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401265866282222
-MeshCollider:
+--- !u!65 &7326034246190113119
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -766,10 +760,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 7903500183810111116, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.016265351, y: 0.00660995, z: 0.0045698406}
+  m_Center: {x: 0.0022423058, y: -0.00034287586, z: 0.00035039659}
 --- !u!1 &842351297824739027
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +775,7 @@ GameObject:
   - component: {fileID: 5446943143843039246}
   - component: {fileID: 1792524148352750284}
   - component: {fileID: 7285401266956454656}
-  - component: {fileID: 7285401266956454657}
+  - component: {fileID: 4640836438695202530}
   m_Layer: 0
   m_Name: Cube_cell.034
   m_TagString: EnemyChunk
@@ -866,8 +859,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266956454657
-MeshCollider:
+--- !u!65 &4640836438695202530
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -876,10 +869,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -111409393879240305, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.009932716, y: 0.010093699, z: 0.004033098}
+  m_Center: {x: -0.0012718193, y: -0.00022756093, z: 0.0010291969}
 --- !u!1 &1239280115097701452
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,7 +884,7 @@ GameObject:
   - component: {fileID: 5056486883015383652}
   - component: {fileID: 3177782935376594188}
   - component: {fileID: 7285401266988146617}
-  - component: {fileID: 7285401266988146618}
+  - component: {fileID: 2180595681755459648}
   m_Layer: 0
   m_Name: Cube_cell.044
   m_TagString: EnemyChunk
@@ -976,8 +968,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266988146618
-MeshCollider:
+--- !u!65 &2180595681755459648
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -986,10 +978,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5951441535154011585, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.01077318, y: 0.0033686531, z: 0.010872806}
+  m_Center: {x: 0.00011012353, y: 0.0004987389, z: 0.001504768}
 --- !u!1 &1334815317842527804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +993,7 @@ GameObject:
   - component: {fileID: 8302762740884632782}
   - component: {fileID: 7657251377994984363}
   - component: {fileID: 7285401266098300421}
-  - component: {fileID: 7285401266098300422}
+  - component: {fileID: 3194545969964656457}
   m_Layer: 0
   m_Name: Cube_cell.007
   m_TagString: EnemyChunk
@@ -1086,8 +1077,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266098300422
-MeshCollider:
+--- !u!65 &3194545969964656457
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1096,10 +1087,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5247750683029895133, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.017639806, y: 0.0066078384, z: 0.0060174465}
+  m_Center: {x: -0.002435979, y: 0.00030541947, z: 0.00047069008}
 --- !u!1 &1601905756906169933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,7 +1183,7 @@ GameObject:
   - component: {fileID: 7319256703371644437}
   - component: {fileID: 5854700159544614069}
   - component: {fileID: 7285401265899879570}
-  - component: {fileID: 7285401265899879571}
+  - component: {fileID: 242287125809017486}
   m_Layer: 0
   m_Name: Cube_cell.024
   m_TagString: EnemyChunk
@@ -1277,8 +1267,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401265899879571
-MeshCollider:
+--- !u!65 &242287125809017486
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1287,10 +1277,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 2753700618850175662, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0107129095, y: 0.0074162288, z: 0.002991412}
+  m_Center: {x: 0.001578375, y: 0.00030697093, z: 0.00047602394}
 --- !u!1 &1892985619777580190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1292,7 @@ GameObject:
   - component: {fileID: 2719731979673740563}
   - component: {fileID: 1659760141125941828}
   - component: {fileID: 7285401266158641267}
-  - component: {fileID: 7285401266158641268}
+  - component: {fileID: 603675114987643441}
   m_Layer: 0
   m_Name: Cube_cell.018
   m_TagString: EnemyChunk
@@ -1387,8 +1376,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266158641268
-MeshCollider:
+--- !u!65 &603675114987643441
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1397,10 +1386,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5871466293194961305, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.006973133, y: 0.008104539, z: 0.020189464}
+  m_Center: {x: -0.00054386706, y: -0.0007557263, z: 0.0007669039}
 --- !u!1 &2105289211410538088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1401,7 @@ GameObject:
   - component: {fileID: 1489218864119790524}
   - component: {fileID: 7355022753221531971}
   - component: {fileID: 7285401265892880377}
-  - component: {fileID: 7285401265892880378}
+  - component: {fileID: 7912128247807085218}
   m_Layer: 0
   m_Name: Cube_cell.001
   m_TagString: EnemyChunk
@@ -1497,8 +1485,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401265892880378
-MeshCollider:
+--- !u!65 &7912128247807085218
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1507,10 +1495,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 584043233924539275, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.012399939, y: 0.010878417, z: 0.012851163}
+  m_Center: {x: -0.0009784786, y: 0.0001836116, z: -0.000103732316}
 --- !u!1 &2362006858293545931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1510,7 @@ GameObject:
   - component: {fileID: 8393296208261933113}
   - component: {fileID: 6198896951716633943}
   - component: {fileID: 7285401267844393049}
-  - component: {fileID: 7285401267844393050}
+  - component: {fileID: 6064353522620943962}
   m_Layer: 0
   m_Name: Cube_cell.025
   m_TagString: EnemyChunk
@@ -1607,8 +1594,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267844393050
-MeshCollider:
+--- !u!65 &6064353522620943962
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1617,10 +1604,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -4980813388084486590, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0007127034, y: 0.005623813, z: 0.0010701959}
+  m_Center: {x: -0.000056938527, y: 0.00044855627, z: 0.00017583687}
 --- !u!1 &2638078247604732972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1619,7 @@ GameObject:
   - component: {fileID: 6849020290492867211}
   - component: {fileID: 5172138422841506968}
   - component: {fileID: 7285401266971564017}
-  - component: {fileID: 7285401266971564018}
+  - component: {fileID: 7024749288429075816}
   m_Layer: 0
   m_Name: Cube_cell.017
   m_TagString: EnemyChunk
@@ -1717,8 +1703,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266971564018
-MeshCollider:
+--- !u!65 &7024749288429075816
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1727,10 +1713,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -3937840758629050675, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0108367875, y: 0.014982849, z: 0.009016132}
+  m_Center: {x: 0.00033996065, y: -0.0018887215, z: -0.00006462842}
 --- !u!1 &2895164494217241179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,7 +1728,7 @@ GameObject:
   - component: {fileID: 8792879695570331480}
   - component: {fileID: 5728464365387935001}
   - component: {fileID: 7285401267392727996}
-  - component: {fileID: 7285401267392727997}
+  - component: {fileID: 8477577870194858166}
   m_Layer: 0
   m_Name: Cube_cell.012
   m_TagString: EnemyChunk
@@ -1827,8 +1812,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267392727997
-MeshCollider:
+--- !u!65 &8477577870194858166
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1837,10 +1822,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 6558674458977992630, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0094023, y: 0.014901226, z: 0.011039413}
+  m_Center: {x: -0.0000718194, y: 0.0006574067, z: 0.0011100513}
 --- !u!1 &3111949290659285733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1837,7 @@ GameObject:
   - component: {fileID: 3833545426234454168}
   - component: {fileID: 2399117868605677793}
   - component: {fileID: 7285401267123010225}
-  - component: {fileID: 7285401267123010226}
+  - component: {fileID: 6880107644921711579}
   m_Layer: 0
   m_Name: Cube_cell.043
   m_TagString: EnemyChunk
@@ -1937,8 +1921,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267123010226
-MeshCollider:
+--- !u!65 &6880107644921711579
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1947,10 +1931,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 117393981066383077, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.010202125, y: 0.0050093555, z: 0.002974332}
+  m_Center: {x: -0.0003125374, y: 0.00041304136, z: -0.00004082655}
 --- !u!1 &3143473954260927929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +1946,7 @@ GameObject:
   - component: {fileID: 7325055356602569182}
   - component: {fileID: 21027950342612742}
   - component: {fileID: 7285401265831182693}
-  - component: {fileID: 7285401265831182694}
+  - component: {fileID: 1300434311249164361}
   m_Layer: 0
   m_Name: Cube_cell.019
   m_TagString: EnemyChunk
@@ -2047,8 +2030,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401265831182694
-MeshCollider:
+--- !u!65 &1300434311249164361
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2057,10 +2040,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -4628682493757197670, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0073612244, y: 0.0024039168, z: 0.008732461}
+  m_Center: {x: 0.0006126534, y: 0.00011414758, z: -0.00027339178}
 --- !u!1 &3159417886408566825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,7 +2055,7 @@ GameObject:
   - component: {fileID: 5121042149374090815}
   - component: {fileID: 7267141980781910519}
   - component: {fileID: 7285401266969648782}
-  - component: {fileID: 7285401266969648783}
+  - component: {fileID: 5646728480596932681}
   m_Layer: 0
   m_Name: Cube_cell.023
   m_TagString: EnemyChunk
@@ -2157,8 +2139,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266969648783
-MeshCollider:
+--- !u!65 &5646728480596932681
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2167,10 +2149,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 1003163084678557181, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.003766531, y: 0.0068175425, z: 0.0121532865}
+  m_Center: {x: 0.00067822513, y: 0.00020785532, z: -0.0013879646}
 --- !u!1 &3331399355031171218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,7 +2164,7 @@ GameObject:
   - component: {fileID: 3755327962459189837}
   - component: {fileID: 8882755029432632879}
   - component: {fileID: 7285401267794115695}
-  - component: {fileID: 7285401267794115680}
+  - component: {fileID: 8940523010374794729}
   m_Layer: 0
   m_Name: Cube_cell.039
   m_TagString: EnemyChunk
@@ -2267,8 +2248,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267794115680
-MeshCollider:
+--- !u!65 &8940523010374794729
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2277,10 +2258,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -893113071000131982, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.003984438, y: 0.0079032695, z: 0.02140301}
+  m_Center: {x: -0.0006002526, y: 0.00097492535, z: -0.0011848325}
 --- !u!1 &3417121995740827702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,7 +2273,7 @@ GameObject:
   - component: {fileID: 178361337711453016}
   - component: {fileID: 6370732704611244927}
   - component: {fileID: 7285401266852942687}
-  - component: {fileID: 7285401266852942672}
+  - component: {fileID: 1728582172183340911}
   m_Layer: 0
   m_Name: Cube_cell.042
   m_TagString: EnemyChunk
@@ -2377,8 +2357,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266852942672
-MeshCollider:
+--- !u!65 &1728582172183340911
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2387,10 +2367,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7670014205678258809, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.01020114, y: 0.00500851, z: 0.006116087}
+  m_Center: {x: 0.0010172293, y: -0.00010684665, z: -0.0005800943}
 --- !u!1 &3506792298907728880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2382,7 @@ GameObject:
   - component: {fileID: 8657048179139117619}
   - component: {fileID: 7240774028123885203}
   - component: {fileID: 7285401267482800655}
-  - component: {fileID: 7285401267482800640}
+  - component: {fileID: 1635205816684260108}
   m_Layer: 0
   m_Name: Cube_cell.041
   m_TagString: EnemyChunk
@@ -2487,8 +2466,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267482800640
-MeshCollider:
+--- !u!65 &1635205816684260108
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2497,10 +2476,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4483134288665364973, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.008590364, y: 0.012869347, z: 0.011621841}
+  m_Center: {x: 0.00034871345, y: -0.00018203766, z: -0.00020736591}
 --- !u!1 &3891872752664240275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2513,7 +2491,7 @@ GameObject:
   - component: {fileID: 3777809690322585302}
   - component: {fileID: 1789959089791170979}
   - component: {fileID: 7285401265919141495}
-  - component: {fileID: 7285401265919141256}
+  - component: {fileID: 4368899229999226508}
   m_Layer: 0
   m_Name: Cube_cell.011
   m_TagString: EnemyChunk
@@ -2597,8 +2575,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401265919141256
-MeshCollider:
+--- !u!65 &4368899229999226508
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2607,10 +2585,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -5061066349509656124, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0036522464, y: 0.0024030816, z: 0.0058353837}
+  m_Center: {x: 0.00010317482, y: -0.000017897688, z: -0.00053882494}
 --- !u!1 &4094351300495253196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,7 +2600,7 @@ GameObject:
   - component: {fileID: 6404011730667539291}
   - component: {fileID: 4736991729675382533}
   - component: {fileID: 7285401267157033720}
-  - component: {fileID: 7285401267157033721}
+  - component: {fileID: 7006116790813794290}
   m_Layer: 0
   m_Name: Cube_cell.026
   m_TagString: EnemyChunk
@@ -2707,8 +2684,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267157033721
-MeshCollider:
+--- !u!65 &7006116790813794290
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2717,10 +2694,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -4246086481497181425, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0048047784, y: 0.0062912027, z: 0.013868552}
+  m_Center: {x: -0.000500213, y: 0.0005522196, z: -0.0011375081}
 --- !u!1 &4170379780563985849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2733,7 +2709,7 @@ GameObject:
   - component: {fileID: 4064361123301866130}
   - component: {fileID: 8604948343642200042}
   - component: {fileID: 7285401267096195985}
-  - component: {fileID: 7285401267096195986}
+  - component: {fileID: 7734323235436490813}
   m_Layer: 0
   m_Name: Cube_cell.047
   m_TagString: EnemyChunk
@@ -2817,8 +2793,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267096195986
-MeshCollider:
+--- !u!65 &7734323235436490813
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2827,10 +2803,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 8266698665149052699, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.015114059, y: 0.0057339813, z: 0.0063091796}
+  m_Center: {x: -0.0014105338, y: -0.0011773983, z: 0.0002859772}
 --- !u!1 &4247516045015014074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2843,7 +2818,7 @@ GameObject:
   - component: {fileID: 170103002951935165}
   - component: {fileID: 504325170250030437}
   - component: {fileID: 7285401267375741762}
-  - component: {fileID: 7285401267375741763}
+  - component: {fileID: 5834196035783330508}
   m_Layer: 0
   m_Name: Cube_cell.046
   m_TagString: EnemyChunk
@@ -2927,8 +2902,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267375741763
-MeshCollider:
+--- !u!65 &5834196035783330508
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2937,10 +2912,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -4106556754445424038, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.014916518, y: 0.009902656, z: 0.008390697}
+  m_Center: {x: 0.002265087, y: -0.000447146, z: -0.000895399}
 --- !u!1 &4557793730830566825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +2927,7 @@ GameObject:
   - component: {fileID: 1288836692499926299}
   - component: {fileID: 303932501289199618}
   - component: {fileID: 7285401267167676087}
-  - component: {fileID: 7285401267167676104}
+  - component: {fileID: 682135880839464158}
   m_Layer: 0
   m_Name: Cube_cell.010
   m_TagString: EnemyChunk
@@ -3037,8 +3011,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267167676104
-MeshCollider:
+--- !u!65 &682135880839464158
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3047,10 +3021,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8907649468366480759, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.010589459, y: 0.00830785, z: 0.016238462}
+  m_Center: {x: 0.0022466474, y: 0.00075349846, z: -0.0017667264}
 --- !u!1 &4594253764356748366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3063,7 +3036,7 @@ GameObject:
   - component: {fileID: 3144873656552150322}
   - component: {fileID: 7434426024169779133}
   - component: {fileID: 7285401266369852045}
-  - component: {fileID: 7285401266369852046}
+  - component: {fileID: 5546668721372618204}
   m_Layer: 0
   m_Name: Cube_cell.005
   m_TagString: EnemyChunk
@@ -3147,8 +3120,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266369852046
-MeshCollider:
+--- !u!65 &5546668721372618204
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3157,10 +3130,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -1039758166088859952, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.00816232, y: 0.0074227536, z: 0.0153141795}
+  m_Center: {x: -0.00021254549, y: 0.00035371285, z: -0.00056321674}
 --- !u!1 &4808026975379747105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,7 +3145,7 @@ GameObject:
   - component: {fileID: 3928473071974456660}
   - component: {fileID: 3599403801322384278}
   - component: {fileID: 7285401267212538871}
-  - component: {fileID: 7285401267212538632}
+  - component: {fileID: 7142010870850214568}
   m_Layer: 0
   m_Name: Cube_cell.035
   m_TagString: EnemyChunk
@@ -3257,8 +3229,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267212538632
-MeshCollider:
+--- !u!65 &7142010870850214568
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3267,10 +3239,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4060370062283913986, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.014802051, y: 0.0034769697, z: 0.015803218}
+  m_Center: {x: 0.00006588757, y: -0.00025273167, z: 0.0004533158}
 --- !u!1 &4861538003702813241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3283,7 +3254,7 @@ GameObject:
   - component: {fileID: 438600617799695299}
   - component: {fileID: 9199408523563786941}
   - component: {fileID: 7285401267083413783}
-  - component: {fileID: 7285401267083413800}
+  - component: {fileID: 2828191006614413929}
   m_Layer: 0
   m_Name: Cube_cell.040
   m_TagString: EnemyChunk
@@ -3367,8 +3338,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267083413800
-MeshCollider:
+--- !u!65 &2828191006614413929
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3377,10 +3348,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 521549627425047028, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.018779472, y: 0.006495758, z: 0.013177919}
+  m_Center: {x: -0.0016143551, y: 0.000091101254, z: 0.0002487669}
 --- !u!1 &5030897208953502664
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,7 +3363,7 @@ GameObject:
   - component: {fileID: 7555549185871597892}
   - component: {fileID: 2933830717735111544}
   - component: {fileID: 7285401267350260080}
-  - component: {fileID: 7285401267350260081}
+  - component: {fileID: 4873742024972654055}
   m_Layer: 0
   m_Name: Cube_cell.006
   m_TagString: EnemyChunk
@@ -3477,8 +3447,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267350260081
-MeshCollider:
+--- !u!65 &4873742024972654055
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3487,10 +3457,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4842132703952747373, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.014605677, y: 0.0043558637, z: 0.013303819}
+  m_Center: {x: -0.0010991615, y: 0.0012027709, z: 0.0006884698}
 --- !u!1 &5086103808459797140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3503,7 +3472,7 @@ GameObject:
   - component: {fileID: 5563918211320870194}
   - component: {fileID: 4335018089769297975}
   - component: {fileID: 7285401267273996341}
-  - component: {fileID: 7285401267273996342}
+  - component: {fileID: 8895695590929308949}
   m_Layer: 0
   m_Name: Cube_cell.021
   m_TagString: EnemyChunk
@@ -3587,8 +3556,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267273996342
-MeshCollider:
+--- !u!65 &8895695590929308949
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3597,10 +3566,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -6229926763641553745, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.019334653, y: 0.006121322, z: 0.008560451}
+  m_Center: {x: -0.0023627714, y: 0.0004155138, z: -0.00077092083}
 --- !u!1 &5095350317789097787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3613,7 +3581,7 @@ GameObject:
   - component: {fileID: 7878279502026960085}
   - component: {fileID: 568459049470124287}
   - component: {fileID: 7285401266961893591}
-  - component: {fileID: 7285401266961893608}
+  - component: {fileID: 4191535996818275286}
   m_Layer: 0
   m_Name: Cube_cell.020
   m_TagString: EnemyChunk
@@ -3697,8 +3665,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266961893608
-MeshCollider:
+--- !u!65 &4191535996818275286
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3707,10 +3675,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -6503296336104585457, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0044477824, y: 0.010881752, z: 0.01447401}
+  m_Center: {x: -0.00039414564, y: 0.0003205551, z: 0.0000033595124}
 --- !u!1 &5240758838988740132
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,7 +3690,7 @@ GameObject:
   - component: {fileID: 909015109614268404}
   - component: {fileID: 7263859878850905244}
   - component: {fileID: 7285401267233855816}
-  - component: {fileID: 7285401267233855817}
+  - component: {fileID: 808519147602161716}
   m_Layer: 0
   m_Name: Cube_cell.037
   m_TagString: EnemyChunk
@@ -3807,8 +3774,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267233855817
-MeshCollider:
+--- !u!65 &808519147602161716
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3817,10 +3784,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7017155640922221079, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0060098995, y: 0.0024038528, z: 0.0049040825}
+  m_Center: {x: 0.00015329254, y: -0.00033375423, z: -0.00024457095}
 --- !u!1 &5345033457348365188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,7 +3799,7 @@ GameObject:
   - component: {fileID: 4471100453186033320}
   - component: {fileID: 6687345520704513760}
   - component: {fileID: 7285401267535875187}
-  - component: {fileID: 7285401267535875188}
+  - component: {fileID: 5472148640474039402}
   m_Layer: 0
   m_Name: Cube_cell.048
   m_TagString: EnemyChunk
@@ -3917,8 +3883,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267535875188
-MeshCollider:
+--- !u!65 &5472148640474039402
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3927,10 +3893,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 474219379728728352, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.007600864, y: 0.011585331, z: 0.016328273}
+  m_Center: {x: 0.00049127993, y: 0.00015778742, z: 0.0008362304}
 --- !u!1 &5912884976366113084
 GameObject:
   m_ObjectHideFlags: 0
@@ -3943,7 +3908,7 @@ GameObject:
   - component: {fileID: 2651026826839742147}
   - component: {fileID: 8742824170095273447}
   - component: {fileID: 7285401266008942462}
-  - component: {fileID: 7285401266008942463}
+  - component: {fileID: 3620041045421498664}
   m_Layer: 0
   m_Name: Cube_cell.032
   m_TagString: EnemyChunk
@@ -4027,8 +3992,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266008942463
-MeshCollider:
+--- !u!65 &3620041045421498664
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4037,10 +4002,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 605505804164092740, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.004806168, y: 0.0049035675, z: 0.011256848}
+  m_Center: {x: -0.0001620529, y: 0.000027007998, z: -0.0009465364}
 --- !u!1 &5916208118714648583
 GameObject:
   m_ObjectHideFlags: 0
@@ -4053,7 +4017,7 @@ GameObject:
   - component: {fileID: 488248790502773456}
   - component: {fileID: 2553508538803632653}
   - component: {fileID: 7285401266327910045}
-  - component: {fileID: 7285401266327910046}
+  - component: {fileID: 1228900485747943264}
   m_Layer: 0
   m_Name: Cube_cell.033
   m_TagString: EnemyChunk
@@ -4137,8 +4101,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266327910046
-MeshCollider:
+--- !u!65 &1228900485747943264
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4147,10 +4111,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 7814970681036727062, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0041382727, y: 0.006881669, z: 0.008908639}
+  m_Center: {x: -0.00066295813, y: 0.0007657124, z: -0.001076189}
 --- !u!1 &6869008150582378496
 GameObject:
   m_ObjectHideFlags: 0
@@ -4163,7 +4126,7 @@ GameObject:
   - component: {fileID: 3907895370825922401}
   - component: {fileID: 1308252164910384455}
   - component: {fileID: 7285401266615966865}
-  - component: {fileID: 7285401266615966866}
+  - component: {fileID: 5732024757242265353}
   m_Layer: 0
   m_Name: Cube_cell.022
   m_TagString: EnemyChunk
@@ -4247,8 +4210,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266615966866
-MeshCollider:
+--- !u!65 &5732024757242265353
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4257,10 +4220,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2438265997946179742, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0066430434, y: 0.0074210283, z: 0.013128064}
+  m_Center: {x: 0.000059245034, y: -0.00142678, z: 0.00041394695}
 --- !u!1 &6947392794545871820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4273,7 +4235,7 @@ GameObject:
   - component: {fileID: 4845808632841536314}
   - component: {fileID: 3489127864584131662}
   - component: {fileID: 7285401266422795943}
-  - component: {fileID: 7285401266422795960}
+  - component: {fileID: 2157921149028405871}
   m_Layer: 0
   m_Name: Cube_cell.015
   m_TagString: EnemyChunk
@@ -4357,8 +4319,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266422795960
-MeshCollider:
+--- !u!65 &2157921149028405871
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4367,10 +4329,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -4095749896116397038, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0059803273, y: 0.013137297, z: 0.009804175}
+  m_Center: {x: 0.00036327992, y: 0.0009955873, z: -0.00031703702}
 --- !u!1 &6952542719493272879
 GameObject:
   m_ObjectHideFlags: 0
@@ -4383,7 +4344,7 @@ GameObject:
   - component: {fileID: 5348918225737747143}
   - component: {fileID: 6822121437932387044}
   - component: {fileID: 7285401267436493587}
-  - component: {fileID: 7285401267436493588}
+  - component: {fileID: 3729884548405497852}
   m_Layer: 0
   m_Name: Cube_cell.003
   m_TagString: EnemyChunk
@@ -4467,8 +4428,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267436493588
-MeshCollider:
+--- !u!65 &3729884548405497852
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4477,10 +4438,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -1071095212348521719, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0023087116, y: 0.0059888423, z: 0.0005000018}
+  m_Center: {x: 0.00024134117, y: -0.00034751408, z: 0.0000032892124}
 --- !u!1 &7182939102258560891
 GameObject:
   m_ObjectHideFlags: 0
@@ -4493,7 +4453,7 @@ GameObject:
   - component: {fileID: 7189903619431269594}
   - component: {fileID: 4199452679201493770}
   - component: {fileID: 7285401266250098362}
-  - component: {fileID: 7285401266250098363}
+  - component: {fileID: 7681575287551669559}
   m_Layer: 0
   m_Name: Cube_cell.031
   m_TagString: EnemyChunk
@@ -4577,8 +4537,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266250098363
-MeshCollider:
+--- !u!65 &7681575287551669559
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4587,10 +4547,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7552350506380347589, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.010201119, y: 0.005015519, z: 0.005073437}
+  m_Center: {x: -0.0018591348, y: -0.0004537776, z: -0.00011870297}
 --- !u!1 &7219178026535619484
 GameObject:
   m_ObjectHideFlags: 0
@@ -4603,7 +4562,7 @@ GameObject:
   - component: {fileID: 302195302257628335}
   - component: {fileID: 1151480921260467022}
   - component: {fileID: 7285401267887933317}
-  - component: {fileID: 7285401267887933318}
+  - component: {fileID: 7257475513726665524}
   m_Layer: 0
   m_Name: Cube_cell.049
   m_TagString: EnemyChunk
@@ -4687,8 +4646,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267887933318
-MeshCollider:
+--- !u!65 &7257475513726665524
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4697,10 +4656,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5462401285362437765, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0049999994, y: 0.005903804, z: 0.004901688}
+  m_Center: {x: -0.00019663501, y: -0.00022658549, z: -0.00030936374}
 --- !u!1 &7653060486422074386
 GameObject:
   m_ObjectHideFlags: 0
@@ -4713,7 +4671,7 @@ GameObject:
   - component: {fileID: 2285011016833093358}
   - component: {fileID: 284568359218574116}
   - component: {fileID: 7285401266969656972}
-  - component: {fileID: 7285401266969656973}
+  - component: {fileID: 3751110810721065399}
   m_Layer: 0
   m_Name: Cube_cell.014
   m_TagString: EnemyChunk
@@ -4797,8 +4755,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266969656973
-MeshCollider:
+--- !u!65 &3751110810721065399
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4807,10 +4765,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -6690634620250380488, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0011541223, y: 0.009857009, z: 0.006296125}
+  m_Center: {x: -0.0000039737783, y: 0.00024972082, z: -0.00048520637}
 --- !u!1 &7691765264408883159
 GameObject:
   m_ObjectHideFlags: 0
@@ -4823,7 +4780,7 @@ GameObject:
   - component: {fileID: 3127918959473134209}
   - component: {fileID: 441227434324195821}
   - component: {fileID: 7285401266282747646}
-  - component: {fileID: 7285401266282747647}
+  - component: {fileID: 7356749100778212330}
   m_Layer: 0
   m_Name: Cube_cell.028
   m_TagString: EnemyChunk
@@ -4907,8 +4864,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266282747647
-MeshCollider:
+--- !u!65 &7356749100778212330
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4917,10 +4874,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -928430774373459938, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.014715764, y: 0.009132912, z: 0.009273329}
+  m_Center: {x: 0.0019077059, y: 0.0010881672, z: -0.00076711195}
 --- !u!1 &7892712537834778522
 GameObject:
   m_ObjectHideFlags: 0
@@ -4933,7 +4889,7 @@ GameObject:
   - component: {fileID: 5732459914976851319}
   - component: {fileID: 2390408762641098478}
   - component: {fileID: 7285401266533291995}
-  - component: {fileID: 7285401266533291996}
+  - component: {fileID: 2765053627540433500}
   m_Layer: 0
   m_Name: Cube_cell.045
   m_TagString: EnemyChunk
@@ -5017,8 +4973,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266533291996
-MeshCollider:
+--- !u!65 &2765053627540433500
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5027,10 +4983,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -1544101750338161227, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0024031505, y: 0.010965958, z: 0.020495491}
+  m_Center: {x: -0.00019294511, y: 0.0013721875, z: 0.0028166573}
 --- !u!1 &8130066249212835168
 GameObject:
   m_ObjectHideFlags: 0
@@ -5043,7 +4998,7 @@ GameObject:
   - component: {fileID: 3662869845228476699}
   - component: {fileID: 7409041289472635478}
   - component: {fileID: 7285401266623354653}
-  - component: {fileID: 7285401266623354654}
+  - component: {fileID: 363376958759848000}
   m_Layer: 0
   m_Name: Cube_cell.008
   m_TagString: EnemyChunk
@@ -5127,8 +5082,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266623354654
-MeshCollider:
+--- !u!65 &363376958759848000
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5137,10 +5092,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 189774765763880218, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.017537141, y: 0.006498872, z: 0.006283837}
+  m_Center: {x: 0.0007723509, y: -0.00040724027, z: 0.00057664607}
 --- !u!1 &8358220063454097042
 GameObject:
   m_ObjectHideFlags: 0
@@ -5153,7 +5107,7 @@ GameObject:
   - component: {fileID: 3016819798259944837}
   - component: {fileID: 7774961193035352941}
   - component: {fileID: 7285401266644329560}
-  - component: {fileID: 7285401266644329561}
+  - component: {fileID: 8582476909647151000}
   m_Layer: 0
   m_Name: Cube_cell.036
   m_TagString: EnemyChunk
@@ -5237,8 +5191,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266644329561
-MeshCollider:
+--- !u!65 &8582476909647151000
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5247,10 +5201,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 5884314370670921866, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.0068590147, y: 0.0006858228, z: 0.00035034886}
+  m_Center: {x: -0.0014858778, y: 0.000049882383, z: -0.000014219953}
 --- !u!1 &8705609351931717779
 GameObject:
   m_ObjectHideFlags: 0
@@ -5263,7 +5216,7 @@ GameObject:
   - component: {fileID: 3494614105461915532}
   - component: {fileID: 5110049000558065461}
   - component: {fileID: 7285401265978699865}
-  - component: {fileID: 7285401265978699866}
+  - component: {fileID: 3517147439317427998}
   m_Layer: 0
   m_Name: Cube_cell.030
   m_TagString: EnemyChunk
@@ -5347,8 +5300,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401265978699866
-MeshCollider:
+--- !u!65 &3517147439317427998
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5357,10 +5310,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2926942048297632113, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.006979686, y: 0.00969932, z: 0.013157816}
+  m_Center: {x: 0.0003157182, y: -0.00025436323, z: 0.000473027}
 --- !u!1 &8737808355943480843
 GameObject:
   m_ObjectHideFlags: 0
@@ -5373,7 +5325,7 @@ GameObject:
   - component: {fileID: 7677710168508569720}
   - component: {fileID: 2226799128487183538}
   - component: {fileID: 7285401267834176793}
-  - component: {fileID: 7285401267834176794}
+  - component: {fileID: 8695245982445006455}
   m_Layer: 0
   m_Name: Cube_cell.027
   m_TagString: EnemyChunk
@@ -5457,8 +5409,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401267834176794
-MeshCollider:
+--- !u!65 &8695245982445006455
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5467,10 +5419,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -7451966861133141203, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.014618325, y: 0.012117708, z: 0.0067788}
+  m_Center: {x: -0.0011840143, y: 0.0007133077, z: -0.00030611447}
 --- !u!1 &8981099182451937672
 GameObject:
   m_ObjectHideFlags: 0
@@ -5483,7 +5434,7 @@ GameObject:
   - component: {fileID: 2161946091123678825}
   - component: {fileID: 5552201008107485096}
   - component: {fileID: 7285401266237457053}
-  - component: {fileID: 7285401266237457054}
+  - component: {fileID: 8124674002939596492}
   m_Layer: 0
   m_Name: Cube_cell.029
   m_TagString: EnemyChunk
@@ -5567,8 +5518,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266237457054
-MeshCollider:
+--- !u!65 &8124674002939596492
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5577,10 +5528,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 1776521119468229134, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.010203399, y: 0.005006235, z: 0.0050142067}
+  m_Center: {x: -0.00075523363, y: 0.0001166579, z: -0.00056740246}
 --- !u!1 &9072733981089215106
 GameObject:
   m_ObjectHideFlags: 0
@@ -5593,7 +5543,7 @@ GameObject:
   - component: {fileID: 151047853010495217}
   - component: {fileID: 4665552271408453134}
   - component: {fileID: 7285401266749832925}
-  - component: {fileID: 7285401266749832926}
+  - component: {fileID: 1382185600210128429}
   m_Layer: 0
   m_Name: Cube_cell.013
   m_TagString: EnemyChunk
@@ -5677,8 +5627,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7285401266749832926
-MeshCollider:
+--- !u!65 &1382185600210128429
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5687,7 +5637,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 8253799314136574756, guid: 3392154d77759534989e68406d2d46f3, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.004804772, y: 0.004904241, z: 0.006584867}
+  m_Center: {x: 0.00010607426, y: 0.00008768586, z: 0.00074126857}
