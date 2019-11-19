@@ -35,15 +35,15 @@ namespace TowerDrop
 
             if (x == 1)
             {
-                Instantiate(throwable[0], hand.transform.position, Quaternion.identity);
+                Instantiate(throwable[0], hand.gameObject.transform.position, Quaternion.EulerRotation(0,0,0));
             }
             if (x == 2)
             {
-                Instantiate(throwable[1], hand.transform.position, Quaternion.identity);
+                Instantiate(throwable[1], hand.gameObject.transform.position, Quaternion.EulerRotation(0, 0, 0));
             }
             if (x == 3)
             {
-                Instantiate(throwable[2], hand.transform.position, Quaternion.identity);
+                Instantiate(throwable[2], hand.gameObject.transform.position, Quaternion.EulerRotation(0, 0, 0));
             }
         }
     }
