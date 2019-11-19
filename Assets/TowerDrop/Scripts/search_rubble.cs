@@ -24,26 +24,31 @@ namespace TowerDrop
         private void Update()
         {
 
-            if(SteamVR_Actions.default_GrabPinch[hand.handType].state && search == true)
+            if(SteamVR_Actions.default_GrabPinch[hand.handType].state && search == true &&hand.gameObject.GetComponentInChildren<Transform>() == null)
             {
-                instantiatethrowable();
+                Instantiatethrowable();
+                
                 search = false;
             }
         }
-        void instantiatethrowable(){
+        void Instantiatethrowable(){
             int x = Random.Range(1, 4);
+            GameObject G;
 
             if (x == 1)
             {
-                Instantiate(throwable[0], hand.gameObject.transform.position, Quaternion.EulerRotation(0,0,0));
+                G=Instantiate(throwable[0], hand.transform.position, Quaternion.identity);
+                G.transform.parent = hand.gameObject.transform;
             }
             if (x == 2)
             {
-                Instantiate(throwable[1], hand.gameObject.transform.position, Quaternion.EulerRotation(0, 0, 0));
+                G=Instantiate(throwable[1], hand.transform.position, Quaternion.identity);
+                G.transform.parent = hand.gameObject.transform;
             }
             if (x == 3)
             {
-                Instantiate(throwable[2], hand.gameObject.transform.position, Quaternion.EulerRotation(0, 0, 0));
+                G=Instantiate(throwable[2], hand.transform.position, Quaternion.identity);
+                G.transform.parent = hand.gameObject.transform;
             }
         }
     }

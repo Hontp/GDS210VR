@@ -11,6 +11,12 @@ TagManager:
   - Enemy
   - EnemyChunk
   - floor
+<<<<<<< HEAD
+  - Enviroment
+  - hand
+=======
+  - enemysword
+>>>>>>> 318c271df473261cd770664e1c0e3753d11c4f0d
   layers:
   - Default
   - TransparentFX
