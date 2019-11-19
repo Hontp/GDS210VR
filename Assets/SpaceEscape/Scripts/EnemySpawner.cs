@@ -11,6 +11,17 @@ namespace MemeMachine
         public float SpawnTime;
         public int numOfEnimies;
         public List<EnemyScript> enemies;
+        public float spawnLimiter;
+        public float spawnDecrease;
+        public void SetSpawnVariables(float limit, float decrease, float time)
+        {
+            SpawnTime = time;
+            spawnLimiter = limit;
+            spawnDecrease = decrease;
+        }
+
+
+
 
         [SerializeField]
         GameObject secondaryLocations;
@@ -32,6 +43,7 @@ namespace MemeMachine
             previousMiddleLocationInt;
         int whileLimiter;
         float timeLeft;
+        MenuSystem menu;
 
         const float GAMETIME = 180;
         const string FUELSTART = "- Refueling In Process -" + "\n" + "ETC : ";
@@ -42,6 +54,7 @@ namespace MemeMachine
         // Start is called before the first frame update
         void Start()
         {
+            menu = FindObjectOfType<MenuSystem>();
             whileLimiter = 0;
             enemyTimer = 0;
             numOfEnimies = 0;
@@ -52,8 +65,11 @@ namespace MemeMachine
         // Update is called once per frame
         void Update()
         {
-            EnemySpawnCounter();
-            CountDownTimer();
+            if (menu.gamePlaying)
+            {
+                EnemySpawnCounter();
+                CountDownTimer();
+            }
         }
 
 
