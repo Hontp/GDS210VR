@@ -127,6 +127,7 @@ MonoBehaviour:
   MaxDist: 10
   jumping: 0
   attacking: 0
+  idle: 0
   animator: {fileID: 4672244418465654264}
 --- !u!1001 &1718085023551798330
 PrefabInstance:

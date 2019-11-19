@@ -26,7 +26,7 @@ public class Samurai : MonoBehaviour
         if(c.transform.CompareTag("enemysword"))
         {
             health--;
-            GameManager._instance.uIManager.SetHurt(0.5f);
+            GameManager._instance.uIManager.SetHurt(0.25f);
         }
     }
 }
