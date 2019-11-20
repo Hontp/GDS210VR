@@ -8,6 +8,7 @@ namespace MemeMachine
 {
     public class EnemySpawner : MonoBehaviour
     {
+        bool gameUnderway;
         public float SpawnTime;
         public int numOfEnimies;
         public List<EnemyScript> enemies;
@@ -64,8 +65,13 @@ namespace MemeMachine
 
         // Update is called once per frame
         void Update()
-        {
-            if (menu.gamePlaying)
+        { 
+            if(menu.gamePlaying & !gameUnderway)
+            {
+                gameUnderway = false;
+                //remove laser pointer and put what needs to be in their ahnds
+            }
+            if (menu.gamePlaying & gameUnderway)
             {
                 EnemySpawnCounter();
                 CountDownTimer();

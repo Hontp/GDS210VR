@@ -6,9 +6,8 @@ using UnityEngine.UI;
 
 public class MenuInteracter : MonoBehaviour
 {
-    public Graphic thingo;
-    public Camera cam;
-    public LayerMask WorldUILayer;
+    public MenuSystem menu;
+    public LineRenderer laserPointer;
     public GameObject redDot;
     public Transform rayOrigin;
 
@@ -18,15 +17,9 @@ public class MenuInteracter : MonoBehaviour
     RaycastHit hit;
     private void Update()
     {
-        //if (Physics.Raycast(new Ray(rayOrigin.position, rayOrigin.up), out hit, 200, WorldUILayer))
-        //{
-        //    redDot.transform.position = hit.point;
-        //}
-        if (thingo.Raycast(cam.WorldToScreenPoint(rayOrigin.position), cam))
-        {
-            redDot.transform.position = hit.point;
-        }
-        //CheckShoot();
+        laserPointer.SetPosition(0, rayOrigin.position);
+        laserPointer.SetPosition(1, rayOrigin.position + rayOrigin.up * 200);
+        CheckShoot();
     }
 
     private void CheckShoot()
@@ -34,6 +27,33 @@ public class MenuInteracter : MonoBehaviour
         if (grabPinch.GetStateDown(inputSource))
         {
             if(Physics.Raycast(new Ray(rayOrigin.position , rayOrigin.up), out hit,200))
+            {
+                GameObject target = hit.transform.gameObject;
+                redDot.transform.position = hit.point;
+                if(target != null)
+                {
+                    if (target.CompareTag("PlayButton"))
+                    {
+                        menu.PlayGame();
+                    }
+                    if (target.CompareTag("DiffButton"))
+                    {
+                        menu.ChangeDifficulty();
+                    }
+                    if (target.CompareTag("ScoreButton"))
+                    {
+                        menu.OnScoreButtonPress();
+                    }
+                    if (target.CompareTag("HomeButton"))
+                    {
+                        menu.HomeButton();
+                    }
+                }   
+            }
+        }
+        else
+        {
+            if (Physics.Raycast(new Ray(rayOrigin.position, rayOrigin.up), out hit, 200))
             {
                 redDot.transform.position = hit.point;
             }

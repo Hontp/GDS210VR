@@ -14,9 +14,11 @@ public class MenuSystem : MonoBehaviour
     [SerializeField]
     TMP_Text mainTitleTB;
     [SerializeField]
+    TMP_Text difficultyTB;
+    [SerializeField]
     TMP_Text scoreTitleTB;
     [SerializeField]
-    GameObject difTB, difDrop;
+    GameObject difTB;
     [SerializeField]
     TMP_Text scoreTB;
     [SerializeField]
@@ -26,6 +28,8 @@ public class MenuSystem : MonoBehaviour
 
     string gameName;
     EnemySpawner spawner;
+    int difficulty = 0;
+    bool mainMenu = true;
 
     const string TITLESTART = "Welcome to ";
     const string SCOREEND = " High Scores";
@@ -49,19 +53,19 @@ public class MenuSystem : MonoBehaviour
                 break;
             case GameLoaded.Sword:
                 SetName("Sword Game");
-                difDrop.SetActive(false);
+                difficultyTB.gameObject.SetActive(false);
                 difTB.SetActive(false);
                 break;
             case GameLoaded.Gun:
                 SetName("Space Escape");
                 spawner = FindObjectOfType<EnemySpawner>();
                 spawner.SetSpawnVariables(30, 0.01f, 6);
-                difDrop.SetActive(true);
+                difficultyTB.gameObject.SetActive(true);
                 difTB.SetActive(true);
                 break;
             case GameLoaded.Tower:
                 SetName("Tower Game");
-                difDrop.SetActive(false);
+                difficultyTB.gameObject.SetActive(false);
                 difTB.SetActive(false);
                 break;
         }
@@ -78,6 +82,7 @@ public class MenuSystem : MonoBehaviour
     // this fucntion runbs when the score button is clicked and sets the score textbox infomation
     public void OnScoreButtonPress()
     {
+        mainMenu = false;
         mainCanvas.SetActive(false);
         scoreCanvas.SetActive(true);
         switch (myGame)
@@ -100,6 +105,7 @@ public class MenuSystem : MonoBehaviour
     //runs when score back to menu button is pressed and goes back to the main menu
     public void BackToMain()
     {
+        mainMenu = true;
         mainCanvas.SetActive(true);
         scoreCanvas.SetActive(false);
     }
@@ -122,22 +128,44 @@ public class MenuSystem : MonoBehaviour
         gamePlaying = true;
     }
 
-    public void OnDifficultyChanged(int diff)
+    public void ChangeDifficulty()
     {
-        switch (diff)
+        difficulty++;
+        if(difficulty > 3)
+        {
+            difficulty = 0;
+        }
+        switch (difficulty)
         {
             case 0:
+                difficultyTB.text = "Easy";
                 spawner.SetSpawnVariables(30, 0.01f, 6);
                 break;
             case 1:
+                difficultyTB.text = "Medium";
                 spawner.SetSpawnVariables(50, 0.04f, 5);
                 break;
             case 2:
+                difficultyTB.text = "Hard";
                 spawner.SetSpawnVariables(75, 0.07f, 4);
                 break;
             case 3:
+                difficultyTB.text = "Insane";
                 spawner.SetSpawnVariables(300, 0.1f, 4);
                 break;
         }
     }
+
+    public void HomeButton()
+    {
+        if (mainMenu)
+        {
+            ReturnToHub();
+        }
+        else
+        {
+            BackToMain();
+        }
+    }
+
 }

@@ -10,10 +10,15 @@ TagManager:
   - wepon
   - Enemy
   - EnemyChunk
-  - floor
-   - Enviroment
+  - floor - Enviroment
   - hand
   - enemysword
+  - Enviroment
+  - PlayButton
+  - DiffButton
+  - ScoreButton
+  - ReturnButton
+  - HomeButton
   layers:
   - Default
   - TransparentFX
