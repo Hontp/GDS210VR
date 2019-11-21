@@ -16,7 +16,7 @@ namespace SamuraiCutter
         [Header("Max Wave Number (Here for reference)")]
         public const int maxWaves = 20;
         public int[] enemyAmounts = new int[maxWaves];
-        
+        public bool spawning;
         public int waveTimeLength;
 
         public int enemiesSpawned;
@@ -59,19 +59,18 @@ namespace SamuraiCutter
             {
                 enemyAmounts[i] = sampleWave(i);
             }
-
             waveStartTime = Time.time;
-            
         }
 
 
         public void Update()
         {
-
             // TODO: Gradually spawn in the enemies
-            if(enemiesSpawned < enemyAmounts[currentWaveNumber])
+            if(enemiesSpawned < enemyAmounts[currentWaveNumber] && !spawning)
             {
-                spawn();
+                Debug.Log("spawning Active");
+                spawning = true;
+                Invoke("Spawn", 1f);
             }
             else
             {
@@ -82,31 +81,33 @@ namespace SamuraiCutter
             }
         }
 
-
-
-        public void spawn()
+        public void Spawn()
         {
-            int spawn = Random.Range(0, 3);
-            Transform currentTransform;
-            switch (spawn)
+            if (spawning)
             {
-                case 0:
-                    currentTransform = enemySpawn1;
-                    break;
-                case 1:
-                    currentTransform = enemySpawn2;
-                    break;
+                int spawn = Random.Range(0, 3);
+                Transform currentTransform;
+                switch (spawn)
+                {
+                    case 0:
+                        currentTransform = enemySpawn1;
+                        break;
+                    case 1:
+                        currentTransform = enemySpawn2;
+                        break;
 
-                case 2:
-                    currentTransform = enemySpawn3;
-                    break;
-                default:
-                    currentTransform = enemySpawn1;
-                    break;
+                    case 2:
+                        currentTransform = enemySpawn3;
+                        break;
+                    default:
+                        currentTransform = enemySpawn1;
+                        break;
+                }
+                Instantiate(respawnEnemy, currentTransform.position, currentTransform.rotation);
+                enemiesSpawned++;
+                spawning = false;
+                Debug.Log("spawning complete");
             }
-            Instantiate(respawnEnemy, currentTransform.position, currentTransform.rotation);
-            enemiesSpawned++;
         }
     }
-
 }
