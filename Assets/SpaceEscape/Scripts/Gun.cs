@@ -37,10 +37,8 @@ namespace MemeMachine
         }
         private void Update()
         {
-            if (gunBackGripGrabbed == true)
-            {
-                CheckShoot();
-            }
+            CheckShoot();
+        
 
         
         }
