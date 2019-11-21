@@ -9,6 +9,7 @@ namespace SamuraiCutter
     {
         public static GameManager _instance;
         public SpawnEnemy spawnEnemy;
+        public UIManager uIManager;
         public Transform playerPos;
         // Start is called before the first frame update
         void Awake()

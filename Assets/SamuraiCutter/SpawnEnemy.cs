@@ -37,6 +37,9 @@ namespace SamuraiCutter
         {
             currentWaveNumber++;
             waveStartTime = Time.time;
+            remainingEnemies = enemyAmounts[currentWaveNumber];
+            enemiesSpawned = 0;
+            
         }
 
         public int sampleWave(int waveNumber)
@@ -64,14 +67,18 @@ namespace SamuraiCutter
 
         public void Update()
         {
-            if(Input.GetKeyDown(KeyCode.R))
+
+            // TODO: Gradually spawn in the enemies
+            if(enemiesSpawned < enemyAmounts[currentWaveNumber])
             {
                 spawn();
             }
-            // WIP: still working out how to spawn enemies within the round
-            if(enemiesSpawned < enemyAmounts[currentWaveNumber])
+            else
             {
-                //if(waveStartTime - )
+                if(remainingEnemies == 0)
+                {
+                    incWave();
+                }
             }
         }
 
@@ -98,6 +105,7 @@ namespace SamuraiCutter
                     break;
             }
             Instantiate(respawnEnemy, currentTransform.position, currentTransform.rotation);
+            enemiesSpawned++;
         }
     }
 

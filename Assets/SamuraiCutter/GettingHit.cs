@@ -17,7 +17,6 @@ namespace SamuraiCutter
         private void Awake()
         {
             spawnEngine = GameObject.Find("EnemySpawnManager").GetComponent<SpawnEnemy>();
-
         }
 
         private void Update()
@@ -32,7 +31,7 @@ namespace SamuraiCutter
         }
         void OnTriggerEnter(Collider hittingCollider)
         {
-            Debug.Log(hittingCollider.transform.tag);
+            //Debug.Log(hittingCollider.transform.tag);
             if (hittingCollider.CompareTag("PlayerSword"))
             {
                 Hit();
@@ -48,7 +47,6 @@ namespace SamuraiCutter
                             rb.AddExplosionForce(explosionPower, explosionPos, explosionRadius, 3.0f);
                         }
                     }
-
                     Invoke("DestroyMe", 2f);
                 }
             }
@@ -56,18 +54,20 @@ namespace SamuraiCutter
 
         void Hit()
         {
-            replacedMesh = Instantiate(brokenMesh, transform.position, transform.rotation);
-            this.GetComponent<BoxCollider>().enabled = false;
-            this.GetComponent<MeshRenderer>().enabled = false;
+            replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
+            GameObject.Find("Score").GetComponent<Scoring>().ScoringSystem();
+            //replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
+            this.GetComponentInChildren<BoxCollider>().enabled = false;
+            this.gameObject.SetActive(false);
+            //this.GetComponentInChildren<MeshRenderer>().enabled = false;
             spawnEngine.registerKill();
-            //Gain Score Code Here
         }
 
         void DestroyMe()
         {
             print("test 1");
-            Destroy(replacedMesh);
             Destroy(gameObject);
+            Destroy(replacedMesh);
         }
     }
 }
