@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Valve.VR.InteractionSystem;
 
 namespace MemeMachine
 {
@@ -37,6 +38,10 @@ namespace MemeMachine
         TMP_Text mainText;
         [SerializeField]
         Slider FuelSlider;
+        [SerializeField]
+        GameObject rightHandObject;
+        [SerializeField]
+        Hand rightHand;
 
 
 
@@ -63,8 +68,6 @@ namespace MemeMachine
             numOfEnimies = 0;
             spawnLocationHolder = gameObject;
             timeLeft = GAMETIME;
-
-            SpawnEnemies();
         }
 
         // Update is called once per frame
@@ -73,6 +76,7 @@ namespace MemeMachine
             if(menu.gamePlaying & !gameUnderway)
             {
                 gameUnderway = true;
+                rightHand.renderModelPrefab = rightHandObject;
                 //remove laser pointer and put what needs to be in their hands
             }
             if (menu.gamePlaying & gameUnderway)

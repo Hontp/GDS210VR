@@ -751,7 +751,7 @@ PrefabInstance:
     - target: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: renderModelPrefab
       value: 
-      objectReference: {fileID: 3542192538974956674, guid: efd5b17502802904c836afaff739ac5c,
+      objectReference: {fileID: 1000012617731570, guid: 837f93beb9a614743ae3a2c0ada7c388,
         type: 3}
     - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: spewDebugText
@@ -9629,6 +9629,8 @@ MonoBehaviour:
   playerTransform: {fileID: 1545395502}
   mainText: {fileID: 544412317}
   FuelSlider: {fileID: 723479952}
+  rightHandObject: {fileID: 0}
+  rightHand: {fileID: 0}
 --- !u!1001 &1525410513
 PrefabInstance:
   m_ObjectHideFlags: 0
