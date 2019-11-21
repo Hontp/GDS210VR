@@ -15,6 +15,7 @@ namespace MemeMachine
         public List<EnemyScript> enemies;
         public float spawnLimiter;
         public float spawnDecrease;
+        
         public void SetSpawnVariables(float limit, float decrease, float time)
         {
             SpawnTime = time;
@@ -28,7 +29,7 @@ namespace MemeMachine
         [SerializeField]
         GameObject secondaryLocations;
         [SerializeField]
-        GameObject basicEnemy;
+        GameObject Enemy;
         [SerializeField]
         Transform playerTransform;
 
@@ -62,6 +63,8 @@ namespace MemeMachine
             numOfEnimies = 0;
             spawnLocationHolder = gameObject;
             timeLeft = GAMETIME;
+
+            SpawnEnemies();
         }
 
         // Update is called once per frame
@@ -77,6 +80,7 @@ namespace MemeMachine
                 EnemySpawnCounter();
                 CountDownTimer();
             }
+            
         }
 
 
@@ -108,7 +112,7 @@ namespace MemeMachine
 
 
             Transform spawnLoc = spawnLocationHolder.transform.GetChild(randIntSpawnLocation);
-            GameObject newEnemy = Instantiate(basicEnemy, spawnLoc.position, Quaternion.identity);
+            GameObject newEnemy = Instantiate(Enemy, spawnLoc.position, Quaternion.identity);
             newEnemy.GetComponent<EnemyScript>().GiveInfo(this,playerTransform, secondaryLocations.transform.GetChild(randIntMiddleLocation));
             enemies.Add(newEnemy.GetComponent<EnemyScript>());
             numOfEnimies++;
