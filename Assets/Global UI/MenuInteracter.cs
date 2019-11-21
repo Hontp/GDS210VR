@@ -20,6 +20,12 @@ public class MenuInteracter : MonoBehaviour
         laserPointer.SetPosition(1, rayOrigin.position + rayOrigin.up * 200);
         CheckShoot();
     }
+    private void Start()
+    {
+        menu = FindObjectOfType<MenuSystem>();
+    }
+
+
     private void CheckShoot()
     {
         if (grabPinch.GetStateDown(inputSource))
@@ -32,21 +38,25 @@ public class MenuInteracter : MonoBehaviour
                 {
                     if (target.CompareTag("PlayButton"))
                     {
+                        print("menu");
                         menu.Invoke("PlayGame", 0.15f);
                         target.GetComponent<PanelChanger>().Selected();
                     }
                     if (target.CompareTag("DiffButton"))
                     {
+                        print("dif");
                         menu.Invoke("ChangeDifficulty", 0.15f);
                         target.GetComponent<PanelChanger>().Selected();
                     }
                     if (target.CompareTag("ScoreButton"))
                     {
+                        print("score");
                         menu.Invoke("OnScoreButtonPress", 0.15f);
                         target.GetComponent<PanelChanger>().Selected();
                     }
                     if (target.CompareTag("HomeButton"))
                     {
+                        print("home");
                         menu.Invoke("HomeButton", 0.15f);
                         target.GetComponent<PanelChanger>().Selected();
                     }

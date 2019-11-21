@@ -101,14 +101,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2352558646723681550}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d2d3a06f1464064a82fa8979e5c57e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   tankShell: {fileID: 7062066426179336418, guid: 24344faae9bdc544897df38abd135e86,
     type: 3}
+  target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   fireRate: 5
 --- !u!1001 &7361803115930270250
 PrefabInstance:

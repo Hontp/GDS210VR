@@ -76,7 +76,7 @@ namespace MemeMachine
             if(menu.gamePlaying & !gameUnderway)
             {
                 gameUnderway = true;
-                rightHand.renderModelPrefab = ;
+                //rightHand.renderModelPrefab = rightHandObject;
                 //remove laser pointer and put what needs to be in their hands
             }
             if (menu.gamePlaying & gameUnderway)
