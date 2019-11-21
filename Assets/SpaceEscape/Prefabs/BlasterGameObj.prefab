@@ -146,15 +146,22 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   restoreOriginalParent: 0
+  attached: 0
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onHeldUpdate:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!135 &5141505512066580999
 SphereCollider:
@@ -168,7 +175,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.18390435
-  m_Center: {x: -0.53, y: 0.04, z: 0.34}
+  m_Center: {x: -0.53, y: 0.04, z: -0.22}
 --- !u!1 &3037863165546482689
 GameObject:
   m_ObjectHideFlags: 0
