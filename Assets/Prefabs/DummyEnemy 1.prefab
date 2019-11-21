@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa714520a844a04b88e75d9bdea4ca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brokenMesh: {fileID: 1601905756906169933, guid: 6e0677624db2de0448452d7af978213c,
+  brokenMesh: {fileID: 2826107215769485342, guid: 435573867d9b7784aacc9fba738a1d1a,
     type: 3}
   replacedMesh: {fileID: 1601905756906169933, guid: 6e0677624db2de0448452d7af978213c,
     type: 3}
@@ -96,7 +96,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.01
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -215,11 +215,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: eaf599fadfc7c524f8a5a7a88904e60d,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 7de03913b62fc7948ae77953e8374e36, type: 2}
     - target: {fileID: -4216859302048453862, guid: eaf599fadfc7c524f8a5a7a88904e60d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -275,6 +270,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: eaf599fadfc7c524f8a5a7a88904e60d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7de03913b62fc7948ae77953e8374e36, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf599fadfc7c524f8a5a7a88904e60d, type: 3}
 --- !u!1 &1731211371878562449 stripped
