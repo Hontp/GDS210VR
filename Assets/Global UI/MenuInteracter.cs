@@ -8,7 +8,6 @@ public class MenuInteracter : MonoBehaviour
 {
     public MenuSystem menu;
     public LineRenderer laserPointer;
-    public GameObject redDot;
     public Transform rayOrigin;
 
     public SteamVR_Input_Sources inputSource;
@@ -21,36 +20,51 @@ public class MenuInteracter : MonoBehaviour
         laserPointer.SetPosition(1, rayOrigin.position + rayOrigin.up * 200);
         CheckShoot();
     }
-
     private void CheckShoot()
     {
         if (grabPinch.GetStateDown(inputSource))
         {
-            if(Physics.Raycast(new Ray(rayOrigin.position , rayOrigin.up), out hit,200))
+            if (Physics.Raycast(new Ray(rayOrigin.position, rayOrigin.up), out hit, 200))
             {
                 GameObject target = hit.transform.gameObject;
-                redDot.transform.position = hit.point;
-                if(target != null)
+
+                if (target != null)
                 {
                     if (target.CompareTag("PlayButton"))
                     {
-                        menu.PlayGame();
+                        menu.Invoke("PlayGame", 0.15f);
+                        target.GetComponent<PanelChanger>().Selected();
                     }
                     if (target.CompareTag("DiffButton"))
                     {
-                        menu.ChangeDifficulty();
+                        menu.Invoke("ChangeDifficulty", 0.15f);
+                        target.GetComponent<PanelChanger>().Selected();
                     }
                     if (target.CompareTag("ScoreButton"))
                     {
-                        menu.OnScoreButtonPress();
+                        menu.Invoke("OnScoreButtonPress", 0.15f);
+                        target.GetComponent<PanelChanger>().Selected();
                     }
                     if (target.CompareTag("HomeButton"))
                     {
-                        menu.HomeButton();
+                        menu.Invoke("HomeButton", 0.15f);
+                        target.GetComponent<PanelChanger>().Selected();
                     }
-                }   
+                }
             }
         }
+        else
+        {
+            if (Physics.Raycast(new Ray(rayOrigin.position, rayOrigin.up), out hit, 200))
+            {
+                GameObject target = hit.transform.gameObject;
+                if (target.CompareTag("PlayButton") || target.CompareTag("DiffButton") || target.CompareTag("ScoreButton") || target.CompareTag("HomeButton"))
+                {
+                    target.GetComponent<PanelChanger>().Hovering();
+                }
+            }
+        }
+
     }
 
     private void OnDrawGizmos()

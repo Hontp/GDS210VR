@@ -25,6 +25,8 @@ public class MenuSystem : MonoBehaviour
     GameObject mainCanvas;
     [SerializeField]
     GameObject scoreCanvas;
+    [SerializeField]
+    GameObject difPanel;
 
     string gameName;
     EnemySpawner spawner;
@@ -55,6 +57,7 @@ public class MenuSystem : MonoBehaviour
                 SetName("Sword Game");
                 difficultyTB.gameObject.SetActive(false);
                 difTB.SetActive(false);
+                difPanel.SetActive(false);
                 break;
             case GameLoaded.Gun:
                 SetName("Space Escape");
@@ -62,11 +65,13 @@ public class MenuSystem : MonoBehaviour
                 spawner.SetSpawnVariables(30, 0.01f, 6);
                 difficultyTB.gameObject.SetActive(true);
                 difTB.SetActive(true);
+                difPanel.SetActive(true);
                 break;
             case GameLoaded.Tower:
                 SetName("Tower Game");
                 difficultyTB.gameObject.SetActive(false);
                 difTB.SetActive(false);
+                difPanel.SetActive(false);
                 break;
         }
     }

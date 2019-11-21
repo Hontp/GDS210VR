@@ -48,9 +48,8 @@ namespace MemeMachine
 
         void ChangeLocation()
         {
-            if (myAgent.remainingDistance < 1 && movingToPlayer)
+            if (myAgent.remainingDistance < 3 && movingToPlayer)
             {
-                print("1");
                 myAgent.isStopped = true;
                 anim.SetBool("Attack", true);
                 anim.SetBool("Run", false);
