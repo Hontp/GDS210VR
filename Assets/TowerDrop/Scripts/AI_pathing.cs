@@ -87,7 +87,7 @@ namespace TowerDrop
                         Quaternion rotateto = Quaternion.LookRotation(direction, Path_points[entitys[i].Path + 1].transform.up);
 
 
-                        entitys[i].AI_gameObject.transform.rotation = Quaternion.Lerp(transform.rotation, rotateto, rotaional_speed * entitys[i].Time);
+                        entitys[i].AI_gameObject.transform.rotation = Quaternion.Lerp(entitys[i].AI_gameObject.transform.rotation, rotateto, rotaional_speed * entitys[i].Time);
 
                     }
 

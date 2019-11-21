@@ -39,16 +39,19 @@ namespace TowerDrop
             {
                 G=Instantiate(throwable[0], hand.transform.position, Quaternion.identity);
                 G.transform.parent = hand.gameObject.transform;
+                hand.AttachObject(G, hand.GetBestGrabbingType(), G.GetComponent<Throwable>().attachmentFlags);
             }
             if (x == 2)
             {
                 G=Instantiate(throwable[1], hand.transform.position, Quaternion.identity);
                 G.transform.parent = hand.gameObject.transform;
+                hand.AttachObject(G, hand.GetBestGrabbingType(), G.GetComponent<Throwable>().attachmentFlags);
             }
             if (x == 3)
             {
                 G=Instantiate(throwable[2], hand.transform.position, Quaternion.identity);
                 G.transform.parent = hand.gameObject.transform;
+                hand.AttachObject(G, hand.GetBestGrabbingType(), G.GetComponent<Throwable>().attachmentFlags);
             }
         }
     }

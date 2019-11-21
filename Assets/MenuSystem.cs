@@ -42,10 +42,10 @@ public class MenuSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DoOnLoad();
+        DoOnStart();
     }
 
-    void DoOnLoad()
+    void DoOnStart()
     {
         switch (myGame)
         {
@@ -125,7 +125,7 @@ public class MenuSystem : MonoBehaviour
     public void MenuActive()
     {
         gameObject.SetActive(true);
-        gamePlaying = true;
+        gamePlaying = false;
     }
 
     public void ChangeDifficulty()
@@ -167,5 +167,8 @@ public class MenuSystem : MonoBehaviour
             BackToMain();
         }
     }
+
+
+
 
 }
