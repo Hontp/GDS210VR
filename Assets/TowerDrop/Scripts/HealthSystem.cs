@@ -37,9 +37,11 @@ namespace TowerDrop
                     if (entity != null)
                     {
                         if (entity.GetComponent<Health>().hit)
+                        {
                             entity.GetComponent<Health>().HP--;
 
-                        entity.GetComponent<Health>().hit = false;
+                            entity.GetComponent<Health>().hit = false;
+                        }
                     }
                 }
             }
@@ -47,6 +49,7 @@ namespace TowerDrop
 
         void Update()
         {
+            
 
             UpdatePlayerHealth();
             UpdateAIHealth();

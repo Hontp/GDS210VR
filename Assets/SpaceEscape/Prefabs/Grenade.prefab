@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: -554592117269542266}
   - component: {fileID: 4776902474744988905}
   - component: {fileID: -3468551564508624820}
+  - component: {fileID: 2852323657535544472}
+  - component: {fileID: 7150830411846552435}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -145,22 +147,46 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   restoreOriginalParent: 0
+  attached: 0
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onHeldUpdate:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   interactable: {fileID: 0}
+--- !u!114 &2852323657535544472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675440026158377512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7bc2d5406c272f44bcce879dc86500c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grenadeTick: 0
+  detTime: 2
+  grenade: {fileID: 1675440026158377512}
+  isGrabbed: 0
+--- !u!135 &7150830411846552435
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675440026158377512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2807050239424231980
 GameObject:
   m_ObjectHideFlags: 0

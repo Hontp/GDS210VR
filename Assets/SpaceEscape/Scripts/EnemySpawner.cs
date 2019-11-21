@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Valve.VR.InteractionSystem;
 
 namespace MemeMachine
 {
     public class EnemySpawner : MonoBehaviour
     {
-        bool gameUnderway;
+        public MenuSystem menu;
+        public bool gameUnderway;
         public float SpawnTime;
         public int numOfEnimies;
         public List<EnemyScript> enemies;
         public float spawnLimiter;
         public float spawnDecrease;
+        
         public void SetSpawnVariables(float limit, float decrease, float time)
         {
             SpawnTime = time;
@@ -27,7 +30,7 @@ namespace MemeMachine
         [SerializeField]
         GameObject secondaryLocations;
         [SerializeField]
-        GameObject basicEnemy;
+        GameObject Enemy;
         [SerializeField]
         Transform playerTransform;
 
@@ -35,6 +38,10 @@ namespace MemeMachine
         TMP_Text mainText;
         [SerializeField]
         Slider FuelSlider;
+        [SerializeField]
+        GameObject rightHandObject;
+        [SerializeField]
+        Hand rightHand;
 
 
 
@@ -44,7 +51,6 @@ namespace MemeMachine
             previousMiddleLocationInt;
         int whileLimiter;
         float timeLeft;
-        MenuSystem menu;
 
         const float GAMETIME = 180;
         const string FUELSTART = "- Refueling In Process -" + "\n" + "ETC : ";
@@ -54,7 +60,8 @@ namespace MemeMachine
 
         // Start is called before the first frame update
         void Start()
-        {
+        {            
+            gameUnderway = false;
             menu = FindObjectOfType<MenuSystem>();
             whileLimiter = 0;
             enemyTimer = 0;
@@ -65,17 +72,19 @@ namespace MemeMachine
 
         // Update is called once per frame
         void Update()
-        { 
+        {
             if(menu.gamePlaying & !gameUnderway)
             {
-                gameUnderway = false;
-                //remove laser pointer and put what needs to be in their ahnds
+                gameUnderway = true;
+                //rightHand.renderModelPrefab = rightHandObject;
+                //remove laser pointer and put what needs to be in their hands
             }
             if (menu.gamePlaying & gameUnderway)
             {
                 EnemySpawnCounter();
                 CountDownTimer();
             }
+            
         }
 
 
@@ -107,7 +116,7 @@ namespace MemeMachine
 
 
             Transform spawnLoc = spawnLocationHolder.transform.GetChild(randIntSpawnLocation);
-            GameObject newEnemy = Instantiate(basicEnemy, spawnLoc.position, Quaternion.identity);
+            GameObject newEnemy = Instantiate(Enemy, spawnLoc.position, Quaternion.identity);
             newEnemy.GetComponent<EnemyScript>().GiveInfo(this,playerTransform, secondaryLocations.transform.GetChild(randIntMiddleLocation));
             enemies.Add(newEnemy.GetComponent<EnemyScript>());
             numOfEnimies++;
