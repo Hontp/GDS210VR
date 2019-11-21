@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Valve.VR.InteractionSystem;
 
-namespace Valve.VR.InteractionSystem
+namespace MemeMachine
 {
     public class SciGrenade : MonoBehaviour
     {

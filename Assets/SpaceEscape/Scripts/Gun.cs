@@ -14,10 +14,16 @@ namespace MemeMachine
         public SteamVR_Action_Vibration vibration;
         public bool shoot;
         public GameObject bullet;
-        public bool gunBackGripGrabbed = false;
+        public  static bool gunBackGripGrabbed = false;
 
         public float shootRateTimeStamp;
         public float shootRate = 0.1f;
+
+        public void Start()
+        {
+            
+            
+        }
         public void Shoot()
         {
             Vector3 angleInfo = transform.rotation.eulerAngles + new Vector3(0, 0, 0);
@@ -26,23 +32,17 @@ namespace MemeMachine
             shot.GetComponent<Bullet>().DestroyBullet(3f);
             shootRateTimeStamp = Time.time + shootRate;
 
-          
+            
 
         }
         private void Update()
         {
-            if (this.GetComponent<Throwable>().attached == true)
-            {
-                gunBackGripGrabbed = true;
-                this.GetComponent<Throwable>().enabled = false;
-            }
-             
-        if(gunBackGripGrabbed == true)
+            if (gunBackGripGrabbed == true)
             {
                 CheckShoot();
             }
 
-           
+        
         }
         private void CheckShoot()
         {

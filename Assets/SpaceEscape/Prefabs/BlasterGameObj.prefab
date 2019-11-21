@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1462913108370546220}
   - component: {fileID: 3251286745275966220}
   - component: {fileID: 5141505512066580999}
+  - component: {fileID: 1280841657998864963}
   m_Layer: 0
   m_Name: BlasterGameObj
   m_TagString: Untagged
@@ -150,18 +151,12 @@ MonoBehaviour:
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onHeldUpdate:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!135 &5141505512066580999
 SphereCollider:
@@ -176,6 +171,30 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.18390435
   m_Center: {x: -0.53, y: 0.04, z: -0.22}
+--- !u!114 &1280841657998864963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044466912786490907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bde74620636e8e468e2e99c0e4f6ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSource: 2
+  grabPinch:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  vibration:
+    actionPath: /actions/default/out/Haptic
+    needsReinit: 0
+  shoot: 0
+  bullet: {fileID: 5086274578444792297, guid: fc736b5756c43354cabd62f4937701c3, type: 3}
+  gunBackGripGrabbed: 0
+  shootRateTimeStamp: 0
+  shootRate: 0.1
 --- !u!1 &3037863165546482689
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,17 +360,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.17000002
       objectReference: {fileID: 0}
-    - target: {fileID: 7254331256200832393, guid: 0d7c93f1e6c744b4bba4247961648cb3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6565310170279458284, guid: 0d7c93f1e6c744b4bba4247961648cb3,
         type: 3}
       propertyPath: bullet
       value: 
       objectReference: {fileID: 5086274578444792297, guid: fc736b5756c43354cabd62f4937701c3,
         type: 3}
+    - target: {fileID: 7254331256200832393, guid: 0d7c93f1e6c744b4bba4247961648cb3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3219763848021890392, guid: 0d7c93f1e6c744b4bba4247961648cb3,
         type: 3}
       propertyPath: m_Radius
@@ -406,6 +425,7 @@ PrefabInstance:
     - {fileID: 4584114270781150327, guid: 0d7c93f1e6c744b4bba4247961648cb3, type: 3}
     - {fileID: 2192899423623508350, guid: 0d7c93f1e6c744b4bba4247961648cb3, type: 3}
     - {fileID: 1258532474997914013, guid: 0d7c93f1e6c744b4bba4247961648cb3, type: 3}
+    - {fileID: 6565310170279458284, guid: 0d7c93f1e6c744b4bba4247961648cb3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0d7c93f1e6c744b4bba4247961648cb3, type: 3}
 --- !u!4 &3288486567666242475 stripped
 Transform:
