@@ -9699,8 +9699,7 @@ MonoBehaviour:
   spawnLimiter: 0
   spawnDecrease: 0
   secondaryLocations: {fileID: 795064198}
-  basicEnemy: {fileID: 2281517611519934350, guid: 28b45fb6c41af874f821fe6e1e088a1f,
-    type: 3}
+  Enemy: {fileID: 2027738870688471394, guid: d69c046f84772ab48aa2973b84e79881, type: 3}
   playerTransform: {fileID: 1545395502}
   mainText: {fileID: 544412317}
   FuelSlider: {fileID: 723479952}
