@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 namespace MemeMachine
 {
@@ -13,9 +14,16 @@ namespace MemeMachine
         public SteamVR_Action_Vibration vibration;
         public bool shoot;
         public GameObject bullet;
+        public  static bool gunBackGripGrabbed = false;
 
         public float shootRateTimeStamp;
         public float shootRate = 0.1f;
+
+        public void Start()
+        {
+            
+            
+        }
         public void Shoot()
         {
             Vector3 angleInfo = transform.rotation.eulerAngles + new Vector3(0, 0, 0);
@@ -24,10 +32,17 @@ namespace MemeMachine
             shot.GetComponent<Bullet>().DestroyBullet(3f);
             shootRateTimeStamp = Time.time + shootRate;
 
+            
+
         }
         private void Update()
         {
-            CheckShoot();
+            if (gunBackGripGrabbed == true)
+            {
+                CheckShoot();
+            }
+
+        
         }
         private void CheckShoot()
         {

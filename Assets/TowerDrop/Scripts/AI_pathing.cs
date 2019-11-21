@@ -83,11 +83,14 @@ namespace TowerDrop
                         //movement
                         entitys[i].AI_gameObject.transform.position = Vector3.Lerp(Path_points[entitys[i].Path].position, Path_points[entitys[i].Path + 1].position, Mathf.Clamp(entitys[i].Time * speed / distances[entitys[i].Path], 0, 1));
                         //rotation
-                        Vector3 direction = Path_points[entitys[i].Path + 1].position - entitys[i].AI_gameObject.transform.position;
-                        Quaternion rotateto = Quaternion.LookRotation(direction, Path_points[entitys[i].Path + 1].transform.up);
+                        Vector3 direction = -(Path_points[entitys[i].Path].position - entitys[i].AI_gameObject.transform.position);
 
+                        entitys[i].AI_gameObject.transform.rotation = Quaternion.Lerp(entitys[i].AI_gameObject.transform.rotation,Quaternion.LookRotation(direction, Path_points[entitys[i].Path + 1].transform.up), rotaional_speed * entitys[i].Time);
+                       // Quaternion last = entitys[i].AI_gameObject.transform.rotation;
+                        //last.SetLookRotation(direction, Path_points[entitys[i].Path + 1].transform.up);
+                        //Quaternion rotateto = last;
 
-                        entitys[i].AI_gameObject.transform.rotation = Quaternion.Lerp(transform.rotation, rotateto, rotaional_speed * entitys[i].Time);
+                        //entitys[i].AI_gameObject.transform.rotation = Quaternion.Lerp(entitys[i].AI_gameObject.transform.rotation, rotateto, rotaional_speed * entitys[i].Time);
 
                     }
 
