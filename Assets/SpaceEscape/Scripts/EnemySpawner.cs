@@ -8,7 +8,8 @@ namespace MemeMachine
 {
     public class EnemySpawner : MonoBehaviour
     {
-        bool gameUnderway;
+        public MenuSystem menu;
+        public bool gameUnderway;
         public float SpawnTime;
         public int numOfEnimies;
         public List<EnemyScript> enemies;
@@ -44,7 +45,6 @@ namespace MemeMachine
             previousMiddleLocationInt;
         int whileLimiter;
         float timeLeft;
-        MenuSystem menu;
 
         const float GAMETIME = 180;
         const string FUELSTART = "- Refueling In Process -" + "\n" + "ETC : ";
@@ -55,6 +55,7 @@ namespace MemeMachine
         // Start is called before the first frame update
         void Start()
         {
+            gameUnderway = false;
             menu = FindObjectOfType<MenuSystem>();
             whileLimiter = 0;
             enemyTimer = 0;
@@ -65,11 +66,11 @@ namespace MemeMachine
 
         // Update is called once per frame
         void Update()
-        { 
+        {
             if(menu.gamePlaying & !gameUnderway)
             {
-                gameUnderway = false;
-                //remove laser pointer and put what needs to be in their ahnds
+                gameUnderway = true;
+                //remove laser pointer and put what needs to be in their hands
             }
             if (menu.gamePlaying & gameUnderway)
             {

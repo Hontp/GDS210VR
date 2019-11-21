@@ -24,7 +24,7 @@ namespace TowerDrop
         private void Update()
         {
 
-            if(SteamVR_Actions.default_GrabPinch[hand.handType].state && search == true &&hand.gameObject.GetComponentInChildren<Transform>() == null)
+            if(SteamVR_Actions.default_GrabPinch[hand.handType].state && search == true &&hand.AttachedObjects.Count<1)
             {
                 Instantiatethrowable();
                 

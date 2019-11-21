@@ -51,13 +51,6 @@ public class MenuInteracter : MonoBehaviour
                 }   
             }
         }
-        else
-        {
-            if (Physics.Raycast(new Ray(rayOrigin.position, rayOrigin.up), out hit, 200))
-            {
-                redDot.transform.position = hit.point;
-            }
-        }
     }
 
     private void OnDrawGizmos()
