@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2352558646723681550}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -23.092, y: -0.7266, z: -0.12056}
-  m_LocalScale: {x: 1.6925, y: 1.6925, z: 1.6925}
+  m_LocalPosition: {x: -23.411, y: 0.20638, z: -0.094166}
+  m_LocalScale: {x: 0.80327743, y: 0.80327743, z: 0.80327743}
   m_Children:
   - {fileID: 2421678258855906479}
   m_Father: {fileID: 0}
@@ -69,11 +69,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6939262313305945178}
     m_Modifications:
-    - target: {fileID: 8208582997236073622, guid: 7ea019a4e72ef8c488c41bf8040c0003,
-        type: 3}
-      propertyPath: m_Name
-      value: SpiderTank
-      objectReference: {fileID: 0}
     - target: {fileID: 5166164674253141637, guid: 7ea019a4e72ef8c488c41bf8040c0003,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -128,6 +123,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208582997236073622, guid: 7ea019a4e72ef8c488c41bf8040c0003,
+        type: 3}
+      propertyPath: m_Name
+      value: SpiderTank
       objectReference: {fileID: 0}
     - target: {fileID: 1325705241124684923, guid: 7ea019a4e72ef8c488c41bf8040c0003,
         type: 3}
