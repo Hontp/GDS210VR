@@ -538,6 +538,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -746,11 +748,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-      propertyPath: renderModelPrefab
-      value: 
-      objectReference: {fileID: 3542192538974956674, guid: efd5b17502802904c836afaff739ac5c,
-        type: 3}
     - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: spewDebugText
       value: 0
@@ -759,6 +756,11 @@ PrefabInstance:
       propertyPath: renderModelPrefab
       value: 
       objectReference: {fileID: 4225170080268828303, guid: 74cdbfdce864ca742bb23ed58e5ded87,
+        type: 3}
+    - target: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: renderModelPrefab
+      value: 
+      objectReference: {fileID: 3542192538974956674, guid: efd5b17502802904c836afaff739ac5c,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
@@ -984,6 +986,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Ship Preparing for take off
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1139,6 +1143,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1451,6 +1457,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: '- Refueling In Process -
 
     ETC : 3 minutes
@@ -2325,6 +2333,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &732195112
 GameObject:
   m_ObjectHideFlags: 0
@@ -7108,6 +7118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4056348e40cf94c9be60067f3d23ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  spawner: {fileID: 1501405713}
+  deathScreenPrefab: {fileID: 2731096263075225887, guid: dec844e2150bb754b9caba3593e81f68,
+    type: 3}
 --- !u!136 &743333001
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7134,7 +7148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &770885410
 PrefabInstance:
@@ -7285,7 +7299,7 @@ Transform:
   - {fileID: 402376047}
   - {fileID: 630045419}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &822733247
 PrefabInstance:
@@ -7626,6 +7640,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -8438,6 +8454,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9503,7 +9521,7 @@ Transform:
   - {fileID: 1497343698}
   - {fileID: 540681424}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1501405713
 MonoBehaviour:
@@ -9517,7 +9535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fda699e804f734cad2b44372a37a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 0}
+  menu: {fileID: 1774201850}
   gameUnderway: 0
   SpawnTime: 4
   numOfEnimies: 0
@@ -9527,6 +9545,7 @@ MonoBehaviour:
   secondaryLocations: {fileID: 795064198}
   Enemy: {fileID: 2027738870688471394, guid: d69c046f84772ab48aa2973b84e79881, type: 3}
   playerTransform: {fileID: 1545395502}
+  playerScript: {fileID: 743333000}
   mainText: {fileID: 544412317}
   FuelSlider: {fileID: 723479952}
   rightHandObject: {fileID: 1000012617731570, guid: 837f93beb9a614743ae3a2c0ada7c388,
@@ -10579,6 +10598,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Systems Check : Complete
 
     Life Support : Functional
@@ -10807,6 +10828,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1771246471}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1774201850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9004453338104709900, guid: 17951107eff78c64d9fcbd5407c4e0ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 8291892169556480752}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfa0d3739862624d975b3bf306e318c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1779957521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6865967380482429367, guid: 3a9e61f7bb608f0458e634ce9f29c7d4,
@@ -11827,6 +11860,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -12099,7 +12134,7 @@ Transform:
   - {fileID: 1760030697}
   - {fileID: 5006512736663524097}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2072008020
 PrefabInstance:
@@ -13221,6 +13256,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 9004453338104709943, guid: 17951107eff78c64d9fcbd5407c4e0ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9004453338104709939, guid: 17951107eff78c64d9fcbd5407c4e0ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13284,7 +13324,7 @@ PrefabInstance:
     - target: {fileID: 9004453338104709939, guid: 17951107eff78c64d9fcbd5407c4e0ba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.638
+      value: 25.402
       objectReference: {fileID: 0}
     - target: {fileID: 9004453338104709939, guid: 17951107eff78c64d9fcbd5407c4e0ba,
         type: 3}
@@ -13330,6 +13370,11 @@ PrefabInstance:
         type: 3}
       propertyPath: myGame
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004453338104709900, guid: 17951107eff78c64d9fcbd5407c4e0ba,
+        type: 3}
+      propertyPath: gamePlaying
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7080847260459832818, guid: 17951107eff78c64d9fcbd5407c4e0ba,
         type: 3}
