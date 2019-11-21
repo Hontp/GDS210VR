@@ -60,7 +60,7 @@ namespace MemeMachine
 
         // Start is called before the first frame update
         void Start()
-        {
+        {            
             gameUnderway = false;
             menu = FindObjectOfType<MenuSystem>();
             whileLimiter = 0;
@@ -76,7 +76,7 @@ namespace MemeMachine
             if(menu.gamePlaying & !gameUnderway)
             {
                 gameUnderway = true;
-                rightHand.renderModelPrefab = rightHandObject;
+                rightHand.renderModelPrefab = ;
                 //remove laser pointer and put what needs to be in their hands
             }
             if (menu.gamePlaying & gameUnderway)
