@@ -8,16 +8,20 @@ namespace MemeMachine
 {
     public class EnemyScript : MonoBehaviour
     {
-        int myHealth;
-        EnemySpawner mySpawner;
-        Transform firstLocation;
-        bool movingToPlayer = false;
 
         [SerializeField]
         NavMeshAgent myAgent;
         [SerializeField]
         Transform playerTransform;
+
         Animator anim;
+        EnemySpawner mySpawner;
+        Transform firstLocation;
+        PlayerScript playerScript;
+        bool movingToPlayer = false;
+        bool attackingPlayer = false;
+        bool attacksStarted = false;
+        int myHealth;
 
 
         // Start is called before the first frame update
@@ -25,7 +29,6 @@ namespace MemeMachine
         {
             myHealth = 5;
             anim = GetComponentInChildren<Animator>();
-
         }
 
         public void DamageEnemy(int damageTaken)
@@ -38,12 +41,13 @@ namespace MemeMachine
                 mySpawner.numOfEnimies--;
             }
         }
-        public void GiveInfo(EnemySpawner spawnerToGive, Transform PlayerLoc, Transform intermediatePos)
+        public void GiveInfo(EnemySpawner spawnerToGive, Transform PlayerLoc, Transform intermediatePos, PlayerScript player)
         {
             mySpawner = spawnerToGive;
             playerTransform = PlayerLoc;
             firstLocation = intermediatePos;
             myAgent.SetDestination(firstLocation.position);
+            playerScript = player;
         }
 
         void ChangeLocation()
@@ -53,7 +57,7 @@ namespace MemeMachine
                 myAgent.isStopped = true;
                 anim.SetBool("Attack", true);
                 anim.SetBool("Run", false);
-
+                attackingPlayer = true;
             }
             if (myAgent.remainingDistance < 1 && !movingToPlayer)
             {
@@ -65,9 +69,27 @@ namespace MemeMachine
 
         }
 
+        void Attack()
+        {
+            if (attackingPlayer && !attacksStarted)
+            {
+                attacksStarted = true;
+                print("attacking player");
+                InvokeRepeating("DamagePlayerLink", 1f, 1f);
+            }
+        }
+
+
         private void Update()
         {
             ChangeLocation();
+            Attack();
+        }
+
+        void DamagePlayerLink()
+        {
+
+            playerScript.Invoke("DamagePlayer", 0);
         }
 
 

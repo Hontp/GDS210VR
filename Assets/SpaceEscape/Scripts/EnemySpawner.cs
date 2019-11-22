@@ -33,6 +33,8 @@ namespace MemeMachine
         GameObject Enemy;
         [SerializeField]
         Transform playerTransform;
+        [SerializeField]
+        PlayerScript playerScript;
 
         [SerializeField]
         TMP_Text mainText;
@@ -60,9 +62,10 @@ namespace MemeMachine
 
         // Start is called before the first frame update
         void Start()
-        {            
+        {
             gameUnderway = false;
             menu = FindObjectOfType<MenuSystem>();
+            playerScript.menu = menu;
             whileLimiter = 0;
             enemyTimer = 0;
             numOfEnimies = 0;
@@ -117,7 +120,7 @@ namespace MemeMachine
 
             Transform spawnLoc = spawnLocationHolder.transform.GetChild(randIntSpawnLocation);
             GameObject newEnemy = Instantiate(Enemy, spawnLoc.position, Quaternion.identity);
-            newEnemy.GetComponent<EnemyScript>().GiveInfo(this,playerTransform, secondaryLocations.transform.GetChild(randIntMiddleLocation));
+            newEnemy.GetComponent<EnemyScript>().GiveInfo(this,playerTransform, secondaryLocations.transform.GetChild(randIntMiddleLocation), playerScript);
             enemies.Add(newEnemy.GetComponent<EnemyScript>());
             numOfEnimies++;
         }   
@@ -145,6 +148,22 @@ namespace MemeMachine
             timeLeft -= Time.deltaTime;
             mainText.text = FUELSTART + Mathf.RoundToInt(timeLeft).ToString() + FUELMIDDLE + Mathf.RoundToInt(fuelPercentage).ToString() + FUELEND;
             FuelSlider.value = fuelPercentage/100;
+        }
+
+        public void gameFinished()
+        {
+            menu.gamePlaying = false;
+            gameUnderway = false;
+            whileLimiter = 0;
+            enemyTimer = 0;
+            numOfEnimies = 0;
+            timeLeft = 0;
+            for(int ii = 0; ii < enemies.Count; ii++)
+            {
+                Destroy(enemies[ii].gameObject);
+            }
+            enemies.Clear();
+            timeLeft = GAMETIME;
         }
     }
 }
