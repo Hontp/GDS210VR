@@ -34,13 +34,17 @@ namespace MemeMachine
             if(playerHealth < 1)
             {
                 print("player has died");
-                spawner.gameFinished();
+                spawner.GameFinished();
                 GameObject deathScreen = Instantiate<GameObject>(deathScreenPrefab);
                 deathScreen.GetComponentInChildren<TMP_Text>().text = "You died noob";
                 menu.Invoke("MenuActive", 4);
                 Destroy(deathScreen, 4);
                 //player dead
             }
+        }
+        public int GetHealth()
+        {
+            return playerHealth;
         }
 
 
