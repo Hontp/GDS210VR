@@ -35,6 +35,8 @@ namespace MemeMachine
         Transform playerTransform;
         [SerializeField]
         PlayerScript playerScript;
+        [SerializeField]
+        GameObject WinScreenPrefab;
 
         [SerializeField]
         TMP_Text mainText;
@@ -86,12 +88,13 @@ namespace MemeMachine
             {
                 EnemySpawnCounter();
                 CountDownTimer();
+
             }
             
         }
 
 
-
+        #region Enemies
         void SpawnEnemies()
         {
             //Code finds a spawn locations and runs a while loop 10 times to try and get it to not spawn at the same location with in reason, if it does the same spawn past that i do not want iot to keep whiling for perfomance reasons
@@ -114,10 +117,7 @@ namespace MemeMachine
             }
             whileLimiter = 0;
             previousMiddleLocationInt = randIntMiddleLocation;
-
-
-
-
+                                 
             Transform spawnLoc = spawnLocationHolder.transform.GetChild(randIntSpawnLocation);
             GameObject newEnemy = Instantiate(Enemy, spawnLoc.position, Quaternion.identity);
             newEnemy.GetComponent<EnemyScript>().GiveInfo(this,playerTransform, secondaryLocations.transform.GetChild(randIntMiddleLocation), playerScript);
@@ -141,6 +141,20 @@ namespace MemeMachine
                 enemyTimer += Time.deltaTime;
             }
         }
+        #endregion
+
+
+        void TestWin()
+        {
+            if(timeLeft < 0 && playerScript.GetHealth() > 0)
+            {
+                GameFinished();
+                GameObject WinScreen = Instantiate<GameObject>(WinScreenPrefab);
+                WinScreen.GetComponentInChildren<TMP_Text>().text = "how??";
+                menu.Invoke("MenuActive", 4);
+                Destroy(WinScreen, 4);
+            }
+        }
 
         void CountDownTimer()
         {
@@ -150,7 +164,7 @@ namespace MemeMachine
             FuelSlider.value = fuelPercentage/100;
         }
 
-        public void gameFinished()
+        public void GameFinished()
         {
             menu.gamePlaying = false;
             gameUnderway = false;
