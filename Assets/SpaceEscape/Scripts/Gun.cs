@@ -18,6 +18,7 @@ namespace MemeMachine
 
         public float shootRateTimeStamp;
         public float shootRate = 0.1f;
+        public Transform handPos;
 
         public void Start()
         {
@@ -39,11 +40,14 @@ namespace MemeMachine
         {
             CheckShoot();
         
-
+            //attachment off set check
+            //when item is picked up appply transform 
+        
         
         }
         private void CheckShoot()
         {
+            //if MagazineScript.isLoaded = true;
             if (grabPinch.GetStateDown(inputSource))
             {
                 if (Time.time > shootRateTimeStamp)
