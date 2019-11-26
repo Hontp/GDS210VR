@@ -18,15 +18,12 @@ namespace SamuraiCutter
         public int[] enemyAmounts = new int[maxWaves];
         public bool spawning;
         public int waveTimeLength;
-
         public int enemiesSpawned;
         public int remainingEnemies;
-
         public float waveStartTime;
-
         public float sectionTime = 1f;
-
         public AnimationCurve waveSpawnCurve;
+        public GameManager startedGame;
 
         public void registerKill()
         {
@@ -39,7 +36,6 @@ namespace SamuraiCutter
             waveStartTime = Time.time;
             remainingEnemies = enemyAmounts[currentWaveNumber];
             enemiesSpawned = 0;
-            
         }
 
         public int sampleWave(int waveNumber)
@@ -65,18 +61,21 @@ namespace SamuraiCutter
 
         public void Update()
         {
-            // TODO: Gradually spawn in the enemies
-            if(enemiesSpawned < enemyAmounts[currentWaveNumber] && !spawning)
+            if (startedGame.dead == false)
             {
-                Debug.Log("spawning Active");
-                spawning = true;
-                Invoke("Spawn", 1f);
-            }
-            else
-            {
-                if(remainingEnemies == 0)
+                // TODO: Gradually spawn in the enemies
+                if (enemiesSpawned < enemyAmounts[currentWaveNumber] && !spawning)
                 {
-                    incWave();
+                    Debug.Log("spawning Active");
+                    spawning = true;
+                    Invoke("Spawn", 1f);
+                }
+                else
+                {
+                    if (remainingEnemies == 0)
+                    {
+                        incWave();
+                    }
                 }
             }
         }

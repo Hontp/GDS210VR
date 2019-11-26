@@ -13,7 +13,7 @@ namespace SamuraiCutter
         private void Start()
         {
             startCounting = false;
-            minimumVelocity = new Vector3(0.5f, 0.5f, 0.5f);
+            minimumVelocity = new Vector3(1f, 1f, 1f);
         }
 
         private void Update()
@@ -39,13 +39,17 @@ namespace SamuraiCutter
             {
                 endPoint = this.transform.position;
                 startCounting = false;
+                CompareThePair(other);
+            }
+        }
 
-                Vector3 compareDistance = startPoint - endPoint;
-                Vector3 comparedDistance = new Vector3(compareDistance.x / timeTravelled, compareDistance.y / timeTravelled, compareDistance.z / timeTravelled);
-                if (comparedDistance.x > minimumVelocity.x && comparedDistance.y > minimumVelocity.y && comparedDistance.z > minimumVelocity.z)
-                {
-                    other.GetComponent<GettingHit>().Hit(this.transform);
-                }
+        private void CompareThePair(Collider other)
+        {
+            Vector3 compareDistance = startPoint - endPoint;
+            Vector3 comparedDistance = new Vector3(compareDistance.x / timeTravelled, compareDistance.y / timeTravelled, compareDistance.z / timeTravelled);
+            if (comparedDistance.x >= minimumVelocity.x || comparedDistance.y >= minimumVelocity.y)
+            {
+                other.GetComponent<GettingHit>().Hit(this.transform);
             }
         }
 

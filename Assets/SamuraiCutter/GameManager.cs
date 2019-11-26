@@ -12,7 +12,7 @@ namespace SamuraiCutter
         public UIManager uIManager;
         public Transform playerPos;
         public MenuSystem menuSystem;
-        public bool dead;
+        public bool dead, startGame;
         // Start is called before the first frame update
         void Awake()
         {
@@ -31,6 +31,11 @@ namespace SamuraiCutter
         {
             if(dead)
             {
+                menuSystem.Invoke("MenuActive", 4f);
+            }
+            if(menuSystem.gamePlaying == true)
+            {
+                dead = false;
             }
         }
     }

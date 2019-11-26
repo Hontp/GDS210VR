@@ -99,7 +99,7 @@ public class MenuSystem : MonoBehaviour
                 scoreTB.text = Scgm.GetComponent<Scoring>().scoreText;
                 break;
             case GameLoaded.Gun:
-                scoreTB.text = "your all noobs";
+                scoreTB.text = "John is Big noob, but thanks for the UI Friend Much Appreciated";
                 break;
             case GameLoaded.Tower:
                 TowerDrop.game_maneger Tgm= GameObject.Find("GameScene").GetComponent<TowerDrop.game_maneger>();

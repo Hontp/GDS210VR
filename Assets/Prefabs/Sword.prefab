@@ -4824,6 +4824,7 @@ GameObject:
   - component: {fileID: 4828409072793192282}
   - component: {fileID: 4609028437019687569}
   - component: {fileID: 5583592919035279427}
+  - component: {fileID: 8012310970836015064}
   m_Layer: 0
   m_Name: Model
   m_TagString: PlayerSword
@@ -4925,6 +4926,19 @@ MonoBehaviour:
     needsReinit: 0
   inputSource: 0
   hand: {fileID: 0}
+--- !u!114 &8012310970836015064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4828409072793192297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646d51359064e084d9786cec688e40e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &4940495778366085590
 GameObject:
   m_ObjectHideFlags: 0
@@ -4984,7 +4998,6 @@ MonoBehaviour:
   mesh: {fileID: 0}
   meshFilter: {fileID: 6916120989307471170}
   meshRenderer: {fileID: 458005299118051325}
-  maxSize: 15
   averageVel: 0
   offset: {x: 0, y: 0.009, z: 0.25}
 --- !u!1 &5381460591508768102
