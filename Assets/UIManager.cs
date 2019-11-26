@@ -27,6 +27,9 @@ namespace SamuraiCutter
                 if(impulse <= 1)
                 impulse -= dampenPerFrame;
 
+                if (impulse < 0)
+                    impulse = 0;
+
             }
             else
             {
