@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bde74620636e8e468e2e99c0e4f6ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSource: 0
+  inputSource: 2
   grabPinch:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
@@ -176,12 +176,18 @@ MonoBehaviour:
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onHeldUpdate:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!135 &5141505512066580999
 SphereCollider:
