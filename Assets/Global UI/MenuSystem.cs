@@ -54,7 +54,7 @@ public class MenuSystem : MonoBehaviour
             case GameLoaded.None:
                 break;
             case GameLoaded.Sword:
-                SetName("Sword Game");
+                SetName("Samurai Cutter");
                 difficultyTB.gameObject.SetActive(false);
                 difTB.SetActive(false);
                 difPanel.SetActive(false);
