@@ -1,44 +1,24 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
-
-    public GameObject tankShell;
-    public GameObject target;
-
-    public float fireRate;
+    public Rigidbody CannonShell;
+    public List<Transform> CannonPoints = new List<Transform>();
 
     private bool isFired;
-    private float timePassed;
 
-    void Update()
+    private void Update()
     {
-        if (target == null)
+        if (CannonShell == null)
             return;
 
-        if (tankShell == null)
+        if (CannonPoints == null)
             return;
 
-        timePassed += Time.deltaTime;
-
-        if (timePassed >= fireRate)
-        {
-            isFired = false;
-        }
-
-
-        if (!isFired)
-        {
-            Transform turrentPoint = transform.GetChild(1).transform;
-
-            GameObject shell = Instantiate(tankShell, turrentPoint.position, turrentPoint.rotation);
-            shell.GetComponent<Shell>().SetTarget(target.transform);
-            shell.GetComponent<Shell>().SetShellSpeed(5.0f);
-
-
-            isFired = true;
-            timePassed = 0;
-        }
-
+        Rigidbody LeftshellInstance = Instantiate(CannonShell, CannonPoints[0].position, CannonPoints[0].rotation) as Rigidbody;
+        LeftshellInstance.velocity = 20.0f * CannonPoints[0].forward;
     }
+
+
 }
