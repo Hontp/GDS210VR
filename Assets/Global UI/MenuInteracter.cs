@@ -9,6 +9,8 @@ public class MenuInteracter : MonoBehaviour
     public MenuSystem menu;
     public LineRenderer laserPointer;
     public Transform rayOrigin;
+    public bool testShoot;
+    public bool lockShoot;
 
     public SteamVR_Input_Sources inputSource;
     public SteamVR_Action_Boolean grabPinch;
@@ -28,7 +30,7 @@ public class MenuInteracter : MonoBehaviour
 
     private void CheckShoot()
     {
-        if (grabPinch.GetStateDown(inputSource))
+        if (grabPinch.GetStateDown(inputSource) || testShoot || lockShoot)
         {
             if (Physics.Raycast(new Ray(rayOrigin.position, rayOrigin.up), out hit, 200))
             {
@@ -62,6 +64,7 @@ public class MenuInteracter : MonoBehaviour
                     }
                 }
             }
+            testShoot = false;
         }
         else
         {
