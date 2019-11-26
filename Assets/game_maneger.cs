@@ -60,6 +60,7 @@ namespace TowerDrop
             }
             if (game_phase == 1)
             {
+                
                 player_time_survived = 0;
             }
             if (game_phase == 2)
