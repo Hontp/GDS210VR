@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 using MemeMachine;
 
 
-public class handcheak : MonoBehaviour
+public class rightHand : MonoBehaviour
 {
     public Hand hand;
     public GameObject x;
