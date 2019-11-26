@@ -88,9 +88,8 @@ namespace MemeMachine
             {
                 EnemySpawnCounter();
                 CountDownTimer();
-
             }
-            
+            TestWin();
         }
 
 

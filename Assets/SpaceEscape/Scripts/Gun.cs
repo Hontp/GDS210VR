@@ -4,6 +4,7 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
+
 namespace MemeMachine
 {
 
@@ -18,12 +19,15 @@ namespace MemeMachine
 
         public float shootRateTimeStamp;
         public float shootRate = 0.1f;
-        public Transform handPos;
+        //public Transform handPos;
+
+        public Hand rightHand;
 
         public void Start()
         {
-            
-            
+
+            rightHand = GameObject.Find("RightHand").gameObject.GetComponent<Hand>();
+
         }
         public void Shoot()
         {
@@ -33,34 +37,45 @@ namespace MemeMachine
             shot.GetComponent<Bullet>().DestroyBullet(3f);
             shootRateTimeStamp = Time.time + shootRate;
 
-            
-
+         
         }
         private void Update()
         {
             CheckShoot();
-        
+
+            if(gunBackGripGrabbed == true)
+            {
+
+            }
+            
             //attachment off set check
             //when item is picked up appply transform 
-        
+           if(this.transform.parent == rightHand)
+            {
+                rightHand.renderModelPrefab = this.gameObject;
+            }
+          
         
         }
         private void CheckShoot()
         {
             //if MagazineScript.isLoaded = true;
-            if (grabPinch.GetStateDown(inputSource))
+            if(gunBackGripGrabbed == true)
             {
-                if (Time.time > shootRateTimeStamp)
+                if (grabPinch.GetLastStateDown(inputSource))
                 {
-                    Shoot();
-                    shoot = false;
-                    vibration.Execute(0, 0.3f, 300f, 1, inputSource);
+                    if (Time.time > shootRateTimeStamp)
+                    {
+                        Shoot();
+                        vibration.Execute(0, 0.3f, 300f, 1, inputSource);
+                    }
+
                 }
-  
             }
+         
 
         }
        
     }
-
+  
 }

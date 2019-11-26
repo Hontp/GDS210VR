@@ -8,7 +8,7 @@ namespace TowerDrop
     {
         public float MaxDamage = 5.5f;
         public float ExplosionForce = 10.0f;
-        public float MaxLifeTime = 2.0f;
+        public float MaxLifeTime = 1.0f;
         public float ExplosionRadius = 2.5f;
 
         private void Start()
@@ -35,9 +35,9 @@ namespace TowerDrop
                     continue;
 
                 playerHealth.hit = true;
-
-                Destroy(gameObject);
             }
+
+            Destroy(gameObject);
         }
     }
 }
