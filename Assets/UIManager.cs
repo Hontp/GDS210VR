@@ -22,8 +22,9 @@ namespace SamuraiCutter
         // Update is called once per frame
         void Update()
         {
-            if(impulse > 0)
+            if(impulse <= 1)
             impulse -= dampenPerFrame;
+
 
             alert.material.SetFloat("_alpha",impulse);
             
