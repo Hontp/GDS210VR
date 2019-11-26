@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Valve.VR.InteractionSystem;
 
 namespace MemeMachine
 {
@@ -14,13 +15,21 @@ namespace MemeMachine
         [SerializeField]
         GameObject deathScreenPrefab;
 
+        public GameObject laserPointer;
         int playerHealth = 6;
+        public Hand rightHand;
+
+
+
+        public void Start()
+        {
+            rightHand = GameObject.Find("RightHand").gameObject.GetComponent<Hand>();
+
+        }
 
         public void DamagePlayer()
         {
-            print("player has taken 1 damage");
             playerHealth -= 1;
-            print(playerHealth);
             TestPlayerDeath();
         }
 
@@ -40,6 +49,8 @@ namespace MemeMachine
                 menu.Invoke("MenuActive", 4);
                 Destroy(deathScreen, 4);
                 //player dead
+                rightHand.renderModelPrefab = laserPointer;
+
             }
         }
         public int GetHealth()
