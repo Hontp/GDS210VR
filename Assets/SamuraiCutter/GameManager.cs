@@ -11,7 +11,7 @@ namespace SamuraiCutter
         public SpawnEnemy spawnEnemy;
         public UIManager uIManager;
         public Transform playerPos;
-        public MenuSystem menuSystem;
+        public GameObject menu;
 
         public bool dead;
         // Start is called before the first frame update
@@ -24,7 +24,7 @@ namespace SamuraiCutter
                 _instance = this;
             }
 
-            menuSystem = FindObjectOfType<MenuSystem>();
+            //menuSystem = FindObjectOfType<MenuSystem>();
         }
 
         // Update is called once per frame
@@ -32,7 +32,8 @@ namespace SamuraiCutter
         {
             if(dead)
             {
-                menuSystem.MenuActive();
+
+                menu.SetActive(true);
                 Time.timeScale = 0.01f;
             }
         }

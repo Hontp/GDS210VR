@@ -25,7 +25,7 @@ namespace SamuraiCutter
             if (bypass)
             {
                 bypass = false;
-                Hit();
+                Hit(this.transform);
                 Invoke("DestroyMe", 2f);
             }
         }
