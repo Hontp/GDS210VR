@@ -41,12 +41,10 @@ namespace TowerDrop
             {
                 hit = true;
 
-                if (totalHP <= 0)
-                {
-                    AI_P.RemoveFromEntityList(entity_index);
-                    gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    Destroy(gameObject, 5);
-                }
+                AI_P.RemoveFromEntityList(entity_index);
+                gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                Destroy(gameObject, 5);
+
             }
         }
 

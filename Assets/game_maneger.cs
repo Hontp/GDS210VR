@@ -8,7 +8,7 @@ namespace TowerDrop
     public class game_maneger : MonoBehaviour
     {
         //0 menue, 1 game start, 2 gameplay, 3 game end
-        int game_phase=0;
+        public int game_phase=0;
 
         //ui refrence
         public MenuSystem UI;
@@ -37,7 +37,6 @@ namespace TowerDrop
                 highscores[1] = high_score2;
                 highscores[2] = high_score3;
             }
-            
         }
 
         // Update is called once per frame
