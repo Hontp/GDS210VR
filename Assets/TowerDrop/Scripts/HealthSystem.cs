@@ -19,7 +19,17 @@ namespace TowerDrop
                 Player_hitbox.GetComponent<PlayerHealth>().playerHP--;
 
             Player_hitbox.GetComponent<PlayerHealth>().hit = false;
+            
+            PlayerHealth Ph = Player_hitbox.GetComponent<PlayerHealth>();
 
+            if (Ph.playerHP <= 0 && GetComponent<game_maneger>().game_phase == 2)
+            {
+                GetComponent<game_maneger>().game_phase=3;
+            }
+            if (GetComponent<game_maneger>().game_phase == 1)
+            {
+                Ph.playerHP = 100;
+            }
         }
 
         private void UpdateAIHealth()

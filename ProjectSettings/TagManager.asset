@@ -19,6 +19,7 @@ TagManager:
   - ScoreButton
   - ReturnButton
   - HomeButton
+  - floor
   layers:
   - Default
   - TransparentFX

@@ -55,7 +55,7 @@ namespace SamuraiCutter
         public void Hit(Transform hittingCollider)
         {
             replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
-            GameObject.Find("Score").GetComponent<Scoring>().ScoringSystem();
+            //GameObject.Find("Score").GetComponent<Scoring>().ScoringSystem();
             //replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
             this.GetComponentInChildren<BoxCollider>().enabled = false;
             this.gameObject.SetActive(false);

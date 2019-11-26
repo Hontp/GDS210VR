@@ -52,7 +52,7 @@ namespace MemeMachine
 
         void ChangeLocation()
         {
-            if (myAgent.remainingDistance < 3 && movingToPlayer)
+            if ( (playerTransform.position - transform.position).magnitude < 3)
             {
                 myAgent.isStopped = true;
                 anim.SetBool("Attack", true);
@@ -66,7 +66,6 @@ namespace MemeMachine
                 anim.SetBool("Run", true);
                 anim.SetBool("Attack", false);
             }
-
         }
 
         void Attack()

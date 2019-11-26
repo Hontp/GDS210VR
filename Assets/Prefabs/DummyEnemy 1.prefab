@@ -84,7 +84,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 16
   m_CollisionDetection: 0
 --- !u!195 &4802085147443668036
 NavMeshAgent:
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rotationSpeed: 3
-  MoveSpeed: 1.6
+  MoveSpeed: 2.5
   MinDist: 5
   MaxDist: 10
   jumping: 0

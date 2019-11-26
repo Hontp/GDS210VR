@@ -22,9 +22,16 @@ namespace SamuraiCutter
         // Update is called once per frame
         void Update()
         {
-            if(impulse <= 1)
-            impulse -= dampenPerFrame;
+            if(!GameManager._instance.dead)
+            {
+                if(impulse <= 1)
+                impulse -= dampenPerFrame;
 
+            }
+            else
+            {
+                impulse = 0.5f;
+            }
 
             alert.material.SetFloat("_alpha",impulse);
             
@@ -32,6 +39,7 @@ namespace SamuraiCutter
 
         public void SetHurt(float amount)
         {
+            if(!GameManager._instance.dead)
             impulse += amount;
         }
     }

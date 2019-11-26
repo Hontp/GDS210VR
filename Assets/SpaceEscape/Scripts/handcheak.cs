@@ -29,7 +29,13 @@ public class handcheak : MonoBehaviour
                 Destroy(x.GetComponent<Throwable>());
                 Destroy(x.GetComponent<Rigidbody>());
 
+                x.GetComponent<Interactable>().highlightOnHover = false;
+
+                x.gameObject.transform.rotation = hand.transform.rotation;
+
+                //hand.SetRenderModel(x);
                 //Destroy(x.GetComponent<Interactable>());
+                Debug.Log("grabbed");
                 Gun.gunBackGripGrabbed = true;
             }
         }
