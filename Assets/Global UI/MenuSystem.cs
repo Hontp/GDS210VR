@@ -95,7 +95,8 @@ public class MenuSystem : MonoBehaviour
             case GameLoaded.None:
                 break;
             case GameLoaded.Sword:
-                scoreTB.text = "your all noobs";
+                SamuraiCutter.GameManager Scgm = GameObject.Find("GameManager").GetComponent<SamuraiCutter.GameManager>();
+                scoreTB.text = Scgm.GetComponent<Scoring>().scoreText;
                 break;
             case GameLoaded.Gun:
                 scoreTB.text = "your all noobs";

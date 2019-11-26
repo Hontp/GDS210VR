@@ -12,18 +12,17 @@ namespace SamuraiCutter
         public UIManager uIManager;
         public Transform playerPos;
         public MenuSystem menuSystem;
-
         public bool dead;
         // Start is called before the first frame update
         void Awake()
         {
+            dead = true;
             if (_instance != null && _instance != this)
             {
                 Destroy(this.gameObject);
             } else {
                 _instance = this;
             }
-
             menuSystem = FindObjectOfType<MenuSystem>();
         }
 
@@ -32,8 +31,6 @@ namespace SamuraiCutter
         {
             if(dead)
             {
-                menuSystem.MenuActive();
-                Time.timeScale = 0.01f;
             }
         }
     }
