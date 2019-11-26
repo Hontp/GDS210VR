@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 8622115526740663648}
   - component: {fileID: 494504488969471120}
   m_Layer: 5
-  m_Name: HonePanel
+  m_Name: HomePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1932,7 +1932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myGame: 2
-  gamePlaying: 0
+  gamePlaying: 1
   mainTitleTB: {fileID: 9004453337477023791}
   difficultyTB: {fileID: 9004453337370841284}
   scoreTitleTB: {fileID: 9004453336887717375}

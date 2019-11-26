@@ -36,7 +36,7 @@ namespace MemeMachine
             shot.GetComponent<Rigidbody>().velocity = transform.forward * 100f;
             shot.GetComponent<Bullet>().DestroyBullet(3f);
             shootRateTimeStamp = Time.time + shootRate;
-
+           // Debug.Log(shootRateTimeStamp);
          
         }
         private void Update()
@@ -62,12 +62,12 @@ namespace MemeMachine
             //if MagazineScript.isLoaded = true;
             if(gunBackGripGrabbed == true)
             {
-                if (grabPinch.GetLastStateDown(inputSource))
+                if (grabPinch.GetStateDown(inputSource))
                 {
                     if (Time.time > shootRateTimeStamp)
                     {
                         Shoot();
-                        vibration.Execute(0, 0.3f, 300f, 1, inputSource);
+                        //vibration.Execute(0, 0.1f, 300f, 1, inputSource);
                     }
 
                 }
@@ -75,6 +75,7 @@ namespace MemeMachine
          
 
         }
+        
        
     }
   

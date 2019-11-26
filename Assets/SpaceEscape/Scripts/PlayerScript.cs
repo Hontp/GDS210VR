@@ -49,7 +49,7 @@ namespace MemeMachine
                 menu.Invoke("MenuActive", 4);
                 Destroy(deathScreen, 4);
                 //player dead
-                rightHand.renderModelPrefab = laserPointer;
+                //rightHand.renderModelPrefab = laserPointer;
 
             }
         }

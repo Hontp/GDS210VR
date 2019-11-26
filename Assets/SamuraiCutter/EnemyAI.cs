@@ -13,7 +13,7 @@ namespace SamuraiCutter
         private Transform myTransform;
         private NavMeshAgent nma;
         public float rotationSpeed = 3,
-                    MoveSpeed = 4,
+                    MoveSpeed = 7,
                     MinDist = 5,
                     MaxDist = 10f;
 
