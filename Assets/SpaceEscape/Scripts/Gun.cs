@@ -4,6 +4,7 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
+
 namespace MemeMachine
 {
 
@@ -20,10 +21,13 @@ namespace MemeMachine
         public float shootRate = 0.1f;
         public Transform handPos;
 
+        public Hand rightHand;
+
         public void Start()
         {
-            
-            
+         
+
+
         }
         public void Shoot()
         {
@@ -33,16 +37,19 @@ namespace MemeMachine
             shot.GetComponent<Bullet>().DestroyBullet(3f);
             shootRateTimeStamp = Time.time + shootRate;
 
-            
-
+         
         }
         private void Update()
         {
             CheckShoot();
-        
+
             //attachment off set check
             //when item is picked up appply transform 
-        
+            if(this.transform.parent == rightHand)
+            {
+                rightHand.renderModelPrefab = this.gameObject;
+            }
+       
         
         }
         private void CheckShoot()
