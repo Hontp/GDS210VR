@@ -33,6 +33,7 @@ namespace SamuraiCutter
             if(dead)
             {
                 menuSystem.MenuActive();
+                Time.timeScale = 0.01f;
             }
         }
     }
