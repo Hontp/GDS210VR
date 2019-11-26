@@ -29,30 +29,30 @@ namespace SamuraiCutter
                 Invoke("DestroyMe", 2f);
             }
         }
-        void OnTriggerEnter(Collider hittingCollider)
-        {
-            //Debug.Log(hittingCollider.transform.tag);
-            if (hittingCollider.CompareTag("PlayerSword"))
-            {
-                Hit();
-                explosionPos = hittingCollider.transform.position;
-                Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius);
-                foreach (Collider hit in colliders)
-                {
-                    if (hit.CompareTag("EnemyChunk"))
-                    {
-                        Rigidbody rb = hit.GetComponent<Rigidbody>();
-                        if (rb != null)
-                        {
-                            rb.AddExplosionForce(explosionPower, explosionPos, explosionRadius, 3.0f);
-                        }
-                    }
-                    Invoke("DestroyMe", 2f);
-                }
-            }
-        }
+        //void OnTriggerEnter(Collider hittingCollider)
+        //{
+        //    //Debug.Log(hittingCollider.transform.tag);
+        //    if (hittingCollider.CompareTag("PlayerSword"))
+        //    {
+        //        Hit();
+        //        explosionPos = hittingCollider.transform.position;
+        //        Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius);
+        //        foreach (Collider hit in colliders)
+        //        {
+        //            if (hit.CompareTag("EnemyChunk"))
+        //            {
+        //                Rigidbody rb = hit.GetComponent<Rigidbody>();
+        //                if (rb != null)
+        //                {
+        //                    rb.AddExplosionForce(explosionPower, explosionPos, explosionRadius, 3.0f);
+        //                }
+        //            }
+        //            Invoke("DestroyMe", 2f);
+        //        }
+        //    }
+        //}
 
-        void Hit()
+        public void Hit(Transform hittingCollider)
         {
             replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
             //GameObject.Find("Score").GetComponent<Scoring>().ScoringSystem();
@@ -61,6 +61,20 @@ namespace SamuraiCutter
             this.gameObject.SetActive(false);
             //this.GetComponentInChildren<MeshRenderer>().enabled = false;
             spawnEngine.registerKill();
+            explosionPos = hittingCollider.transform.position;
+            Collider[] colliders = Physics.OverlapSphere(explosionPos, explosionRadius);
+            foreach (Collider hit in colliders)
+            {
+                if (hit.CompareTag("EnemyChunk"))
+                {
+                    Rigidbody rb = hit.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.AddExplosionForce(explosionPower, explosionPos, explosionRadius, 3.0f);
+                    }
+                }
+                Invoke("DestroyMe", 2f);
+            }
         }
 
         void DestroyMe()
