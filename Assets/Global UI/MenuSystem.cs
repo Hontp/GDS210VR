@@ -101,7 +101,8 @@ public class MenuSystem : MonoBehaviour
                 scoreTB.text = "your all noobs";
                 break;
             case GameLoaded.Tower:
-                scoreTB.text = "your all noobs";
+                TowerDrop.game_maneger Tgm= GameObject.Find("GameScene").GetComponent<TowerDrop.game_maneger>();
+                scoreTB.text = "high Score 1: " + Tgm.high_score1.ToString() +"\n"+ "high Score 2: " + Tgm.high_score2.ToString() + "\n"+"high Score 3: " + Tgm.high_score3.ToString();
                 break;
         }
     }

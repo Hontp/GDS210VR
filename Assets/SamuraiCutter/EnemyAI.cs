@@ -35,7 +35,6 @@ namespace SamuraiCutter
             nma.speed = MoveSpeed;
             nma.SetDestination(GameManager._instance.playerPos.position);
             spawnEnemy = GameManager._instance.spawnEnemy;
-            
         }
 
         // Update is called once per frame
@@ -53,12 +52,8 @@ namespace SamuraiCutter
                     //
                 }
                 
-                var rand = Random.Range(0,100000);
-                if(rand >= 0 && rand <= 100)
-                {
-                    jumpBack();
-                }
-                else if(rand > 100 && rand <= 500)
+                var rand = Random.Range(0,1000);
+                if(rand > 100 && rand <= 500)
                 {
                     slash();
                 }
@@ -120,37 +115,37 @@ namespace SamuraiCutter
             attacking = true;
         }
 
-        public void jumpBack()
-        {
+        //public void jumpBack()
+        //{
             
-            jumping = true;
-            //new Vector3( (((transform.position-GameManager._instance.playerPos.position).normalized).x), -1.0f, (((transform.position-GameManager._instance.playerPos.position).normalized).z))
-            rb.isKinematic = false;
-            rb.useGravity = true;
-            rb.AddForce( new Vector3( 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).x), 2f, 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).z)), ForceMode.VelocityChange);
-            //rb.constraints = RigidbodyConstraints.FreezeRotationY & RigidbodyConstraints.FreezeRotationZ & RigidbodyConstraints.FreezePosition;
-            //rb.AddTorque(transform.right * -180f);
-            nma.isStopped = true;
-            nma.enabled = false;
-            idle = false;
-        }
+        //    jumping = true;
+        //    //new Vector3( (((transform.position-GameManager._instance.playerPos.position).normalized).x), -1.0f, (((transform.position-GameManager._instance.playerPos.position).normalized).z))
+        //    rb.isKinematic = false;
+        //    rb.useGravity = true;
+        //    rb.AddForce( new Vector3( 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).x), 2f, 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).z)), ForceMode.VelocityChange);
+        //    //rb.constraints = RigidbodyConstraints.FreezeRotationY & RigidbodyConstraints.FreezeRotationZ & RigidbodyConstraints.FreezePosition;
+        //    //rb.AddTorque(transform.right * -180f);
+        //    nma.isStopped = true;
+        //    nma.enabled = false;
+        //    idle = false;
+        //}
 
-        public void OnCollisionEnter(Collision col)
-        {
-            if(col.transform.CompareTag("floor"))
-            {
-                rb.isKinematic = true;
-                rb.useGravity = false;
-                jumping = false;
-                nma.enabled = true;
-                nma.isStopped = false;
-                nma.speed = MoveSpeed;
-                nma.SetDestination(GameManager._instance.playerPos.position);
-                animator.SetBool("flip", false);
-                animator.SetBool("attack",false);
-                idle = false;
-            }
-        }
+        //public void OnCollisionEnter(Collision col)
+        //{
+        //    if(col.transform.CompareTag("floor"))
+        //    {
+        //        rb.isKinematic = true;
+        //        rb.useGravity = false;
+        //        jumping = false;
+        //        nma.enabled = true;
+        //        nma.isStopped = false;
+        //        nma.speed = MoveSpeed;
+        //        nma.SetDestination(GameManager._instance.playerPos.position);
+        //        animator.SetBool("flip", false);
+        //        animator.SetBool("attack",false);
+        //        idle = false;
+        //    }
+        //}
 
        
     }
