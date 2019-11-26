@@ -43,6 +43,11 @@ namespace MemeMachine
         {
             CheckShoot();
 
+            if(gunBackGripGrabbed == true)
+            {
+
+            }
+            
             //attachment off set check
             //when item is picked up appply transform 
            if(this.transform.parent == rightHand)
@@ -57,12 +62,11 @@ namespace MemeMachine
             //if MagazineScript.isLoaded = true;
             if(gunBackGripGrabbed == true)
             {
-                if (grabPinch.GetStateDown(inputSource))
+                if (grabPinch.GetLastStateDown(inputSource))
                 {
                     if (Time.time > shootRateTimeStamp)
                     {
                         Shoot();
-                        shoot = false;
                         vibration.Execute(0, 0.3f, 300f, 1, inputSource);
                     }
 
@@ -73,8 +77,5 @@ namespace MemeMachine
         }
        
     }
-    //turn off hoverhighlight whe nattached
-    // fix gun alignemnent
-    //bullet despawn plus correct orietation
-
+  
 }
