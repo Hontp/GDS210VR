@@ -18,9 +18,7 @@ namespace MemeMachine
 
         public void DamagePlayer()
         {
-            print("player has taken 1 damage");
             playerHealth -= 1;
-            print(playerHealth);
             TestPlayerDeath();
         }
 
