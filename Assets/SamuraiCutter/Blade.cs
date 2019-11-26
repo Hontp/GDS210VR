@@ -18,7 +18,7 @@ public class Blade : MonoBehaviour
     public Mesh mesh;
     public MeshFilter meshFilter;
     public MeshRenderer meshRenderer;
-    public int maxSize = 8;
+    public const int maxSize = 15;
 
     public float averageVel;
 
@@ -37,6 +37,8 @@ public class Blade : MonoBehaviour
         mesh.triangles = new int[3*maxSize];
         //mesh.normals = new Vector3[2*maxSize];
         mesh.uv = new Vector2[2*maxSize];
+
+        
     }
 
     // Update is called once per frame
@@ -85,7 +87,12 @@ public class Blade : MonoBehaviour
 
         meshRenderer.material.SetFloat("_alpha",Mathf.Clamp(averageVel*0.5f,0.2f,0.6f));
 
-        generateMesh();
+        if(botBladePoints.Count >= maxSize)
+        {
+            generateMesh();
+        }
+        
+        
         mesh.RecalculateBounds();      
         meshFilter.mesh = mesh;
         meshFilter.mesh.RecalculateBounds();
@@ -97,45 +104,49 @@ public class Blade : MonoBehaviour
 
     void generateMesh()
     {
-        var verts = new Vector3[4]
+        var verts = new Vector3[2*maxSize];
+        for(int i=0;i<maxSize;i++)
         {
-        startBot,// - offset,
-        startTop,// - offset,
-        endBot,// - offset,
-        endTop// - offset
-        };
+            verts[2*i] = botBladePoints.ToArray()[i];
+            verts[2*i+1] = topBladePoints.ToArray()[i];    
+        }
 
         mesh.vertices = verts;
 
-        var tris = new int[6]
+        var tris = new int[3*maxSize];
+        
+        for(int i=0;i<maxSize/2;i++)
         {
-            0,
-            2,
-            1,
-            2,
-            3,
-            1
-        };
+ 
+                tris[i*6] = 0 + i*2;
+                tris[i*6 + 1] = 1 + i*2;
+                tris[i*6 + 2] = 2 + i*2;
+                tris[i*6 + 3] = 2 + i*2;
+                tris[i*6 + 4] = 1 + i*2;
+                tris[i*6 + 5] = 3 + i*2;
+  
+        }
+
+
+
         mesh.triangles = tris;
 
         
-        var normals = new Vector3[4]
+        var normals = new Vector3[2*maxSize];
+        for(int i=0;i<2*maxSize;i++)
         {
-            Vector3.Cross(transform.forward,(-startTop + endTop).normalized),
-            Vector3.Cross(transform.forward,(-startTop + endTop).normalized),
-            Vector3.Cross(transform.forward,(-startTop + endTop).normalized),
-            Vector3.Cross(transform.forward,(-startTop + endTop).normalized)
-        };
+            normals[i] = Vector3.Cross(transform.forward,(-startTop + endTop).normalized);
+        }
         mesh.normals = normals;
 
 
-        var uv = new Vector2[4]
+        var uv = new Vector2[2*maxSize];
+        for(int i=0;i<maxSize;i++)
         {
-            new Vector2(0, 0),
-            new Vector2(1, 0),
-            new Vector2(0, 1),
-            new Vector2(1, 1)
-        };
+
+                uv[2*i] = new Vector2(i/maxSize,0);
+                uv[2*i+1] = new Vector2((i+1)/maxSize,1);
+        }
         mesh.uv = uv;
 
     }
