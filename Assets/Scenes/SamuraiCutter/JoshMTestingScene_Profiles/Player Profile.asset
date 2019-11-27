@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8007516515136619785
+--- !u!114 &-7542542017440797544
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,25 +9,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d695c8d9ed9dc74681845db62154a21, type: 3}
-  m_Name: SobelOutlineV2
+  m_Script: {fileID: 11500000, guid: b805f78990fcddf478003bbceffdb2e1, type: 3}
+  m_Name: SobelOutline
   m_EditorClassIdentifier: 
   active: 1
   enabled:
     overrideState: 1
     value: 1
-  edgeExp:
-    overrideState: 1
-    value: 2.01
-  sampleDist:
-    overrideState: 1
-    value: 3.22
-  fadeStength:
-    overrideState: 1
-    value: 0
-  fadeColor:
-    overrideState: 1
+  scale:
+    overrideState: 0
+    value: 1
+  color:
+    overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
+  depthThreshold:
+    overrideState: 0
+    value: 1.5
+  depthNormalThreshold:
+    overrideState: 0
+    value: 0.5
+  depthNormalThresholdScale:
+    overrideState: 0
+    value: 7
+  normalThreshold:
+    overrideState: 0
+    value: 0.4
 --- !u!114 &-5808292572666626841
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -162,9 +168,9 @@ MonoBehaviour:
   settings:
   - {fileID: -42446364483021740}
   - {fileID: 233638382168299671}
-  - {fileID: -8007516515136619785}
   - {fileID: -5808292572666626841}
   - {fileID: 990692055615563859}
+  - {fileID: -7542542017440797544}
 --- !u!114 &233638382168299671
 MonoBehaviour:
   m_ObjectHideFlags: 3
