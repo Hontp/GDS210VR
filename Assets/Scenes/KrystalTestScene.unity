@@ -275,6 +275,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Press Trigger to Continue......
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -700,6 +702,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 199cf24c8d3a8db43a7c9b88bd0630b7, type: 3}
+--- !u!1001 &715206976
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4940495778366085590, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_Name
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.102
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935455082011058949, guid: 6fc49b897f94d334cafa830e3e940f88,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fc49b897f94d334cafa830e3e940f88, type: 3}
 --- !u!1 &720726314
 GameObject:
   m_ObjectHideFlags: 0
@@ -6426,6 +6497,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Kills: 0
 
     Swings Per Minute: 0
