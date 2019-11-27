@@ -36,7 +36,10 @@ namespace MemeMachine
             myHealth -= damageTaken;
             if(myHealth < 1)
             {
-                Destroy(gameObject);
+                anim.SetBool("Die", true);
+                anim.SetBool("Attack", false);
+                anim.SetBool("Run", false);
+                Destroy(gameObject, 5f);
                 mySpawner.enemies.Remove(this);
                 mySpawner.numOfEnimies--;
             }
