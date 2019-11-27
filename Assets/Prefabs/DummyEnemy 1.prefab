@@ -69,7 +69,6 @@ MonoBehaviour:
   explosionRadius: 0
   explosionPower: 0
   explosionPos: {x: 0, y: 0, z: 0}
-  nma: {fileID: 0}
 --- !u!54 &1228554199369167052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -195,6 +194,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596065131804659910, guid: 585ce743332524c429110aeff4acca8c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.055555556
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596065131804659910, guid: 585ce743332524c429110aeff4acca8c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.055555556
+      objectReference: {fileID: 0}
+    - target: {fileID: 1596065131804659910, guid: 585ce743332524c429110aeff4acca8c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.055555556
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 585ce743332524c429110aeff4acca8c, type: 3}

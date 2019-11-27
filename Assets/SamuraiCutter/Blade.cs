@@ -18,7 +18,7 @@ public class Blade : MonoBehaviour
     public Mesh mesh;
     public MeshFilter meshFilter;
     public MeshRenderer meshRenderer;
-    public const int maxSize = 15;
+    public const int maxSize = 8;
 
     public float averageVel;
 
