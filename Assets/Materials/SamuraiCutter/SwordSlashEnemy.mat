@@ -7,17 +7,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwordSlash
+  m_Name: SwordSlashEnemy
   m_Shader: {fileID: -6465566751694194690, guid: e2acbb83cd203a6408d4fa38ab04fa1e,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 1
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses:
-  - SHADOWCASTER
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -53,9 +52,9 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _Cull: 0
+    - _Cull: 2
     - _Cutoff: 0.5
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -67,19 +66,19 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 5
-    - _Surface: 1
+    - _SrcBlend: 1
+    - _Surface: 0
     - _WorkflowMode: 1
-    - _ZWrite: 0
-    - _alpha: 0.83
+    - _ZWrite: 1
+    - _alpha: 0.5
     m_Colors:
-    - _BaseColor: {r: 0.54245275, g: 0.89242435, b: 1, a: 0.4392157}
+    - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Emission: {r: 0.0024627147, g: 0.005680662, b: 0.0062717134, a: 0.5960785}
+    - _Emission: {r: 7.336102, g: 7.336102, b: 7.336102, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _albedo: {r: 0, g: 0.6545739, b: 1, a: 1}
---- !u!114 &8282953230625796624
+    - _albedo: {r: 1.4339622, g: 0.14030045, b: 0.11498756, a: 1}
+--- !u!114 &6724556272276238157
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
