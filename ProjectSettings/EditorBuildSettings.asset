@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SamuraiCutter.unity
+    path: Assets/Scenes/SamuraiCutter/SamuraiCutter.unity
     guid: f9cd7f3ccd3eb544484daf99e3938ed3
   - enabled: 1
     path: Assets/Scenes/AlienEscape.unity
