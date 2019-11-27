@@ -81,6 +81,7 @@ namespace MemeMachine
             if(menu.gamePlaying & !gameUnderway)
             {
                 gameUnderway = true;
+                playerScript.SetPlayerHealth(6);
                 //rightHand.renderModelPrefab = rightHandObject;
                 //remove laser pointer and put what needs to be in their hands
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Valve.VR.InteractionSystem;
+using UnityEngine.UI;
 
 namespace MemeMachine
 {
@@ -14,28 +15,34 @@ namespace MemeMachine
         EnemySpawner spawner;
         [SerializeField]
         GameObject deathScreenPrefab;
+        [SerializeField]
+        TMP_Text healthTB;
+        [SerializeField]
+        RawImage healthImage;
+        [SerializeField]
+        Color orange;
 
-        public GameObject laserPointer;
-        int playerHealth = 6;
-        public Hand rightHand;
+        int playerHealth = 1000;
+
 
 
 
         public void Start()
-        {
-            rightHand = GameObject.Find("RightHand").gameObject.GetComponent<Hand>();
-
+        {            
+            UpdatePlayerHealthDisplay();
         }
 
         public void DamagePlayer()
         {
             playerHealth -= 1;
+            UpdatePlayerHealthDisplay();
             TestPlayerDeath();
         }
 
         public void SetPlayerHealth(int health)
         {
             playerHealth = health;
+            UpdatePlayerHealthDisplay();
         }
 
         public void TestPlayerDeath()
@@ -48,8 +55,6 @@ namespace MemeMachine
                 deathScreen.GetComponentInChildren<TMP_Text>().text = "You died noob";
                 menu.Invoke("MenuActive", 4);
                 Destroy(deathScreen, 4);
-                //player dead
-                //rightHand.renderModelPrefab = laserPointer;
 
             }
         }
@@ -58,10 +63,26 @@ namespace MemeMachine
             return playerHealth;
         }
 
-
-
-
-
+        public void UpdatePlayerHealthDisplay()
+        {
+            healthTB.text = playerHealth.ToString();
+            if(playerHealth > 4)
+            {
+                healthImage.color = Color.green;
+            }
+            else if (playerHealth > 2)
+            {
+                healthImage.color = Color.yellow;
+            }
+            else if (playerHealth > 0)
+            {
+                healthImage.color = orange;
+            }
+            else if (playerHealth < 1)
+            {
+                healthImage.color = Color.red;
+            }
+        }
 
 
 

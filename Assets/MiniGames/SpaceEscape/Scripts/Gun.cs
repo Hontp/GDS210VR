@@ -10,6 +10,11 @@ namespace MemeMachine
 
     public class Gun : MonoBehaviour
     {
+        [SerializeField]
+
+
+
+
         public SteamVR_Input_Sources inputSource;
         public SteamVR_Action_Boolean grabPinch;
         public SteamVR_Action_Vibration vibration;
@@ -23,21 +28,12 @@ namespace MemeMachine
 
         public Hand rightHand;
 
+
         public void Start()
         {
 
             rightHand = GameObject.Find("RightHand").gameObject.GetComponent<Hand>();
 
-        }
-        public void Shoot()
-        {
-            Vector3 angleInfo = transform.rotation.eulerAngles + new Vector3(0, 0, 0);
-            GameObject shot = Instantiate(bullet, transform.position + transform.forward * 0.55f, Quaternion.Euler(angleInfo.x, angleInfo.y, angleInfo.z));
-            shot.GetComponent<Rigidbody>().velocity = transform.forward * 100f;
-            shot.GetComponent<Bullet>().DestroyBullet(3f);
-            shootRateTimeStamp = Time.time + shootRate;
-           // Debug.Log(shootRateTimeStamp);
-         
         }
         private void Update()
         {
@@ -59,24 +55,68 @@ namespace MemeMachine
         }
         private void CheckShoot()
         {
-            //if MagazineScript.isLoaded = true;
-            if(gunBackGripGrabbed == true)
+            if (grabPinch.GetLastStateDown(inputSource))
             {
-                if (grabPinch.GetStateDown(inputSource))
+                shoot = true;
+            }
+            if (grabPinch.GetLastStateUp(inputSource))
+            {
+                shoot = false;
+            }
+
+            //if MagazineScript.isLoaded = true;
+            if (gunBackGripGrabbed == true)
+            {
+                if (shoot && TestAmmo())
                 {
                     if (Time.time > shootRateTimeStamp)
                     {
                         Shoot();
-                        //vibration.Execute(0, 0.1f, 300f, 1, inputSource);
+                        vibration.Execute(0, 0.1f, 300f, 1, inputSource);
                     }
-
+                }
+                else if (shoot)
+                {
+                    //click sound for out of ammo
                 }
             }
-         
+        }
+
+        public void Shoot()
+        {
+            Vector3 angleInfo = transform.rotation.eulerAngles + new Vector3(0, 0, 0);
+            GameObject shot = Instantiate(bullet, transform.position + transform.forward * 0.55f, Quaternion.Euler(angleInfo.x, angleInfo.y, angleInfo.z));
+            shot.GetComponent<Rigidbody>().velocity = transform.forward * 100f;
+            shot.GetComponent<Bullet>().DestroyBullet(3f);
+            UseAmmo();
+        }
+
+        public void UseAmmo(/*put magazine script here as a thing*/)
+        {
+            /*thing --;*/
+        }
+
+        public bool TestAmmo(/*put magazine script here as a thing*/)
+        {
+            /*
+                 if(thing.ammoRemaining < 1)
+                 {
+                    return false;
+                 }
+                 else
+                 {
+                    return true;
+                 }            
+             */
+            return true;
+        }
+
+        public void UpdateAmmoText()
+        {
 
         }
-        
-       
+
+
     }
   
 }
