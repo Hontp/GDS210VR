@@ -12,6 +12,7 @@ public class rightHand : MonoBehaviour
     public GameObject x;
     public GameObject laser;
     public GameObject slimHand;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     private void Awake()
@@ -28,22 +29,28 @@ public class rightHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         //game start change from laser to slimhand
-        if (GetComponent<MenuSystem>().gamePlaying)
+       if (hand.renderModelPrefab == laser && canvas.GetComponent<MenuSystem>().gamePlaying)
         {
-            Debug.Log("from laser to slim");
+            
+            Destroy(GameObject.Find("LaserPointer(Clone)"));
             hand.renderModelPrefab = slimHand;
             hand.SetRenderModel(slimHand);
+         
+            
+            Debug.Log("from laser to slim");
         }
+
 
         //when dead put laser back in hand
 
-        if (!GetComponent<EnemySpawner>().gameUnderway)
+       /* if (!GetComponent<EnemySpawner>().gameUnderway)
          {
             Debug.Log("from gun to slim");
             hand.renderModelPrefab = laser;
             hand.SetRenderModel(laser);
-         }
+         }*/
          
 
 
@@ -70,4 +77,5 @@ public class rightHand : MonoBehaviour
         }
         
     }
+    
 }

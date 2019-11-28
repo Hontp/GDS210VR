@@ -13,7 +13,7 @@ public class MagazineScript : MonoBehaviour
     public Rigidbody rb;
     bool attached;
 
-    public int ammoCount = 30;
+    public static int ammoCount = 30;
     public bool hasAmmo = true;
     
     // Start is called before the first frame update
@@ -47,7 +47,8 @@ public class MagazineScript : MonoBehaviour
                 if (hand.AttachedObjects[i].attachedObject.tag == "Mag")
                 {
                     Debug.Log("second check");
-                    GetComponent<Gun>().currentMag = x.gameObject;
+                    //GetComponent<Gun>().currentMag = x.gameObject;
+                   // Gun.currentMag = x.gameObject;
                     x = hand.AttachedObjects[i].attachedObject.gameObject;
 
                     hand.DetachObject(hand.AttachedObjects[i].attachedObject, false);

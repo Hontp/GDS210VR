@@ -30,7 +30,7 @@ namespace MemeMachine
 
         public Hand rightHand;
         
-        public static GameObject currentMag;
+        public GameObject currentMag;
        
 
 
@@ -105,12 +105,13 @@ namespace MemeMachine
 
         public void UseAmmo(/*put magazine script here as a thing*/)
         {
-            currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
+            // currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
+            MagazineScript.ammoCount -= 1;
         }
 
         public bool TestAmmo(/*put magazine script here as a thing*/)
         {
-            if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
+            if (MagazineScript.ammoCount < 1)
             {
                return false;
             }
@@ -125,7 +126,7 @@ namespace MemeMachine
         {
             if (MagazineScript.isLoaded)
             {
-                ammoTB.text = currentMag.GetComponent<MagazineScript>().ammoCount.ToString() + " / " + 30;
+                ammoTB.text = MagazineScript.ammoCount.ToString() + " / " + 30;
             }
         }
 
