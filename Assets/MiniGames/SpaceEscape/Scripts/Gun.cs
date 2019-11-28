@@ -15,7 +15,8 @@ namespace MemeMachine
 
 
 
-        public SteamVR_Input_Sources inputSource;
+        public SteamVR_Input_Sources rightInputSource;
+        public SteamVR_Input_Sources leftInputSource;
         public SteamVR_Action_Boolean grabPinch;
         public SteamVR_Action_Vibration vibration;
         public bool shoot;
@@ -27,6 +28,9 @@ namespace MemeMachine
         //public Transform handPos;
 
         public Hand rightHand;
+        
+        public static GameObject currentMag;
+       
 
 
         public void Start()
@@ -39,9 +43,9 @@ namespace MemeMachine
         {
             CheckShoot();
 
-            if(gunBackGripGrabbed == true)
+            if(MagazineScript.isLoaded == true)
             {
-
+        
             }
             
             //attachment off set check
@@ -50,16 +54,23 @@ namespace MemeMachine
             {
                 rightHand.renderModelPrefab = this.gameObject;
             }
-          
-        
+
+            if (grabPinch.GetStateDown(leftInputSource)) //|| right side button press)
+            {
+                //add throwable and rb on mag
+                
+                
+            }
+
+    
         }
         private void CheckShoot()
         {
-            if (grabPinch.GetLastStateDown(inputSource))
+            if (grabPinch.GetLastStateDown(rightInputSource))
             {
                 shoot = true;
             }
-            if (grabPinch.GetLastStateUp(inputSource))
+            if (grabPinch.GetLastStateUp(rightInputSource))
             {
                 shoot = false;
             }
@@ -72,7 +83,7 @@ namespace MemeMachine
                     if (Time.time > shootRateTimeStamp)
                     {
                         Shoot();
-                        vibration.Execute(0, 0.1f, 300f, 1, inputSource);
+                        vibration.Execute(0, 0.1f, 300f, 1, rightInputSource);
                     }
                 }
                 else if (shoot)
@@ -94,10 +105,19 @@ namespace MemeMachine
         public void UseAmmo(/*put magazine script here as a thing*/)
         {
             /*thing --;*/
+            currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
         }
 
         public bool TestAmmo(/*put magazine script here as a thing*/)
         {
+            if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
+            {
+               return false;
+            }
+            else
+            {
+                return true;
+            }
             /*
                  if(thing.ammoRemaining < 1)
                  {
@@ -108,7 +128,7 @@ namespace MemeMachine
                     return true;
                  }            
              */
-            return true;
+            
         }
 
         public void UpdateAmmoText()
