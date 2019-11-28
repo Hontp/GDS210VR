@@ -7,9 +7,7 @@ namespace TowerDrop
     public class Shell : MonoBehaviour
     {
         public float MaxDamage = 5.5f;
-        public float ExplosionForce = 10.0f;
-        public float MaxLifeTime = 1.0f;
-        public float ExplosionRadius = 2.5f;
+        public float MaxLifeTime = 5.5f;
 
         private void Start()
         {
@@ -18,26 +16,13 @@ namespace TowerDrop
 
         private void OnTriggerEnter(Collider other)
         {
-            Collider[] colliders = Physics.OverlapSphere(transform.position, ExplosionRadius, 0);
-
-            for (int i = 0; i < colliders.Length; i++)
+            if (other.tag == "Player")
             {
-                Rigidbody target = colliders[i].GetComponent<Rigidbody>();
-
-                if (!target)
-                    continue;
-
-                target.AddExplosionForce(ExplosionForce, transform.position, ExplosionRadius);
-
-                PlayerHealth playerHealth = target.GetComponent<PlayerHealth>();
-
-                if (!playerHealth)
-                    continue;
-
-                playerHealth.hit = true;
+                other.gameObject.GetComponent<PlayerHealth>().hit = true;
+                Destroy(gameObject);
             }
 
-            Destroy(gameObject);
+            Destroy(gameObject, MaxLifeTime);
         }
     }
 }

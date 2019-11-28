@@ -31,18 +31,20 @@ public class rightHand : MonoBehaviour
         //game start change from laser to slimhand
         if (GetComponent<MenuSystem>().gamePlaying)
         {
+            Debug.Log("from laser to slim");
             hand.renderModelPrefab = slimHand;
             hand.SetRenderModel(slimHand);
         }
 
         //when dead put laser back in hand
 
-        /*if (!GetComponent<MenuSystem>().isDead)
+        if (!GetComponent<EnemySpawner>().gameUnderway)
          {
+            Debug.Log("from gun to slim");
             hand.renderModelPrefab = laser;
             hand.SetRenderModel(laser);
          }
-         */
+         
 
 
         for (int i=0; hand.AttachedObjects.Count > i; i++)

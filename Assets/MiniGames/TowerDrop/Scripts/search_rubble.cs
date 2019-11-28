@@ -18,7 +18,7 @@ namespace TowerDrop
         private void OnEnable()
         {
             if (hand == null)
-                hand = this.GetComponent<Hand>();
+                hand = GetComponent<Hand>();
 
         }
         private void Update()

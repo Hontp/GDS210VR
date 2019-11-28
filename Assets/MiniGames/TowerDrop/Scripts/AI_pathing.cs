@@ -7,6 +7,14 @@ namespace TowerDrop
 {
     public class AI_pathing : MonoBehaviour
     {
+        public entity_maneger em;
+
+        //gamemaneger
+        public game_maneger gm;
+
+        //spawn tick
+        float gametick;
+
         //positions
         public List<Transform> Path_points;
         //distances between positions used to create sonstant movement
@@ -39,6 +47,11 @@ namespace TowerDrop
         public float speed;
         //speed of direction rotation
         public float rotaional_speed;
+
+        public bool destroyOnEnd;
+
+        public bool endless;
+          
         //if you want to ride the created path click ride.
         public bool ride = false;
         int pasenger = 0;
@@ -47,91 +60,119 @@ namespace TowerDrop
         // Start is called before the first frame update
         void Start()
         {
-
+            gm = GameObject.Find("GameScene").GetComponent<game_maneger>();
 
             //creates the distances of the paths
             for (int i = 1; Path_points.Count > i; i++)
             {
                 distances.Add(Vector3.Distance(Path_points[i].position, Path_points[i - 1].position));
             }
-            //spawn tick
-            InvokeRepeating("Spawn_enitiy", 0, spawn_time);
+            em = GameObject.Find("GameScene").GetComponent<entity_maneger>();
 
         }
 
         // Update is called once per frame
         void LateUpdate()
         {
-            //runs for every entity in 'entitys' list
-            for (int i = 0; entitys.Count > i; i++)
-            {
-                if (entitys[i].AI_gameObject != null)
+            if (gm.game_phase == 1) {
+                if(endless==false)
                 {
-                    //refreshes entity index in event off deleted entitys
-                    entitys[i].AI_gameObject.GetComponent<Health>().entity_index = i;
-
-                    //creation of a struct template to reaply to it self because its naot an array 
-                    pathed_entity x;
-                    x = entitys[i];
-
-
-                    //time is updated every frame
-                    x.Time += Time.deltaTime;
-
-                    if (entitys[i].Path != Path_points.Count - 1)
                     {
-                        //movement
-                        entitys[i].AI_gameObject.transform.position = Vector3.Lerp(Path_points[entitys[i].Path].position, Path_points[entitys[i].Path + 1].position, Mathf.Clamp(entitys[i].Time * speed / distances[entitys[i].Path], 0, 1));
-                        //rotation
-                        Vector3 direction = -(Path_points[entitys[i].Path].position - entitys[i].AI_gameObject.transform.position);
-
-                        entitys[i].AI_gameObject.transform.rotation = Quaternion.Lerp(entitys[i].AI_gameObject.transform.rotation,Quaternion.LookRotation(direction, Path_points[entitys[i].Path + 1].transform.up), rotaional_speed * entitys[i].Time);
-                       // Quaternion last = entitys[i].AI_gameObject.transform.rotation;
-                        //last.SetLookRotation(direction, Path_points[entitys[i].Path + 1].transform.up);
-                        //Quaternion rotateto = last;
-
-                        //entitys[i].AI_gameObject.transform.rotation = Quaternion.Lerp(entitys[i].AI_gameObject.transform.rotation, rotateto, rotaional_speed * entitys[i].Time);
-
+                        //spawn tick
+                        gametick += Time.deltaTime;
+                        if (gametick >= spawn_time)
+                        {
+                            gametick = 0;
+                            Spawn_enitiy();
+                        }
                     }
-
-                    //cleanup and deletion of entitys that finish the end of the final path
-                    if (entitys[i].AI_gameObject.transform.position == Path_points[Path_points.Count - 1].position)
+                }else if (endless == true && entitys.Count == 0 && em.SpiderTankCount == 2)
+                {
+                    int x = Random.Range(1, 21);
+                    if (x == 1)
                     {
-                        pathed_entity del;
-                        del = entitys[i];
-                        entitys.RemoveAt(i);
-                        Destroy(del.AI_gameObject);
-                        return;
+                        Spawn_enitiy();
                     }
-
-                    //moves the entity on the next path
-                    if (entitys[i].AI_gameObject.transform.position == Path_points[entitys[i].Path + 1].position)
-                    {
-                        x.Time = 0;
-                        x.Path += 1;
-                    }
-
-
-                    //overides the x template back on to it self
-                    entitys[i] = x;
+                    
                 }
 
-            }
-
-            for (int x = 0; entitysToDestroy.Count > x; x++)
-            {
-                for (int y = 0; entitys.Count > y; y++)
-                    if (entitysToDestroy[x].AI_gameObject == entitys[y].AI_gameObject)
+                    //runs for every entity in 'entitys' list
+                    for (int i = 0; entitys.Count > i; i++)
+                {
+                    if (entitys[i].AI_gameObject != null)
                     {
-                        entitys.Remove(entitys[y]);
+                        //refreshes entity index in event off deleted entitys
+                        entitys[i].AI_gameObject.GetComponent<Health>().entity_index = i;
 
-                        // Destroy(entitysToDestroy[x].AI_gameObject);
+                        //creation of a struct template to reaply to it self because its naot an array 
+                        pathed_entity x;
+                        x = entitys[i];
+
+
+                        //time is updated every frame
+                        x.Time += Time.deltaTime;
+
+                        if (entitys[i].Path != Path_points.Count - 1)
+                        {
+                            //movement
+                            entitys[i].AI_gameObject.transform.position = Vector3.Lerp(Path_points[entitys[i].Path].position, Path_points[entitys[i].Path + 1].position, Mathf.Clamp(entitys[i].Time * speed / distances[entitys[i].Path], 0, 1));
+                            //rotation
+                            Vector3 direction = -(Path_points[entitys[i].Path].position - entitys[i].AI_gameObject.transform.position);
+
+                            entitys[i].AI_gameObject.transform.rotation = Quaternion.Lerp(entitys[i].AI_gameObject.transform.rotation, Quaternion.LookRotation(direction, Path_points[entitys[i].Path + 1].transform.up), rotaional_speed * entitys[i].Time);
+                            // Quaternion last = entitys[i].AI_gameObject.transform.rotation;
+                            //last.SetLookRotation(direction, Path_points[entitys[i].Path + 1].transform.up);
+                            //Quaternion rotateto = last;
+
+                            //entitys[i].AI_gameObject.transform.rotation = Quaternion.Lerp(entitys[i].AI_gameObject.transform.rotation, rotateto, rotaional_speed * entitys[i].Time);
+
+                        }
+
+                        //cleanup and deletion of entitys that finish the end of the final path
+                        if (entitys[i].AI_gameObject.transform.position == Path_points[Path_points.Count - 1].position)
+                        {
+                            pathed_entity del;
+                            del = entitys[i];
+                            entitys.RemoveAt(i);
+                            if (destroyOnEnd)
+                            {
+                                Destroy(del.AI_gameObject);
+                            }
+                            else
+                            {
+                                //set the postion of del
+                            }
+                            return;
+                        }
+
+                        //moves the entity on the next path
+                        if (entitys[i].AI_gameObject.transform.position == Path_points[entitys[i].Path + 1].position)
+                        {
+                            x.Time = 0;
+                            x.Path += 1;
+                        }
+
+
+                        //overides the x template back on to it self
+                        entitys[i] = x;
                     }
+
+                }
+
+                for (int x = 0; entitysToDestroy.Count > x; x++)
+                {
+                    for (int y = 0; entitys.Count > y; y++)
+                        if (entitysToDestroy[x].AI_gameObject == entitys[y].AI_gameObject)
+                        {
+                            entitys.Remove(entitys[y]);
+
+                            // Destroy(entitysToDestroy[x].AI_gameObject);
+                        }
+                }
+                entitysToDestroy.Clear();
+
+
             }
-            entitysToDestroy.Clear();
-
-
-
         }
 
         public void RemoveFromEntityList(int index)

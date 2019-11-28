@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7062066426179336418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4786008, y: 0.4786008, z: 0.4786008}
+  m_LocalPosition: {x: -4.1447e-10, y: 0, z: 0.0042925}
+  m_LocalScale: {x: 0.26560467, y: 0.26560467, z: 0.26560467}
   m_Children:
   - {fileID: 7443794621278169340}
   m_Father: {fileID: 0}
@@ -46,9 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxDamage: 5.5
-  ExplosionForce: 10
   MaxLifeTime: 2
-  ExplosionRadius: 2.5
 --- !u!54 &1799525903502153880
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80,7 +78,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8be0fe69349462f48aa4a29921780eff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.000000001794
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8be0fe69349462f48aa4a29921780eff,
         type: 3}
@@ -90,7 +88,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8be0fe69349462f48aa4a29921780eff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.046
+      value: 0.069829
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8be0fe69349462f48aa4a29921780eff,
         type: 3}
@@ -135,18 +133,23 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8be0fe69349462f48aa4a29921780eff,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.841227
+      value: 11.226254
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8be0fe69349462f48aa4a29921780eff,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.841225
+      value: 11.226251
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8be0fe69349462f48aa4a29921780eff,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.841225
+      value: 11.226251
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 8be0fe69349462f48aa4a29921780eff,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ce6f40566ec9bc4cad39363e6f685ba, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8be0fe69349462f48aa4a29921780eff, type: 3}
 --- !u!4 &7443794621278169340 stripped
