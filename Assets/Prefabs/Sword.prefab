@@ -4938,7 +4938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 646d51359064e084d9786cec688e40e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimumVelocity: {x: 0, y: 0, z: 0}
+  minimumVelocity: {x: 0.2, y: 0.2, z: 0}
 --- !u!1 &4940495778366085590
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ namespace SamuraiCutter
         public float waveStartTime;
         public float sectionTime = 1f;
         public AnimationCurve waveSpawnCurve;
-        public GameManager startedGame;
+    
 
         public void registerKill()
         {
@@ -61,7 +61,7 @@ namespace SamuraiCutter
 
         public void Update()
         {
-            if (!GameManager._instance.dead)
+            if (!GameManager._instance.dead && GameManager._instance.started)
             {
                 // TODO: Gradually spawn in the enemies
                 if (enemiesSpawned < enemyAmounts[currentWaveNumber] && !spawning)

@@ -55,6 +55,7 @@ public class MenuSystem : MonoBehaviour
                 break;
             case GameLoaded.Sword:
                 SetName("Samurai Cutter");
+                
                 difficultyTB.gameObject.SetActive(false);
                 difTB.SetActive(false);
                 difPanel.SetActive(false);
@@ -63,6 +64,7 @@ public class MenuSystem : MonoBehaviour
                 SetName("Space Escape");
                 spawner = FindObjectOfType<EnemySpawner>();
                 spawner.SetSpawnVariables(30, 0.01f, 6);
+
                 difficultyTB.gameObject.SetActive(true);
                 difTB.SetActive(true);
                 difPanel.SetActive(true);
@@ -125,6 +127,11 @@ public class MenuSystem : MonoBehaviour
     //sets a bool to true for game to start
     public void PlayGame()
     {
+        if(myGame == GameLoaded.Sword)
+        {
+            SamuraiCutter.GameManager._instance.started = true;
+        }
+
         gameObject.SetActive(false);
         gamePlaying = true;
     }
