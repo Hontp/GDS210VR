@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
-using MemeMachine;
+
 public class MagazineScript : MonoBehaviour
 {
     public Hand hand;
@@ -32,10 +32,6 @@ public class MagazineScript : MonoBehaviour
         if (gameObject.transform.parent == null)
             attached = true;
             //when not in mag or hand
-        if(Time.time % 5f == 0)
-        {
-            Debug.Log(ammoCount);
-        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -44,7 +40,7 @@ public class MagazineScript : MonoBehaviour
             Debug.Log("first check");
             for (int i = 0; hand.AttachedObjects.Count > i; i++)
             {
-                if (hand.AttachedObjects[i].attachedObject.tag == "Mag")
+                if (hand.AttachedObjects[i].attachedObject.name == "Mag")
                 {
                     Debug.Log("second check");
                     //GetComponent<Gun>().currentMag = x.gameObject;
@@ -53,19 +49,12 @@ public class MagazineScript : MonoBehaviour
 
                     hand.DetachObject(hand.AttachedObjects[i].attachedObject, false);
                     x.transform.parent = blaster.gameObject.transform;
-                    rb.isKinematic = false;
                     x.GetComponent<Throwable>().enabled = false;
-                    
-                    //Destroy(GetComponent<Throwable>());
-                    //Destroy(rb);
-
-                   
-
-                    x.gameObject.transform.position = new Vector3(0, 0, 0); //have to find pos of mag in gun in game.
+                    Destroy(GetComponent<Throwable>());
+                    Destroy(rb);
                     
                     isLoaded = true;
-                    //Debug.Log(isLoaded);
-                   
+                    Debug.Log(isLoaded);
                     
                 }
             }

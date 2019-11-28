@@ -16,8 +16,7 @@ namespace MemeMachine
 
 
 
-        public SteamVR_Input_Sources rightInputSource;
-        public SteamVR_Input_Sources leftInputSource;
+        public SteamVR_Input_Sources inputSource;
         public SteamVR_Action_Boolean grabPinch;
         public SteamVR_Action_Vibration vibration;
         public bool shoot;
@@ -44,9 +43,9 @@ namespace MemeMachine
         {
             CheckShoot();
 
-            if(MagazineScript.isLoaded == true)
+            if(gunBackGripGrabbed == true)
             {
-        
+
             }
             
             //attachment off set check
@@ -56,7 +55,7 @@ namespace MemeMachine
                 rightHand.renderModelPrefab = this.gameObject;
             }
 
-            if (grabPinch.GetStateDown(leftInputSource)) //|| right side button press)
+            //if (grabPinch.GetStateDown(leftInputSource)) //|| right side button press)
             {
                 //add throwable and rb on mag
                 
@@ -67,11 +66,11 @@ namespace MemeMachine
         }
         private void CheckShoot()
         {
-            if (grabPinch.GetLastStateDown(rightInputSource))
+            if (grabPinch.GetLastStateDown(inputSource))
             {
                 shoot = true;
             }
-            if (grabPinch.GetLastStateUp(rightInputSource))
+            if (grabPinch.GetLastStateUp(inputSource))
             {
                 shoot = false;
             }
@@ -84,7 +83,7 @@ namespace MemeMachine
                     if (Time.time > shootRateTimeStamp)
                     {
                         Shoot();
-                        vibration.Execute(0, 0.1f, 300f, 1, rightInputSource);
+                        vibration.Execute(0, 0.1f, 300f, 1, inputSource);
                     }
                 }
                 else if (shoot)

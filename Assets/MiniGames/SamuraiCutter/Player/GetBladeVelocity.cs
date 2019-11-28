@@ -39,10 +39,7 @@ namespace SamuraiCutter
             {
                 endPoint = this.transform.position;
                 startCounting = false;
-                
                 CompareThePair(other);
-
-                timeTravelled = 0;
             }
         }
 

@@ -663,7 +663,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1252845477730005517}
-  - component: {fileID: 9107721535043218591}
   m_Layer: 0
   m_Name: Good Character Model Broken 1
   m_TagString: Untagged

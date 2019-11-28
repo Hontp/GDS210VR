@@ -92,8 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bde74620636e8e468e2e99c0e4f6ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightInputSource: 2
-  leftInputSource: 1
+  inputSource: 2
   grabPinch:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
@@ -104,7 +103,6 @@ MonoBehaviour:
   bullet: {fileID: 5086274578444792297, guid: fc736b5756c43354cabd62f4937701c3, type: 3}
   shootRateTimeStamp: 0
   shootRate: 0.1
-  rightHand: {fileID: 0}
 --- !u!65 &4584114270781150327
 BoxCollider:
   m_ObjectHideFlags: 0

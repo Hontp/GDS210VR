@@ -5,7 +5,6 @@ using Valve.VR.InteractionSystem;
 using MemeMachine;
 
 
-
 public class rightHand : MonoBehaviour
 {
     public Hand hand;
@@ -15,15 +14,9 @@ public class rightHand : MonoBehaviour
     public GameObject canvas;
 
     // Start is called before the first frame update
-    private void Awake()
-    {
-        hand.renderModelPrefab = laser;
-        hand.SetRenderModel(laser);
-       
-    }
     void Start()
     {
-   
+        
     }
 
     // Update is called once per frame
@@ -68,7 +61,7 @@ public class rightHand : MonoBehaviour
                 x.GetComponent<Interactable>().highlightOnHover = false;
 
                 x.gameObject.transform.rotation = hand.transform.rotation;
-                x.gameObject.transform.position = Vector3.zero;
+
                 //hand.SetRenderModel(x);
                 //Destroy(x.GetComponent<Interactable>());
                 Debug.Log("grabbed");

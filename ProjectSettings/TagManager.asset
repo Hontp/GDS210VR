@@ -20,7 +20,6 @@ TagManager:
   - ReturnButton
   - HomeButton
   - floor
-  - Mag
   layers:
   - Default
   - TransparentFX
