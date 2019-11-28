@@ -33,7 +33,7 @@ namespace SamuraiCutter
             }
             else
             {
-                impulse = 0.5f;
+                impulse = 0.1f;
             }
 
             alert.material.SetFloat("_alpha",impulse);

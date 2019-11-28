@@ -82,10 +82,10 @@ public class Blade : MonoBehaviour
         float botDistance = Vector3.Distance(startBot,endBot);
         float topDistance = Vector3.Distance(startTop,endTop);
 
+        // http://hyperphysics.phy-astr.gsu.edu/hbase/vel2.html
+        averageVel =  (botDistance + topDistance) / (Time.deltaTime * maxSize);  
 
-        averageVel =  (botDistance + topDistance) / 2.0f;  
-
-        meshRenderer.material.SetFloat("_alpha",Mathf.Clamp(averageVel*0.5f,0.2f,0.6f));
+        meshRenderer.material.SetFloat("_alpha",getVel());
 
         if(botBladePoints.Count >= maxSize)
         {
@@ -101,7 +101,10 @@ public class Blade : MonoBehaviour
         swordTrailObj.position = Vector3.zero;
     }
 
-
+    public float getVel()
+    {
+        return Mathf.Clamp(averageVel*0.25f,0.2f,0.6f);
+    }
     void generateMesh()
     {
         var verts = new Vector3[2*maxSize];

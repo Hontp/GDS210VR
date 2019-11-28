@@ -49,10 +49,9 @@ namespace SamuraiCutter
             Vector3 comparedDistance = new Vector3(compareDistance.x / timeTravelled, compareDistance.y / timeTravelled, compareDistance.z / timeTravelled);
             if (comparedDistance.x >= minimumVelocity.x || comparedDistance.y >= minimumVelocity.y)
             {
-                other.GetComponent<GettingHit>().Hit(this.transform);
+                //other.GetComponent<GettingHit>().Hit(this.transform);
             }
         }
 
     }
 }
-

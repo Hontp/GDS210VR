@@ -40,7 +40,7 @@ namespace SamuraiCutter
         // Update is called once per frame
         void Update()
         {
-            if(Vector3.Distance(GameManager._instance.playerPos.position, transform.position) < 1.6f && !jumping && !attacking)
+            if(Vector3.Distance(GameManager._instance.playerPos.position, transform.position) < 2.5f && !jumping && !attacking)
             {
                 idle = true;
                 //jumping = true;
@@ -49,7 +49,6 @@ namespace SamuraiCutter
                 {
                     nma.speed = 0;
                     nma.isStopped = true;
-                    //
                 }
                 
                 var rand = Random.Range(0,1000);
@@ -115,37 +114,42 @@ namespace SamuraiCutter
             attacking = true;
         }
 
-        //public void jumpBack()
-        //{
-            
-        //    jumping = true;
-        //    //new Vector3( (((transform.position-GameManager._instance.playerPos.position).normalized).x), -1.0f, (((transform.position-GameManager._instance.playerPos.position).normalized).z))
-        //    rb.isKinematic = false;
-        //    rb.useGravity = true;
-        //    rb.AddForce( new Vector3( 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).x), 2f, 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).z)), ForceMode.VelocityChange);
-        //    //rb.constraints = RigidbodyConstraints.FreezeRotationY & RigidbodyConstraints.FreezeRotationZ & RigidbodyConstraints.FreezePosition;
-        //    //rb.AddTorque(transform.right * -180f);
-        //    nma.isStopped = true;
-        //    nma.enabled = false;
-        //    idle = false;
-        //}
+        public void jumpBack()
+        {
+            // does the animation
+           jumping = true;
+           //new Vector3( (((transform.position-GameManager._instance.playerPos.position).normalized).x), -1.0f, (((transform.position-GameManager._instance.playerPos.position).normalized).z))
+            Invoke("BackJumpForce",0.5f);
+        }
 
-        //public void OnCollisionEnter(Collision col)
-        //{
-        //    if(col.transform.CompareTag("floor"))
-        //    {
-        //        rb.isKinematic = true;
-        //        rb.useGravity = false;
-        //        jumping = false;
-        //        nma.enabled = true;
-        //        nma.isStopped = false;
-        //        nma.speed = MoveSpeed;
-        //        nma.SetDestination(GameManager._instance.playerPos.position);
-        //        animator.SetBool("flip", false);
-        //        animator.SetBool("attack",false);
-        //        idle = false;
-        //    }
-        //}
+        public void BackJumpForce()
+        {
+             rb.isKinematic = false;
+           rb.useGravity = true;
+           rb.AddForce( new Vector3( 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).x), 2f, 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).z)), ForceMode.VelocityChange);
+           rb.constraints = RigidbodyConstraints.FreezeRotationX & RigidbodyConstraints.FreezeRotationY & RigidbodyConstraints.FreezeRotationY;
+           //rb.AddTorque(transform.right * -180f);
+           nma.isStopped = true;
+           nma.enabled = false;
+           idle = false;
+        }
+
+        public void OnCollisionEnter(Collision col)
+        {
+           if(col.transform.CompareTag("floor"))
+           {
+               rb.isKinematic = true;
+               rb.useGravity = false;
+               jumping = false;
+               nma.enabled = true;
+               nma.isStopped = false;
+               nma.speed = MoveSpeed;
+               nma.SetDestination(GameManager._instance.playerPos.position);
+               animator.SetBool("flip", false);
+               animator.SetBool("attack",false);
+               idle = false;
+           }
+        }
 
        
     }

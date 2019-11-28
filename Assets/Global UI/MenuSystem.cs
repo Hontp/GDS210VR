@@ -129,7 +129,12 @@ public class MenuSystem : MonoBehaviour
     {
         if(myGame == GameLoaded.Sword)
         {
+            print("Running the game");
             SamuraiCutter.GameManager._instance.started = true;
+            Time.timeScale = 1f;
+            SamuraiCutter.GameManager._instance.spawnEnemy.currentWaveNumber = 0;
+            SamuraiCutter.GameManager._instance.spawnEnemy.remainingEnemies = 0;
+
         }
 
         gameObject.SetActive(false);
@@ -138,6 +143,7 @@ public class MenuSystem : MonoBehaviour
 
     public void MenuActive()
     {
+        print("reactivating Menu");
         gameObject.SetActive(true);
         gamePlaying = false;
     }

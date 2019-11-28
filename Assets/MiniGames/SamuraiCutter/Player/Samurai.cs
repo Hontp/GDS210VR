@@ -21,6 +21,12 @@ public class Samurai : MonoBehaviour
         if(health < 0.01f)
         {
             GameManager._instance.dead = true;
+            Time.timeScale = 0.1f;
+            foreach( EnemyAI enemies in FindObjectsOfType<EnemyAI>())
+            {
+                Destroy(enemies.gameObject,0.5f);
+            }
+            GameManager._instance.menuSystem.MenuActive();
         }
     }
 

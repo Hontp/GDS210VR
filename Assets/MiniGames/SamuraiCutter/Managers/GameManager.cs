@@ -16,7 +16,7 @@ namespace SamuraiCutter
         // Start is called before the first frame update
         void Awake()
         {
-            
+            started = false;
             if (_instance != null && _instance != this)
             {
                 Destroy(this.gameObject);
@@ -29,8 +29,9 @@ namespace SamuraiCutter
         // Update is called once per frame
         void Update()
         {
-            if(dead || !started)
+            if(dead && !started)
             {
+                print("dead and not started");
                 menuSystem.Invoke("MenuActive", 4f);
             }
             if(menuSystem.gamePlaying == true)
