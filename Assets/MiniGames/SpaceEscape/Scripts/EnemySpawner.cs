@@ -62,6 +62,7 @@ namespace MemeMachine
         const string FUELEND = "%";
 
 
+
         // Start is called before the first frame update
         void Start()
         {
@@ -178,6 +179,9 @@ namespace MemeMachine
             }
             enemies.Clear();
             timeLeft = GAMETIME;
+           
         }
+
+    
     }
 }

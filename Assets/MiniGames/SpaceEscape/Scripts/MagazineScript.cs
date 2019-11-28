@@ -47,7 +47,7 @@ public class MagazineScript : MonoBehaviour
                 if (hand.AttachedObjects[i].attachedObject.tag == "Mag")
                 {
                     Debug.Log("second check");
-                    Gun.currentMag = x.gameObject;
+                    GetComponent<Gun>().currentMag = x.gameObject;
                     x = hand.AttachedObjects[i].attachedObject.gameObject;
 
                     hand.DetachObject(hand.AttachedObjects[i].attachedObject, false);
