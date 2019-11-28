@@ -3,14 +3,12 @@ using UnityEngine;
 
 public class Tank : MonoBehaviour
 {
-    public int ShellBatch = 5;
     public float fireShellTime = 1.5f;
 
     public GameObject CannonShell;
     public GameObject SideShell;
     public List<Transform> CannonPoints = new List<Transform>();
 
-    private int shellCount =0;
     private float timePassed = 0;
     private bool isFired;
 
@@ -30,7 +28,7 @@ public class Tank : MonoBehaviour
             isFired = false;
         }
 
-        if (!isFired && shellCount <= ShellBatch)
+        if (!isFired)
         {
             Fire();
         }
@@ -47,12 +45,9 @@ public class Tank : MonoBehaviour
             GameObject sideCannons = Instantiate(SideShell, CannonPoints[i].position, CannonPoints[i].rotation) as GameObject;
             sideCannons.GetComponent<Rigidbody>().velocity = 15.0f * CannonPoints[i].forward;
         }
-
-       
-        
+     
         isFired = true;
         timePassed = 0;
-        shellCount++;
     }
 
 }
