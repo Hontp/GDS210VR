@@ -51,7 +51,11 @@ namespace MemeMachine
                 for (int i = 0; i < enemiesHit.Length; i++)
                 {
                     Debug.Log(enemiesHit[i].collider.gameObject.name);
-                    //Destroy(enemiesHit[i].collider.gameObject);
+                    if(enemiesHit[i].collider.gameObject.tag == "Enemy")
+                    {
+                        enemiesHit[i].collider.GetComponent<EnemyScript>().DamageEnemy(10);
+                    }
+             
                 }
             }
             grenadeTick = false;
