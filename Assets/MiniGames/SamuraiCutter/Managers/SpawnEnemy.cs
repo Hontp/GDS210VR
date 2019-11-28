@@ -61,7 +61,7 @@ namespace SamuraiCutter
 
         public void Update()
         {
-            if (startedGame.dead == false)
+            if (!GameManager._instance.dead)
             {
                 // TODO: Gradually spawn in the enemies
                 if (enemiesSpawned < enemyAmounts[currentWaveNumber] && !spawning)

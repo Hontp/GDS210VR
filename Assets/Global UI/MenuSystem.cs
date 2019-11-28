@@ -127,8 +127,8 @@ public class MenuSystem : MonoBehaviour
     {
         gameObject.SetActive(false);
         gamePlaying = true;
-    } 
-    
+    }
+
     public void MenuActive()
     {
         gameObject.SetActive(true);
