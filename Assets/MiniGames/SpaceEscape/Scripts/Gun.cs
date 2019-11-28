@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using TMPro;
 
 
 namespace MemeMachine
@@ -11,7 +12,7 @@ namespace MemeMachine
     public class Gun : MonoBehaviour
     {
         [SerializeField]
-
+        TMP_Text ammoTB;
 
 
 
@@ -62,7 +63,7 @@ namespace MemeMachine
                 
             }
 
-    
+            UpdateAmmoText();
         }
         private void CheckShoot()
         {
@@ -104,7 +105,6 @@ namespace MemeMachine
 
         public void UseAmmo(/*put magazine script here as a thing*/)
         {
-            /*thing --;*/
             currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
         }
 
@@ -118,22 +118,15 @@ namespace MemeMachine
             {
                 return true;
             }
-            /*
-                 if(thing.ammoRemaining < 1)
-                 {
-                    return false;
-                 }
-                 else
-                 {
-                    return true;
-                 }            
-             */
             
         }
 
         public void UpdateAmmoText()
         {
-
+            if (MagazineScript.isLoaded)
+            {
+                ammoTB.text = currentMag.GetComponent<MagazineScript>().ammoCount.ToString() + " / " + 30;
+            }
         }
 
 
