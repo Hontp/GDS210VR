@@ -9,18 +9,24 @@ namespace TowerDrop
 
         public GameObject Player_hitbox;
 
+        public PlayerHealth Ph;
+
+        void Start()
+        {
+             Ph = Player_hitbox.GetComponent<PlayerHealth>();
+        }
 
         private void UpdatePlayerHealth()
         {
             if (Player_hitbox == null)
                 return;
 
-            if (Player_hitbox.GetComponent<PlayerHealth>().hit == true)
-                Player_hitbox.GetComponent<PlayerHealth>().playerHP--;
+            if (Ph.hit == true)
+                Ph.playerHP--;
 
-            Player_hitbox.GetComponent<PlayerHealth>().hit = false;
+            Ph.hit = false;
             
-            PlayerHealth Ph = Player_hitbox.GetComponent<PlayerHealth>();
+            
 
             if (Ph.playerHP <= 0 && GetComponent<game_maneger>().game_phase == 2)
             {

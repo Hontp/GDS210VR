@@ -23,6 +23,7 @@ namespace TowerDrop
         public Vector2 high_score3;
 
         public Vector2[] highscores= new Vector2[3];
+
         // Start is called before the first frame update
         void Start()
         {
@@ -60,12 +61,13 @@ namespace TowerDrop
             }
             if (game_phase == 1)
             {
-                
                 player_time_survived = 0;
             }
             if (game_phase == 2)
             {
                 player_time_survived += Time.deltaTime;
+                //activate ingame UI
+                
             }
             if (game_phase == 3)
             {
@@ -78,12 +80,10 @@ namespace TowerDrop
                 //comparing scores
                 compare_scores();
 
-
-
-
                 UI.MenuActive();
                 game_phase = 0;
 
+                //disable in game UI
             }
         }
         void compare_scores()
