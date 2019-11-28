@@ -26,10 +26,10 @@ public class Samurai : MonoBehaviour
 
     void OnTriggerEnter(Collider c)
     {
-        Debug.Log(c.transform.name);
+        //Debug.Log(c.transform.name);
         if(c.transform.CompareTag("enemysword"))
         {
-            GameManager._instance.uIManager.SetHurt(0.25f);
+             GameManager._instance.uIManager.SetHurt(0.25f);
         }
     }
 }

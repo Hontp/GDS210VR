@@ -12,24 +12,24 @@ namespace SamuraiCutter
         public UIManager uIManager;
         public Transform playerPos;
         public MenuSystem menuSystem;
-        public bool dead, startGame;
+        public bool dead, started;
         // Start is called before the first frame update
         void Awake()
         {
-            dead = true;
+            
             if (_instance != null && _instance != this)
             {
                 Destroy(this.gameObject);
             } else {
                 _instance = this;
             }
-            menuSystem = FindObjectOfType<MenuSystem>();
+           
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(dead)
+            if(dead || !started)
             {
                 menuSystem.Invoke("MenuActive", 4f);
             }
