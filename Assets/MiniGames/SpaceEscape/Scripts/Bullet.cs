@@ -29,7 +29,7 @@ namespace MemeMachine
                 case "Head":
                     Destroy(gameObject);
                     print("hit enemy head");
-                    collision.gameObject.GetComponent<EnemyScript>().DamageEnemy(5);
+                    collision.gameObject.transform.parent.GetComponent<EnemyScript>().DamageEnemy(5);
                     break;
             }
         }

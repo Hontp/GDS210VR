@@ -7,6 +7,7 @@ using MemeMachine;
 
 public class rightHand : MonoBehaviour
 {
+    public GameObject actualBlaster;
     public Hand hand;
     public GameObject x;
     public GameObject laser;
@@ -16,7 +17,10 @@ public class rightHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        hand.renderModelPrefab = laser;
+        hand.SetRenderModel(laser);
+        canvas = GameObject.Find("Canvas");
+
     }
 
     // Update is called once per frame
@@ -26,8 +30,8 @@ public class rightHand : MonoBehaviour
         //game start change from laser to slimhand
        if (hand.renderModelPrefab == laser && canvas.GetComponent<MenuSystem>().gamePlaying)
         {
-            
-            Destroy(GameObject.Find("LaserPointer(Clone)"));
+            hand.DetachObject(laser);
+           // Destroy(GameObject.Find("LaserPointer(Clone)"));
             hand.renderModelPrefab = slimHand;
             hand.SetRenderModel(slimHand);
          
@@ -49,23 +53,33 @@ public class rightHand : MonoBehaviour
 
         for (int i=0; hand.AttachedObjects.Count > i; i++)
         {
-            if (hand.AttachedObjects[i].attachedObject.name == "BlasterGameObj")
+            if (!Gun.gunBackGripGrabbed && hand.AttachedObjects[i].attachedObject.name == "Dummy Blaster")
             {
+                Destroy(hand.AttachedObjects[i].attachedObject.gameObject);
+                actualBlaster.SetActive(true);
+                Gun.gunBackGripGrabbed = true;
+                actualBlaster.GetComponent<Interactable>().highlightOnHover = false;
+                /*
                 x = hand.AttachedObjects[i].attachedObject.gameObject;
 
                 hand.DetachObject(hand.AttachedObjects[i].attachedObject,false);
-                x.transform.parent = hand.gameObject.transform;
+               
                 Destroy(x.GetComponent<Throwable>());
                 Destroy(x.GetComponent<Rigidbody>());
 
                 x.GetComponent<Interactable>().highlightOnHover = false;
-
-                x.gameObject.transform.rotation = hand.transform.rotation;
-
-                //hand.SetRenderModel(x);
-                //Destroy(x.GetComponent<Interactable>());
+                //x.gameObject.transform.position = Vector3.zero;
+                x.transform.parent = hand.gameObject.transform;
+               // x.gameObject.transform.rotation = hand.transform.rotation;
+                
                 Debug.Log("grabbed");
                 Gun.gunBackGripGrabbed = true;
+               */
+
+
+
+
+
             }
         }
         

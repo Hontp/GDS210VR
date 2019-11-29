@@ -34,12 +34,14 @@ namespace MemeMachine
         public void DamageEnemy(int damageTaken)
         {
             myHealth -= damageTaken;
+            print(myHealth);
             if(myHealth < 1)
             {
-                anim.SetBool("Die", true);
+                //anim.SetBool("Die", true);
                 anim.SetBool("Attack", false);
                 anim.SetBool("Run", false);
-                Destroy(gameObject, 5f);
+                //Destroy(gameObject, 5f);
+                Destroy(gameObject);
                 mySpawner.enemies.Remove(this);
                 mySpawner.numOfEnimies--;
             }

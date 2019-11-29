@@ -24,13 +24,17 @@ namespace MemeMachine
         public  static bool gunBackGripGrabbed = false;
 
         public float shootRateTimeStamp;
-        public float shootRate = 0.1f;
+        public float shootRate;
         //public Transform handPos;
 
         public Hand rightHand;
         
-        public GameObject currentMag;
-       
+        public GameObject currentMag = null;
+        public GameObject parent;
+
+        
+
+
 
 
         public void Start()
@@ -45,14 +49,15 @@ namespace MemeMachine
 
             if(gunBackGripGrabbed == true)
             {
-
+                //transform.parent.position = Vector3.zero;
             }
             
             //attachment off set check
             //when item is picked up appply transform 
            if(this.transform.parent == rightHand)
             {
-                rightHand.renderModelPrefab = this.gameObject;
+                //rightHand.renderModelPrefab = this.gameObject;
+               // rightHand.SetRenderModel(this.gameObject);
             }
 
             //if (grabPinch.GetStateDown(leftInputSource)) //|| right side button press)
@@ -78,12 +83,15 @@ namespace MemeMachine
             //if MagazineScript.isLoaded = true;
             if (gunBackGripGrabbed == true)
             {
-                if (shoot && TestAmmo())
-                {
-                    if (Time.time > shootRateTimeStamp)
+                if (shoot && TestAmmo() && MagazineScript.isLoaded)
+                {   
+                    if (shootRateTimeStamp < 0)
                     {
                         Shoot();
-                        vibration.Execute(0, 0.1f, 300f, 1, inputSource);
+                    }
+                    else
+                    {
+                        shootRateTimeStamp -= Time.deltaTime;
                     }
                 }
                 else if (shoot)
@@ -99,20 +107,26 @@ namespace MemeMachine
             GameObject shot = Instantiate(bullet, transform.position + transform.forward * 0.55f, Quaternion.Euler(angleInfo.x, angleInfo.y, angleInfo.z));
             shot.GetComponent<Rigidbody>().velocity = transform.forward * 100f;
             shot.GetComponent<Bullet>().DestroyBullet(3f);
+            shootRateTimeStamp = Time.time + shootRate;
             UseAmmo();
+            shootRateTimeStamp = shootRate;
+            vibration.Execute(0, 0.1f, 300f, 1, inputSource);
         }
 
-        public void UseAmmo(/*put magazine script here as a thing*/)
+        public void UseAmmo()
         {
-            // currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
-            MagazineScript.ammoCount -= 1;
+            UpdateAmmoText();
+            currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
         }
 
-        public bool TestAmmo(/*put magazine script here as a thing*/)
+        public bool TestAmmo()
         {
-            if (MagazineScript.ammoCount < 1)
+            UpdateAmmoText();
+            if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
             {
-               return false;
+                Debug.Log("out");
+                return false;
+               
             }
             else
             {
@@ -125,7 +139,11 @@ namespace MemeMachine
         {
             if (MagazineScript.isLoaded)
             {
-                ammoTB.text = MagazineScript.ammoCount.ToString() + " / " + 30;
+                ammoTB.text = currentMag.GetComponent<MagazineScript>().ammoCount.ToString() + " / " + 30;
+            }
+            else
+            {
+                ammoTB.text = "0 / 0";
             }
         }
 
