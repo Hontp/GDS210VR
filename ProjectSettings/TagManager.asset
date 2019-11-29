@@ -21,6 +21,8 @@ TagManager:
   - HomeButton
   - floor
   - Head
+  - Mag
+  - Bullet
   layers:
   - Default
   - TransparentFX
