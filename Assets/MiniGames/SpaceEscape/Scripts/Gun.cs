@@ -31,6 +31,7 @@ namespace MemeMachine
         
         public GameObject currentMag = null;
         public GameObject parent;
+        public EnemySpawner spawner;
 
         
 
@@ -41,7 +42,7 @@ namespace MemeMachine
         {
 
             rightHand = GameObject.Find("RightHand").gameObject.GetComponent<Hand>();
-
+            spawner = FindObjectOfType<EnemySpawner>();
         }
         private void Update()
         {
@@ -111,6 +112,7 @@ namespace MemeMachine
             UseAmmo();
             shootRateTimeStamp = shootRate;
             vibration.Execute(0, 0.1f, 300f, 1, inputSource);
+            spawner.bulletsShot++;
         }
 
         public void UseAmmo()

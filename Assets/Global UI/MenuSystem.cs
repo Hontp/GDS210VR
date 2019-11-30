@@ -63,8 +63,7 @@ public class MenuSystem : MonoBehaviour
             case GameLoaded.Gun:
                 SetName("Space Escape");
                 spawner = FindObjectOfType<EnemySpawner>();
-                spawner.SetSpawnVariables(30, 0.01f, 6);
-
+                spawner.SetSpawnVariables(30, 0.01f, 6, 1);
                 difficultyTB.gameObject.SetActive(true);
                 difTB.SetActive(true);
                 difPanel.SetActive(true);
@@ -109,7 +108,6 @@ public class MenuSystem : MonoBehaviour
                 break;
         }
     }
-
 
     //runs when score back to menu button is pressed and goes back to the main menu
     public void BackToMain()
@@ -159,19 +157,19 @@ public class MenuSystem : MonoBehaviour
         {
             case 0:
                 difficultyTB.text = "Easy";
-                spawner.SetSpawnVariables(30, 0.01f, 6);
+                spawner.SetSpawnVariables(30, 0.01f, 6, 1);
                 break;
             case 1:
                 difficultyTB.text = "Medium";
-                spawner.SetSpawnVariables(50, 0.04f, 5);
+                spawner.SetSpawnVariables(50, 0.04f, 5, 2);
                 break;
             case 2:
                 difficultyTB.text = "Hard";
-                spawner.SetSpawnVariables(75, 0.07f, 4);
+                spawner.SetSpawnVariables(75, 0.07f, 4, 3);
                 break;
             case 3:
                 difficultyTB.text = "Insane";
-                spawner.SetSpawnVariables(300, 0.1f, 4);
+                spawner.SetSpawnVariables(300, 0.1f, 4, 4);
                 break;
         }
     }
@@ -187,8 +185,4 @@ public class MenuSystem : MonoBehaviour
             BackToMain();
         }
     }
-
-
-
-
 }

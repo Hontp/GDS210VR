@@ -16,16 +16,16 @@ namespace MemeMachine
         public List<EnemyScript> enemies;
         public float spawnLimiter;
         public float spawnDecrease;
-        
-        public void SetSpawnVariables(float limit, float decrease, float time)
+        public int bulletsShot;
+        public int score;
+        public int difficulty;
+        public void SetSpawnVariables(float limit, float decrease, float time, int dif)
         {
             SpawnTime = time;
             spawnLimiter = limit;
             spawnDecrease = decrease;
+            difficulty = dif
         }
-
-
-
 
         [SerializeField]
         GameObject secondaryLocations;
@@ -151,7 +151,7 @@ namespace MemeMachine
             {
                 GameFinished();
                 GameObject WinScreen = Instantiate<GameObject>(WinScreenPrefab);
-                WinScreen.GetComponentInChildren<TMP_Text>().text = "how??";
+                WinScreen.GetComponentInChildren<TMP_Text>().text = "you got a score of " + score.ToString(); ;
                 menu.Invoke("MenuActive", 4);
                 Destroy(WinScreen, 4);
             }
@@ -179,7 +179,8 @@ namespace MemeMachine
             }
             enemies.Clear();
             timeLeft = GAMETIME;
-           
+            score = (int)(GAMETIME - timeLeft * (8 + difficulty*2) - bulletsShot * (difficulty/2));
+            
         }
 
     
