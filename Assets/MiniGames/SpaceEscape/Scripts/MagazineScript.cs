@@ -54,7 +54,7 @@ namespace MemeMachine
                     Debug.Log("second check");
                     print(hand.AttachedObjects[i].attachedObject.name);
                     print("(" + hand.AttachedObjects[i].attachedObject.tag + ")");
-                    if (hand.AttachedObjects[i].attachedObject.CompareTag("Mag"))
+                    if (hand.AttachedObjects[i].attachedObject.CompareTag("Mag") && FindObjectOfType<Gun>().currentMag != null)
                     {
                         Debug.Log("1");
                         x = hand.AttachedObjects[i].attachedObject.gameObject;
