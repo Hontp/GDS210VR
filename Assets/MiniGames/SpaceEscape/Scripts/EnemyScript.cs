@@ -37,10 +37,12 @@ namespace MemeMachine
             print(myHealth);
             if(myHealth < 1)
             {
+                myAgent.isStopped = true;
                 anim.SetBool("Die", true);
                 anim.SetBool("Attack", false);
                 anim.SetBool("Run", false);
-                Destroy(gameObject, 5f);
+
+                Destroy(gameObject, 2f);
                 mySpawner.enemies.Remove(this);
                 mySpawner.numOfEnimies--;
             }
@@ -61,6 +63,7 @@ namespace MemeMachine
                 myAgent.isStopped = true;
                 anim.SetBool("Attack", true);
                 anim.SetBool("Run", false);
+                anim.SetBool("Die", false);
                 attackingPlayer = true;
             }
             if (myAgent.remainingDistance < 1 && !movingToPlayer)
@@ -69,6 +72,7 @@ namespace MemeMachine
                 myAgent.SetDestination(playerTransform.position);
                 anim.SetBool("Run", true);
                 anim.SetBool("Attack", false);
+                anim.SetBool("Die", false);
             }
         }
 
