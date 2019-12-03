@@ -83,9 +83,9 @@ public class Blade : MonoBehaviour
         float topDistance = Vector3.Distance(startTop,endTop);
 
         // http://hyperphysics.phy-astr.gsu.edu/hbase/vel2.html
-        averageVel =  (botDistance + topDistance) / (Time.deltaTime * maxSize);  
+        averageVel =  (topDistance) /2;  
 
-        meshRenderer.material.SetFloat("_alpha",getVel());
+        meshRenderer.material.SetFloat("_alpha", Mathf.Clamp(averageVel * 0.5f, 0.2f, 0.6f));
 
         if(botBladePoints.Count >= maxSize)
         {
@@ -103,7 +103,7 @@ public class Blade : MonoBehaviour
 
     public float getVel()
     {
-        return Mathf.Clamp(averageVel*0.25f,0.2f,0.6f);
+        return Mathf.Clamp(Vector3.Distance(startTop,prevTop)/2.0f,0.2f,0.6f);
     }
     void generateMesh()
     {

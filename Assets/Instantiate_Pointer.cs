@@ -9,8 +9,9 @@ public class Instantiate_Pointer : MonoBehaviour
     public GameObject pointer;
     public GameManager gm;
     GameObject reference_pointer;
-    bool spawned_pointer;
+    public bool spawned_pointer=false;
     public Hand hand;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class Instantiate_Pointer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gm.dead == true)
+        if (canvas.activeSelf==true)
         {
             if (spawned_pointer == false)
             {
@@ -39,6 +40,7 @@ public class Instantiate_Pointer : MonoBehaviour
             {
                 hand.DetachObject(reference_pointer);
                 Destroy(reference_pointer);
+                spawned_pointer = false;
             }
         }
     }

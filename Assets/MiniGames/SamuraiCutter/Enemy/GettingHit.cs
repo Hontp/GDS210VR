@@ -13,17 +13,25 @@ namespace SamuraiCutter
         public float explosionRadius, explosionPower;
         public Vector3 explosionPos;
         public AudioSource breakHit;
+        public AudioSource clinkHit;
         public Blade blade;
         private EnemyAI ai;
 
+        public SkinnedMeshRenderer mr;
+        public Material cracked;
+
         public float minVelToKill;
+        private bool beenHit;
 
         private void Awake()
         {
+            beenHit = false;
             spawnEngine = GameObject.Find("EnemySpawnManager").GetComponent<SpawnEnemy>();
             blade = FindObjectOfType<Blade>();
             ai = GetComponent<EnemyAI>();
             breakHit = GameObject.Find("BreakingSFX").GetComponent<AudioSource>();
+            clinkHit = GameObject.Find("ClinkHitSFX").GetComponent<AudioSource>();
+            
         }
 
         private void Update()
@@ -63,18 +71,39 @@ namespace SamuraiCutter
             {
                 if(blade.averageVel >= minVelToKill)
                 {
-                    replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
-                    this.GetComponentInChildren<BoxCollider>().enabled = false;
-                    this.gameObject.SetActive(false);
-                    spawnEngine.registerKill();
-                    breakHit.Play();
-                    Invoke("DestroyMe", 2f);
+                    kill();
                 }
                 else
                 {
-                    ai.jumpBack();
+                    if(beenHit)
+                    {
+                        kill();
+                    }
+                    else
+                    {
+                        clink();
+                        beenHit = true;
+                    }
                 }
             }
+        }
+
+
+        void kill()
+        {
+            replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
+            this.GetComponentInChildren<BoxCollider>().enabled = false;
+            this.gameObject.SetActive(false);
+            spawnEngine.registerKill();
+            breakHit.Play();
+            Invoke("DestroyMe", 2f);
+        }
+
+        void clink()
+        {
+            mr.material = cracked;
+            clinkHit.Play();
+            ai.jumpBack();
         }
 
         void DestroyMe()

@@ -100,8 +100,12 @@ MonoBehaviour:
   explosionRadius: 0
   explosionPower: 0
   explosionPos: {x: 0, y: 0, z: 0}
+  breakHit: {fileID: 0}
+  clinkHit: {fileID: 0}
   blade: {fileID: 0}
-  minVelToKill: 0.4
+  mr: {fileID: 8540180604400507434}
+  cracked: {fileID: 2100000, guid: 2c3497646f6e5de4690f2c7841f71924, type: 2}
+  minVelToKill: 0.155
 --- !u!54 &1228554199369167052
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -159,6 +163,7 @@ MonoBehaviour:
   MaxDist: 10
   jumping: 0
   attacking: 0
+  playerHit: {fileID: 0}
   idle: 0
   animator: {fileID: 4672244418465654264}
 --- !u!1001 &1718085023551798330
@@ -262,6 +267,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: -7767868420266356462, guid: eaf599fadfc7c524f8a5a7a88904e60d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7767868420266356462, guid: eaf599fadfc7c524f8a5a7a88904e60d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eaf599fadfc7c524f8a5a7a88904e60d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -322,16 +337,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7de03913b62fc7948ae77953e8374e36, type: 2}
-    - target: {fileID: -7767868420266356462, guid: eaf599fadfc7c524f8a5a7a88904e60d,
+    - target: {fileID: 2135624897131870642, guid: eaf599fadfc7c524f8a5a7a88904e60d,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7767868420266356462, guid: eaf599fadfc7c524f8a5a7a88904e60d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1484eca9a5cc955428e792cc3cd26fc3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaf599fadfc7c524f8a5a7a88904e60d, type: 3}
 --- !u!4 &3340868601814370434 stripped
@@ -343,6 +353,12 @@ Transform:
 --- !u!95 &4672244418465654264 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: eaf599fadfc7c524f8a5a7a88904e60d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7721301183628796824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &8540180604400507434 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2135624897131870642, guid: eaf599fadfc7c524f8a5a7a88904e60d,
     type: 3}
   m_PrefabInstance: {fileID: 7721301183628796824}
   m_PrefabAsset: {fileID: 0}
