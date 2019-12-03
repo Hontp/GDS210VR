@@ -30,8 +30,8 @@ namespace TowerDrop
               //  x.transform.parent = hand.gameObject.transform;
                 x.transform.position = hand.gameObject.transform.position;
                 x.transform.rotation = hand.gameObject.transform.rotation;
-            //    if (x.GetComponent<Throwable>())
-              //      Destroy(x.GetComponent<Throwable>());
+            //  if (x.GetComponent<Throwable>())
+            //  Destroy(x.GetComponent<Throwable>());
                 if (peranted == false)
                 {
                     peranted = true;

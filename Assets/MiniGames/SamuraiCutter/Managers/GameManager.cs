@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 namespace SamuraiCutter
 {
@@ -12,6 +13,8 @@ namespace SamuraiCutter
         public UIManager uIManager;
         public Transform playerPos;
         public MenuSystem menuSystem;
+        public Hand hand;
+        public GameObject pointer;
         public bool dead, started;
         // Start is called before the first frame update
         void Awake()
@@ -20,25 +23,30 @@ namespace SamuraiCutter
             if (_instance != null && _instance != this)
             {
                 Destroy(this.gameObject);
-            } else {
+            }
+            else
+            {
                 _instance = this;
             }
-           
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(dead && !started)
+            if (dead && !started)
             {
                 print("dead and not started");
                 menuSystem.Invoke("MenuActive", 4f);
-            }
-            if(menuSystem.gamePlaying == true)
-            {
-                dead = false;
+
+                if (menuSystem.gamePlaying == true)
+                {
+                    dead = false;
+                    hand.renderModelPrefab = pointer;
+                }
             }
         }
     }
+
 
 }

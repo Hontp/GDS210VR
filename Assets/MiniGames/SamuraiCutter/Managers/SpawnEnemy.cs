@@ -23,7 +23,7 @@ namespace SamuraiCutter
         public float waveStartTime;
         public float sectionTime = 1f;
         public AnimationCurve waveSpawnCurve;
-    
+        public AudioSource newRound;
 
         public void registerKill()
         {
@@ -67,6 +67,7 @@ namespace SamuraiCutter
                 if (enemiesSpawned < enemyAmounts[currentWaveNumber] && !spawning)
                 {
                     Debug.Log("spawning Active");
+                    newRound.Play();
                     spawning = true;
                     Invoke("Spawn", 1f);
                 }
