@@ -48,6 +48,8 @@
 	half4 SobelFragmentPass(Varyings i) : SV_Target
 	{
 
+		half2 adjustedUV = UnityStereoTransformScreenSpaceTex(i.uv[1]);
+
 		half centerDepth = Linear01Depth(SAMPLE_DEPTH_TEXTURE(_CameraDepthTexture, sampler_CameraDepthTexture,
 
 		UnityStereoScreenSpaceUVAdjust(i.uv[1], _CameraDepthTexture_ST)));
@@ -86,7 +88,7 @@
 		half Sobel = sqrt(SobelX * SobelX + SobelY * SobelY);
 
 		Sobel = 1.0 - pow(saturate(Sobel), _Exponent);
-		return Sobel * lerp(SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv[0]), _FadeColor, _FadeStength);
+		return Sobel * lerp(SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, adjustedUV), _FadeColor, _FadeStength);
 	}
 
 
