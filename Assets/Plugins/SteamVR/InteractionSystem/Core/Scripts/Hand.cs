@@ -1142,9 +1142,17 @@ namespace Valve.VR.InteractionSystem
                             targetHandRotation = currentAttachedObjectInfo.Value.interactable.transform.rotation * Quaternion.Inverse(offset);
 
                             Vector3 worldOffset = (this.transform.position - currentAttachedObjectInfo.Value.handAttachmentPointTransform.position);
-                            Quaternion rotationDiff = mainRenderModel.GetHandRotation() * Quaternion.Inverse(this.transform.rotation);
+                            Quaternion rotationDiff;
+                            if (mainRenderModel != null) { 
+                                rotationDiff = mainRenderModel.GetHandRotation() * Quaternion.Inverse(this.transform.rotation);
+                            }
+                            else
+                            {
+                                rotationDiff = Quaternion.Inverse(this.transform.rotation);
+                            }
                             Vector3 localOffset = rotationDiff * worldOffset;
                             targetHandPosition = currentAttachedObjectInfo.Value.interactable.transform.position + localOffset;
+                            
                         }
                         else
                         {
