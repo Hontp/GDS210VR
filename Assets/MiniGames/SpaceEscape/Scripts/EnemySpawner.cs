@@ -24,7 +24,7 @@ namespace MemeMachine
             SpawnTime = time;
             spawnLimiter = limit;
             spawnDecrease = decrease;
-            difficulty = dif
+            difficulty = dif;
         }
 
         [SerializeField]
