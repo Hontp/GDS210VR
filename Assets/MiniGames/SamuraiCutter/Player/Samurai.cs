@@ -8,11 +8,7 @@ namespace SamuraiCutter
 public class Samurai : MonoBehaviour
 {
     public float health = 1f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AudioSource playerHit;
 
     // Update is called once per frame
     void Update()
@@ -36,6 +32,7 @@ public class Samurai : MonoBehaviour
         if(c.transform.CompareTag("enemysword"))
         {
              GameManager._instance.uIManager.SetHurt(0.25f);
+                playerHit.Play();
         }
     }
 }
