@@ -75,7 +75,7 @@ namespace TowerDrop
         void LateUpdate()
         {
             if (gm.game_phase == 2) {
-                if(endless==false)
+                if(endless==true)
                 {
                     {
                         //spawn tick
@@ -86,7 +86,7 @@ namespace TowerDrop
                             Spawn_enitiy();
                         }
                     }
-                }else if (endless == true && entitys.Count == 0 && em.SpiderTankCount == 2)
+                }else if (endless == false && entitys.Count == 0 && em.SpiderTankCount <= 2)
                 {
                     int x = Random.Range(1, 21);
                     if (x == 1)
@@ -140,7 +140,7 @@ namespace TowerDrop
                             }
                             else
                             {
-                                //set the postion of del
+                              //  entitys.RemoveAt(i);
                             }
                             return;
                         }
