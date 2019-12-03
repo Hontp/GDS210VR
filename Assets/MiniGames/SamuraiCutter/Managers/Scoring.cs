@@ -6,6 +6,8 @@ public class Scoring : MonoBehaviour
 {
     public int currentScore;
     public string scoreText;
+    PlayerPrefs SC_HighScore_1, SC_HighScore_2, SC_HighScore_3;
+
 
     private void Start()
     {
@@ -17,5 +19,13 @@ public class Scoring : MonoBehaviour
     {
         currentScore += 1;
         scoreText = "SCORE: " + currentScore;
+    }
+
+    void CompareScore()
+    {
+        //if(currentScore >= SC_HighScore_1)
+        //{
+
+        //}
     }
 }
