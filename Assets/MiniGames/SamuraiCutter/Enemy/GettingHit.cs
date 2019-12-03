@@ -12,7 +12,7 @@ namespace SamuraiCutter
         public bool bypass;
         public float explosionRadius, explosionPower;
         public Vector3 explosionPos;
-
+        public AudioSource breakHit;
         public Blade blade;
         private EnemyAI ai;
 
@@ -23,6 +23,7 @@ namespace SamuraiCutter
             spawnEngine = GameObject.Find("EnemySpawnManager").GetComponent<SpawnEnemy>();
             blade = FindObjectOfType<Blade>();
             ai = GetComponent<EnemyAI>();
+            breakHit = GameObject.Find("BreakingSFX").GetComponent<AudioSource>();
         }
 
         private void Update()
@@ -66,6 +67,7 @@ namespace SamuraiCutter
                     this.GetComponentInChildren<BoxCollider>().enabled = false;
                     this.gameObject.SetActive(false);
                     spawnEngine.registerKill();
+                    breakHit.Play();
                     Invoke("DestroyMe", 2f);
                 }
                 else
