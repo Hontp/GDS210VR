@@ -10164,7 +10164,7 @@ PrefabInstance:
     - target: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: renderModelPrefab
       value: 
-      objectReference: {fileID: 3542192538974956674, guid: efd5b17502802904c836afaff739ac5c,
+      objectReference: {fileID: 4940495778366085590, guid: 6fc49b897f94d334cafa830e3e940f88,
         type: 3}
     - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: renderModelPrefab
@@ -10492,7 +10492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964d3973e15342f49b24faacfac58d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointer: {fileID: 3542192538974956674, guid: 29280f7e3bb94924c925d99bd7df6933, type: 3}
+  pointer: {fileID: 3542192538974956674, guid: cf6c96750d4abde48a30fb4553bbcc55, type: 3}
   gm: {fileID: 1438630467}
   hand: {fileID: 501454526}
 --- !u!4 &511071598 stripped
