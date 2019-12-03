@@ -37,11 +37,10 @@ namespace MemeMachine
             print(myHealth);
             if(myHealth < 1)
             {
-                //anim.SetBool("Die", true);
+                anim.SetBool("Die", true);
                 anim.SetBool("Attack", false);
                 anim.SetBool("Run", false);
-                //Destroy(gameObject, 5f);
-                Destroy(gameObject);
+                Destroy(gameObject, 5f);
                 mySpawner.enemies.Remove(this);
                 mySpawner.numOfEnimies--;
             }

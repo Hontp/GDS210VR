@@ -18,8 +18,6 @@ public class rightHand : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //hand.renderModelPrefab = laser;
-        //hand.SetRenderModel(laser);
         canvas = GameObject.Find("Canvas");
 
     }
@@ -27,16 +25,6 @@ public class rightHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        //when dead put laser back in hand
-
-       /* if (!GetComponent<EnemySpawner>().gameUnderway)
-         {
-            Debug.Log("from gun to slim");
-            hand.renderModelPrefab = laser;
-            hand.SetRenderModel(laser);
-         }*/
          
 
 
@@ -44,27 +32,14 @@ public class rightHand : MonoBehaviour
         {
             if (!Gun.gunBackGripGrabbed && hand.AttachedObjects[i].attachedObject.name == "Dummy Blaster")
             {
-                Destroy(hand.AttachedObjects[i].attachedObject.gameObject);
+                if (FindObjectOfType<MenuSystem>().gamePlaying)
+                {
+                    Destroy(hand.AttachedObjects[i].attachedObject.gameObject);
 
-                actualBlaster.SetActive(true);
-                Gun.gunBackGripGrabbed = true;
-                actualBlaster.GetComponent<Interactable>().highlightOnHover = false;
-                /*
-                x = hand.AttachedObjects[i].attachedObject.gameObject;
-
-                hand.DetachObject(hand.AttachedObjects[i].attachedObject,false);
-               
-                Destroy(x.GetComponent<Throwable>());
-                Destroy(x.GetComponent<Rigidbody>());
-
-                x.GetComponent<Interactable>().highlightOnHover = false;
-                //x.gameObject.transform.position = Vector3.zero;
-                x.transform.parent = hand.gameObject.transform;
-               // x.gameObject.transform.rotation = hand.transform.rotation;
-                
-                Debug.Log("grabbed");
-                Gun.gunBackGripGrabbed = true;
-               */
+                    actualBlaster.SetActive(true);
+                    Gun.gunBackGripGrabbed = true;
+                    actualBlaster.GetComponent<Interactable>().highlightOnHover = false;
+                }
             }
         }        
     }
@@ -74,7 +49,6 @@ public class rightHand : MonoBehaviour
         Gun.gunBackGripGrabbed = false;
         laser.SetActive(true);
         GameObject dummy = Instantiate<GameObject>(dummyBlaster, new Vector3(-0.612f, 1.228f, 35.4f), Quaternion.Euler(-30, 180,0));
-
     }
     public void GameStarted()
     {

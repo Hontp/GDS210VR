@@ -31,14 +31,7 @@ namespace MemeMachine
         
         public GameObject currentMag = null;
         public GameObject parent;
-        public EnemySpawner spawner;
-
-        
-
-
-
-
-        public void Start()
+        public EnemySpawner spawner;        public void Start()
         {
 
             rightHand = GameObject.Find("RightHand").gameObject.GetComponent<Hand>();
@@ -47,27 +40,6 @@ namespace MemeMachine
         private void Update()
         {
             CheckShoot();
-
-            if(gunBackGripGrabbed == true)
-            {
-                //transform.parent.position = Vector3.zero;
-            }
-            
-            //attachment off set check
-            //when item is picked up appply transform 
-           if(this.transform.parent == rightHand)
-            {
-                //rightHand.renderModelPrefab = this.gameObject;
-               // rightHand.SetRenderModel(this.gameObject);
-            }
-
-            //if (grabPinch.GetStateDown(leftInputSource)) //|| right side button press)
-            {
-                //add throwable and rb on mag
-                
-                
-            }
-
             UpdateAmmoText();
         }
         private void CheckShoot()
