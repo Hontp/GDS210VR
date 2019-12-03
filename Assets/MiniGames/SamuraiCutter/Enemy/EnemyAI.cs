@@ -21,7 +21,7 @@ namespace SamuraiCutter
         private Rigidbody rb;
         public bool jumping;
         public bool attacking;
-
+        public AudioSource playerHit;
         public bool idle;
 
         public enum State {IDLE,WALK,JUMP};
@@ -112,6 +112,7 @@ namespace SamuraiCutter
         public void slash()
         {
             attacking = true;
+
         }
 
         public void jumpBack()
