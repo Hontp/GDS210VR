@@ -32,9 +32,9 @@ namespace TowerDrop
             {
                 GetComponent<game_maneger>().game_phase=3;
             }
-            if (GetComponent<game_maneger>().game_phase == 1)
+            if (GetComponent<game_maneger>().game_phase == 0)
             {
-                Ph.playerHP = 100;
+                Ph.playerHP = 10;
             }
         }
 

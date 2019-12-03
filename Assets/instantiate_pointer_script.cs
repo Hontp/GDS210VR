@@ -11,6 +11,7 @@ namespace TowerDrop
         public Hand hand;
         public game_maneger gm;
         public GameObject x;
+        bool peranted;
         // Start is called before the first frame update
         void Start()
         {
@@ -27,12 +28,23 @@ namespace TowerDrop
               //  x.transform.parent = hand.gameObject.transform;
                 x.transform.position = hand.gameObject.transform.position;
                 x.transform.rotation = hand.gameObject.transform.rotation;
-                hand.AttachObject(x, hand.GetBestGrabbingType(), Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.TurnOffGravity | Hand.AttachmentFlags.DetachOthers);
+                if (x.GetComponent<Throwable>())
+                    Destroy(x.GetComponent<Throwable>());
+                if (peranted == false)
+                {
+                    peranted = true;
+                    x.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+                    hand.AttachObject(x, hand.GetBestGrabbingType(), Hand.AttachmentFlags.ParentToHand | Hand.AttachmentFlags.TurnOffGravity | Hand.AttachmentFlags.DetachOthers);
+                    
+                }
             }
             else
             {
+                x.AddComponent<Throwable>();
                 x.transform.parent = null;
                 hand.DetachObject(x);
+                peranted = false;
+                x.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             }
         }
     }
