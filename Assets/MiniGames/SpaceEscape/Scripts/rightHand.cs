@@ -27,19 +27,6 @@ public class rightHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        //game start change from laser to slimhand
-       if (/*hand.renderModelPrefab == laser && */canvas.GetComponent<MenuSystem>().gamePlaying)
-       {
-            laser.SetActive(false);
-            //hand.DetachObject(laser);
-           // Destroy(GameObject.Find("LaserPointer(Clone)"));
-            hand.renderModelPrefab = slimHand;
-            hand.SetRenderModel(slimHand);
-         
-            
-            Debug.Log("from laser to slim");
-       }
 
 
         //when dead put laser back in hand
@@ -88,5 +75,13 @@ public class rightHand : MonoBehaviour
         laser.SetActive(true);
         GameObject dummy = Instantiate<GameObject>(dummyBlaster, new Vector3(-0.612f, 1.228f, 35.4f), Quaternion.Euler(-30, 180,0));
 
+    }
+    public void GameStarted()
+    {
+        if (canvas.GetComponent<MenuSystem>().gamePlaying)
+        {
+            laser.SetActive(false);
+            Debug.Log("from laser to slim");
+        }
     }
 }

@@ -83,6 +83,7 @@ namespace MemeMachine
             {
                 gameUnderway = true;
                 playerScript.SetPlayerHealth(6);
+                FindObjectOfType<rightHand>().GameStarted();
                 //reset all mags position and ammo
 
 
