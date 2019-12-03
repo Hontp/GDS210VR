@@ -32,7 +32,7 @@ public class rightHand : MonoBehaviour
         {
             if (!Gun.gunBackGripGrabbed && hand.AttachedObjects[i].attachedObject.name == "Dummy Blaster")
             {
-                if (FindObjectOfType<MenuSystem>().gamePlaying)
+                if (canvas.activeSelf == false) // (FindObjectOfType<MenuSystem>().gamePlaying == true
                 {
                     Destroy(hand.AttachedObjects[i].attachedObject.gameObject);
 
