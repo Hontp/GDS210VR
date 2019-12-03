@@ -24,7 +24,7 @@ namespace MemeMachine
             SpawnTime = time;
             spawnLimiter = limit;
             spawnDecrease = decrease;
-            difficulty = dif
+            difficulty = dif;
         }
 
         [SerializeField]
@@ -83,8 +83,9 @@ namespace MemeMachine
             {
                 gameUnderway = true;
                 playerScript.SetPlayerHealth(6);
-                //rightHand.renderModelPrefab = rightHandObject;
-                //remove laser pointer and put what needs to be in their hands
+                //reset all mags position and ammo
+
+
             }
             if (menu.gamePlaying & gameUnderway)
             {
@@ -153,6 +154,7 @@ namespace MemeMachine
                 GameObject WinScreen = Instantiate<GameObject>(WinScreenPrefab);
                 WinScreen.GetComponentInChildren<TMP_Text>().text = "you got a score of " + score.ToString(); ;
                 menu.Invoke("MenuActive", 4);
+                FindObjectOfType<rightHand>().MenuActive();
                 Destroy(WinScreen, 4);
             }
         }
