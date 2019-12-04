@@ -67,7 +67,7 @@ namespace SamuraiCutter
                 if (enemiesSpawned < enemyAmounts[currentWaveNumber] && !spawning)
                 {
                     Debug.Log("spawning Active");
-                    newRound.Play();
+                    
                     spawning = true;
                     Invoke("Spawn", 1f);
                 }
@@ -75,6 +75,7 @@ namespace SamuraiCutter
                 {
                     if (remainingEnemies == 0)
                     {
+                        newRound.Play();
                         incWave();
                     }
                 }
