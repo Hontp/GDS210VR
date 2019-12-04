@@ -1,31 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using SamuraiCutter;
 
 public class Scoring : MonoBehaviour
 {
     public int currentScore;
     public string scoreText;
-    PlayerPrefs SC_HighScore_1, SC_HighScore_2, SC_HighScore_3;
-
+    public bool gameOver;
 
     private void Start()
     {
         currentScore = 0;
-        scoreText = "SCORE: " + currentScore;
     }
 
     public void ScoringSystem()
     {
         currentScore += 1;
-        scoreText = "SCORE: " + currentScore;
+    }
+
+    private void Update()
+    {
+        if(GameManager._instance.dead)
+        {
+            if (gameOver == false)
+            {
+                gameOver = true;
+                CompareScore();
+            }
+        }
+        else
+        {
+            gameOver = false;
+        }
     }
 
     void CompareScore()
     {
-        //if(currentScore >= SC_HighScore_1)
-        //{
-
-        //}
+        if (PlayerPrefs.GetInt("SC_Highscore_Num") < currentScore)
+        {
+            PlayerPrefs.SetInt("SC_Highscore_Num", currentScore);
+            PlayerPrefs.SetString("SC_Highscore", "HIGHSCORE: " + currentScore.ToString());
+        }
+        scoreText = PlayerPrefs.GetString("SC_Highscore");
     }
 }
