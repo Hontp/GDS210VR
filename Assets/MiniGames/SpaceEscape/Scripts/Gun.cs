@@ -22,6 +22,7 @@ namespace MemeMachine
         public bool shoot;
         public GameObject bullet;
         public  static bool gunBackGripGrabbed = false;
+        public GameObject dummyMag;
 
         public float shootRateTimeStamp;
         public float shootRate;
@@ -41,6 +42,7 @@ namespace MemeMachine
         {
             CheckShoot();
             UpdateAmmoText();
+            DummyMagLogic();
         }
         private void CheckShoot()
         {
@@ -52,8 +54,7 @@ namespace MemeMachine
             {
                 shoot = false;
             }
-
-            //if MagazineScript.isLoaded = true;
+            
             if (gunBackGripGrabbed == true)
             {
                 if (shoot && TestAmmo() && MagazineScript.isLoaded)
@@ -119,6 +120,19 @@ namespace MemeMachine
             {
                 ammoTB.text = "0 / 0";
             }
+        }
+
+        public void DummyMagLogic()
+        {
+            if(currentMag == null)
+            {
+                dummyMag.SetActive(false);
+            }
+            else
+            {
+                dummyMag.SetActive(true);
+            }
+
         }
 
 

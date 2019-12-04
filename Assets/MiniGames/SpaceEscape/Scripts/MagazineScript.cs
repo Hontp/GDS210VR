@@ -7,6 +7,8 @@ namespace MemeMachine
 {
     public class MagazineScript : MonoBehaviour
     {
+        public const int STARTINGAMMOCOUNT = 30;
+
         public Hand hand;
         public GameObject x;
         public GameObject blaster;
@@ -18,11 +20,13 @@ namespace MemeMachine
         public int ammoCount = 30;
         public bool hasAmmo = true;
 
+        public bool unlimited_ammo=false;
 
 
         // Start is called before the first frame update
         void Start()
         {
+            ammoCount = STARTINGAMMOCOUNT;
             hand = GameObject.Find("LeftHand").gameObject.GetComponent<Hand>();
             print(blaster);
             rb = GetComponent<Rigidbody>();
@@ -37,10 +41,20 @@ namespace MemeMachine
                 FindObjectOfType<Gun>().currentMag = null;
                 isLoaded = false;
                 FindObjectOfType<Gun>().UpdateAmmoText();
+                GetComponent<MeshRenderer>().enabled = true;
             }
             if (transform.parent != null && rb.isKinematic == false)
             {
                 rb.isKinematic = true;
+                if(transform.parent.name == "BlasterGameObj")
+                {
+                    GetComponent<MeshRenderer>().enabled = false;
+                }
+                //make invisible
+            }
+            if (unlimited_ammo == true)
+            {
+                ammoCount = 30;
             }
 
         }
@@ -64,6 +78,7 @@ namespace MemeMachine
                         x.transform.parent = blaster.gameObject.transform;
                         Debug.Log("4");
                         FindObjectOfType<Gun>().currentMag = x;
+                        print(transform.position);
                         Debug.Log("third check");
                         isLoaded = true;
                         Debug.Log(isLoaded);

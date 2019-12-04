@@ -132,6 +132,7 @@ public class MenuSystem : MonoBehaviour
             Time.timeScale = 1f;
             SamuraiCutter.GameManager._instance.spawnEnemy.currentWaveNumber = 0;
             SamuraiCutter.GameManager._instance.spawnEnemy.remainingEnemies = 0;
+            SamuraiCutter.GameManager._instance.dead = false;
         }
 
         gameObject.SetActive(false);

@@ -21,6 +21,7 @@ namespace MemeMachine
         bool movingToPlayer = false;
         bool attackingPlayer = false;
         bool attacksStarted = false;
+        float attackCounter = 0;
         int myHealth;
 
 
@@ -82,7 +83,16 @@ namespace MemeMachine
             {
                 attacksStarted = true;
                 print("attacking player");
-                InvokeRepeating("DamagePlayerLink", 1f, 1f);
+                attackCounter = 1;
+            }
+            if(attacksStarted && attackCounter < 0)
+            {
+                playerScript.Invoke("DamagePlayer", 0);
+                attackCounter = 1;
+            }
+            else
+            {
+                attackCounter -= Time.deltaTime;
             }
         }
 
@@ -91,12 +101,6 @@ namespace MemeMachine
         {
             ChangeLocation();
             Attack();
-        }
-
-        void DamagePlayerLink()
-        {
-
-            playerScript.Invoke("DamagePlayer", 0);
         }
 
 

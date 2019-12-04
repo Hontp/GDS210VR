@@ -54,7 +54,7 @@ namespace MemeMachine
                 GameObject deathScreen = Instantiate<GameObject>(deathScreenPrefab);
                 deathScreen.GetComponentInChildren<TMP_Text>().text = "You died noob";
                 menu.Invoke("MenuActive", 4);
-                FindObjectOfType<rightHand>().MenuActive();
+                FindObjectOfType<rightHand>().MenuReset();
                 Destroy(deathScreen, 4);
 
             }
