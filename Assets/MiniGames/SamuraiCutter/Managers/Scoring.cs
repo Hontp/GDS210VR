@@ -7,6 +7,7 @@ using SamuraiCutter;
 public class Scoring : MonoBehaviour
 {
     public int currentScore;
+    public int highscore;
     public string scoreText;
     public bool gameOver, hasScore;
 
@@ -35,25 +36,33 @@ public class Scoring : MonoBehaviour
             gameOver = false;
         }
 
-        if(PlayerPrefs.HasKey("SC_Highscore"))
+
+        if (!hasScore)
         {
-            hasScore = true;
-        }
-        else
-        {
-            PlayerPrefs.SetInt("SC_Highscore_Num", 0);
-            PlayerPrefs.SetString("SC_Highscore", "HIGHSCORE: " + PlayerPrefs.GetInt("SC_Highscore_Num"));
+            if (PlayerPrefs.HasKey("SC_Highscore"))
+            {
+                highscore = PlayerPrefs.GetInt("SC_Highscore");
+
+            }
+            else
+            {
+                PlayerPrefs.SetInt("SC_Highscore", 0);
+                highscore = 0;
+            }
+
+            scoreText = highscore.ToString();
             hasScore = true;
         }
     }
 
     void CompareScore()
     {
-        if (PlayerPrefs.GetInt("SC_Highscore_Num") < currentScore && hasScore)
+        if (highscore < currentScore)
         {
-            PlayerPrefs.SetInt("SC_Highscore_Num", currentScore);
-            PlayerPrefs.SetString("SC_Highscore", "HIGHSCORE: " + currentScore.ToString());
+            PlayerPrefs.SetInt("SC_Highscore", currentScore);
+            highscore = currentScore;
+           
         }
-        scoreText = PlayerPrefs.GetString("SC_Highscore");
+        scoreText = highscore.ToString();
     }
 }
