@@ -23,6 +23,8 @@ TagManager:
   - Head
   - Mag
   - Bullet
+  - arial point
+  - vtol
   layers:
   - Default
   - TransparentFX
