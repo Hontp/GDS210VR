@@ -1,83 +1,74 @@
 fileFormatVersion: 2
-guid: dc5b88b6f65fa244c95eec1e6955bb81
+guid: 023768de407386d4d8785f509cd8c227
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
-      74: 628617374676318939
-    second: Cube_Plane|Cube_Plane.002Action.001
+      74: -8051102449201487124
+    second: Cube|Action
   - first:
-      74: 1989944192931787143
-    second: Cube_Plane|Cube_Plane.003Action.001
+      74: -1404934914944061489
+    second: Cube|Action.001
   - first:
-      74: 7743809260962123913
-    second: Cube_Plane|Cube_Plane.004Action.001
+      74: 7708070724893832537
+    second: Cube|Action.002
   - first:
-      74: -4379266971503050115
-    second: Cube_Plane|Cube_Plane.005Action.001
+      74: -7359060483159870833
+    second: Cube|Action.003
   - first:
-      74: -2307899130550661256
-    second: Cube_Plane|Cube_PlaneAction.001
+      74: 2307062787039625165
+    second: Cube|Action.004
   - first:
-      74: 7313447666560178489
-    second: Cube_Plane.002|Cube_Plane.002Action.001
+      74: 5259475447914872051
+    second: Cube|Cube.004Action
   - first:
-      74: -2835516866222917749
-    second: Cube_Plane.002|Cube_Plane.003Action.001
+      74: 8113416117056043464
+    second: Armature.000|Action
   - first:
-      74: -5370446303624233792
-    second: Cube_Plane.002|Cube_Plane.004Action.001
+      74: -397543591003064571
+    second: Armature.000|Action.001
   - first:
-      74: -2804855997382486549
-    second: Cube_Plane.002|Cube_Plane.005Action.001
+      74: 3126094806203495254
+    second: Armature.000|Action.002
   - first:
-      74: -6618209595678349786
-    second: Cube_Plane.002|Cube_PlaneAction.001
+      74: -1541648300007516530
+    second: Armature.000|Action.003
   - first:
-      74: 1640680022342917543
-    second: Cube_Plane.003|Cube_Plane.002Action.001
+      74: 2073375114558252190
+    second: Armature.000|Action.004
   - first:
-      74: 3553517358088166651
-    second: Cube_Plane.003|Cube_Plane.003Action.001
+      74: 5923223639718819129
+    second: Armature.000|Armature.000Action
   - first:
-      74: 821413538637805310
-    second: Cube_Plane.003|Cube_Plane.004Action.001
+      74: -6809707879906735441
+    second: Armature.000|Armature.000Action.001
   - first:
-      74: 8674189882672569642
-    second: Cube_Plane.003|Cube_Plane.005Action.001
+      74: 4742496209246984989
+    second: Armature.000|Cube.004Action
   - first:
-      74: -8042863592358188415
-    second: Cube_Plane.003|Cube_PlaneAction.001
+      74: 7721715186239825389
+    second: Armature.001|Action
   - first:
-      74: -7300815191969185439
-    second: Cube_Plane.004|Cube_Plane.002Action.001
+      74: -7523534810428418115
+    second: Armature.001|Action.001
   - first:
-      74: -6910432841509029041
-    second: Cube_Plane.004|Cube_Plane.003Action.001
+      74: -4398270123438568637
+    second: Armature.001|Action.002
   - first:
-      74: -7716479612374641696
-    second: Cube_Plane.004|Cube_Plane.004Action.001
+      74: 7007551240903112307
+    second: Armature.001|Action.003
   - first:
-      74: 3092158329090192598
-    second: Cube_Plane.004|Cube_Plane.005Action.001
+      74: 2637131330213253197
+    second: Armature.001|Action.004
   - first:
-      74: -3779615888801243591
-    second: Cube_Plane.004|Cube_PlaneAction.001
+      74: -6299958635320117647
+    second: Armature.001|Armature.000Action
   - first:
-      74: -987822094953857390
-    second: Cube_Plane.005|Cube_Plane.002Action.001
+      74: 1226996330119613696
+    second: Armature.001|Armature.000Action.001
   - first:
-      74: 8660576233396967401
-    second: Cube_Plane.005|Cube_Plane.003Action.001
-  - first:
-      74: -1150861441417678944
-    second: Cube_Plane.005|Cube_Plane.004Action.001
-  - first:
-      74: 4456279476437352694
-    second: Cube_Plane.005|Cube_Plane.005Action.001
-  - first:
-      74: 7866235418900066707
-    second: Cube_Plane.005|Cube_PlaneAction.001
+      74: 7821627992464522005
+    second: Armature.001|Cube.004Action
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -107,11 +98,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Cube_Plane|Cube_Plane.002Action.001
-      takeName: Cube_Plane|Cube_Plane.002Action.001
-      internalID: 628617374676318939
+      name: Cube|Action
+      takeName: Cube|Action
+      internalID: -8051102449201487124
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -136,11 +127,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane|Cube_Plane.003Action.001
-      takeName: Cube_Plane|Cube_Plane.003Action.001
-      internalID: 1989944192931787143
+      name: Cube|Action.001
+      takeName: Cube|Action.001
+      internalID: -1404934914944061489
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -165,11 +156,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane|Cube_Plane.004Action.001
-      takeName: Cube_Plane|Cube_Plane.004Action.001
-      internalID: 7743809260962123913
+      name: Cube|Action.002
+      takeName: Cube|Action.002
+      internalID: 7708070724893832537
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -194,11 +185,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane|Cube_Plane.005Action.001
-      takeName: Cube_Plane|Cube_Plane.005Action.001
-      internalID: -4379266971503050115
+      name: Cube|Action.003
+      takeName: Cube|Action.003
+      internalID: -7359060483159870833
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -223,11 +214,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane|Cube_PlaneAction.001
-      takeName: Cube_Plane|Cube_PlaneAction.001
-      internalID: -2307899130550661256
+      name: Cube|Action.004
+      takeName: Cube|Action.004
+      internalID: 2307062787039625165
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -252,11 +243,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.002|Cube_Plane.002Action.001
-      takeName: Cube_Plane.002|Cube_Plane.002Action.001
-      internalID: 7313447666560178489
+      name: Cube|Cube.004Action
+      takeName: Cube|Cube.004Action
+      internalID: 5259475447914872051
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -281,11 +272,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.002|Cube_Plane.003Action.001
-      takeName: Cube_Plane.002|Cube_Plane.003Action.001
-      internalID: -2835516866222917749
+      name: Armature.000|Action
+      takeName: Armature.000|Action
+      internalID: 8113416117056043464
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -310,11 +301,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.002|Cube_Plane.004Action.001
-      takeName: Cube_Plane.002|Cube_Plane.004Action.001
-      internalID: -5370446303624233792
+      name: Armature.000|Action.001
+      takeName: Armature.000|Action.001
+      internalID: -397543591003064571
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -339,11 +330,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.002|Cube_Plane.005Action.001
-      takeName: Cube_Plane.002|Cube_Plane.005Action.001
-      internalID: -2804855997382486549
+      name: Armature.000|Action.002
+      takeName: Armature.000|Action.002
+      internalID: 3126094806203495254
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -368,11 +359,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.002|Cube_PlaneAction.001
-      takeName: Cube_Plane.002|Cube_PlaneAction.001
-      internalID: -6618209595678349786
+      name: Armature.000|Action.003
+      takeName: Armature.000|Action.003
+      internalID: -1541648300007516530
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -397,11 +388,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.003|Cube_Plane.002Action.001
-      takeName: Cube_Plane.003|Cube_Plane.002Action.001
-      internalID: 1640680022342917543
+      name: Armature.000|Action.004
+      takeName: Armature.000|Action.004
+      internalID: 2073375114558252190
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -426,11 +417,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.003|Cube_Plane.003Action.001
-      takeName: Cube_Plane.003|Cube_Plane.003Action.001
-      internalID: 3553517358088166651
+      name: Armature.000|Armature.000Action
+      takeName: Armature.000|Armature.000Action
+      internalID: 5923223639718819129
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -455,11 +446,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.003|Cube_Plane.004Action.001
-      takeName: Cube_Plane.003|Cube_Plane.004Action.001
-      internalID: 821413538637805310
+      name: Armature.000|Armature.000Action.001
+      takeName: Armature.000|Armature.000Action.001
+      internalID: -6809707879906735441
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -484,11 +475,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.003|Cube_Plane.005Action.001
-      takeName: Cube_Plane.003|Cube_Plane.005Action.001
-      internalID: 8674189882672569642
+      name: Armature.000|Cube.004Action
+      takeName: Armature.000|Cube.004Action
+      internalID: 4742496209246984989
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -513,11 +504,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.003|Cube_PlaneAction.001
-      takeName: Cube_Plane.003|Cube_PlaneAction.001
-      internalID: -8042863592358188415
+      name: Armature.001|Action
+      takeName: Armature.001|Action
+      internalID: 7721715186239825389
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -542,11 +533,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.004|Cube_Plane.002Action.001
-      takeName: Cube_Plane.004|Cube_Plane.002Action.001
-      internalID: -7300815191969185439
+      name: Armature.001|Action.001
+      takeName: Armature.001|Action.001
+      internalID: -7523534810428418115
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -571,11 +562,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.004|Cube_Plane.003Action.001
-      takeName: Cube_Plane.004|Cube_Plane.003Action.001
-      internalID: -6910432841509029041
+      name: Armature.001|Action.002
+      takeName: Armature.001|Action.002
+      internalID: -4398270123438568637
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -600,11 +591,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.004|Cube_Plane.004Action.001
-      takeName: Cube_Plane.004|Cube_Plane.004Action.001
-      internalID: -7716479612374641696
+      name: Armature.001|Action.003
+      takeName: Armature.001|Action.003
+      internalID: 7007551240903112307
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -629,11 +620,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.004|Cube_Plane.005Action.001
-      takeName: Cube_Plane.004|Cube_Plane.005Action.001
-      internalID: 3092158329090192598
+      name: Armature.001|Action.004
+      takeName: Armature.001|Action.004
+      internalID: 2637131330213253197
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -658,11 +649,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.004|Cube_PlaneAction.001
-      takeName: Cube_Plane.004|Cube_PlaneAction.001
-      internalID: -3779615888801243591
+      name: Armature.001|Armature.000Action
+      takeName: Armature.001|Armature.000Action
+      internalID: -6299958635320117647
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -687,11 +678,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.005|Cube_Plane.002Action.001
-      takeName: Cube_Plane.005|Cube_Plane.002Action.001
-      internalID: -987822094953857390
+      name: Armature.001|Armature.000Action.001
+      takeName: Armature.001|Armature.000Action.001
+      internalID: 1226996330119613696
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -716,98 +707,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cube_Plane.005|Cube_Plane.003Action.001
-      takeName: Cube_Plane.005|Cube_Plane.003Action.001
-      internalID: 8660576233396967401
+      name: Armature.001|Cube.004Action
+      takeName: Armature.001|Cube.004Action
+      internalID: 7821627992464522005
       firstFrame: 0
-      lastFrame: 240
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Cube_Plane.005|Cube_Plane.004Action.001
-      takeName: Cube_Plane.005|Cube_Plane.004Action.001
-      internalID: -1150861441417678944
-      firstFrame: 0
-      lastFrame: 240
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Cube_Plane.005|Cube_Plane.005Action.001
-      takeName: Cube_Plane.005|Cube_Plane.005Action.001
-      internalID: 4456279476437352694
-      firstFrame: 0
-      lastFrame: 240
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Cube_Plane.005|Cube_PlaneAction.001
-      takeName: Cube_Plane.005|Cube_PlaneAction.001
-      internalID: 7866235418900066707
-      firstFrame: 0
-      lastFrame: 240
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
