@@ -188,9 +188,14 @@ namespace MemeMachine
                 Destroy(enemies[ii].gameObject);
             }
             enemies.Clear();
-            timeLeft = GAMETIME;
-            score = (int)(GAMETIME - timeLeft * (8 + difficulty*2) - bulletsShot * (difficulty/2));
-            
+            score = (int)((GAMETIME - timeLeft) * (8 + difficulty * 2) - bulletsShot * (difficulty / 2));
+            /*                                  *\
+
+              Lincoln put score saving code here
+
+            \*                                  */
+
+            timeLeft = GAMETIME;            
         }
 
     
