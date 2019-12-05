@@ -5,11 +5,25 @@ using UnityEngine;
 public class despawn_thowable : MonoBehaviour
 {
     public bool explode;
+    bool active=false;
+    bool triggered=false;
     public GameObject explosion;
     // Start is called before the first frame update
+    private void Update()
+    {
+        if(transform.parent!=null && transform.parent.tag == "hand")
+        {
+            active = true;
+        }
+        if(active=true && transform.parent == null)
+        {
+            triggered = true;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (explode == true)
+        if (explode == true &&triggered==true)
         {
             GameObject x;
             x= Instantiate(explosion, transform);
