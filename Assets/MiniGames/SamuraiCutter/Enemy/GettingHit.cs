@@ -93,10 +93,14 @@ namespace SamuraiCutter
         {
             replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
             this.GetComponentInChildren<BoxCollider>().enabled = false;
+<<<<<<< HEAD
             foreach(MeshRenderer deathNote in this.gameObject.GetComponentsInChildren<MeshRenderer>())
             {
                 deathNote.enabled = false;
             }
+=======
+            this.gameObject.SetActive(false);
+>>>>>>> parent of cd187a3... Fixing DESTROY THEM ALL
             spawnEngine.registerKill();
             breakHit.Play();
             Invoke("DestroyMe", 2f);

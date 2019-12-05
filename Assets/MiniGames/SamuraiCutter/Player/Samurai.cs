@@ -18,7 +18,7 @@ public class Samurai : MonoBehaviour
         {
             GameManager._instance.dead = true;
             Time.timeScale = 0.1f;
-            foreach(EnemyAI enemies in FindObjectsOfType<EnemyAI>())
+            foreach( EnemyAI enemies in FindObjectsOfType<EnemyAI>())
             {
                 Destroy(enemies.gameObject,0.5f);
             }
@@ -29,11 +29,11 @@ public class Samurai : MonoBehaviour
     void OnTriggerEnter(Collider c)
     {
         //Debug.Log(c.transform.name);
-        //if(c.transform.CompareTag("enemysword"))
-        //{
-        //     GameManager._instance.uIManager.SetHurt(0.25f);
-        //        playerHit.Play();
-        //}
+        if(c.transform.CompareTag("enemysword"))
+        {
+             GameManager._instance.uIManager.SetHurt(0.25f);
+                playerHit.Play();
+        }
     }
 }
 
