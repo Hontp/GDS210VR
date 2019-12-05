@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: f33ccd07f9433f44f8c5430938b168ac, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -106,7 +106,7 @@ Material:
     - g_flReflectanceMin: 0
     - g_flReflectanceScale: 1
     m_Colors:
-    - _BaseColor: {r: 0.18325102, g: 0.7196769, b: 0.743, a: 0.61960787}
+    - _BaseColor: {r: 0.074971914, g: 1, b: 0, a: 1}
     - _Color: {r: 0.18325105, g: 0.7196769, b: 0.743, a: 0.61960787}
     - _EmissionColor: {r: 0.17637901, g: 0.6267087, b: 0.683, a: 1}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
@@ -117,6 +117,7 @@ Material:
     - g_vWorldAlignedTextureNormal: {r: 0, g: 1, b: 0, a: 0}
     - g_vWorldAlignedTexturePosition: {r: 0, g: 0, b: 0, a: 0}
     - g_vWorldAlignedTextureSize: {r: 1, g: 1, b: 1, a: 0}
+<<<<<<< HEAD
 --- !u!114 &7051677829930442863
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -130,3 +131,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
+=======
+>>>>>>> parent of f6254b1... more suff
