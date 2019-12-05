@@ -133,7 +133,7 @@ MonoBehaviour:
     value: 0.277
   clamp:
     overrideState: 0
-    value: 65472
+    value: 65471.48
   diffusion:
     overrideState: 1
     value: 2.5
@@ -214,10 +214,10 @@ MonoBehaviour:
     value: {x: 42.445557, y: 87.44556}
   minLuminance:
     overrideState: 1
-    value: -1.93
+    value: -2.33
   maxLuminance:
     overrideState: 1
-    value: 1.52
+    value: -2.07
   keyValue:
     overrideState: 1
     value: 1

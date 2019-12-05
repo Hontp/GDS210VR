@@ -172,7 +172,7 @@ namespace TowerDrop
                 entitysToDestroy.Clear();
 
             }
-            if (gm.game_phase == 3)
+            if (gm.game_phase == 0)
             {
                 for(int i=0; entitys.Count > i; i++)
                 {

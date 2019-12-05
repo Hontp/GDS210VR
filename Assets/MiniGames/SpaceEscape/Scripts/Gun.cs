@@ -32,9 +32,10 @@ namespace MemeMachine
         
         public GameObject currentMag = null;
         public GameObject parent;
-        public EnemySpawner spawner;        public void Start()
-        {
+        public EnemySpawner spawner;
 
+        public void Start()
+        {
             rightHand = GameObject.Find("RightHand").gameObject.GetComponent<Hand>();
             spawner = FindObjectOfType<EnemySpawner>();
         }
