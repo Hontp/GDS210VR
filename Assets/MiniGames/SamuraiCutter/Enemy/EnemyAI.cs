@@ -112,7 +112,8 @@ namespace SamuraiCutter
         public void slash()
         {
             attacking = true;
-
+            GameManager._instance.uIManager.SetHurt(0.25f);
+            playerHit.Play();
         }
 
         public void jumpBack()
