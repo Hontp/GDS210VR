@@ -8,7 +8,7 @@ public class Scoring : MonoBehaviour
 {
     public int currentScore;
     public string scoreText;
-    public bool gameOver;
+    public bool gameOver, hasScore;
 
     private void Start()
     {
@@ -34,11 +34,22 @@ public class Scoring : MonoBehaviour
         {
             gameOver = false;
         }
+
+        if(PlayerPrefs.HasKey("SC_Highscore"))
+        {
+            hasScore = true;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("SC_Highscore_Num", 0);
+            PlayerPrefs.SetString("SC_Highscore", "HIGHSCORE: " + PlayerPrefs.GetInt("SC_Highscore_Num"));
+            hasScore = true;
+        }
     }
 
     void CompareScore()
     {
-        if (PlayerPrefs.GetInt("SC_Highscore_Num") < currentScore)
+        if (PlayerPrefs.GetInt("SC_Highscore_Num") < currentScore && hasScore)
         {
             PlayerPrefs.SetInt("SC_Highscore_Num", currentScore);
             PlayerPrefs.SetString("SC_Highscore", "HIGHSCORE: " + currentScore.ToString());
