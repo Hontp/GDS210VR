@@ -7,7 +7,12 @@ public class vtol_scipt : MonoBehaviour
     public Animator anim;
     public bool grabed;
     public bool open_close;
+   
     public GameObject player;
+    public float distance_to_shoot;
+
+    bool shootimg;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +23,12 @@ public class vtol_scipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position,player.transform.position)<0)
-        {
+        anim.SetBool("grabed", grabed);
+        anim.SetBool("open_Close", open_close);
 
+        if (Vector3.Distance(transform.position,player.transform.position) < distance_to_shoot)
+        {
+            shootimg = true;
         }
         if (transform.parent.tag == "hand")
         {

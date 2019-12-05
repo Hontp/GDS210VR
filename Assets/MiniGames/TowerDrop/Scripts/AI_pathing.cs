@@ -171,7 +171,16 @@ namespace TowerDrop
                 }
                 entitysToDestroy.Clear();
 
-
+            }
+            if (gm.game_phase == 3)
+            {
+                for(int i=0; entitys.Count > i; i++)
+                {
+                    pathed_entity del;
+                    del = entitys[i];
+                    entitys.RemoveAt(i);
+                    Destroy(del.AI_gameObject);
+                }
             }
         }
 
