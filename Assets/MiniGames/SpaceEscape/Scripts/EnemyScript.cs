@@ -24,10 +24,12 @@ namespace MemeMachine
         float attackCounter = 0;
         int myHealth;
 
+      
 
         // Start is called before the first frame update
         void Start()
         {
+           
             myHealth = 5;
             anim = GetComponentInChildren<Animator>();
         }
@@ -81,12 +83,15 @@ namespace MemeMachine
         {
             if (attackingPlayer && !attacksStarted)
             {
+              
                 attacksStarted = true;
                 print("attacking player");
+
                 attackCounter = 1;
             }
             if(attacksStarted && attackCounter < 0)
             {
+                
                 playerScript.Invoke("DamagePlayer", 0);
                 attackCounter = 1;
             }
