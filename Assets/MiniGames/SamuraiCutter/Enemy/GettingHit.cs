@@ -93,7 +93,10 @@ namespace SamuraiCutter
         {
             replacedMesh = Instantiate(brokenMesh, transform.position + Vector3.down * 0.2f, transform.rotation);
             this.GetComponentInChildren<BoxCollider>().enabled = false;
-            this.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            foreach(MeshRenderer deathNote in this.gameObject.GetComponentsInChildren<MeshRenderer>())
+            {
+                deathNote.enabled = false;
+            }
             spawnEngine.registerKill();
             breakHit.Play();
             Invoke("DestroyMe", 2f);
