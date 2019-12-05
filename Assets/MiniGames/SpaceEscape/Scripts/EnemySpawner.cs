@@ -192,9 +192,14 @@ namespace MemeMachine
             /*                                  *\
 
               Lincoln put score saving code here
-
+              
             \*                                  */
+            PlayerPrefs.SetFloat("spaceEscapeScore", score);
 
+            if(PlayerPrefs.GetFloat("spaceEscapeHiScore") < score)
+            {
+                PlayerPrefs.SetFloat("spaceEscapeHiScore", score);
+            }
             timeLeft = GAMETIME;            
         }
 
