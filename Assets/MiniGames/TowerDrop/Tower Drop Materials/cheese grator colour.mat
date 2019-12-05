@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material 1
+  m_Name: cheese grator colour
   m_Shader: {fileID: 4800000, guid: c2b8438f1096c7447ba39077ec70b313, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -76,7 +76,7 @@ Material:
     - _Glossiness: 0.5
     - _GlossinessSource: 0
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Outline: 0.087
@@ -87,7 +87,7 @@ Material:
     - _RimThreshold: 0.1
     - _SampleGI: 0
     - _Shininess: 0
-    - _Smoothness: 0.5
+    - _Smoothness: 0.949
     - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0
     - _SpecSource: 0
@@ -99,12 +99,12 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _AmbientColor: {r: 24.84706, g: 21.709805, b: 4.894118, a: 1}
-    - _BaseColor: {r: 1, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 39.152943, g: 39.152943, b: 39.152943, a: 1}
     - _Color: {r: 1, g: 0.8193213, b: 0.3066038, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 82.13032, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1.4309018, g: 1.4309018, b: 1.4309018, a: 1}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _RimColor: {r: 8, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 3.6705894, g: 2.5943959, b: 0.2498307, a: 1}
 --- !u!114 &357095713502046426
 MonoBehaviour:
