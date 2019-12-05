@@ -52,6 +52,14 @@ namespace MemeMachine
                 }
                 //make invisible
             }
+            if (transform.parent != null)
+            {
+                if (transform.parent.name == "BlasterGameObj")
+                {
+                    GetComponent<MeshRenderer>().enabled = false;
+                }
+                //make invisible
+            }
             if (unlimited_ammo == true)
             {
                 ammoCount = 30;

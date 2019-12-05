@@ -84,7 +84,7 @@ namespace MemeMachine
 
             audioSource.clip = backgroundMusic;
             audioSource.loop = true;
-            audioSource.Play();
+           // audioSource.Play();
         }
 
         // Update is called once per frame

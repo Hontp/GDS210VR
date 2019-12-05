@@ -75,7 +75,10 @@ namespace MemeMachine
                 }
                 else if (shoot)
                 {
-                    //click sound for out of ammo
+                    audioSource.clip = magOutSound;
+                    audioSource.Play();
+                    vibration.Execute(0, 0.05f, 100f, 1, inputSource);
+                  
                 }
             }
         }
@@ -103,21 +106,22 @@ namespace MemeMachine
 
         public bool TestAmmo()
         {
-            UpdateAmmoText();
-            if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
+            if(currentMag.GetComponent<MagazineScript>() != null)
             {
-                Debug.Log("out");
-                vibration.Execute(0, 0.05f, 100f, 1, inputSource);
-                audioSource.clip = magOutSound;
-                audioSource.Play();
-                return false;
-               
+                UpdateAmmoText();
+                if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
+                {
+                    Debug.Log("out");
+                    return false;
+
+                }
+                else
+                {
+                    return true;
+                }
             }
-            else
-            {
-                return true;
-            }
-            
+            return false;
+
         }
 
         public void UpdateAmmoText()

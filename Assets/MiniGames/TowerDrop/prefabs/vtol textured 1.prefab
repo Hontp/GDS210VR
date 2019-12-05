@@ -513,18 +513,12 @@ MonoBehaviour:
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onHeldUpdate:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!114 &5383796950794770081
 MonoBehaviour:
@@ -548,7 +542,7 @@ MonoBehaviour:
   projectile: {fileID: 5469435355810594603, guid: 826efb6cde98b57488949d43e18b97b9,
     type: 3}
   vtol_arial_points: []
-  jet_speed: 0
+  jet_speed: 7.08
 --- !u!65 &5299003956414143041
 BoxCollider:
   m_ObjectHideFlags: 0

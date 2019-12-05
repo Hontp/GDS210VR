@@ -6,7 +6,7 @@ public class vtol_scipt : MonoBehaviour
 {
     public Animator anim;
     public bool grabed;
-    bool hit;
+    public bool hit;
     public bool open_close;
    
     public GameObject player;
@@ -43,7 +43,7 @@ public class vtol_scipt : MonoBehaviour
         anim.SetBool("grabed", grabed);
         anim.SetBool("open_Close", open_close);
 
-        if (grabed == false || hit == false)
+        if (grabed == false && hit == false)
         {
 
             if (open_close == false)
@@ -90,10 +90,14 @@ public class vtol_scipt : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision col)
     {
-        if (collision.gameObject.tag == "wepon")
+        if (col.gameObject.tag == "wepon")
         {
             hit = true;
         }

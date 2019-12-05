@@ -30,10 +30,34 @@ namespace MemeMachine
 
         public void Start()
         {
-            audioSource.clip = music;
-            audioSource.loop = true;
-            audioSource.Play();
+            if (menu.gamePlaying)
+            {
+                audioSource.clip = music;
+                audioSource.loop = true;
+                audioSource.Play();
+
+            }
+            if(!menu.gamePlaying && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+            print(audioSource.isPlaying);
             UpdatePlayerHealthDisplay();
+        }
+
+        private void Update()
+        {
+            if (menu.gamePlaying)
+            {
+                audioSource.clip = music;
+                audioSource.loop = true;
+                audioSource.Play();
+
+            }
+            if (!menu.gamePlaying && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
         }
 
         public void DamagePlayer()
