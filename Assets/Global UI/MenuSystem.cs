@@ -7,7 +7,7 @@ using MemeMachine;
 
 public class MenuSystem : MonoBehaviour
 {
-    public enum GameLoaded {None, Sword, Gun, Tower}
+    public enum GameLoaded { None, Sword, Gun, Tower }
     public GameLoaded myGame = GameLoaded.None;
     public bool gamePlaying;
 
@@ -32,7 +32,7 @@ public class MenuSystem : MonoBehaviour
     EnemySpawner spawner;
     int difficulty = 0;
     bool mainMenu = true;
-
+    List<GetParts> Enemies;
     const string TITLESTART = "Welcome to ";
     const string SCOREEND = " High Scores";
 
@@ -133,6 +133,16 @@ public class MenuSystem : MonoBehaviour
             SamuraiCutter.GameManager._instance.spawnEnemy.currentWaveNumber = 0;
             SamuraiCutter.GameManager._instance.spawnEnemy.remainingEnemies = 0;
             SamuraiCutter.GameManager._instance.dead = false;
+            Enemies = new List<GetParts>();
+            Enemies.AddRange((FindObjectsOfType<GetParts>()));
+            for (int i = 0; i < Enemies.Count; i++)
+            {
+                if (Enemies[i] != null)
+                {
+                    Destroy(Enemies[i]);
+                }
+            }
+            Enemies.Clear();
         }
 
         gameObject.SetActive(false);
