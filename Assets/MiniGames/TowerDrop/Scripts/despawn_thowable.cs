@@ -14,6 +14,7 @@ public class despawn_thowable : MonoBehaviour
             GameObject x;
             x= Instantiate(explosion, transform);
             x.transform.parent = null;
+            Destroy(gameObject);
         }
         Destroy(gameObject, 10);
     }
