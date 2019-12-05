@@ -19,6 +19,10 @@ namespace MemeMachine
         public int bulletsShot;
         public int score;
         public int difficulty;
+
+        public AudioClip backgroundMusic;
+        public AudioSource audioSource;
+
         public void SetSpawnVariables(float limit, float decrease, float time, int dif)
         {
             SpawnTime = time;
@@ -77,6 +81,10 @@ namespace MemeMachine
             numOfEnimies = 0;
             spawnLocationHolder = gameObject;
             timeLeft = GAMETIME;
+
+            audioSource.clip = backgroundMusic;
+            audioSource.loop = true;
+            audioSource.Play();
         }
 
         // Update is called once per frame
