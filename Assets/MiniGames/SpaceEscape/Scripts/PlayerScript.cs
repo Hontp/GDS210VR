@@ -23,12 +23,16 @@ namespace MemeMachine
         Color orange;
 
         int playerHealth = 1000;
-
+        public AudioSource audioSource;
+        public AudioClip music;
 
 
 
         public void Start()
-        {            
+        {
+            audioSource.clip = music;
+            audioSource.loop = true;
+            audioSource.Play();
             UpdatePlayerHealthDisplay();
         }
 

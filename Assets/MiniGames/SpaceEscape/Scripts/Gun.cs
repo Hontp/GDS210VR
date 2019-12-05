@@ -34,6 +34,10 @@ namespace MemeMachine
         public GameObject parent;
         public EnemySpawner spawner;
 
+        public AudioSource audioSource;
+        public AudioClip shotSound;
+        public AudioClip magOutSound;
+
         public void Start()
         {
             rightHand = GameObject.Find("RightHand").gameObject.GetComponent<Hand>();
@@ -87,6 +91,8 @@ namespace MemeMachine
             shootRateTimeStamp = shootRate;
             vibration.Execute(0, 0.1f, 300f, 1, inputSource);
             spawner.bulletsShot++;
+            audioSource.clip = shotSound;
+            audioSource.Play();
         }
 
         public void UseAmmo()
@@ -101,6 +107,9 @@ namespace MemeMachine
             if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
             {
                 Debug.Log("out");
+                vibration.Execute(0, 0.05f, 100f, 1, inputSource);
+                audioSource.clip = magOutSound;
+                audioSource.Play();
                 return false;
                
             }
