@@ -97,7 +97,7 @@ public class MenuSystem : MonoBehaviour
                 break;
             case GameLoaded.Sword:
                 SamuraiCutter.GameManager Scgm = GameObject.Find("GameManager").GetComponent<SamuraiCutter.GameManager>();
-                scoreTB.text = PlayerPrefs.GetString("SC_Highscore");
+                scoreTB.text = "Highscore: " + FindObjectOfType<Scoring>().scoreText;
                 break;
             case GameLoaded.Gun:
                 scoreTB.text = "John is cool dude, thanks for the UI Friend Much Appreciated";

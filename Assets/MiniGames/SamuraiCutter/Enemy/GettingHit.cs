@@ -97,6 +97,7 @@ namespace SamuraiCutter
             spawnEngine.registerKill();
             breakHit.Play();
             Invoke("DestroyMe", 2f);
+            FindObjectOfType<Scoring>().ScoringSystem();
         }
 
         void clink()
