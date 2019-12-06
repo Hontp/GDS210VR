@@ -223,6 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f7031c0d0e92243b7925518ca93339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explode: 0
+  explosion: {fileID: 0}
 --- !u!64 &6608587466385280066
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -234,6 +236,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: 4e542144147e95849b295d6e56106112, type: 3}
