@@ -9,17 +9,29 @@ public class throwable_aim_assist : MonoBehaviour
 
     public Ray ray;
     public RaycastHit rayhit;
-    
 
+    Rigidbody RB;
     // Start is called before the first frame update
     void Start()
     {
-        
+        RB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        ;//        while 
+        if (target == null)
+        {
+            
+            bool hit =Physics.Raycast(transform.position, RB.velocity, out rayhit);
+            if (hit)
+            {
+                target=rayhit.collider.gameObject;
+            }
+        }
+        else
+        {
+            transform.position = transform.position = Vector3.Lerp(transform.position, target.transform.position, 0.01f);
+        }
     }
 }
