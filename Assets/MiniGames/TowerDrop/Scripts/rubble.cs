@@ -26,6 +26,15 @@ namespace TowerDrop
 
             }
         }
+        private void OnTriggerExit(Collider col)
+        {
+            if (col.gameObject.tag == "hand")
+            {
+                GameObject hand = col.gameObject;
+                hand.GetComponent<search_rubble>().search = false;
+
+            }
+        }
 
     }
 }

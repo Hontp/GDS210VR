@@ -104,7 +104,7 @@ public class MenuSystem : MonoBehaviour
                 break;
             case GameLoaded.Tower:
                 TowerDrop.game_maneger Tgm= GameObject.Find("GameScene").GetComponent<TowerDrop.game_maneger>();
-                scoreTB.text = "high Score 1: " + Tgm.high_score1.ToString() +"\n"+ "high Score 2: " + Tgm.high_score2.ToString() + "\n"+"high Score 3: " + Tgm.high_score3.ToString();
+                scoreTB.text = "best times survived" + "\n" + "1st: " + Tgm.high_score1.ToString() +"\n"+ "high Score 2: " + Tgm.high_score2.ToString() + "\n"+"high Score 3: " + Tgm.high_score3.ToString();
                 break;
         }
     }
