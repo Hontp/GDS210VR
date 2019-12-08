@@ -23,7 +23,7 @@ public class throwable_aim_assist : MonoBehaviour
         if (target == null)
         {
             
-            bool hit =Physics.Raycast(transform.position, RB.velocity, out rayhit);
+            bool hit =Physics.SphereCast(transform.position,10, RB.velocity, out rayhit);
             if (hit)
             {
                 target=rayhit.collider.gameObject;

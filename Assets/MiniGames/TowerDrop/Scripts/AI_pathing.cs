@@ -12,6 +12,9 @@ namespace TowerDrop
         //gamemaneger
         public game_maneger gm;
 
+        //rage script;
+        public rage_scrpt rs;
+
         //spawn tick
         float gametick;
 
@@ -165,6 +168,7 @@ namespace TowerDrop
                         if (entitysToDestroy[x].AI_gameObject == entitys[y].AI_gameObject)
                         {
                             entitys.Remove(entitys[y]);
+                            rs.rage += 3;
 
                             // Destroy(entitysToDestroy[x].AI_gameObject);
                         }

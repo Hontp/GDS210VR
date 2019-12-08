@@ -37,7 +37,7 @@ namespace TowerDrop
             }
             if (GetComponent<game_maneger>().game_phase == 0)
             {
-                Ph.playerHP = 20;
+                Ph.playerHP = 100;
             }
         }
 

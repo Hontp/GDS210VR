@@ -24,9 +24,12 @@ namespace TowerDrop
 
         public Vector2[] highscores= new Vector2[3];
 
+        public GameObject inGameCanvas;
+
         // Start is called before the first frame update
         void Start()
         {
+            inGameCanvas.SetActive(false);
             game_phase = 0;
             UI.MenuActive();
             if (PlayerPrefs.HasKey("highsscore1_min"))
@@ -66,12 +69,14 @@ namespace TowerDrop
             }
             if (game_phase == 2)
             {
+                inGameCanvas.SetActive(true);
                 player_time_survived += Time.deltaTime;
                 //activate ingame UI
                 
             }
             if (game_phase == 3)
             {
+                inGameCanvas.SetActive(false);
                 player_time_survived = (int)Mathf.Round(player_time_survived);
 
                 minuts = (int)player_time_survived / 60;
