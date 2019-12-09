@@ -406,7 +406,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5383796950794770080}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
@@ -513,12 +513,18 @@ MonoBehaviour:
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   onHeldUpdate:
     m_PersistentCalls:
       m_Calls: []
+    m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!114 &5383796950794770081
 MonoBehaviour:
@@ -534,6 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1325831614184704457}
   grabed: 0
+  hit: 0
   open_close: 0
   player: {fileID: 0}
   distance_to_shoot: 0

@@ -93,6 +93,7 @@ public class vtol_scipt : MonoBehaviour
         else
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            GetComponent<Rigidbody>().useGravity = true;
         }
     }
     private void OnCollisionEnter(Collision col)
