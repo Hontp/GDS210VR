@@ -119,7 +119,8 @@ public class MenuSystem : MonoBehaviour
 
     public void ReturnToHub()
     {
-        //Return to hub code here
+        Destroy(GameObject.Find("Player"));
+        SceneManager.LoadScene(3);
     }
 
     //sets a bool to true for game to start
