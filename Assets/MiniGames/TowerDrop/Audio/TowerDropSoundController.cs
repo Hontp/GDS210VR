@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TowerDrop
 {
-    public class TowerDropSoundController : MonoBehaviour
+    public class TowerDropSoundController :Singleton<TowerDropSoundController>
     {
         private Dictionary<string, AudioClip> sfx = new Dictionary<string, AudioClip>();
         private List<AudioClip> bmgs = new List<AudioClip>();
