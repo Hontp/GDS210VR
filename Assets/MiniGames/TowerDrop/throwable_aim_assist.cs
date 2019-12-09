@@ -31,7 +31,7 @@ public class throwable_aim_assist : MonoBehaviour
         }
         else
         {
-            transform.position = transform.position = Vector3.Lerp(transform.position, target.transform.position, 0.01f);
+            transform.position = transform.position = Vector3.Lerp(transform.position, target.transform.position, ark/100);
         }
     }
 }
