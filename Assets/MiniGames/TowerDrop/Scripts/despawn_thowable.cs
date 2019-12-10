@@ -13,11 +13,16 @@ public class despawn_thowable : MonoBehaviour
     {
         if(transform.parent!=null && transform.parent.tag == "hand")
         {
+            active = false;
+        }
+        else
+        {
             active = true;
         }
         if(active=true && transform.parent == null)
         {
             triggered = true;
+            Destroy(gameObject, 10);
         }
     }
 
@@ -30,6 +35,6 @@ public class despawn_thowable : MonoBehaviour
             x.transform.parent = null;
             Destroy(gameObject);
         }
-        Destroy(gameObject, 10);
+        
     }
 }
