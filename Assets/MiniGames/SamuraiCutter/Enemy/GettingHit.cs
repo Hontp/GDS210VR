@@ -96,7 +96,9 @@ namespace SamuraiCutter
             this.gameObject.SetActive(false);
             spawnEngine.registerKill();
             breakHit.Play();
-            Invoke("DestroyMe", 2f);
+            replacedMesh.GetComponent<GetParts>().DestroyMe(2f);
+            DestroyMe();
+            //Invoke("DestroyMe", 2f);
             FindObjectOfType<Scoring>().ScoringSystem();
         }
 
@@ -109,9 +111,9 @@ namespace SamuraiCutter
 
         void DestroyMe()
         {
-            print("test 1");
+            //print("test 1");
             Destroy(gameObject);
-            Destroy(replacedMesh);
+            //Destroy(replacedMesh);
         }
     }
 }

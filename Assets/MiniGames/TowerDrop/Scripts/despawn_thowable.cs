@@ -28,7 +28,7 @@ public class despawn_thowable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (explode == true &&triggered==true)
+        if (explode == true &&triggered==true &&collision.gameObject.tag!="hand")
         {
             GameObject x;
             x= Instantiate(explosion, transform);

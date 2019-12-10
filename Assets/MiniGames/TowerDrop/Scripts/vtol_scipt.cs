@@ -50,7 +50,7 @@ public class vtol_scipt : MonoBehaviour
             {
                 Vector3 direction = -(transform.position - player.transform.position);
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction, player.transform.up), 0.2f);
-                transform.position = Vector3.Lerp(transform.position, vtol_arial_points[arialpoint].position, 0.02f);
+                transform.position = Vector3.Lerp(transform.position, vtol_arial_points[arialpoint].position,jet_speed/100);
                 shootimg = true;
 
             }
@@ -61,7 +61,7 @@ public class vtol_scipt : MonoBehaviour
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction, player.transform.up), 0.2f);
 
             }
-            if (Vector3.Distance(transform.position, vtol_arial_points[arialpoint].position) < 5)
+            if (Vector3.Distance(transform.position, vtol_arial_points[arialpoint].position) < 0.5f)
             {
                 arialpoint = Random.Range(0, vtol_arial_points.Length);
             }

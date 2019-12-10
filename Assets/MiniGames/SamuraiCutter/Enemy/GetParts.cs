@@ -8,6 +8,8 @@ public class GetParts : MonoBehaviour
     MeshRenderer[] brokenPieces;
     public Canvas plusOne;
     float timePassed;
+    bool shouldDestroySelf;
+    float timeToDestroy;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,31 @@ public class GetParts : MonoBehaviour
 
     private void Update()
     {
-        timePassed += Time.deltaTime;
+        timePassed += Time.unscaledDeltaTime;
 
         for (int i = 0; i < brokenPieces.Length; i++)
         {
             brokenPieces[i].material.SetFloat("_alphaClip", -1.5f + timePassed*2f);
         }
+
+        if (shouldDestroySelf && timePassed >= timeToDestroy)
+        {
+            DestroySelf();
+
+        }
     }
+
+
+    public void DestroyMe(float t)
+    {
+        shouldDestroySelf = true;
+        timeToDestroy = t;
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(this.gameObject);
+    }
+
+
 }
