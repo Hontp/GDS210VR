@@ -87,14 +87,20 @@ namespace SamuraiCutter
             {
                 
                 nma.speed = MoveSpeed;
-                nma.isStopped = false;
-                
+                if (nma.isOnNavMesh)
+                {
+                    nma.isStopped = false;
+                }
+
             }
             if (jumping && !attacking)
             {
                 animator.SetBool("flip", true);
                 animator.SetBool("attack", false);
-                nma.isStopped = false;
+                if (nma.isOnNavMesh)
+                {
+                    nma.isStopped = false;
+                }
                 jumping = false;
                 nma.speed = 0;
             }
@@ -103,7 +109,11 @@ namespace SamuraiCutter
             {
                 animator.SetBool("flip", false);
                 animator.SetBool("attack",true);
-                nma.isStopped = false;
+
+                if (nma.isOnNavMesh)
+                {
+                    nma.isStopped = false;
+                }
                 
                 nma.speed = 0;
                 attacking = false;
@@ -112,9 +122,11 @@ namespace SamuraiCutter
             {
                 animator.SetBool("idle", true);
                 animator.SetBool("attack",false);
-                
-            
-                nma.isStopped = false;
+
+                if (nma.isOnNavMesh)
+                {
+                    nma.isStopped = false;
+                }
                 nma.speed = 0;
                 attacking = false;
             }
@@ -142,8 +154,12 @@ namespace SamuraiCutter
            rb.useGravity = true;
            rb.AddForce( new Vector3( 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).x), 2f, 3f*(((transform.position-GameManager._instance.playerPos.position).normalized).z)), ForceMode.VelocityChange);
            rb.constraints = RigidbodyConstraints.FreezeRotationX & RigidbodyConstraints.FreezeRotationY & RigidbodyConstraints.FreezeRotationY;
-           //rb.AddTorque(transform.right * -180f);
-           nma.isStopped = true;
+            //rb.AddTorque(transform.right * -180f);
+
+            if (nma.isOnNavMesh)
+            {
+                nma.isStopped = true;
+            }
            nma.enabled = false;
            idle = false;
         }

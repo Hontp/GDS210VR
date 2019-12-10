@@ -101,23 +101,32 @@ namespace MemeMachine
         public void UseAmmo()
         {
             UpdateAmmoText();
-            currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
+
+            if(currentMag != null)
+            {
+                currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
+            }
+               
         }
 
         public bool TestAmmo()
         {
-            if(currentMag.GetComponent<MagazineScript>() != null)
-            {
-                UpdateAmmoText();
-                if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
-                {
-                    Debug.Log("out");
-                    return false;
 
-                }
-                else
+            if (currentMag != null)
+            {
+                if (currentMag.GetComponent<MagazineScript>() != null)
                 {
-                    return true;
+                    UpdateAmmoText();
+                    if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
+                    {
+                        Debug.Log("out");
+                        return false;
+
+                    }
+                    else
+                    {
+                        return true;
+                    }
                 }
             }
             return false;

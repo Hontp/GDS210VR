@@ -33,11 +33,15 @@ public class rightHand : MonoBehaviour
             {
                 if (canvas.activeSelf == false) // (FindObjectOfType<MenuSystem>().gamePlaying == true
                 {
-                    Destroy(hand.AttachedObjects[i].attachedObject.gameObject);
+
+                    GameObject g = hand.AttachedObjects[i].attachedObject;
+
+                    hand.DetachObject(hand.AttachedObjects[i].attachedObject);
+                    Destroy(g);
 
                     actualBlaster.SetActive(true);
                     Gun.gunBackGripGrabbed = true;
-                    actualBlaster.GetComponent<Interactable>().highlightOnHover = false;
+                   // actualBlaster.GetComponent<Interactable>().highlightOnHover = false;
                 }
             }
         }        

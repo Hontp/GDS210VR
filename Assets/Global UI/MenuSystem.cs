@@ -119,6 +119,33 @@ public class MenuSystem : MonoBehaviour
 
     public void ReturnToHub()
     {
+        if(myGame == GameLoaded.Tower)
+        {
+            DestroyImmediate(GameObject.Find("GameScene"));
+        }
+
+        if(myGame == GameLoaded.Sword)
+        {
+
+            GameObject g = GameObject.Find("interactable LaserPointer samcutter(Clone)");
+
+            if(g == null)
+            {
+                return;
+            }
+
+            Valve.VR.InteractionSystem.Hand[] hands = FindObjectsOfType<Valve.VR.InteractionSystem.Hand>();
+            foreach(Valve.VR.InteractionSystem.Hand h in hands)
+            {
+                if(h.handType == Valve.VR.SteamVR_Input_Sources.RightHand)
+                {
+                    h.DetachObject(g);
+                    Destroy(g);
+                }
+            }
+        }
+
+
         Destroy(GameObject.Find("Player"));
         SceneManager.LoadScene(3);
     }

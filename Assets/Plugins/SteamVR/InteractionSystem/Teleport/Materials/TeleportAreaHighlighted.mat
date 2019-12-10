@@ -117,7 +117,6 @@ Material:
     - g_vWorldAlignedTextureNormal: {r: 0, g: 1, b: 0, a: 0}
     - g_vWorldAlignedTexturePosition: {r: 0, g: 0, b: 0, a: 0}
     - g_vWorldAlignedTextureSize: {r: 1, g: 1, b: 1, a: 0}
-<<<<<<< HEAD
 --- !u!114 &7051677829930442863
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -131,5 +130,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-=======
->>>>>>> parent of f6254b1... more suff

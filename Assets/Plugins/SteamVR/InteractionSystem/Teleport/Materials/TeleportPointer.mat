@@ -87,7 +87,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}
-<<<<<<< HEAD
 --- !u!114 &3849633098478361004
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -101,5 +100,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-=======
->>>>>>> parent of f6254b1... more suff
