@@ -167,8 +167,9 @@ namespace TowerDrop
                     for (int y = 0; entitys.Count > y; y++)
                         if (entitysToDestroy[x].AI_gameObject == entitys[y].AI_gameObject)
                         {
-                            entitys.Remove(entitys[y]);
                             rs.rage += 3;
+                            entitys.Remove(entitys[y]);
+                           
 
                             // Destroy(entitysToDestroy[x].AI_gameObject);
                         }

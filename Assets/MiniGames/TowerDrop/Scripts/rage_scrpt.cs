@@ -30,9 +30,9 @@ public class rage_scrpt : MonoBehaviour
 
         rage = Mathf.Clamp(rage, 0, 100);
 
-        if(rage==100 && SteamVR_Actions.default_Squeeze[left.handType].active && SteamVR_Actions.default_Squeeze[right.handType].active)
+        if(rage==100 && SteamVR_Actions.default_Teleport[left.handType].state && SteamVR_Actions.default_Teleport[right.handType].state)
         {
-           
+            rage = 0;
             StartCoroutine(rage_attack());
         }
     }
