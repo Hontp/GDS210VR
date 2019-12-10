@@ -192,7 +192,8 @@ namespace TowerDrop
 
         public void RemoveFromEntityList(int index)
         {
-            entitysToDestroy.Add(entitys[index]);
+            if(index < entitys.Count && index > 0)
+                entitysToDestroy.Add(entitys[index]);
 
 
         }
