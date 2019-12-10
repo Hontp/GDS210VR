@@ -64,6 +64,7 @@ namespace TowerDrop
         void Start()
         {
             gm = GameObject.Find("GameScene").GetComponent<game_maneger>();
+            rs = GameObject.Find("GameScene").GetComponent<rage_scrpt>();
 
             //creates the distances of the paths
             for (int i = 1; Path_points.Count > i; i++)
