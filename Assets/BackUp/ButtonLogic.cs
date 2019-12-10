@@ -7,13 +7,14 @@ public class ButtonLogic : MonoBehaviour
 {
     public int sceneToLoad;
     Vector3 startingPos;
-    float x, z;
+    float x, y, z;
     // Start is called before the first frame update
     void Start()
     {
         startingPos = transform.position;
         x = startingPos.x;
         z = startingPos.z;
+        y = startingPos.y;
 
 
 
@@ -28,20 +29,20 @@ public class ButtonLogic : MonoBehaviour
 
     void HeightLimiter()
     {
-        if (transform.position.y > 1.4f)
+        if (transform.position.y > y)
         {
-            transform.position = new Vector3(x, 1.4f, z);
+            transform.position = new Vector3(x, y, z);
             GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
-        if (transform.position.y < 1.22f)
+        if (transform.position.y < y - 0.2f)
         {
-            transform.position = new Vector3(x, 1.226f, z);
+            transform.position = new Vector3(x, y-0.2f, z);
             Invoke("ChangeScene", 0.1f);
         }
     }
     void ButtonMove()
     {
-        if(transform.position.y < 1.4f)
+        if(transform.position.y < y)
         {
             GetComponent<Rigidbody>().AddForce(Vector3.up * 1.5f);
         }
