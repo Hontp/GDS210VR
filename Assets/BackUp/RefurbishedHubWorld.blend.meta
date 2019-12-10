@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1f7ae08253c5bd841aa76a0fc4a912b6
+guid: dc811b4aa0159524e97ade8f16bb8077
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Dark
-    second: {fileID: 2100000, guid: 82b809e9504d02140b810b7dd962ab7c, type: 2}
+    second: {fileID: 2100000, guid: 3457e47d0a6fc3347a90ebf27a087ff0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Windows
-    second: {fileID: 2100000, guid: 080d634716c84b9449e31a2c48980a88, type: 2}
+    second: {fileID: 2100000, guid: 9e1b5f01fcaa08e4bbd9bdc1c5f68dbe, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
