@@ -46,7 +46,7 @@ namespace MemeMachine
                 anim.SetBool("Run", false);
                 attacksStarted = false;
                 attackingPlayer = false;
-                Destroy(gameObject, 2f);
+                Destroy(gameObject, 1.75f);
                 mySpawner.enemies.Remove(this);
                 mySpawner.numOfEnimies--;
             }
