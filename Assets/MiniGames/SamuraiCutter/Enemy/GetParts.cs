@@ -23,7 +23,7 @@ public class GetParts : MonoBehaviour
 
         for (int i = 0; i < brokenPieces.Length; i++)
         {
-            brokenPieces[i].material.SetFloat("_alphaDelay", -1.5f + timePassed*2f);
+            brokenPieces[i].material.SetFloat("_alphaClip", -1.5f + timePassed*2f);
         }
     }
 }

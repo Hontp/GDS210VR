@@ -165,6 +165,7 @@ MonoBehaviour:
   attacking: 0
   playerHit: {fileID: 0}
   idle: 0
+  AttackSpeed: 1.25
   animator: {fileID: 4672244418465654264}
 --- !u!1001 &1718085023551798330
 PrefabInstance:

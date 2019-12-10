@@ -7,7 +7,7 @@ using MemeMachine;
 
 public class MenuSystem : MonoBehaviour
 {
-    public enum GameLoaded {None, Sword, Gun, Tower}
+    public enum GameLoaded { None, Sword, Gun, Tower }
     public GameLoaded myGame = GameLoaded.None;
     public bool gamePlaying;
 
@@ -32,7 +32,7 @@ public class MenuSystem : MonoBehaviour
     EnemySpawner spawner;
     int difficulty = 0;
     bool mainMenu = true;
-
+    List<GetParts> Enemies;
     const string TITLESTART = "Welcome to ";
     const string SCOREEND = " High Scores";
 
@@ -97,14 +97,14 @@ public class MenuSystem : MonoBehaviour
                 break;
             case GameLoaded.Sword:
                 SamuraiCutter.GameManager Scgm = GameObject.Find("GameManager").GetComponent<SamuraiCutter.GameManager>();
-                scoreTB.text = Scgm.GetComponent<Scoring>().scoreText;
+                scoreTB.text = "Highscore: " + FindObjectOfType<Scoring>().scoreText;
                 break;
             case GameLoaded.Gun:
-                scoreTB.text = "John is cool dude, thanks for the UI Friend Much Appreciated";
+                scoreTB.text = "HighScore: " + PlayerPrefs.GetFloat("spaceEscapeHiScore").ToString() + "\n Previous Score: " + PlayerPrefs.GetFloat("spaceEscapeScore").ToString() + "\n\n\n Click2 Recorded by Sebastian \n Bent and Broken by Kevin MacLeod ";
                 break;
             case GameLoaded.Tower:
                 TowerDrop.game_maneger Tgm= GameObject.Find("GameScene").GetComponent<TowerDrop.game_maneger>();
-                scoreTB.text = "high Score 1: " + Tgm.high_score1.ToString() +"\n"+ "high Score 2: " + Tgm.high_score2.ToString() + "\n"+"high Score 3: " + Tgm.high_score3.ToString();
+                scoreTB.text = "best times survived" + "\n" + "1st: " + Tgm.high_score1.ToString() +"\n"+ "high Score 2: " + Tgm.high_score2.ToString() + "\n"+"high Score 3: " + Tgm.high_score3.ToString();
                 break;
         }
     }
@@ -119,7 +119,35 @@ public class MenuSystem : MonoBehaviour
 
     public void ReturnToHub()
     {
-        //Return to hub code here
+        if(myGame == GameLoaded.Tower)
+        {
+            DestroyImmediate(GameObject.Find("GameScene"));
+        }
+
+        if(myGame == GameLoaded.Sword)
+        {
+
+            GameObject g = GameObject.Find("interactable LaserPointer samcutter(Clone)");
+
+            if(g == null)
+            {
+                return;
+            }
+
+            Valve.VR.InteractionSystem.Hand[] hands = FindObjectsOfType<Valve.VR.InteractionSystem.Hand>();
+            foreach(Valve.VR.InteractionSystem.Hand h in hands)
+            {
+                if(h.handType == Valve.VR.SteamVR_Input_Sources.RightHand)
+                {
+                    h.DetachObject(g);
+                    Destroy(g);
+                }
+            }
+        }
+
+
+        Destroy(GameObject.Find("Player"));
+        SceneManager.LoadScene(3);
     }
 
     //sets a bool to true for game to start
@@ -132,6 +160,17 @@ public class MenuSystem : MonoBehaviour
             Time.timeScale = 1f;
             SamuraiCutter.GameManager._instance.spawnEnemy.currentWaveNumber = 0;
             SamuraiCutter.GameManager._instance.spawnEnemy.remainingEnemies = 0;
+            SamuraiCutter.GameManager._instance.dead = false;
+            Enemies = new List<GetParts>();
+            Enemies.AddRange((FindObjectsOfType<GetParts>()));
+            for (int i = 0; i < Enemies.Count; i++)
+            {
+                if (Enemies[i] != null)
+                {
+                    Destroy(Enemies[i]);
+                }
+            }
+            Enemies.Clear();
         }
 
         gameObject.SetActive(false);

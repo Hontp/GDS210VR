@@ -37,11 +37,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 0f0385f1d197fc847a1e330aa731b0cb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 10b59dc5760e6824fb48e7adc231e674, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 92158be91be306946a41ed495d6b804f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -49,11 +49,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 4d340188dc6d905488e19c03505e740c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: beb807ab0a21a384aabc89e7fe8fb579, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -63,7 +63,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
-    - _BumpScale: 1
+    - _BumpScale: 1.5
     - _Cull: 2
     - _Cutoff: 0.481
     - _DstBlend: 0
@@ -72,7 +72,7 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _OcclusionStrength: 0
+    - _OcclusionStrength: 0.685
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimAmount: 0.809
@@ -88,5 +88,5 @@ Material:
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0.39902994, g: 0.40284228, b: 0.46226418, a: 1}
-    - _RimColor: {r: 5.5971184, g: 28.712801, b: 118.78336, a: 1}
-    - _SpecColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
+    - _RimColor: {r: 11.194243, g: 58.458828, b: 237.56673, a: 1}
+    - _SpecColor: {r: 0.19019608, g: 0.19019608, b: 0.19019608, a: 1}

@@ -22,6 +22,7 @@ namespace MemeMachine
         public bool shoot;
         public GameObject bullet;
         public  static bool gunBackGripGrabbed = false;
+        public GameObject dummyMag;
 
         public float shootRateTimeStamp;
         public float shootRate;
@@ -31,9 +32,14 @@ namespace MemeMachine
         
         public GameObject currentMag = null;
         public GameObject parent;
-        public EnemySpawner spawner;        public void Start()
-        {
+        public EnemySpawner spawner;
 
+        public AudioSource audioSource;
+        public AudioClip shotSound;
+        public AudioClip magOutSound;
+
+        public void Start()
+        {
             rightHand = GameObject.Find("RightHand").gameObject.GetComponent<Hand>();
             spawner = FindObjectOfType<EnemySpawner>();
         }
@@ -41,6 +47,7 @@ namespace MemeMachine
         {
             CheckShoot();
             UpdateAmmoText();
+            DummyMagLogic();
         }
         private void CheckShoot()
         {
@@ -52,8 +59,7 @@ namespace MemeMachine
             {
                 shoot = false;
             }
-
-            //if MagazineScript.isLoaded = true;
+            
             if (gunBackGripGrabbed == true)
             {
                 if (shoot && TestAmmo() && MagazineScript.isLoaded)
@@ -69,7 +75,10 @@ namespace MemeMachine
                 }
                 else if (shoot)
                 {
-                    //click sound for out of ammo
+                    audioSource.clip = magOutSound;
+                    audioSource.Play();
+                    vibration.Execute(0, 0.05f, 100f, 1, inputSource);
+                  
                 }
             }
         }
@@ -85,28 +94,43 @@ namespace MemeMachine
             shootRateTimeStamp = shootRate;
             vibration.Execute(0, 0.1f, 300f, 1, inputSource);
             spawner.bulletsShot++;
+            audioSource.clip = shotSound;
+            audioSource.Play();
         }
 
         public void UseAmmo()
         {
             UpdateAmmoText();
-            currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
+
+            if(currentMag != null)
+            {
+                currentMag.GetComponent<MagazineScript>().ammoCount -= 1;
+            }
+               
         }
 
         public bool TestAmmo()
         {
-            UpdateAmmoText();
-            if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
+
+            if (currentMag != null)
             {
-                Debug.Log("out");
-                return false;
-               
+                if (currentMag.GetComponent<MagazineScript>() != null)
+                {
+                    UpdateAmmoText();
+                    if (currentMag.GetComponent<MagazineScript>().ammoCount < 1)
+                    {
+                        Debug.Log("out");
+                        return false;
+
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
             }
-            else
-            {
-                return true;
-            }
-            
+            return false;
+
         }
 
         public void UpdateAmmoText()
@@ -119,6 +143,19 @@ namespace MemeMachine
             {
                 ammoTB.text = "0 / 0";
             }
+        }
+
+        public void DummyMagLogic()
+        {
+            if(currentMag == null)
+            {
+                dummyMag.SetActive(false);
+            }
+            else
+            {
+                dummyMag.SetActive(true);
+            }
+
         }
 
 

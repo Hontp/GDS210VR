@@ -21,12 +21,15 @@ namespace MemeMachine
         bool movingToPlayer = false;
         bool attackingPlayer = false;
         bool attacksStarted = false;
+        float attackCounter = 0;
         int myHealth;
 
+      
 
         // Start is called before the first frame update
         void Start()
         {
+           
             myHealth = 5;
             anim = GetComponentInChildren<Animator>();
         }
@@ -41,8 +44,9 @@ namespace MemeMachine
                 anim.SetBool("Die", true);
                 anim.SetBool("Attack", false);
                 anim.SetBool("Run", false);
-
-                Destroy(gameObject, 2f);
+                attacksStarted = false;
+                attackingPlayer = false;
+                Destroy(gameObject, 1.75f);
                 mySpawner.enemies.Remove(this);
                 mySpawner.numOfEnimies--;
             }
@@ -80,9 +84,21 @@ namespace MemeMachine
         {
             if (attackingPlayer && !attacksStarted)
             {
+              
                 attacksStarted = true;
                 print("attacking player");
-                InvokeRepeating("DamagePlayerLink", 1f, 1f);
+
+                attackCounter = 1;
+            }
+            if(attacksStarted && attackCounter < 0)
+            {
+                
+                playerScript.Invoke("DamagePlayer", 0);
+                attackCounter = 1;
+            }
+            else
+            {
+                attackCounter -= Time.deltaTime;
             }
         }
 
@@ -91,12 +107,6 @@ namespace MemeMachine
         {
             ChangeLocation();
             Attack();
-        }
-
-        void DamagePlayerLink()
-        {
-
-            playerScript.Invoke("DamagePlayer", 0);
         }
 
 

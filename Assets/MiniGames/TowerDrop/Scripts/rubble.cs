@@ -17,12 +17,21 @@ namespace TowerDrop
         {
 
         }
-        private void OnTriggerEnter(Collider col)
+        void OnTriggerEnter(Collider col)
         {
             if (col.gameObject.tag == "hand")
             {
-                GameObject hand = col.gameObject;
-                hand.GetComponent<search_rubble>().search = true;
+                col.GetComponent<search_rubble>().search = true;
+                
+
+            }
+        }
+        void OnTriggerExit(Collider col)
+        {
+            if (col.gameObject.tag == "hand")
+            {
+                col.gameObject.GetComponent<search_rubble>().search = false;
+               
 
             }
         }

@@ -19,6 +19,10 @@ namespace MemeMachine
         public int bulletsShot;
         public int score;
         public int difficulty;
+
+        public AudioClip backgroundMusic;
+        public AudioSource audioSource;
+
         public void SetSpawnVariables(float limit, float decrease, float time, int dif)
         {
             SpawnTime = time;
@@ -55,6 +59,7 @@ namespace MemeMachine
             previousMiddleLocationInt;
         int whileLimiter;
         float timeLeft;
+        ItemReseter[] items;
 
         const float GAMETIME = 180;
         const string FUELSTART = "- Refueling In Process -" + "\n" + "ETC : ";
@@ -66,6 +71,8 @@ namespace MemeMachine
         // Start is called before the first frame update
         void Start()
         {
+            items = FindObjectsOfType<ItemReseter>();
+            print(items.Length + " items in scene");
             gameUnderway = false;
             menu = FindObjectOfType<MenuSystem>();
             playerScript.menu = menu;
@@ -74,6 +81,10 @@ namespace MemeMachine
             numOfEnimies = 0;
             spawnLocationHolder = gameObject;
             timeLeft = GAMETIME;
+
+            audioSource.clip = backgroundMusic;
+            audioSource.loop = true;
+           // audioSource.Play();
         }
 
         // Update is called once per frame
@@ -155,7 +166,7 @@ namespace MemeMachine
                 GameObject WinScreen = Instantiate<GameObject>(WinScreenPrefab);
                 WinScreen.GetComponentInChildren<TMP_Text>().text = "you got a score of " + score.ToString(); ;
                 menu.Invoke("MenuActive", 4);
-                FindObjectOfType<rightHand>().MenuActive();
+                FindObjectOfType<rightHand>().MenuReset();
                 Destroy(WinScreen, 4);
             }
         }
@@ -170,6 +181,10 @@ namespace MemeMachine
 
         public void GameFinished()
         {
+            for(int ii = 0; ii < items.Length; ii++)
+            {
+                items[ii].ResetItems();
+            }
             menu.gamePlaying = false;
             gameUnderway = false;
             whileLimiter = 0;
@@ -181,9 +196,19 @@ namespace MemeMachine
                 Destroy(enemies[ii].gameObject);
             }
             enemies.Clear();
-            timeLeft = GAMETIME;
-            score = (int)(GAMETIME - timeLeft * (8 + difficulty*2) - bulletsShot * (difficulty/2));
-            
+            score = (int)((GAMETIME - timeLeft) * (8 + difficulty * 2) - bulletsShot * (difficulty / 2));
+            /*                                  *\
+
+              Lincoln put score saving code here
+              
+            \*                                  */
+            PlayerPrefs.SetFloat("spaceEscapeScore", score);
+
+            if(PlayerPrefs.GetFloat("spaceEscapeHiScore") < score)
+            {
+                PlayerPrefs.SetFloat("spaceEscapeHiScore", score);
+            }
+            timeLeft = GAMETIME;            
         }
 
     

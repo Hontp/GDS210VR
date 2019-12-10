@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TowerDrop
 {
     public class HealthSystem : Singleton< MonoBehaviour>
     {
+        public RectTransform healthbar;
+
         public  List<AI_pathing> AIObjects=  new List<AI_pathing>();
 
         public GameObject Player_hitbox;
@@ -34,7 +37,7 @@ namespace TowerDrop
             }
             if (GetComponent<game_maneger>().game_phase == 0)
             {
-                Ph.playerHP = 10;
+                Ph.playerHP = 100;
             }
         }
 
@@ -69,7 +72,10 @@ namespace TowerDrop
 
             UpdatePlayerHealth();
             UpdateAIHealth();
-            
+
+
+            healthbar.localScale = new Vector3(Ph.playerHP / 100, healthbar.localScale.y, healthbar.localScale.z);
+
         }
 
     }

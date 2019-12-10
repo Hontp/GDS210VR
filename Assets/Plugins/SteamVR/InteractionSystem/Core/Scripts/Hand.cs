@@ -437,25 +437,29 @@ namespace Valve.VR.InteractionSystem
             attachedObject.attachedRigidbody = objectToAttach.GetComponent<Rigidbody>();
             if (attachedObject.attachedRigidbody != null)
             {
-                if (attachedObject.interactable.attachedToHand != null) //already attached to another hand
-                {
-                    //if it was attached to another hand, get the flags from that hand
 
-                    for (int attachedIndex = 0; attachedIndex < attachedObject.interactable.attachedToHand.attachedObjects.Count; attachedIndex++)
+                if (attachedObject.interactable != null)
+                {
+                    if (attachedObject.interactable.attachedToHand != null) //already attached to another hand
                     {
-                        AttachedObject attachedObjectInList = attachedObject.interactable.attachedToHand.attachedObjects[attachedIndex];
-                        if (attachedObjectInList.interactable == attachedObject.interactable)
+                        //if it was attached to another hand, get the flags from that hand
+
+                        for (int attachedIndex = 0; attachedIndex < attachedObject.interactable.attachedToHand.attachedObjects.Count; attachedIndex++)
                         {
-                            attachedObject.attachedRigidbodyWasKinematic = attachedObjectInList.attachedRigidbodyWasKinematic;
-                            attachedObject.attachedRigidbodyUsedGravity = attachedObjectInList.attachedRigidbodyUsedGravity;
-                            attachedObject.originalParent = attachedObjectInList.originalParent;
+                            AttachedObject attachedObjectInList = attachedObject.interactable.attachedToHand.attachedObjects[attachedIndex];
+                            if (attachedObjectInList.interactable == attachedObject.interactable)
+                            {
+                                attachedObject.attachedRigidbodyWasKinematic = attachedObjectInList.attachedRigidbodyWasKinematic;
+                                attachedObject.attachedRigidbodyUsedGravity = attachedObjectInList.attachedRigidbodyUsedGravity;
+                                attachedObject.originalParent = attachedObjectInList.originalParent;
+                            }
                         }
                     }
-                }
-                else
-                {
-                    attachedObject.attachedRigidbodyWasKinematic = attachedObject.attachedRigidbody.isKinematic;
-                    attachedObject.attachedRigidbodyUsedGravity = attachedObject.attachedRigidbody.useGravity;
+                    else
+                    {
+                        attachedObject.attachedRigidbodyWasKinematic = attachedObject.attachedRigidbody.isKinematic;
+                        attachedObject.attachedRigidbodyUsedGravity = attachedObject.attachedRigidbody.useGravity;
+                    }
                 }
             }
 
@@ -1189,6 +1193,7 @@ namespace Valve.VR.InteractionSystem
             if (currentAttachedObject != null)
             {
                 AttachedObject attachedInfo = currentAttachedObjectInfo.Value;
+
                 if (attachedInfo.attachedObject != null)
                 {
                     if (attachedInfo.HasAttachFlag(AttachmentFlags.VelocityMovement))
@@ -1211,6 +1216,11 @@ namespace Valve.VR.InteractionSystem
                         }
                     }
 
+
+                    if (attachedInfo.interactable == null)
+                    {
+                        return;
+                    }
 
                     if (attachedInfo.interactable.attachEaseIn)
                     {

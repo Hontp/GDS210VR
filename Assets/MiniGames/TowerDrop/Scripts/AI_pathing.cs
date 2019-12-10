@@ -12,6 +12,9 @@ namespace TowerDrop
         //gamemaneger
         public game_maneger gm;
 
+        //rage script;
+        public rage_scrpt rs;
+
         //spawn tick
         float gametick;
 
@@ -61,6 +64,7 @@ namespace TowerDrop
         void Start()
         {
             gm = GameObject.Find("GameScene").GetComponent<game_maneger>();
+            rs = GameObject.Find("GameScene").GetComponent<rage_scrpt>();
 
             //creates the distances of the paths
             for (int i = 1; Path_points.Count > i; i++)
@@ -164,14 +168,25 @@ namespace TowerDrop
                     for (int y = 0; entitys.Count > y; y++)
                         if (entitysToDestroy[x].AI_gameObject == entitys[y].AI_gameObject)
                         {
+                            rs.rage += 3;
                             entitys.Remove(entitys[y]);
+                           
 
                             // Destroy(entitysToDestroy[x].AI_gameObject);
                         }
                 }
                 entitysToDestroy.Clear();
 
-
+            }
+            if (gm.game_phase == 0)
+            {
+                for(int i=0; entitys.Count > i; i++)
+                {
+                    pathed_entity del;
+                    del = entitys[i];
+                    entitys.RemoveAt(i);
+                    Destroy(del.AI_gameObject);
+                }
             }
         }
 

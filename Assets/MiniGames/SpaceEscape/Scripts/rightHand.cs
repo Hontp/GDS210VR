@@ -19,7 +19,6 @@ public class rightHand : MonoBehaviour
     void Start()
     {
         canvas = GameObject.Find("Canvas");
-
     }
 
     // Update is called once per frame
@@ -34,21 +33,29 @@ public class rightHand : MonoBehaviour
             {
                 if (canvas.activeSelf == false) // (FindObjectOfType<MenuSystem>().gamePlaying == true
                 {
-                    Destroy(hand.AttachedObjects[i].attachedObject.gameObject);
+
+                    GameObject g = hand.AttachedObjects[i].attachedObject;
+
+                    hand.DetachObject(hand.AttachedObjects[i].attachedObject);
+                    Destroy(g);
 
                     actualBlaster.SetActive(true);
                     Gun.gunBackGripGrabbed = true;
-                    actualBlaster.GetComponent<Interactable>().highlightOnHover = false;
+                   // actualBlaster.GetComponent<Interactable>().highlightOnHover = false;
                 }
             }
         }        
     }
-    public void MenuActive()
+    public void MenuReset()
     {
         actualBlaster.SetActive(false);
         Gun.gunBackGripGrabbed = false;
         laser.SetActive(true);
-        GameObject dummy = Instantiate<GameObject>(dummyBlaster, new Vector3(-0.612f, 1.228f, 35.4f), Quaternion.Euler(-30, 180,0));
+        if(GameObject.Find("Dummy Blaster(Clone )") == null)
+        {
+            GameObject dummy = Instantiate<GameObject>(dummyBlaster, new Vector3(-0.612f, 1.228f, 35.4f), Quaternion.Euler(-30, 180, 0));
+            dummy.name = "Dummy Blaster";
+        }
     }
     public void GameStarted()
     {

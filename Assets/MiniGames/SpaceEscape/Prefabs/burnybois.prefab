@@ -4855,6 +4855,7 @@ GameObject:
   - component: {fileID: 6651173969397452190}
   - component: {fileID: 2384288505150683048}
   - component: {fileID: 8226449963606231889}
+  - component: {fileID: 1887021326445221800}
   - component: {fileID: 5283414508707392262}
   - component: {fileID: -1173098315475899522}
   - component: {fileID: -1131296279817221921}
@@ -4930,6 +4931,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1887021326445221800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7644559808717422477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f67108ed162aef4cbcdff2ae16b088d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingRotation: {x: 0, y: 0, z: 0, w: 0}
+  startingPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5283414508707392262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5045,18 +5060,12 @@ MonoBehaviour:
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDetachFromHand:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onHeldUpdate:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.InteractionSystem.HandEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   interactable: {fileID: 0}
 --- !u!136 &-2459062088616244688
 CapsuleCollider:

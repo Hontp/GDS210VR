@@ -5,10 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SamuraiCutter/SamuraiCutter.unity
     guid: f9cd7f3ccd3eb544484daf99e3938ed3
   - enabled: 1
     path: Assets/Scenes/AlienEscape.unity
     guid: 9419137a872324c4e9c27ab5a66b2d5e
+  - enabled: 1
+    path: Assets/Scenes/tower_drop_main_game.unity
+    guid: 11bb26ed8699940f9bca8e8d7516b9ad
+  - enabled: 1
+    path: Assets/Scenes/SamuraiCutter/JoshMTestingScene.unity
+    guid: 1253c4cb79fa27e4fa6dbb9ecd6296c7
+  - enabled: 1
+    path: Assets/Scenes/Teleporting test.unity
+    guid: 39e84ce11d2e42b4fb0406d8d08f3e8a
   m_configObjects: {}

@@ -23,13 +23,41 @@ namespace MemeMachine
         Color orange;
 
         int playerHealth = 1000;
-
+        public AudioSource audioSource;
+        public AudioClip music;
 
 
 
         public void Start()
-        {            
+        {
+            if (menu.gamePlaying)
+            {
+                audioSource.clip = music;
+                audioSource.loop = true;
+                audioSource.Play();
+
+            }
+            if(!menu.gamePlaying && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+            print(audioSource.isPlaying);
             UpdatePlayerHealthDisplay();
+        }
+
+        private void Update()
+        {
+            if (menu.gamePlaying)
+            {
+                audioSource.clip = music;
+                audioSource.loop = true;
+                audioSource.Play();
+
+            }
+            if (!menu.gamePlaying && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
         }
 
         public void DamagePlayer()
@@ -52,9 +80,9 @@ namespace MemeMachine
                 print("player has died");
                 spawner.GameFinished();
                 GameObject deathScreen = Instantiate<GameObject>(deathScreenPrefab);
-                deathScreen.GetComponentInChildren<TMP_Text>().text = "You died noob";
+                deathScreen.GetComponentInChildren<TMP_Text>().text = "You died noob with a score of " + spawner.score;
                 menu.Invoke("MenuActive", 4);
-                FindObjectOfType<rightHand>().MenuActive();
+                FindObjectOfType<rightHand>().MenuReset();
                 Destroy(deathScreen, 4);
 
             }
