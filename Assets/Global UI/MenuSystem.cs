@@ -31,6 +31,7 @@ public class MenuSystem : MonoBehaviour
     string gameName;
     EnemySpawner spawner;
     int difficulty = 0;
+    int colour = 0;
     bool mainMenu = true;
     List<GetParts> Enemies;
     const string TITLESTART = "Welcome to ";
@@ -54,11 +55,12 @@ public class MenuSystem : MonoBehaviour
             case GameLoaded.None:
                 break;
             case GameLoaded.Sword:
-                SetName("Samurai Cutter");
-                
-                difficultyTB.gameObject.SetActive(false);
-                difTB.SetActive(false);
-                difPanel.SetActive(false);
+                SetName("Samurai Cutter");                
+                difficultyTB.gameObject.SetActive(true);
+                difficultyTB.text = "Blue";
+                difTB.SetActive(true);
+                difTB.GetComponent<TMP_Text>().text = "Sword Colour:";
+                difPanel.SetActive(true);
                 break;
             case GameLoaded.Gun:
                 SetName("Space Escape");
@@ -202,29 +204,64 @@ public class MenuSystem : MonoBehaviour
 
     public void ChangeDifficulty()
     {
-        difficulty++;
-        if(difficulty > 3)
+        if(myGame == GameLoaded.Gun)
         {
-            difficulty = 0;
+            difficulty++;
+            if (difficulty > 3)
+            {
+                difficulty = 0;
+            }
+            switch (difficulty)
+            {
+                case 0:
+                    difficultyTB.text = "Easy";
+                    spawner.SetSpawnVariables(30, 0.01f, 6, 1);
+                    break;
+                case 1:
+                    difficultyTB.text = "Medium";
+                    spawner.SetSpawnVariables(50, 0.04f, 5, 2);
+                    break;
+                case 2:
+                    difficultyTB.text = "Hard";
+                    spawner.SetSpawnVariables(75, 0.07f, 4, 3);
+                    break;
+                case 3:
+                    difficultyTB.text = "Insane";
+                    spawner.SetSpawnVariables(300, 0.1f, 4, 4);
+                    break;
+            }
         }
-        switch (difficulty)
+        if(myGame == GameLoaded.Sword)
         {
-            case 0:
-                difficultyTB.text = "Easy";
-                spawner.SetSpawnVariables(30, 0.01f, 6, 1);
-                break;
-            case 1:
-                difficultyTB.text = "Medium";
-                spawner.SetSpawnVariables(50, 0.04f, 5, 2);
-                break;
-            case 2:
-                difficultyTB.text = "Hard";
-                spawner.SetSpawnVariables(75, 0.07f, 4, 3);
-                break;
-            case 3:
-                difficultyTB.text = "Insane";
-                spawner.SetSpawnVariables(300, 0.1f, 4, 4);
-                break;
+            colour++;
+            if (colour > 4)
+            {
+                colour = 0;
+            }
+            switch (colour)
+            {
+                case 0:
+                    difficultyTB.text = "Blue";
+                    FindObjectOfType<ChangeBladeColour>().MakeBlue();
+                    break;
+                case 1:
+                    difficultyTB.text = "Green";
+                    FindObjectOfType<ChangeBladeColour>().MakeGreen();
+                    break;
+                case 2:
+                    difficultyTB.text = "Red";
+                    FindObjectOfType<ChangeBladeColour>().MakeRed();
+                    break;
+                case 3:
+                    difficultyTB.text = "Purple";
+                    FindObjectOfType<ChangeBladeColour>().MakePurple();
+                    break;
+                case 4:
+                    difficultyTB.text = "Yellow";
+                    FindObjectOfType<ChangeBladeColour>().MakeYellow();
+                    break;
+            }
+
         }
     }
 
