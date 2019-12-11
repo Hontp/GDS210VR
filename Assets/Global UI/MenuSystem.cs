@@ -241,20 +241,24 @@ public class MenuSystem : MonoBehaviour
             switch (colour)
             {
                 case 0:
-                    difficultyTB.text = "Red";
-
+                    difficultyTB.text = "Blue";
+                    FindObjectOfType<ChangeBladeColour>().MakeBlue();
                     break;
                 case 1:
                     difficultyTB.text = "Green";
+                    FindObjectOfType<ChangeBladeColour>().MakeGreen();
                     break;
                 case 2:
-                    difficultyTB.text = "Blue";
+                    difficultyTB.text = "Red";
+                    FindObjectOfType<ChangeBladeColour>().MakeRed();
                     break;
                 case 3:
                     difficultyTB.text = "Purple";
+                    FindObjectOfType<ChangeBladeColour>().MakePurple();
                     break;
                 case 4:
                     difficultyTB.text = "Yellow";
+                    FindObjectOfType<ChangeBladeColour>().MakeYellow();
                     break;
             }
 
