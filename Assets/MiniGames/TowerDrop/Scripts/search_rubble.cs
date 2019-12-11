@@ -32,24 +32,18 @@ namespace TowerDrop
             }
         }
         void Instantiatethrowable(){
-            int x = Random.Range(1, 4);
+            int x = Random.Range(1, 5);
             GameObject G;
 
-            if (x == 1)
+            if (x == 10)
             {
                 G=Instantiate(throwable[0], hand.transform.position, Quaternion.identity);
                 G.transform.parent = hand.gameObject.transform;
                 hand.AttachObject(G, hand.GetBestGrabbingType(), G.GetComponent<Throwable>().attachmentFlags);
             }
-            if (x == 2)
+            else
             {
                 G=Instantiate(throwable[1], hand.transform.position, Quaternion.identity);
-                G.transform.parent = hand.gameObject.transform;
-                hand.AttachObject(G, hand.GetBestGrabbingType(), G.GetComponent<Throwable>().attachmentFlags);
-            }
-            if (x == 3)
-            {
-                G=Instantiate(throwable[2], hand.transform.position, Quaternion.identity);
                 G.transform.parent = hand.gameObject.transform;
                 hand.AttachObject(G, hand.GetBestGrabbingType(), G.GetComponent<Throwable>().attachmentFlags);
             }
