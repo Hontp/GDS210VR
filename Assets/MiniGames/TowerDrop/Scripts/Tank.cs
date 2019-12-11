@@ -12,6 +12,16 @@ public class Tank : MonoBehaviour
     private float timePassed = 0;
     private bool isFired;
 
+    bool shoot=false;
+
+    public Animator anim;
+
+
+    private void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
+
     private void Update()
     { 
         if (CannonShell == null)
@@ -28,9 +38,15 @@ public class Tank : MonoBehaviour
             isFired = false;
         }
 
-        if (!isFired)
+        if (!isFired && shoot==true)
         {
             Fire();
+        }
+
+        if (transform.parent == null)
+        {
+            shoot = true;
+            anim.SetBool("Stop", true);
         }
     }
 

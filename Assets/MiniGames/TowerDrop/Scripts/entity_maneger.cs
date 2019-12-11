@@ -12,7 +12,7 @@ namespace TowerDrop
 
         public AI_pathing[] spidertank_pathing;
 
-        public int SpiderTankCount;
+        public bool SpawnSpiderTank;
         void Start()
         {
             
@@ -21,8 +21,14 @@ namespace TowerDrop
         // Update is called once per frame
         void Update()
         {
-            SpiderTankCount = spidertank_pathing[0].entitys.Count + spidertank_pathing[1].entitys.Count + spidertank_pathing[2].entitys.Count;
-
+            if (spidertank_pathing[0].Single_entity != null && spidertank_pathing[1].Single_entity != null && spidertank_pathing[2].Single_entity != null)
+            {
+                SpawnSpiderTank = false;
+            }
+            else
+            {
+                SpawnSpiderTank = true;
+            }
         }
     }
 }

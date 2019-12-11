@@ -126,14 +126,13 @@ public class MenuSystem : MonoBehaviour
 
         if(myGame == GameLoaded.Sword)
         {
-
+            Time.timeScale = 1;
             GameObject g = GameObject.Find("interactable LaserPointer samcutter(Clone)");
 
             if(g == null)
             {
                 return;
             }
-
             Valve.VR.InteractionSystem.Hand[] hands = FindObjectsOfType<Valve.VR.InteractionSystem.Hand>();
             foreach(Valve.VR.InteractionSystem.Hand h in hands)
             {

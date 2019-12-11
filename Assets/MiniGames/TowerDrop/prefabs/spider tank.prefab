@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2d3a06f1464064a82fa8979e5c57e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireShellTime: 1000
+  fireShellTime: 5
   CannonShell: {fileID: 7062066426179336418, guid: 24344faae9bdc544897df38abd135e86,
     type: 3}
   SideShell: {fileID: 7062066426179336418, guid: 100051dbeddf8be4f9afca28b0298905,
