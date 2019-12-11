@@ -231,58 +231,6 @@ public class MenuSystem : MonoBehaviour
                     break;
             }
         }
-        //if(myGame == GameLoaded.Sword)
-        //{
-        //    colour++;
-        //    if (colour > 4)
-        //    {
-        //        colour = 0;
-        //    }
-        //    switch (colour)
-        //    {
-        //        case 0:
-        //            difficultyTB.text = "Blue";
-        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
-        //            for(int i = 0; i < colourBlade.Length; i++)
-        //            {
-        //                colourBlade[i].MakeBlue();
-        //            }
-        //            break;
-        //        case 1:
-        //            difficultyTB.text = "Green";
-        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
-        //            for (int i = 0; i < colourBlade.Length; i++)
-        //            {
-        //                colourBlade[i].MakeGreen();
-        //            }
-        //            break;
-        //        case 2:
-        //            difficultyTB.text = "Red";
-        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
-        //            for (int i = 0; i < colourBlade.Length; i++)
-        //            {
-        //                colourBlade[i].MakeRed();
-        //            }
-        //            break;
-        //        case 3:
-        //            difficultyTB.text = "Purple";
-        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
-        //            for (int i = 0; i < colourBlade.Length; i++)
-        //            {
-        //                colourBlade[i].MakePurple();
-        //            }
-        //            break;
-        //        case 4:
-        //            difficultyTB.text = "Yellow";
-        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
-        //            for (int i = 0; i < colourBlade.Length; i++)
-        //            {
-        //                colourBlade[i].MakeYellow();
-        //            }
-        //            break;
-        //    }
-
-        //}
     }
 
     public void HomeButton()
