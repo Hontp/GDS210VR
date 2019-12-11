@@ -57,7 +57,7 @@ public class MenuSystem : MonoBehaviour
             case GameLoaded.Sword:
                 SetName("Samurai Cutter");                
                 difficultyTB.gameObject.SetActive(true);
-
+                difficultyTB.text = "Blue";
                 difTB.SetActive(true);
                 difTB.GetComponent<TMP_Text>().text = "Sword Colour:";
                 difPanel.SetActive(true);
