@@ -19,7 +19,7 @@ namespace TowerDrop
 
         public GameObject projectile;
 
-        private TowerDropSoundController laserSfx;
+        public TowerDropSoundController sfxController;
         private AudioSource sfxSource;
 
         public Transform[] vtol_arial_points;
@@ -37,7 +37,6 @@ namespace TowerDrop
             }
             vtol_arial_points = arial_points_list.ToArray();
 
-            laserSfx = GameObject.Find("SoundManger").GetComponent<TowerDropSoundController>();
             sfxSource = GetComponent<AudioSource>();
         }
 
@@ -92,7 +91,7 @@ namespace TowerDrop
                         GameObject x;
                         shoot_tick = 0;
                         x = Instantiate(projectile, transform.forward * 3 + transform.position, transform.rotation);
-                        laserSfx.playSFX(sfxSource, "Vtol_Laser");
+                        sfxController.playSFX(sfxSource, "Vtol_Laser");
                         x.transform.parent = null;
                         Destroy(x, 10);
                     }
