@@ -150,7 +150,7 @@ namespace TowerDrop
                         }
 
                         //moves the entity on the next path
-                        if (entitys[i].AI_gameObject.transform.position == Path_points[entitys[i].Path + 1].position)
+                        if (Vector3.Distance(entitys[i].AI_gameObject.transform.position, Path_points[entitys[i].Path + 1].position)<0.2f)
                         {
                             x.Time = 0;
                             x.Path += 1;

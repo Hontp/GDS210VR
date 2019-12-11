@@ -79,7 +79,7 @@ namespace TowerDrop
                 if (!source.isPlaying)
                 {
                     source.clip = sfx[name];
-                    source.Play();
+                    source.PlayOneShot(source.clip, 0.75f);
                 }
             }
         }
