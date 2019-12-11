@@ -40,13 +40,11 @@ namespace TowerDrop
             if (col.gameObject.tag == "wepon" && hit == false)
             {
                 hit = true;
-
                 AI_P.RemoveFromEntityList(entity_index);
                 gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 Destroy(gameObject, 5);
 
             }
         }
-
     }
 }
