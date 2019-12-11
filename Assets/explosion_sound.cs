@@ -13,16 +13,10 @@ namespace TowerDrop {
         {
             soundPlayed = false;
             rb = GetComponent<Rigidbody>();
+            tsc.playSFX(tsc.GetComponent<AudioSource>(), "0017_explo_bomb_04_PremiumBeat");
         }
 
         // Update is called once per frame
-        void Update()
-        {
-            if (rb.velocity.magnitude > 1 && soundPlayed == false)
-            {
-                soundPlayed = true;
-                tsc.playSFX(tsc.GetComponent<AudioSource>(), "0017_explo_bomb_04_PremiumBeat");
-            }
-        }
+       
     }
 }
