@@ -32,10 +32,10 @@ namespace TowerDrop
             }
         }
         void Instantiatethrowable(){
-            int x = Random.Range(1, 5);
+            int x = Random.Range(1, 6);
             GameObject G;
 
-            if (x == 10)
+            if (x == 5)
             {
                 G=Instantiate(throwable[0], hand.transform.position, Quaternion.identity);
                 G.transform.parent = hand.gameObject.transform;
