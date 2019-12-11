@@ -75,8 +75,8 @@ Material:
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimAmount: 0.468
-    - _RimThreshold: 0.427
+    - _RimAmount: 0
+    - _RimThreshold: 0.236
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
