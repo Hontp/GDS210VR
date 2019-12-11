@@ -25,7 +25,7 @@ public class vtol_scipt : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        player = GameObject.Find("Player");
+        player = GameObject.Find("vtol target");
         List<Transform> arial_points_list = new List<Transform>();
         for (int i = 0; GameObject.FindGameObjectsWithTag("arial point").Length > i; i++)
         {
