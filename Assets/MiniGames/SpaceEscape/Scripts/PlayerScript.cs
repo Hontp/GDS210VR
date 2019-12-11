@@ -23,41 +23,24 @@ namespace MemeMachine
         Color orange;
 
         int playerHealth = 1000;
-        public AudioSource audioSource;
-        public AudioClip music;
 
+        public AudioSource mainSource;
 
 
         public void Start()
         {
-            if (menu.gamePlaying)
-            {
-                audioSource.clip = music;
-                audioSource.loop = true;
-                audioSource.Play();
-
-            }
-            if(!menu.gamePlaying && audioSource.isPlaying)
-            {
-                audioSource.Stop();
-            }
-            print(audioSource.isPlaying);
+     
+        
             UpdatePlayerHealthDisplay();
         }
 
         private void Update()
         {
-            if (menu.gamePlaying)
+            //for some reason main music plays when gameplaying is false, must be something in menuscript
+           if( menu.gamePlaying == false)
             {
-                audioSource.clip = music;
-                audioSource.loop = true;
-                audioSource.Play();
-
-            }
-            if (!menu.gamePlaying && audioSource.isPlaying)
-            {
-                audioSource.Stop();
-            }
+                mainSource.Play();
+            }  
         }
 
         public void DamagePlayer()
