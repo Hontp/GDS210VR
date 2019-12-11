@@ -1221,9 +1221,8 @@ MonoBehaviour:
     needsReinit: 0
   hand: {fileID: 0}
   throwable:
-  - {fileID: 6998152046704760002, guid: f78b1f91260b5fc4f8b8d147c1898888, type: 3}
-  - {fileID: 1176174108042557975, guid: e1ff1e9af5993754db72b76567e88146, type: 3}
   - {fileID: 2602277082039357690, guid: 7bd94e5f76014a845ba30f08a10168ff, type: 3}
+  - {fileID: 1176174108042557975, guid: e1ff1e9af5993754db72b76567e88146, type: 3}
   search: 0
 --- !u!54 &56632103
 Rigidbody:
@@ -3782,8 +3781,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 5709479957031805212, guid: 58d525667404c4536a15056ef473b6b4,
     type: 3}
   m_Type: 0
@@ -18019,8 +18016,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 4076761884365869794, guid: 58d525667404c4536a15056ef473b6b4,
     type: 3}
   m_Type: 0
@@ -39887,8 +39882,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -4377279635648583503, guid: 58d525667404c4536a15056ef473b6b4,
     type: 3}
   m_Type: 0
@@ -40020,9 +40013,8 @@ MonoBehaviour:
     needsReinit: 0
   hand: {fileID: 0}
   throwable:
-  - {fileID: 6998152046704760002, guid: f78b1f91260b5fc4f8b8d147c1898888, type: 3}
-  - {fileID: 1176174108042557975, guid: e1ff1e9af5993754db72b76567e88146, type: 3}
   - {fileID: 2602277082039357690, guid: 7bd94e5f76014a845ba30f08a10168ff, type: 3}
+  - {fileID: 1176174108042557975, guid: e1ff1e9af5993754db72b76567e88146, type: 3}
   search: 0
 --- !u!135 &1980483441
 SphereCollider:
@@ -43165,8 +43157,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -8233157717320922622, guid: 58d525667404c4536a15056ef473b6b4,
     type: 3}
   m_Type: 0
@@ -45740,28 +45730,18 @@ MonoBehaviour:
   onTransformUpdated:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onConnectedChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_ConnectedChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onTrackingChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_TrackingChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDeviceIndexChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
 --- !u!114 &114000011915599333
 MonoBehaviour:
@@ -45783,28 +45763,18 @@ MonoBehaviour:
   onTransformUpdated:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onConnectedChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_ConnectedChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onTrackingChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_TrackingChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDeviceIndexChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
 --- !u!114 &114000012291650889
 MonoBehaviour:
