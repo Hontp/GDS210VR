@@ -54,7 +54,9 @@ namespace TowerDrop
         public bool destroyOnEnd;
 
         public bool endless;
-          
+
+        public GameObject Single_entity;
+
         //if you want to ride the created path click ride.
         public bool ride = false;
         int pasenger = 0;
@@ -90,7 +92,7 @@ namespace TowerDrop
                             Spawn_enitiy();
                         }
                     }
-                }else if (endless == false && entitys.Count == 0 && em.SpiderTankCount <= 2)
+                }else if (endless == false && Single_entity == null && em.SpawnSpiderTank == false)
                 {
                     int x = Random.Range(1, 21);
                     if (x == 1)
@@ -133,7 +135,7 @@ namespace TowerDrop
                         }
 
                         //cleanup and deletion of entitys that finish the end of the final path
-                        if (entitys[i].AI_gameObject.transform.position == Path_points[Path_points.Count - 1].position)
+                        if (Vector3.Distance(entitys[i].AI_gameObject.transform.position,Path_points[Path_points.Count - 1].position)<0.11f)
                         {
                             pathed_entity del;
                             del = entitys[i];
@@ -144,13 +146,13 @@ namespace TowerDrop
                             }
                             else
                             {
-                              //  entitys.RemoveAt(i);
+                                del.AI_gameObject.transform.parent = null;
                             }
                             return;
                         }
-
+                        
                         //moves the entity on the next path
-                        if (Vector3.Distance(entitys[i].AI_gameObject.transform.position, Path_points[entitys[i].Path + 1].position)<0.2f)
+                        if (Vector3.Distance(entitys[i].AI_gameObject.transform.position, Path_points[entitys[i].Path + 1].position)<0.1f)
                         {
                             x.Time = 0;
                             x.Path += 1;
@@ -213,7 +215,9 @@ namespace TowerDrop
         {
             GameObject x;
             //creates gameobect
+
             x = Instantiate(AI_PAthing_entity, spawner.transform);
+            Single_entity = x;
 
             x.AddComponent<Health>();
             Health eC = x.GetComponent<Health>();
