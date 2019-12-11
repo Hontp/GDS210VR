@@ -36,7 +36,7 @@ public class MenuSystem : MonoBehaviour
     List<GetParts> Enemies;
     const string TITLESTART = "Welcome to ";
     const string SCOREEND = " High Scores";
-
+    ChangeBladeColour[] colourBlade;
 
 
 
@@ -55,12 +55,12 @@ public class MenuSystem : MonoBehaviour
             case GameLoaded.None:
                 break;
             case GameLoaded.Sword:
-                SetName("Samurai Cutter");                
-                difficultyTB.gameObject.SetActive(true);
-                difficultyTB.text = "Blue";
-                difTB.SetActive(true);
-                difTB.GetComponent<TMP_Text>().text = "Sword Colour:";
-                difPanel.SetActive(true);
+                SetName("Samurai Cutter");
+                difficultyTB.gameObject.SetActive(false);
+                //difficultyTB.text = "Blue";
+                difTB.SetActive(false);
+                //difTB.GetComponent<TMP_Text>().text = "Sword Colour:";
+                difPanel.SetActive(false);
                 break;
             case GameLoaded.Gun:
                 SetName("Space Escape");
@@ -231,38 +231,58 @@ public class MenuSystem : MonoBehaviour
                     break;
             }
         }
-        if(myGame == GameLoaded.Sword)
-        {
-            colour++;
-            if (colour > 4)
-            {
-                colour = 0;
-            }
-            switch (colour)
-            {
-                case 0:
-                    difficultyTB.text = "Blue";
-                    FindObjectOfType<ChangeBladeColour>().MakeBlue();
-                    break;
-                case 1:
-                    difficultyTB.text = "Green";
-                    FindObjectOfType<ChangeBladeColour>().MakeGreen();
-                    break;
-                case 2:
-                    difficultyTB.text = "Red";
-                    FindObjectOfType<ChangeBladeColour>().MakeRed();
-                    break;
-                case 3:
-                    difficultyTB.text = "Purple";
-                    FindObjectOfType<ChangeBladeColour>().MakePurple();
-                    break;
-                case 4:
-                    difficultyTB.text = "Yellow";
-                    FindObjectOfType<ChangeBladeColour>().MakeYellow();
-                    break;
-            }
+        //if(myGame == GameLoaded.Sword)
+        //{
+        //    colour++;
+        //    if (colour > 4)
+        //    {
+        //        colour = 0;
+        //    }
+        //    switch (colour)
+        //    {
+        //        case 0:
+        //            difficultyTB.text = "Blue";
+        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
+        //            for(int i = 0; i < colourBlade.Length; i++)
+        //            {
+        //                colourBlade[i].MakeBlue();
+        //            }
+        //            break;
+        //        case 1:
+        //            difficultyTB.text = "Green";
+        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
+        //            for (int i = 0; i < colourBlade.Length; i++)
+        //            {
+        //                colourBlade[i].MakeGreen();
+        //            }
+        //            break;
+        //        case 2:
+        //            difficultyTB.text = "Red";
+        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
+        //            for (int i = 0; i < colourBlade.Length; i++)
+        //            {
+        //                colourBlade[i].MakeRed();
+        //            }
+        //            break;
+        //        case 3:
+        //            difficultyTB.text = "Purple";
+        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
+        //            for (int i = 0; i < colourBlade.Length; i++)
+        //            {
+        //                colourBlade[i].MakePurple();
+        //            }
+        //            break;
+        //        case 4:
+        //            difficultyTB.text = "Yellow";
+        //            colourBlade = FindObjectsOfType<ChangeBladeColour>();
+        //            for (int i = 0; i < colourBlade.Length; i++)
+        //            {
+        //                colourBlade[i].MakeYellow();
+        //            }
+        //            break;
+        //    }
 
-        }
+        //}
     }
 
     public void HomeButton()
