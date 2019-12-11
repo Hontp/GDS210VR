@@ -11439,7 +11439,7 @@ MonoBehaviour:
     needsReinit: 0
   grabGripAction:
     actionPath: /actions/default/in/GrabGrip
-    needsReinit: 0
+    needsReinit: 1
   hapticAction:
     actionPath: /actions/default/out/Haptic
     needsReinit: 1
@@ -11626,7 +11626,7 @@ MonoBehaviour:
     needsReinit: 0
   grabGripAction:
     actionPath: /actions/default/in/GrabGrip
-    needsReinit: 0
+    needsReinit: 1
   hapticAction:
     actionPath: /actions/default/out/Haptic
     needsReinit: 1
