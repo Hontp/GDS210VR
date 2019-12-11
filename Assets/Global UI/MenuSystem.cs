@@ -36,7 +36,7 @@ public class MenuSystem : MonoBehaviour
     List<GetParts> Enemies;
     const string TITLESTART = "Welcome to ";
     const string SCOREEND = " High Scores";
-
+    ChangeBladeColour[] colourBlade;
 
 
 
@@ -57,7 +57,9 @@ public class MenuSystem : MonoBehaviour
             case GameLoaded.Sword:
                 SetName("Samurai Cutter");
                 difficultyTB.gameObject.SetActive(false);
+                //difficultyTB.text = "Blue";
                 difTB.SetActive(false);
+                //difTB.GetComponent<TMP_Text>().text = "Sword Colour:";
                 difPanel.SetActive(false);
                 break;
             case GameLoaded.Gun:
