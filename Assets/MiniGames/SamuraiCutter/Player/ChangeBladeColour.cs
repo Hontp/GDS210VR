@@ -15,6 +15,8 @@ public class ChangeBladeColour : MonoBehaviour
         purple = new Vector4(50, 0, 255, 1.5f);
         yellow = new Vector4(150, 150, 20, 1.5f);
 
+        blade = GetComponent<MeshRenderer>().materials[GetComponent<MeshRenderer>().materials.Length - 1];
+
         blade.SetColor("_Emission", blue);
     }
 

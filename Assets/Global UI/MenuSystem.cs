@@ -55,12 +55,10 @@ public class MenuSystem : MonoBehaviour
             case GameLoaded.None:
                 break;
             case GameLoaded.Sword:
-                SetName("Samurai Cutter");                
-                difficultyTB.gameObject.SetActive(true);
-                difficultyTB.text = "Blue";
-                difTB.SetActive(true);
-                difTB.GetComponent<TMP_Text>().text = "Sword Colour:";
-                difPanel.SetActive(true);
+                SetName("Samurai Cutter");
+                difficultyTB.gameObject.SetActive(false);
+                difTB.SetActive(false);
+                difPanel.SetActive(false);
                 break;
             case GameLoaded.Gun:
                 SetName("Space Escape");
@@ -230,38 +228,6 @@ public class MenuSystem : MonoBehaviour
                     spawner.SetSpawnVariables(300, 0.1f, 4, 4);
                     break;
             }
-        }
-        if(myGame == GameLoaded.Sword)
-        {
-            colour++;
-            if (colour > 4)
-            {
-                colour = 0;
-            }
-            switch (colour)
-            {
-                case 0:
-                    difficultyTB.text = "Blue";
-                    FindObjectOfType<ChangeBladeColour>().MakeBlue();
-                    break;
-                case 1:
-                    difficultyTB.text = "Green";
-                    FindObjectOfType<ChangeBladeColour>().MakeGreen();
-                    break;
-                case 2:
-                    difficultyTB.text = "Red";
-                    FindObjectOfType<ChangeBladeColour>().MakeRed();
-                    break;
-                case 3:
-                    difficultyTB.text = "Purple";
-                    FindObjectOfType<ChangeBladeColour>().MakePurple();
-                    break;
-                case 4:
-                    difficultyTB.text = "Yellow";
-                    FindObjectOfType<ChangeBladeColour>().MakeYellow();
-                    break;
-            }
-
         }
     }
 
