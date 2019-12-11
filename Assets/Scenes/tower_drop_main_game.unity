@@ -1200,7 +1200,7 @@ SphereCollider:
   m_GameObject: {fileID: 650529045}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.09
   m_Center: {x: 0.06, y: 0, z: -0.08}
@@ -3782,8 +3782,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 5709479957031805212, guid: 58d525667404c4536a15056ef473b6b4,
     type: 3}
   m_Type: 0
@@ -4618,7 +4616,7 @@ PrefabInstance:
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}
       propertyPath: spawn_time
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}
@@ -5768,9 +5766,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339252824}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 300.28406, y: -71.57117, z: -66.38272}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2637.8215, y: -628.71124, z: -583.1338}
+  m_LocalScale: {x: 8.784421, y: 8.784421, z: 8.784421}
   m_Children:
   - {fileID: 5006512736768966348}
   - {fileID: 5006512735891306253}
@@ -5898,8 +5896,8 @@ Transform:
   - {fileID: 1914050301}
   - {fileID: 1831059741}
   - {fileID: 317402968}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 867367621}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &343401844
 PrefabInstance:
@@ -10030,8 +10028,14 @@ PrefabInstance:
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}
       propertyPath: spawn_time
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
+        type: 3}
+      propertyPath: AI_PAthing_entity
+      value: 
+      objectReference: {fileID: 2352558646723681550, guid: 94dee7b6afddc5c4c8f207f1b109b4ca,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af80607370e244df6ad754cce28d2dfa, type: 3}
 --- !u!1001 &563749123
@@ -10130,7 +10134,7 @@ PrefabInstance:
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}
       propertyPath: spawn_time
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}
@@ -11438,7 +11442,7 @@ MonoBehaviour:
     needsReinit: 0
   hapticAction:
     actionPath: /actions/default/out/Haptic
-    needsReinit: 0
+    needsReinit: 1
   uiInteractAction:
     actionPath: /actions/default/in/InteractUI
     needsReinit: 0
@@ -11625,7 +11629,7 @@ MonoBehaviour:
     needsReinit: 0
   hapticAction:
     actionPath: /actions/default/out/Haptic
-    needsReinit: 0
+    needsReinit: 1
   uiInteractAction:
     actionPath: /actions/default/in/InteractUI
     needsReinit: 0
@@ -11677,7 +11681,7 @@ MonoBehaviour:
     needsReinit: 0
   hapticAction:
     actionPath: /actions/default/out/Haptic
-    needsReinit: 0
+    needsReinit: 1
   uiInteractAction:
     actionPath: /actions/default/in/InteractUI
     needsReinit: 0
@@ -13783,7 +13787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &680628361
 Transform:
   m_ObjectHideFlags: 0
@@ -17029,6 +17033,7 @@ Transform:
   - {fileID: 1104881748}
   - {fileID: 1460012985}
   - {fileID: 1934912294}
+  - {fileID: 339252825}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17105,7 +17110,7 @@ MonoBehaviour:
   left: {fileID: 644533691}
   right: {fileID: 644451621}
   player: {fileID: 650502105}
-  explosion: {fileID: 327859757648430578, guid: fac22cef27687204bb97fbb7262baeb9,
+  explosion: {fileID: 327859757648430578, guid: 5a3e9870cc732f74ebac38d0ccd9c3d6,
     type: 3}
 --- !u!114 &867367626
 MonoBehaviour:
@@ -17851,8 +17856,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 4076761884365869794, guid: 58d525667404c4536a15056ef473b6b4,
     type: 3}
   m_Type: 0
@@ -24628,7 +24631,7 @@ PrefabInstance:
     - target: {fileID: 9004453338104709939, guid: 17951107eff78c64d9fcbd5407c4e0ba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70.91
+      value: 77.41
       objectReference: {fileID: 0}
     - target: {fileID: 9004453338104709939, guid: 17951107eff78c64d9fcbd5407c4e0ba,
         type: 3}
@@ -26544,7 +26547,7 @@ PrefabInstance:
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}
       propertyPath: spawn_time
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}
@@ -29046,7 +29049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1484596248
 Transform:
   m_ObjectHideFlags: 0
@@ -31860,7 +31863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1612234924
 Transform:
   m_ObjectHideFlags: 0
@@ -34065,7 +34068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1726755942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34074,8 +34077,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726755941}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
-  m_LocalScale: {x: 0.11383811, y: 0.11383817, z: 0.11383811}
+  m_LocalPosition: {x: 0, y: 0, z: 0.74}
+  m_LocalScale: {x: 0.05, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1592842654}
   - {fileID: 899511125}
@@ -34086,7 +34089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.01, y: -0.107}
   m_SizeDelta: {x: 16, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1726755943
@@ -38215,7 +38218,7 @@ PrefabInstance:
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}
       propertyPath: spawn_time
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af80607370e244df6ad754cce28d2dfa, type: 3}
@@ -39606,8 +39609,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -4377279635648583503, guid: 58d525667404c4536a15056ef473b6b4,
     type: 3}
   m_Type: 0
@@ -42806,8 +42807,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: -8233157717320922622, guid: 58d525667404c4536a15056ef473b6b4,
     type: 3}
   m_Type: 0
@@ -45381,28 +45380,18 @@ MonoBehaviour:
   onTransformUpdated:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onConnectedChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_ConnectedChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onTrackingChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_TrackingChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDeviceIndexChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
 --- !u!114 &114000011915599333
 MonoBehaviour:
@@ -45424,28 +45413,18 @@ MonoBehaviour:
   onTransformUpdated:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onTransformChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_PoseEvent, SteamVR, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   onConnectedChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_ConnectedChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onTrackingChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_TrackingChangedEvent, SteamVR, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onDeviceIndexChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Valve.VR.SteamVR_Behaviour_Pose_DeviceIndexChangedEvent, SteamVR,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   broadcastDeviceChanges: 1
 --- !u!114 &114000012291650889
 MonoBehaviour:
@@ -59338,7 +59317,7 @@ PrefabInstance:
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}
       propertyPath: spawn_time
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7085381070630680323, guid: af80607370e244df6ad754cce28d2dfa,
         type: 3}

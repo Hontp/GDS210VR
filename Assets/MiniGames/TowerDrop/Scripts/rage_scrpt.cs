@@ -26,7 +26,7 @@ public class rage_scrpt : MonoBehaviour
     void Update()
     {
 
-        ragebar.localScale = new Vector3(rage / 100, ragebar.localScale.y, ragebar.localScale.z);
+        ragebar.localScale = new Vector3((float)rage / 100, ragebar.localScale.y, ragebar.localScale.z);
 
         rage = Mathf.Clamp(rage, 0, 100);
 

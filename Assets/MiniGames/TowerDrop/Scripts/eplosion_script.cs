@@ -6,10 +6,11 @@ public class eplosion_script : MonoBehaviour
 {
     float size_by_time=0;
     public float groth;
+    public float time_lasting;
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 3);
+        Destroy(gameObject, time_lasting);
     }
 
     // Update is called once per frame

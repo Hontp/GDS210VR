@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3542192538974956697}
   - component: {fileID: 4761345503070985638}
+  - component: {fileID: 9185168659732559507}
+  - component: {fileID: 3037015241847720192}
   m_Layer: 0
   m_Name: interactable LaserPointer
   m_TagString: Untagged
@@ -48,6 +50,78 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9185168659732559507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3542192538974956674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa156fd40826c54eb533c8c6038eaef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  laserPointer: {fileID: 3542192537732608483}
+  rayOrigin: {fileID: 3542192537903259007}
+  testShoot: 0
+  lockShoot: 0
+  inputSource: 0
+  grabPinch:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+--- !u!114 &3037015241847720192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3542192538974956674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach:
+    actionSetPath: 
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 1
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  snapAttachEaseInCompleted: 0
+  skeletonPoser: {fileID: 0}
+  handFollowTransform: 1
+  highlightOnHover: 1
+  hideHighlight: []
 --- !u!1001 &3753865587885285948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120,11 +194,26 @@ PrefabInstance:
       propertyPath: attachEaseIn
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 743837323254056304, guid: b709657d046978c429c55ff2f2843ddc, type: 3}
+    - {fileID: 5199345708756309496, guid: b709657d046978c429c55ff2f2843ddc, type: 3}
+    - {fileID: 5915773630965644249, guid: b709657d046978c429c55ff2f2843ddc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b709657d046978c429c55ff2f2843ddc, type: 3}
 --- !u!4 &8134438240505938824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4970633298616443316, guid: b709657d046978c429c55ff2f2843ddc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3753865587885285948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3542192537903259007 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 373813636364533571, guid: b709657d046978c429c55ff2f2843ddc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3753865587885285948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &3542192537732608483 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 373813636199633887, guid: b709657d046978c429c55ff2f2843ddc,
     type: 3}
   m_PrefabInstance: {fileID: 3753865587885285948}
   m_PrefabAsset: {fileID: 0}

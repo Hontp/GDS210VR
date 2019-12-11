@@ -121,6 +121,23 @@ public class MenuSystem : MonoBehaviour
     {
         if(myGame == GameLoaded.Tower)
         {
+            
+           
+            GameObject g = GameObject.Find("interactable LaserPointer(Clone)");
+
+            if (g == null)
+            {
+                return;
+            }
+            Valve.VR.InteractionSystem.Hand[] hands = FindObjectsOfType<Valve.VR.InteractionSystem.Hand>();
+            foreach (Valve.VR.InteractionSystem.Hand h in hands)
+            {
+                if (h.handType == Valve.VR.SteamVR_Input_Sources.RightHand)
+                {
+                    h.DetachObject(g);
+                    Destroy(g);
+                }
+            }
             DestroyImmediate(GameObject.Find("GameScene"));
         }
 
@@ -222,4 +239,7 @@ public class MenuSystem : MonoBehaviour
             BackToMain();
         }
     }
+   
+        
+    
 }

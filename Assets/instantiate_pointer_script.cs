@@ -23,7 +23,7 @@ namespace TowerDrop
         }
 
         // Update is called once per frame
-        void Update()
+        private void LateUpdate()
         {
             if (gm.game_phase == 0 || gm.game_phase == 3)
             {
