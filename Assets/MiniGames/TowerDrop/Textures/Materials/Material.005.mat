@@ -11,7 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: c2b8438f1096c7447ba39077ec70b313, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 567387aa2846aac48a89f9260b6e3b5c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -36,15 +36,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: cebd842783b053b44b06fd45ba17b3e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a1db656f028585549a3bc954c26620e5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5fb9e1ed5b9758043a7838de17982e47, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -59,11 +59,11 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _OcclusionStrength: 1
+    - _OcclusionStrength: 0.738
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimAmount: 0.529
-    - _RimThreshold: 0.487
+    - _RimAmount: 0.439
+    - _RimThreshold: 0.382
     - _Smoothness: 0.121
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -74,9 +74,9 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-    - _EmissionColor: {r: 2.4538426, g: 6.188679, b: 1.0800997, a: 0}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _EmissionColor: {r: 1.4596426, g: 5.4562836, b: 0, a: 0}
+    - _RimColor: {r: 0.53333336, g: 0.9098039, b: 0.09411765, a: 1}
+    - _SpecColor: {r: 0.047058824, g: 0.45490196, b: 0.015686275, a: 1}
 --- !u!114 &3787717609823575928
 MonoBehaviour:
   m_ObjectHideFlags: 11

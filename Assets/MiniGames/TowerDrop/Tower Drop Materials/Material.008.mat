@@ -11,7 +11,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: c2b8438f1096c7447ba39077ec70b313, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -59,11 +59,11 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 1
-    - _OcclusionStrength: 1
+    - _OcclusionStrength: 0.672
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimAmount: 0.29
-    - _RimThreshold: 0.707
+    - _RimAmount: 0.958
+    - _RimThreshold: 0.662
     - _Smoothness: 0.882
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -72,11 +72,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
     - _Color: {r: 0.13286395, g: 0.13286395, b: 0.13286395, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _RimColor: {r: 28.109804, g: 12.047059, b: 128.50197, a: 1}
-    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0.039215688, g: 0, b: 0, a: 0}
+    - _RimColor: {r: 255.99997, g: 2.680628, b: 0, a: 1}
+    - _SpecColor: {r: 6.64151, g: 6.64151, b: 6.64151, a: 1}
 --- !u!114 &7089483743798768127
 MonoBehaviour:
   m_ObjectHideFlags: 11
