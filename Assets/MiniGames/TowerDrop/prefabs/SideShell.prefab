@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxDamage: 5.5
-  MaxLifeTime: 2
+  MaxLifeTime: 8.8
+  sfxController: {fileID: 0}
 --- !u!54 &1799525903502153880
 Rigidbody:
   m_ObjectHideFlags: 0
