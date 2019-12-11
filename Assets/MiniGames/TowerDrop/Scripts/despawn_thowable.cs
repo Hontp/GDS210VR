@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class despawn_thowable : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class despawn_thowable : MonoBehaviour
         if(active=true && transform.parent == null)
         {
             triggered = true;
+            Destroy(GetComponent<Throwable>(),Time.deltaTime);
+            Destroy(GetComponent<Interactable>(),Time.deltaTime);
             Destroy(gameObject, 10);
         }
     }

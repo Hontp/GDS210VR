@@ -20,18 +20,21 @@ public class throwable_aim_assist : MonoBehaviour
     // Update is called once per frame
     private void LateUpdate()
     {
-        if (target == null)
+        if (transform.parent == null)
         {
-            
-            bool hit =Physics.SphereCast(transform.position,1, RB.velocity, out rayhit);
-            if (hit && rayhit.collider.tag=="Enemy")
+            if (target == null)
             {
-                target=rayhit.collider.gameObject;
+
+                bool hit = Physics.SphereCast(transform.position, 1, RB.velocity, out rayhit);
+                if (hit && rayhit.collider.tag == "Enemy")
+                {
+                    target = rayhit.collider.gameObject;
+                }
             }
-        }
-        else
-        {
-            transform.position = transform.position = Vector3.Lerp(transform.position, target.transform.position, ark/100);
+            else
+            {
+                transform.position = transform.position = Vector3.Lerp(transform.position, target.transform.position, ark / 100);
+            }
         }
     }
 }
