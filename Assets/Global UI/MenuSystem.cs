@@ -55,11 +55,12 @@ public class MenuSystem : MonoBehaviour
             case GameLoaded.None:
                 break;
             case GameLoaded.Sword:
-                SetName("Samurai Cutter");
-                
-                difficultyTB.gameObject.SetActive(false);
-                difTB.SetActive(false);
-                difPanel.SetActive(false);
+                SetName("Samurai Cutter");                
+                difficultyTB.gameObject.SetActive(true);
+
+                difTB.SetActive(true);
+                difTB.GetComponent<TMP_Text>().text = "Sword Colour:";
+                difPanel.SetActive(true);
                 break;
             case GameLoaded.Gun:
                 SetName("Space Escape");
