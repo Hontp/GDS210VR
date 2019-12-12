@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using SamuraiCutter;
+using System;
 
 namespace SamuraiCutter
 {
@@ -166,19 +167,27 @@ namespace SamuraiCutter
 
         public void OnCollisionEnter(Collision col)
         {
-           if(col.transform.CompareTag("floor"))
-           {
-               rb.isKinematic = true;
-               rb.useGravity = false;
-               jumping = false;
-               nma.enabled = true;
-               nma.isStopped = false;
-               nma.speed = MoveSpeed;
-               nma.SetDestination(GameManager._instance.playerPos.position);
-               animator.SetBool("flip", false);
-               animator.SetBool("attack",false);
-               idle = false;
-           }
+            if(col.transform.CompareTag("floor"))
+            {
+                try
+                {
+                    rb.isKinematic = true;
+                    rb.useGravity = false;
+                    jumping = false;
+                    nma.enabled = true;
+                    nma.isStopped = false;
+                    nma.speed = MoveSpeed;
+                    nma.SetDestination(GameManager._instance.playerPos.position);
+                    animator.SetBool("flip", false);
+                    animator.SetBool("attack", false);
+                    idle = false;
+                }
+                catch (Exception e)
+                {
+
+                }
+                
+            }
         }
 
        

@@ -142,7 +142,6 @@ public class MenuSystem : MonoBehaviour
             }
             DestroyImmediate(GameObject.Find("GameScene"));
         }
-
         if(myGame == GameLoaded.Sword)
         {
             Time.timeScale = 1;
@@ -165,7 +164,7 @@ public class MenuSystem : MonoBehaviour
 
 
         Destroy(GameObject.Find("Player"));
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0);
     }
 
     //sets a bool to true for game to start

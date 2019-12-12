@@ -63,7 +63,7 @@ namespace MemeMachine
                 print("player has died");
                 spawner.GameFinished();
                 GameObject deathScreen = Instantiate<GameObject>(deathScreenPrefab);
-                deathScreen.GetComponentInChildren<TMP_Text>().text = "You died noob with a score of " + spawner.score;
+                deathScreen.GetComponentInChildren<TMP_Text>().text = "you got a score of " + spawner.score;
                 menu.Invoke("MenuActive", 4);
                 FindObjectOfType<rightHand>().MenuReset();
                 Destroy(deathScreen, 4);

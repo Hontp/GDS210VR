@@ -31,9 +31,8 @@ public class rightHand : MonoBehaviour
         {
             if (!Gun.gunBackGripGrabbed && hand.AttachedObjects[i].attachedObject.name == "Dummy Blaster")
             {
-                if (canvas.activeSelf == false) // (FindObjectOfType<MenuSystem>().gamePlaying == true
+                if (canvas.GetComponent<MenuSystem>() == null) // (FindObjectOfType<MenuSystem>().gamePlaying == true
                 {
-
                     GameObject g = hand.AttachedObjects[i].attachedObject;
 
                     hand.DetachObject(hand.AttachedObjects[i].attachedObject);
@@ -59,10 +58,7 @@ public class rightHand : MonoBehaviour
     }
     public void GameStarted()
     {
-        if (canvas.GetComponent<MenuSystem>().gamePlaying)
-        {
             laser.SetActive(false);
             Debug.Log("from laser to slim");
-        }
     }
 }

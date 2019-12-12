@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,13 +25,21 @@ namespace MemeMachine
         {
             if (isMag)
             {
-                transform.parent = null;
-                GetComponent<MagazineScript>().ammoCount = MagazineScript.STARTINGAMMOCOUNT;
-                GetComponent<MagazineScript>().gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                FindObjectOfType<Gun>().currentMag = null;
-                MagazineScript.isLoaded = false;
-                FindObjectOfType<Gun>().UpdateAmmoText();
-                GetComponent<MeshRenderer>().enabled = true;
+                try
+                {
+                    transform.parent = null;
+                    GetComponent<MagazineScript>().ammoCount = MagazineScript.STARTINGAMMOCOUNT;
+                    GetComponent<MagazineScript>().gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                    FindObjectOfType<Gun>().currentMag = null;
+                    MagazineScript.isLoaded = false;
+                    FindObjectOfType<Gun>().UpdateAmmoText();
+                    GetComponent<MeshRenderer>().enabled = true;
+                }
+                catch (Exception e)
+                {
+
+                }
+
             }
             transform.position = startingPosition;
             transform.rotation = startingRotation;
