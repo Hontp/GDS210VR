@@ -11,13 +11,14 @@ namespace TowerDrop {
         // Start is called before the first frame update
         void Start()
         {
-            tsc = GameObject.Find("SoundManager").GetComponent<TowerDropSoundController>();
+           tsc = GameObject.Find("SoundManager").GetComponent<TowerDropSoundController>();
+          
             soundPlayed = false;
             rb = GetComponent<Rigidbody>();
-            tsc.playSFX(tsc.GetComponent<AudioSource>(), "0017_explo_bomb_04_PremiumBeat");
+            tsc.playSFX(transform.GetComponent<AudioSource>(), "0017_explo_bomb_04");
         }
 
         // Update is called once per frame
-       
+
     }
 }

@@ -38,7 +38,7 @@ public class rage_scrpt : MonoBehaviour
     }
     IEnumerator rage_attack()
     {
-        Time.timeScale = 0.2f;
+        Time.timeScale = 0.7f;
         Instantiate(explosion, player.transform);
         yield return new WaitForSecondsRealtime(10);
         rage = 0;

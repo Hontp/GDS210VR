@@ -29,7 +29,7 @@ namespace TowerDrop
             return files;
         }
 
-        void Start()
+        void Awake()
         {
             List<string> bmgFiles;
             bmgFiles = GetAudioFilePaths("Audio/Music/");
@@ -75,12 +75,10 @@ namespace TowerDrop
         public void playSFX(AudioSource source, string name)
         {
             if (source != null && sfx.ContainsKey(name))
-            {
-                if (!source.isPlaying)
-                {
-                    source.clip = sfx[name];
-                    source.PlayOneShot(source.clip, 0.75f);
-                }
+            {                
+                source.clip = sfx[name];
+                source.PlayOneShot(source.clip, 0.55f);
+                
             }
         }
 

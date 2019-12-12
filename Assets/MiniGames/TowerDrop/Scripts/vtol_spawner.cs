@@ -6,16 +6,21 @@ namespace TowerDrop
 {
     public class vtol_spawner : MonoBehaviour
     {
+
+        public TowerDropSoundController soundController;
+
         public Transform[] spawn_points;
         public GameObject vtol;
         public game_maneger gm;
         float spawn_tick;
         public float spawn_rate;
 
+
         // Start is called before the first frame update
         void Start()
         {
             gm = GetComponent<game_maneger>();
+            soundController = GameObject.Find("SoundManager").GetComponent<TowerDropSoundController>();
         }
 
         // Update is called once per frame
@@ -27,7 +32,8 @@ namespace TowerDrop
                 if (spawn_tick >= spawn_rate)
                 {
                     spawn_tick = 0;
-                    Instantiate(vtol, spawn_points[Random.Range(0, spawn_points.Length)]);
+                   GameObject g = Instantiate(vtol, spawn_points[Random.Range(0, spawn_points.Length)]);
+                    g.GetComponent<vtol_scipt>().sfxController = soundController;
                 }
             }
         }
